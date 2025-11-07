@@ -1,0 +1,27 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+          name="problem-statement"
+          directory="serverFilesCourse"
+          file-name="theorielearn/problem_statements/intermediate_vertex.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+
+<hr/>
+
+<markdown>
+With distances from $s$ to $X$ and from $t$ to $X$, the task now is to compute the shortest path from $s$ to $t$ through $X$ by summing these distances for each vertex in $X$.
+
+So, how do we combine the distances from $s$ to $X$ and from $t$ to $X$ to find the shortest path from $s$ to $t$ through $X$?
+
+Suppose $ds(u)$ is the distance from $s$ to a vertex $u$ and $dt(v)$ is the distance from a vertex $v$ to $t$. Then, the shortest path from $s$ to t through a vertex from $X$ is given by:
+
+<pl-multiple-choice order="ascend" answers-name="ShortestPath" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">$min\_{x \in X}$</pl-answer>
+    <pl-answer>$max\_{x \in X}$</pl-answer>
+    <pl-answer>$min\_{s, t}$</pl-answer>
+    <pl-answer>$max\_{s, t}$</pl-answer>
+</pl-multiple-choice>
+<pl-symbolic-input show-help-text="true" variables="x,ds,dt" correct-answer="ds(x) + dt(x)" answers-name="ShortestPathEq" display="inline" size="8" placeholder="dt(s) + ds(t)"></pl-symbolic-input>
+</markdown>

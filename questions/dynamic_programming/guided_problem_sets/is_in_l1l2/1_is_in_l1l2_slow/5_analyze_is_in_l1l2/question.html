@@ -1,0 +1,20 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<markdown>
+Let $A = (L_1L_2)^*$. Consider the following pseudocode for $IsInL_1L_2()$:
+
+<pl-figure file-name="is_in_l1l2.png" directory="clientFilesQuestion"></pl-figure>
+
+$isInL_1()$ and $isInL_2()$ run in constant time.
+
+The runtime of this function is
+<pl-big-o-input answers-name="runtime" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>.
+</markdown>

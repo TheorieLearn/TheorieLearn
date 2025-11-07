@@ -1,0 +1,110 @@
+<style>
+  details.instructions {
+      border: 1px solid rgba(0, 0, 0, .125);
+      padding: .5em .5em 0;
+      margin-bottom: 15px;
+      background-color: rgba(0, 0, 0, .03);
+  }
+
+  .instructions summary {
+      font-weight: bold;
+      margin: -.5em -.5em 0;
+      padding: .5em;
+      outline: none;
+  }
+
+  details.instructions[open] {
+      padding: .5em;
+  }
+
+  details.instructions[open] summary {
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+      margin-bottom: .5em;
+  }
+  table.format th {
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 10px;
+  text-align: center;
+}
+
+
+table.format td{
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 8px;
+  text-align: left;
+}
+
+table.format td input {
+  text-align: left;
+}
+
+table.format td span.form-inline {
+  margin-left: 0 !important;
+}
+
+</style>
+
+<pl-question-panel>
+<p>
+  We are given an array representation of a disjoint set. There are 10 elements, A through J,
+  where A is given index 0, B is given index 1, … , and J is given index 9. Our array representation(L) starts off as [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1] since all 10 elements are disjoint.
+  What is the resulting array after the following consecutive union operations are performed?
+  Assume <strong>smart-union by size</strong>. In the event that the two sizes are equal, the first argument will be considered as larger than the second.
+  Assume that find <strong>{{pc_description}}</strong>
+</p>
+
+
+
+  <pl-code language="cpp" copy-code-button="true">
+{{current_state_display}}</pl-code>
+
+
+<table class='format' style="border: 2px solid black; width: 100%;">
+    <tr>
+      <th scope = "col">union operation</th>
+      <th scope = "col">array state</th>
+    </tr>
+  {{#table_rows}}
+    {{#is_finished}}
+    <tr>
+      <td>${{^union_display}} \varnothing {{/union_display}} {{union_display}}$</td>
+      <td>${{^set_state_display}} \varnothing {{/set_state_display}} {{set_state_display}}$</td>
+    </tr>
+    {{/is_finished}}
+    {{#is_current}}
+    <tr>
+      <td>${{^union_display}} \varnothing {{/union_display}} {{union_display}}$</td>
+      <td><pl-string-input answers-name="{{current_row_number}}-answer" show-help-text=false size="100" remove-spaces="true" placeholder="comma-separated list"></pl-string-input></td>
+    </tr>
+    {{/is_current}}
+    {{#is_upcoming}}
+    <tr>
+      <td>${{^q}} \varnothing {{/q}} {{q}}$</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    {{/is_upcoming}}
+  {{/table_rows}}
+</table>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+
+</pl-submission-panel>
+
+
+<pl-answer-panel>
+
+
+{{#is_done}}
+  You have completed the question.
+{{/is_done}}
+{{^is_done}}
+  {{feedback}}
+{{/is_done}}
+
+
+</pl-answer-panel>

@@ -1,0 +1,32 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/longest_common_subsequence.html"
+      ></pl-variable>
+    </pl-template>
+    <h5>English Definition</h5>
+    <center><b>Define $LCS(i, j)$ to be the length of the longest common subsequence between $A[1..i]$ and $B[1..j]$.</b></center>
+    <br>
+    <br>
+    <h5>Recursive Definition</h5>
+    $$
+    LCS(i, j):=
+    \begin{cases}
+    0 & \text{if } i = 0 \text{ or } j = 0\\
+    \max \{LCS(i-1, j), LCS(i, j-1)\}& \text{if } A[i] \neq B[j]\\
+    \max \{LCS(i-1, j), LCS(i, j-1), 1+LCS(i-1, j-1)\}& \text{if } A[i] = B[j]
+    \end{cases}
+    $$
+  <br/>
+  We now need to determine the evaluation order for our memoization structure.
+  In what order do we have to evaluate each problem in order to make sure that all of its dependencies are satisfied? <b>Note: Make sure you have proper indentation.</b>
+  </pl-question-panel>
+  <pl-order-blocks answers-name="eval" grading-method="dag" indentation="true">
+    <pl-answer correct="true" tag="1">For $i$, in increasing order:</pl-answer>
+    <pl-answer correct="true" tag="2">For $j$, in increasing order:</pl-answer>
+    <pl-answer correct="false" tag="3">For $i$, in decreasing order:</pl-answer>
+    <pl-answer correct="false" tag="4">For $j$, in decreasing order:</pl-answer>
+    <pl-answer correct="true" tag="5">Compute $LCS(i,j)$</pl-answer>
+  </pl-order-blocks>

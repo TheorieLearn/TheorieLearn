@@ -1,0 +1,39 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+We will define two subproblems. Let $A = (L_1L_2)^*$, and let $B = (L_1L_2)^*L_1$.
+<br><br>
+Let $isInA(i) = True$ if and only if $s[1..i] \in A$. Similarly, let $isInB(i) = True$ if and only if $s[1..i] \in B$.
+<br><br>
+Suppose that we have a nonempty prefix of $s[1..i]$.
+<br><br>
+We've established that if $s[1..i] \in A$, then it must have a suffix in $L_2$. The corresponding prefix must be in
+<pl-multiple-choice answers-name="a-prefix-membership" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">B</pl-answer>
+    <pl-answer correct="false">A</pl-answer>
+    <pl-answer correct="false">B*</pl-answer>
+    <pl-answer correct="false">A*</pl-answer>
+</pl-multiple-choice>.
+<br>
+Now, suppose that $s[1..i] \in B$. By the definition of $B$, it must have a suffix in
+<pl-multiple-choice answers-name="b-suffix-membership" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">L_1</pl-answer>
+    <pl-answer correct="false">L_2</pl-answer>
+    <pl-answer correct="false">L_1L_1</pl-answer>
+    <pl-answer correct="false">L_2L_2</pl-answer>
+</pl-multiple-choice>.
+
+The corresponding prefix must be in
+<pl-multiple-choice answers-name="b-prefix-membership" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">A</pl-answer>
+    <pl-answer correct="false">B</pl-answer>
+    <pl-answer correct="false">AB</pl-answer>
+    <pl-answer correct="false">B*</pl-answer>
+</pl-multiple-choice>.

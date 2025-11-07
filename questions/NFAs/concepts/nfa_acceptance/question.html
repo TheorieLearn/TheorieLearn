@@ -1,0 +1,16 @@
+<pl-question-panel>
+    <p>Consider the NFA drawn below. Which of the following strings are accepted by this NFA?</p>
+    <pl-graph>
+        {{params.nfa}}
+    </pl-graph>
+</pl-question-panel>
+
+<pl-checkbox answers-name="ans" weight="1">
+    {{#params.strings_in_nfa}}
+    <pl-answer correct="true">${{.}}$</pl-answer>
+    {{/params.strings_in_nfa}}
+
+    {{#params.strings_not_in_nfa}}
+    <pl-answer>${{.}}$</pl-answer>
+    {{/params.strings_not_in_nfa}}
+</pl-checkbox>

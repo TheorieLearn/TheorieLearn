@@ -1,0 +1,64 @@
+<pl-question-panel>
+    <markdown>
+Create a DFA in the area below for the following language:
+
+***<center>All binary strings that do not begin with $101$ where the total number of $0$s is divisible by $3$.</center>***
+    </markdown>
+    <hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="dfa">
+    <correct-answer>
+        {
+            "states":[
+               "p1",
+               "p0",
+               "s",
+               "c",
+               "p2",
+               "b",
+               "a"
+            ],
+            "input_symbols":[
+               "0",
+               "1"
+            ],
+            "transitions":{
+               "s":{
+                  "1":"a",
+                  "0":"p1"
+               },
+               "a":{
+                  "0":"b",
+                  "1":"p0"
+               },
+               "b":{
+                  "1":"c",
+                  "0":"p2"
+               },
+               "c":{
+                  "0":"c",
+                  "1":"c"
+               },
+               "p1":{
+                  "1":"p1",
+                  "0":"p2"
+               },
+               "p2":{
+                  "1":"p2",
+                  "0":"p0"
+               },
+               "p0":{
+                  "0":"p1",
+                  "1":"p0"
+               }
+            },
+            "initial_state":"s",
+            "final_states":[
+               "p0",
+               "a",
+               "s"
+            ]
+         }
+    </correct-answer>
+</tl-fsm-builder>

@@ -1,0 +1,64 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/french_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr/>
+
+<markdown>
+We've defined the vertices $V'$ in $G'$. We now need to define the edges $E'$, using the existence and color of any given edge in $G$.
+
+The vertices in $G'$ look like $(v,i)$, where $i \in \{0,1,2\}$. Again, based on the idea that we are using $i$ to encode *the number of edges traversed so far modulo 3*,
+we can define $E'$ as follows:
+</markdown>
+</pl-question-panel>
+For every edge $e=u\to v$ in $E$ :
+<ul>
+<li> If $e$ is red, then an edge exists from
+<pl-multiple-choice order="ascend" answers-name="red_edge-u" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(u,0)</pl-answer>
+    <pl-answer>(u,1)</pl-answer>
+    <pl-answer>(u,2)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice order="ascend" answers-name="red_edge-v" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(v,1)</pl-answer>
+    <pl-answer>(v,0)</pl-answer>
+    <pl-answer>(v,2)</pl-answer>
+</pl-multiple-choice>
+in $E'$.
+</li>
+
+<li> If $e$ is white, then an edge exists from
+<pl-multiple-choice order="ascend" answers-name="white_edge-u" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(u,1)</pl-answer>
+    <pl-answer>(u,0)</pl-answer>
+    <pl-answer>(u,2)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice order="ascend" answers-name="white_edge-v" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(v,2)</pl-answer>
+    <pl-answer>(v,0)</pl-answer>
+    <pl-answer>(v,1)</pl-answer>
+</pl-multiple-choice>
+in $E'$.
+</li>
+
+<li> If $e$ is blue, then an edge exists from
+<pl-multiple-choice order="ascend" answers-name="blue_edge-u" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(u,2)</pl-answer>
+    <pl-answer>(u,0)</pl-answer>
+    <pl-answer>(u,1)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice order="ascend" answers-name="blue_edge-v" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(v,0)</pl-answer>
+    <pl-answer>(v,1)</pl-answer>
+    <pl-answer>(v,2)</pl-answer>
+</pl-multiple-choice>
+in $E'$.
+</li>
+</ul>

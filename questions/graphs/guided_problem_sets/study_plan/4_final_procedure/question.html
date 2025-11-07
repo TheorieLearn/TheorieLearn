@@ -1,0 +1,30 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/study_plan.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+  We now have all the necessary pieces to construct an algorithm to find an optimal study plan for the student!
+  From the last question, you determined that a topic needs to be studied before $t$ if and only if it is reachable from $t$
+  in the reversal of $G$. We will solve the problem by constructing a new graph, containing only the nodes we need.
+
+  Drag and drop the blocks to construct a procedure to come up with an optimal study plan.
+</pl-question-panel>
+
+<pl-order-blocks answers-name="study-plan-algo" grading-method="dag">
+  <pl-answer correct="false" tag="1">Compute a topological sort of $G$.</pl-answer>
+  <pl-answer correct="true" tag="2" depends="">Construct the reversal of $G$, called $G.rev$.</pl-answer>
+  <pl-answer correct="false" tag="3">Compute a topological sort of $G.rev$</pl-answer>
+  <pl-answer correct="false" tag="4">Find all nodes reachable from $t$ in $G$.</pl-answer>
+  <pl-answer correct="true" tag="5" depends="2">Find all nodes reachable from $t$ in $G.rev$.</pl-answer>
+  <pl-answer correct="true" tag="6" depends="5">Construct a new graph $H$ consisting only of the reachable nodes.</pl-answer>
+  <pl-answer correct="true" tag="7" depends="6">Construct the reversal of $H$, called $H.rev$.</pl-answer>
+  <pl-answer correct="false" tag="8">Compute a topological sort of $H$.</pl-answer>
+  <pl-answer correct="true" tag="9" depends="7">Compute a topological sort of $H.rev$.</pl-answer>
+  <pl-answer correct="false" tag="10">Remove all nodes that come after $t$ in the topological sort.</pl-answer>
+  <pl-answer correct="false" tag="11">Remove all nodes that come before $t$ in the topological sort.</pl-answer>
+</pl-order-blocks>

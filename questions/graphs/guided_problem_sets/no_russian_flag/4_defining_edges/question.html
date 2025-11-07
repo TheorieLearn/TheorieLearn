@@ -1,0 +1,121 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/no_russian_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr/>
+
+<markdown>
+We've defined the vertices $V'$ in $G'$. We now need to define the edges $E'$, using the existence and color of any given edge in $G$.
+
+The vertices in $G'$ look like $(v,i)$, where $i \in \{None, W, WB\}$. Again, based on the idea that we are using $i$ to encode *the longest suffix of colors traversed that is a prefix of [White, Blue, Red]*,
+we can define $E'$ below. Note: Choose "Nothing" if there are no suitable edges given the starting vertex and the edge color.
+</markdown>
+</pl-question-panel>
+For every edge $e=u\to v$ in $E$ :
+<ul>
+<li> If $e$ is red, then edges exists from:
+    <ul>
+    (u, None) to
+    <pl-multiple-choice order="ascend" answers-name="red_edge1" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, None)</pl-answer>
+        <pl-answer>(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+     in $E'$.</ul>
+
+    <ul>
+    (u, W)
+    to
+    <pl-multiple-choice order="ascend" answers-name="red_edge2" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, None)</pl-answer>
+        <pl-answer>(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+    in $E'$.</ul>
+
+    <ul>
+        (u, WB)
+        to
+        <pl-multiple-choice order="ascend" answers-name="red_edge3" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">Nothing</pl-answer>
+            <pl-answer>(v, None)</pl-answer>
+            <pl-answer>(v, W)</pl-answer>
+            <pl-answer>(v, WB)</pl-answer>
+        </pl-multiple-choice>
+        in $E'$.</ul>
+</li>
+
+<li> If $e$ is white, then an edge exists from:
+<ul>
+    (u, None) to
+    <pl-multiple-choice order="ascend" answers-name="white_edge1" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, W)</pl-answer>
+        <pl-answer>(v, None)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+        in $E'$.</ul>
+
+    <ul>
+    (u, W)
+    to
+    <pl-multiple-choice order="ascend" answers-name="white_edge2" display="dropdown" hide-letter-keys="true">
+        <pl-answer>(v, None)</pl-answer>
+        <pl-answer correct="true">(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+    in $E'$.</ul>
+
+    <ul>
+    (u, WB)
+    to
+    <pl-multiple-choice order="ascend" answers-name="white_edge3" display="dropdown" hide-letter-keys="true">
+        <pl-answer>(v, None)</pl-answer>
+        <pl-answer correct="true">(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+    in $E'$.</ul>
+</li>
+
+<li> If $e$ is blue, then an edge exists from
+<ul>
+    (u, None) to
+    <pl-multiple-choice order="ascend" answers-name="blue_edge1" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, None)</pl-answer>
+        <pl-answer>(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+        in $E'$.</ul>
+
+    <ul>
+    (u, W)
+    to
+    <pl-multiple-choice order="ascend" answers-name="blue_edge2" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, WB)</pl-answer>
+        <pl-answer>(v, W)</pl-answer>
+        <pl-answer>(v, None)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+    in $E'$.</ul>
+
+    <ul>
+    (u, WB)
+    to
+    <pl-multiple-choice order="ascend" answers-name="blue_edge3" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">(v, None)</pl-answer>
+        <pl-answer>(v, W)</pl-answer>
+        <pl-answer>(v, WB)</pl-answer>
+        <pl-answer>Nothing</pl-answer>
+    </pl-multiple-choice>
+    in $E'$.</ul>
+</li>
+</ul>

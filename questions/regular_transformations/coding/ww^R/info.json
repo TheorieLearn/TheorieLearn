@@ -1,0 +1,19 @@
+{
+    "uuid": "937ea69d-f860-420d-b96e-45be81f62cb6",
+    "title": "Regular Transformation: ww^R in L",
+    "topic": "Regular Transformation",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

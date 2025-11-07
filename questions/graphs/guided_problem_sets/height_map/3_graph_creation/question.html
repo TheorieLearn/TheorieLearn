@@ -1,0 +1,37 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/height_map_graph.html"
+    ></pl-variable>
+</pl-template>
+  <hr>
+
+  <h3>Constructing G'</h3>
+  To make the newly constructed graph more clear, we will recreate the problem statement with a small example.
+  The start state is $[1.1]$. Below is a graph $G$ representing the given height map. The edge weights represent the
+  elevation change in meters when going from one vertex to another. $\Delta = 25$.
+  <pl-graph>
+    {{{params.original_graph}}}
+  </pl-graph>
+  From this, we generate our new graph $G' = (V', E')$. Recall from the previous part that $V' = R \times C \times D$.
+  To be compatible with the backend generation code, we modify the vertex definition for this part only to be $RC \times D$ where
+  $RC$ is the set containing $[n.m]$ for all $n \in R$ and $m \in C$. In other words, we combine $R$ and $C$ so that $[n.m]$ represents
+  the $n^{th}$ row and the $m^{th}$ column of the height map. Note: $Elev[i, j]$ represents the $i^{th}$ and $j^{th}$ index of the $Elevation$ map.
+  <br>
+  <br>
+  To write the rules, specify a start vertex to an end vertex. The arrow direction "$\to$" indicates the direction of
+  the edge. Each vertex such as ([1.1], up) is specified by three components, each coming from sets $RC$ and $D$.
+  To represent an element from:
+
+  <ul>
+    <li>$RC$: Write "[i.j]" to represent any outgoing vertex from $G$ and "[i'.j']" to any matching incoming vertex from $G$.</li>
+    <li>$D$: Write "up" and "down" to represent the uphill and downhill portions of the climb. Write "d" to represent a generic element of
+      $D$ (i.e., by using "d", you are saying that the specified edge should be added for both $d =$ up and $h =$
+      down).</li>
+  </ul>
+
+</pl-question-panel>
+
+{{{params.html}}}

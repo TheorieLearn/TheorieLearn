@@ -1,0 +1,19 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/valid_shuffle.html"
+      ></pl-variable>
+    </pl-template>
+    <p>
+      Great job! Finally, let's do a runtime analysis on our DP algorithm. Consider array accesses to all be $O(1)$, <b>Assume that $m \leq n$</b>, and give all expressions with respect to $n$.
+    </p>
+  <br><br>
+  </pl-question-panel>
+
+  There are <pl-symbolic-input show-help-text="false" variables="n" correct-answer="n**2" answers-name="sub" display="inline" size="3" placeholder=""></pl-symbolic-input> subproblems,
+  and each subproblem takes <pl-big-o-input show-help-text="false" answers-name="ans" variable="n" correct-answer="1" display='inline' size='3'></pl-big-o-input>
+  time to evaluate.
+
+  The overall runtime is then <pl-big-o-input show-help-text="false" answers-name="ans2" variable="n" correct-answer="n**2" display='inline' size='3'></pl-big-o-input>

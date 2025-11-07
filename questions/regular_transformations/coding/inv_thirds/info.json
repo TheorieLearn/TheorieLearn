@@ -1,0 +1,23 @@
+{
+    "uuid": "e486ef64-d879-4d65-be4f-c1e32b58857f",
+    "title": "Regular Transformation: Inverse Thirds",
+    "topic": "Regular Transformation",
+    "tags": [
+        "summer22",
+        "clarage2",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

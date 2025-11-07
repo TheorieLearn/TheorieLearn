@@ -1,0 +1,16 @@
+<pl-question-panel>
+    <h3>Detecting Arbitrage Cycles</h3>
+    In the past several questions, we assumed there were no arbitrage cycles, which are a series of trades that would
+    allow us to start with one unit of currency $i$ and result with more than one unit of currency $i$, making infinite
+    profit possible.
+    <br>
+    <br>
+    Let's say we are running our algorithm without this assumption. What could we do to determine if there were
+    arbitrage cycles in the graph we construct?
+</pl-question-panel>
+<pl-multiple-choice answers-name="q1" hide-letter-keys="true">
+    <pl-answer correct="true" feedback="Correct! Bellman-Ford can help us here.">Check for any negative cycles.</pl-answer>
+    <pl-answer correct="false" feedback="This doesn't imply an arbitrage cycle. Can you think of an example that shows this?">Check if the sum of all shortest paths is negative.</pl-answer>
+    <pl-answer correct="false" feedback="Consider what an arbitrage cycle would look like. Does it resemble a concept we've discussed before?">It's impossible to detect arbitrage cycles.</pl-answer>
+</pl-multiple-choice>
+<pl-submission-panel>{{{feedback.q1}}}</pl-submission-panel>

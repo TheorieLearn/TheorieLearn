@@ -1,0 +1,28 @@
+<pl-question-panel>
+  <b> For the next few questions, you are tasked with transforming an input graph
+  to a new graph in order to solve a traversal problem. </b>
+  <br>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/maze_graph.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+  <h3>Information to Track</h3>
+  First, we must determine what information needs to be kept track about past decisions in traversing the maze to inform future decisions.
+  Please select the options below that would be useful to keep track of to help solve the problem:
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1" fixed-order="true">
+    <pl-answer>How many maze guardians were avoided.</pl-answer>
+    <pl-answer>Remaining distance from your current position to $t$.</pl-answer>
+    <pl-answer>The number of edges traversed containing mysterious hieroglyphics.</pl-answer>
+    <pl-answer correct="true">Whether or not you have traversed an edge containing mysterious hieroglyphics.</pl-answer>
+    <pl-answer>How many charging stations were traversed.</pl-answer>
+    <pl-answer>A record of edges that were traversed.</pl-answer>
+    <pl-answer correct="true">Whether or not you currently have a charged invisibility device.</pl-answer>
+</pl-checkbox>

@@ -1,0 +1,24 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings in $\Sigma^*$ in which every run of $1$s is even in length.</center>***
+
+For example:
+
+* `110011` is in the language.
+* `101` is **not** in the language.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (0*(11))*0*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Treat each block of 1's as a group of pairs `11`. Make sure to consider where `0`s can appear.
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,23 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Determining our Vertices</h3>
+    Before we start developing a graph algorithm to solve our problem, we need to create a graph that represents our
+    input data, which is $R[1 \dots n, 1 \dots n]$. First, we'll consider the vertices of such a graph.
+    <br>
+    <br>
+    Which of the following should our vertices reasonably coorespond to?
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="q1" hide-letter-keys="true">
+    <pl-answer feedback="Correct! For further problems, we will assume vertex $v_i$ cooresponds to currency $i$ for all $i$." correct="true">The individual currencies</pl-answer>
+    <pl-answer feedback="Our problem consists of turning something into something else. At each step, are we turning pairs of currencies into different pairs of currencies?">All possible ordered pairs of currencies</pl-answer>
+    <pl-answer feedback="Our problem consists of turning something into something else. At each step, are we turning pairs of currencies into different pairs of currencies?">All possible unordered pairs of currencies</pl-answer>
+    <pl-answer feedback="Our graph will eventually contain this information, but not as the vertices.">The exchange rates</pl-answer>
+</pl-multiple-choice>
+
+<pl-submission-panel>{{{feedback.q1}}}</pl-submission-panel>

@@ -1,0 +1,76 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour.html"
+    ></pl-variable>
+  </pl-template>
+  <markdown>
+  Before starting, please note that this exercise is intended as a challenging
+  extension to the course material, and should bring together some important
+  concepts. **Other dynamic programming problems in the course will be on
+  computationally easier problems that have more efficient runtimes.**
+  In particular, the specific type of dynamic
+  programming used here is not efficient enough to use on homework or exams.
+
+  ---
+
+  #### Example
+
+  Suppose the input graph $G$ to this problem is the following:
+
+  <pl-graph>
+  graph G {
+    0 -- 1 [label=2]
+    0 -- 2 [label=4]
+    0 -- 3 [label=3]
+    0 -- 4 [label=1]
+    1 -- 2 [label=5]
+    1 -- 3 [label=10]
+    1 -- 4 [label=8]
+    2 -- 3 [label=9]
+    2 -- 4 [label=7]
+    3 -- 4 [label=6]
+  }
+  </pl-graph>
+
+  The cheapest tour is
+  $0 \rightarrow 1 \rightarrow 2 \rightarrow 4 \rightarrow 3$,
+  which has total cost $2 + 5 + 7 + 6= 22$.
+
+  </markdown>
+
+  <!--TODO: State as the path version, then mention the cycle thing at the end.-->
+
+  <hr>
+  <markdown>
+  To gain some basic understanding of this problem's structure, let's consider
+  the simplest (i.e. slowest) algorithm that still produces a correct answer. For
+  this problem, that's the algorithm that enumerates every possible tour, computes
+  the cost, and returns the tour of cheapest cost at the end. See the pseudocode
+  below:
+
+  ```python3
+  def WorldTourBruteForce(G):
+    minCost = infinity
+
+    for every possible tour T in G starting from 0:
+        cost = sum of edge distances in T
+        minCost = min(cost, minCost)
+
+    return minCost
+  ```
+  </markdown>
+  <hr/>
+</pl-question-panel>
+
+<pl-question-panel>
+  Remember that every tour has $n-1$ edges.
+  What is the (worst case) runtime of this algorithm?
+  <i>Please fully simplify your answer.</i>
+  <br>
+</pl-question-panel>
+
+<pl-big-o-input answers-name="big-o" variable="n" correct-answer="factorial(n)" display='inline' size='10'/>

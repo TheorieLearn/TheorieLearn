@@ -1,0 +1,113 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/longest_common_subsequence.html"
+      ></pl-variable>
+    </pl-template>
+    <center><b>Define $LCS(i, j)$ to be the length of the longest common subsequence between $A[1..i]$ and $B[1..j]$.</b></center>
+    <markdown>
+ From the previous question, we have three cases that factor into the calculation of $LCS(i,j)$:
+
+ 1. Solution subsequence does not use $A[i] \to$ [length of LCS between $A[1..i-1]$ and $B[1..j]$];
+ 2. Solution subsequence does not use $B[j] \to$ [length of LCS between $A[1..i]$ and $B[1..j-1]$];
+ 3. $A[i] = B[j]$ and solution subsequence uses it $\to$ 1 + [length of LCS between $A[1..i-1]$ and $B[1..j-1]$].
+    </markdown>
+
+    We will now give an expression for the value of each of these cases. Keep in mind how you use the subproblem definition of $LCS(i,j)$
+    when defining these expressions.
+    <br/>
+    Allowed functions/variables are <code>LCS(a,b), i, j, n, m</code>
+</pl-question-panel>
+<br/>
+<br/>
+<b>Case 1:</b> [length of LCS between $A[1..i-1]$ and $B[1..j]$]
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 2:</b> [length of LCS between $A[1..i]$ and $B[1..j-1]$]
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans2" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 3:</b> 1 + [length of LCS between $A[1..i-1]$ and $B[1..j-1]$]
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans3" show-help-text="false"></pl-string-input>
+<hr>
+
+Finally, we will address the last step of the DP problem-solving bullet points.
+
+To compute $LCS(i,j)$, we combine together the first two cases by taking the
+<pl-multiple-choice answers-name="drop1" order="fixed" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">minimum</pl-answer>
+  <pl-answer correct="true">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of first two expressions if $A[i] \neq B[j]$; we combine together all three cases by taking the
+<pl-multiple-choice answers-name="drop2" order="fixed" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">minimum</pl-answer>
+  <pl-answer correct="true">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of all three expressions if $A[i] = B[j]$.
+<!-- (when $A[i]=B[j]$, we notice that we can implement a small optimization,
+from the fact that the solution subsequence in Case 3 is at least as long as the subsequence in the first two cases.
+Since this doesn't lead to a runtime reduction, you may choose to submit either the optimized or unoptimized expression.
+<i>Note: on homeworks and exams, you should always give a proof for greedy optimizations like this one! Otherwise,
+your recursive definition will be considered incorrect</i>) -->
+<hr>
+This will lead us to give the recursive definition for $LCS(i,j)$:
+$$
+    LCS(i, j):=
+    \begin{cases}
+    [base\_case] & \text{if } [base\_case\_cond]\\
+    [expr1] & \text{if } A[i] \neq B[j]\\
+    [expr2] & \text{if } A[i] = B[j]
+    \end{cases}\quad,
+$$
+where we have:
+<br>
+<pl-string-input display="block" label="$expr1=$" placeholder="Symbolic input"  answers-name="expr1_ans" show-help-text="false"></pl-string-input>
+and
+<br>
+<pl-string-input display="block" label="$expr2=$" placeholder="Symbolic input"  answers-name="expr2_ans" show-help-text="false"></pl-string-input>
+<em>*Note: min and max are included in the list of viable functions</em>
+<hr>
+
+Let's also handle the base case necessary for our recursion: When $i$
+<div>
+  <pl-multiple-choice display="dropdown" answers-name="drop3" hide-letter-keys="true">
+    <pl-answer correct="false">$\le$</pl-answer>
+    <pl-answer correct="false">≠</pl-answer>
+    <pl-answer correct="true">=</pl-answer>
+  </pl-multiple-choice>
+</div>
+$0$
+<pl-multiple-choice answers-name="drop4" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">and</pl-answer>
+  <pl-answer correct="true">or</pl-answer>
+</pl-multiple-choice>
+$j$
+<pl-multiple-choice answers-name="drop5" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">≥</pl-answer>
+  <pl-answer correct="false">≠</pl-answer>
+  <pl-answer correct="true">=</pl-answer>
+</pl-multiple-choice>
+$0$, we should have:
+
+<pl-string-input display="block" label="$base\_case=$" placeholder="Symbolic input"  answers-name="base_ans" show-help-text="false"></pl-string-input>
+
+<pl-submission-panel>
+  <hr>
+  {{#feedback.expr2_ans}}
+  <b>Expression 2 Recursive Case Feedback:</b> {{{feedback.expr2_ans}}}
+  <br>
+  {{/feedback.expr2_ans}}
+</pl-submission-panel>

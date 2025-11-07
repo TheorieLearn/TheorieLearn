@@ -1,0 +1,13 @@
+{
+    "uuid": "2cca732a-aa75-422c-ab1b-4db5ee5f8aa9",
+    "title": "Regular Expressions: Contains 010 or at least 3 ones",
+    "topic": "Regular Expressions",
+    "tags": [
+      "erobson2",
+      "summer22",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

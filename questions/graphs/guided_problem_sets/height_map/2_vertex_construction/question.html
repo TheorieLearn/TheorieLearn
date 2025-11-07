@@ -1,0 +1,59 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/height_map_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr></hr>
+
+    <h3>Constructing Vertices in G'</h3>
+    Now, after noting what information we should track, we need to formally define the set of vertices in the new graph $G'=(V',E')$.
+</pl-question-panel>
+
+We define $V'$ as the product of three sets:
+<ul>
+    <li> $R=$
+        <pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">{0, 1, ..., n}</pl-answer>
+            <pl-answer>{0, 1}</pl-answer>
+            <pl-answer>{NotSeen, Seen}</pl-answer>
+        </pl-multiple-choice>
+        , representing
+        <pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">the row (first) index of the Elevation map</pl-answer>
+            <pl-answer>how many positions in the Elevation map you have traversed</pl-answer>
+            <pl-answer>if you have seen the peak in the Elevation map</pl-answer>
+        </pl-multiple-choice> </li>
+    <li> $C=$
+        <pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">{0, 1, ..., n}</pl-answer>
+            <pl-answer>{0, 1}</pl-answer>
+            <pl-answer>{NotSeen, Seen}</pl-answer>
+        </pl-multiple-choice>
+        , representing
+        <pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">the col (second) index of the Elevation map</pl-answer>
+            <pl-answer>how many positions in the Elevation map you have traversed</pl-answer>
+            <pl-answer>if you have seen the peak in the Elevation map</pl-answer>
+        </pl-multiple-choice> </li>
+    <li> $D=$
+        <pl-multiple-choice answers-name="q5" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">{up, down}</pl-answer>
+            <pl-answer>{0, 1, ..., max height}</pl-answer>
+            <pl-answer>{0, 1, ..., number of positions}</pl-answer>
+        </pl-multiple-choice>
+        , representing
+        <pl-multiple-choice answers-name="q6" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">uphill or downhill portion of the climb</pl-answer>
+            <pl-answer>your current height</pl-answer>
+            <pl-answer>how many mountain positions you traversed upwards or downwards</pl-answer>
+        </pl-multiple-choice> </li>
+</ul>
+More concisely, we define $V'$ =
+<pl-multiple-choice answers-name="q7" display="dropdown" hide-letter-keys="true">
+    <pl-answer>R ∪ C ∪ D</pl-answer>
+    <pl-answer correct="true">R x C x D</pl-answer>
+    <pl-answer>R ∩ C ∩ D</pl-answer>
+</pl-multiple-choice>

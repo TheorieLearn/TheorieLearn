@@ -1,0 +1,28 @@
+<pl-question-panel>
+<markdown>
+For regular language transformation problems, it's important that you fully
+understand the transformation in question. A good first step is to think about
+a very simple language and consider what strings are accepted by the transformed language.
+
+Consider the following language transformation:
+
+$\mathsf{SWAP}(L) := \{\mathsf{swap}(w) \mid w \in L \}$, where $\mathsf{swap}(w)$ is defined recursively as
+
+$$
+  \mathsf{swap}(w) = \begin{cases}
+    w &\text{if } |w| \leq 1\\
+    ba \bullet \mathsf{swap}(x) &\text{if } w = ab \bullet x \text{ for some } a, b \in \Sigma \text{ and } x \in \Sigma^*
+  \end{cases}
+$$
+
+<hr>
+Suppose that $L = \{ 0001 \}$. What string is contained in $\mathsf{SWAP}(L)$?
+<pl-string-input answers-name="transform-0001" correct-answer="0010" size=5 show-help-text=false remove-spaces="true"></pl-string-input>
+
+<br>
+Suppose that $L = \{ 10101 \}$. What string is contained in $\mathsf{SWAP}(L)$?
+<pl-string-input answers-name="transform-10101" correct-answer="01011" size=5 show-help-text=false remove-spaces="true"></pl-string-input>
+
+<br>
+Suppose that $L = \{ 111000 \}$. What string is contained in $\mathsf{SWAP}(L)$?
+<pl-string-input answers-name="transform-111000" correct-answer="110100" size=5 show-help-text=false remove-spaces="true"></pl-string-input>

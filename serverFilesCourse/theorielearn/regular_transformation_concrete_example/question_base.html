@@ -1,0 +1,49 @@
+<pl-question-panel>
+<div class="border border-dark px-3 pt-3 mb-3">
+  {{{transformation_definition}}}
+</div>
+
+<markdown>
+Our goal is to show that if $L$ is regular, then $\mathsf{ {{transformation_name}} }(L)$ will also be regular. Since $L$ is regular, we can assume that there exists a DFA $M$ which accepts $L$. In order to show that $\mathsf{ {{transformation_name}} }(L)$ is regular, we will use $M$ to construct {{^M'_is_nfa}}a DFA{{/M'_is_nfa}} {{#M'_is_nfa}}an ***NFA***{{/M'_is_nfa}} $M'$ which accepts $\mathsf{ {{transformation_name}} }(L)$.
+
+In these types of problems, the most important part of the problem-solving process is to *write down English descriptions of what the states in $M'$ mean*. Once we have descriptions of the states' meanings, it is much easier to reason about what the transitions, start state, and accept states should be.
+
+In this GPS, we will provide some scaffolding by giving you these English descriptions. However, don't forget to do this step on your own on homework and exams!
+
+<div class="border border-dark px-3 pt-3 mb-3">
+  {{{description_of_states}}}
+</div>
+
+Note that our transformation cannot assume anything about $M$; $M$ can be any arbitrary DFA. However, in order to scaffold the learning process, we will first focus on a concrete example and consider what our transformation does to a *specific* DFA $M$. In the following problems, we will generalize the transformation to an abstract $M$.
+
+<pl-graph>
+{{{dfa_diagram}}}
+</pl-graph>
+
+Consider the DFA $M$ shown above. If we construct $M' = (Q', \{0,1\}, \delta', s', A')$ from $M$ in accordance with the specification of states above, then what are the components of $M'$?
+
+(Note that we're only asking for a few representative examples of the transition function instead of asking you to fill out the entire transition table for $\delta'$.)
+
+{{#M'_is_nfa}}**Recall that in the definition of an NFA's transition function, the output values are sets.**{{/M'_is_nfa}}
+<pl-template file-name="theorielearn/set-input-instructions/template.html" directory="serverFilesCourse"></pl-template>
+
+Copy and paste the symbol `ε` to represent $\varepsilon$.
+</markdown>
+</pl-question-panel>
+
+<markdown>
+$Q' = $
+<pl-string-input answers-name="Q'" remove-spaces=true show-help-text=false allow-blank=true size=50></pl-string-input>
+
+{{#transitions_to_ask}}
+${{{.}}} = $
+<pl-string-input answers-name="{{{.}}}" remove-spaces=true show-help-text=false allow-blank=true size=10></pl-string-input>
+
+{{/transitions_to_ask}}
+
+$s' =$
+<pl-string-input answers-name="s'" remove-spaces=true show-help-text=false allow-blank=true size=10></pl-string-input>
+
+$A' = $
+<pl-string-input answers-name="A'" remove-spaces=true show-help-text=false allow-blank=true size=50></pl-string-input>
+</markdown>

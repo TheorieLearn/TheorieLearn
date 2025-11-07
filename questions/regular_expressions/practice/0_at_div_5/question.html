@@ -1,0 +1,30 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings of length at least $5$ such that the symbols at positions divisible by $5$ are all $0$'s.</center>***
+
+As an example, the string $1001 \underline{0} 1111 \underline{0} 0101 \underline{0} 11$ is in the language as all of the underlined symbols are $0$'s.
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    zat = (0+1)(0+1)(0+1)(0+1)0
+    zdiv = (zat)(zat)*
+    lenless = (e+0+1)(e+0+1)(e+0+1)(e+0+1)
+    (zdiv)(lenless)
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Break it into steps. How can you get every string of length divisible by $5$ with a $0$ at the right spot?
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        If you have a regex for all acceptable strings of length divisible by $5$, you just need another for all strings
+        of length less than $5$.
+    </pl-hint>
+</pl-hidden-hints>

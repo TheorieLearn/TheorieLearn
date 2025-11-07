@@ -1,0 +1,36 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings containing $010$ where the total number
+  of $0$s is divisible by 3.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+div = (1*01*01*01*)*
+modOne = div 1*010 div 1*01*
+modTwo = div 1*01*010 div 1*
+modThree = div 1*01*01*010 div 1*01*01*
+modOne + modTwo + modThree
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=2>
+    Any string in the language can be expressed as $x010y$. Perform casework on
+    the value of $\#_0(x) \bmod 3$.
+  </pl-hint>
+  <pl-hint show-after-submission=4>
+    The value of $\#_0(x) \bmod 3$ uniquely determines the value of $\#_0(y) \bmod 3$.
+  </pl-hint>
+  <pl-hint show-after-submission=6>
+    The final answer should be the union of three regular expressions, one for each case.
+  </pl-hint>
+  <pl-hint show-after-submission=8>
+    Let $L_i = \{x \mid \#_0(x) \equiv i \pmod 3\}$. Write regular expressions for
+    $L_0$, $L_1$, and $L_2$, and use those as subexpressions to compose the final answer.
+  </pl-hint>
+</pl-hidden-hints>

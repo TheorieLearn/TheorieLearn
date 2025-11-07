@@ -1,0 +1,57 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost_coupon.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+  <p>
+  <b>Let $MinCost(i, j)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$ (including the
+    cost of the hotel at mile $i$) with $j$ remaining coupons.</b>
+  </p>
+  <p>
+  Notice that the total cost of Momo's trip can be expressed as:
+
+  <center>
+  <em>[The cost of the hotel at mile $i$] + [The cost of all hotels she will stay at after mile i]</em></center>
+</p>
+  <p>
+  Since we already know the cost of the current hotel, we need to derive an expression for the cost of all of the hotels
+  she stayed at after this hotel.
+  At this point, we can address the first step of the general problem-solving advice.
+  The choice to consider is: what is the next hotel that Momo can stay at after staying at the hotel at mile $i$?
+  Choose all that apply below.
+</p>
+</pl-question-panel>
+
+<pl-checkbox answers-name="drop1">
+  <pl-answer correct="false">Hotel at mile $i$</pl-answer>
+  <pl-answer correct="false">Hotel at mile $i - 1$</pl-answer>
+  <pl-answer correct="false">Hotel at mile $i - 2$</pl-answer>
+  <pl-answer correct="true">Hotel at mile $i + 1$</pl-answer>
+  <pl-answer correct="true">Hotel at mile $i + 2$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $1$ through $i - 1$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $1$ through $i - 2$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $i+1$ through $n$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $i+2$ through $n$</pl-answer>
+</pl-checkbox>
+
+
+<pl-question-panel>
+  <br/>
+  <p>
+  Since we have two parameters in our subproblem, we also need to consider a second choice: Will she use a coupon at this hotel?
+  Which of the following is a possible number of coupons that Momo could have remaining for the rest of the trip after staying at hotel $i$?
+  </p>
+</pl-question-panel>
+
+<pl-checkbox answers-name="drop2">
+  <pl-answer correct="false">$k$</pl-answer>
+  <pl-answer correct="true">$j$</pl-answer>
+  <pl-answer correct="false">$j+1$</pl-answer>
+  <pl-answer correct="true">$j-1$</pl-answer>
+  <pl-answer correct="false">Any number of coupons in the range $0$ through $j$</pl-answer>
+  <pl-answer correct="false">Any number of coupons in the range $j$ through $k$</pl-answer>
+</pl-checkbox>

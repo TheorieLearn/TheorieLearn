@@ -1,0 +1,33 @@
+<p>
+<ul>
+     <li>$\textbf{Lemma 1: } w \bullet \varepsilon = w \text{ for all strings }w.$</li>
+
+     <li>$\textbf{Lemma 2: } |w \bullet x| = |w| + |x| \text{ for all strings } w \text{ and } x.$</li>
+
+     <li>$\textbf{Lemma 3: } (w \bullet x) \bullet y = w \bullet (x \bullet y) \text{ for all strings } w, x \text{ and
+          } y.$</li>
+</ul>
+$$
+|w|:=
+\begin{cases}
+0 & \text{if } w = \varepsilon\\
+1 + |x| & \text{if } w=ax \text{ for some input symbol }a \text{ and some string }x\\
+\end{cases}
+$$
+
+$$
+w \bullet z :=
+\begin{cases}
+z & \text{if } w = \varepsilon\\
+a \cdot (x \bullet z) & \text{if } w=ax \text{ for some input symbol }a \text{ and some string }x\\
+\end{cases}
+$$
+
+$$
+w^R :=
+\begin{cases}
+\varepsilon & \text{if } w=\varepsilon\\
+x^R \bullet a & \text{if } w=ax \text{ for some input symbol }a \text{ and some string }x\\
+\end{cases}
+$$
+</p>

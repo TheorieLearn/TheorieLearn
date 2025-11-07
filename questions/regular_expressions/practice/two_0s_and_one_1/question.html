@@ -1,0 +1,25 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings containing at least two $0$s and at least one $1$.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+  A = (0+1)*
+  A 01*01*0*1 A + A 11*01*0 A + A 00*11*0 A
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=2>
+    Do casework on where the first $1$ appears relative to the first two $0$s.
+  </pl-hint>
+  <pl-hint show-after-submission=4>
+    There should be three cases. The final answer should be the union of three
+    regular expressions, one for each case.
+  </pl-hint>
+</pl-hidden-hints>

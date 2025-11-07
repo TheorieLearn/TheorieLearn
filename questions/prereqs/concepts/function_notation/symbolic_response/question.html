@@ -1,0 +1,14 @@
+<pl-question-panel>
+    <p>Disclaimer: If a question like this ever appears on an exam, it will not be this complicated.</p>
+    <p>
+      Let $f(x) = {{params.base_expr}}$.
+    </p>
+    <p>
+      What is the expanded form of ${{params.expr_recursive_form}}$?
+    </p>
+</pl-question-panel>
+
+<p>
+  <pl-symbolic-input answers-name="expr_expanded_form" size=50
+    variables="x, y, z" label= "${{params.expr_recursive_form}} = $"/>
+</p>

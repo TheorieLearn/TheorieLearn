@@ -1,0 +1,19 @@
+<pl-question-panel>
+  <p>Consider the DFA drawn below. Which of the following strings are accepted by this DFA?
+  </p>
+  <pl-graph>
+    {{params.dfa}}
+  </pl-graph>
+
+</pl-question-panel>
+
+
+<pl-checkbox answers-name="ans" weight="1">
+  {{#params.strings_in_dfa}}
+    <pl-answer correct="true">${{.}}$</pl-answer>
+  {{/params.strings_in_dfa}}
+
+  {{#params.strings_not_in_dfa}}
+    <pl-answer>${{.}}$</pl-answer>
+  {{/params.strings_not_in_dfa}}
+</pl-checkbox>

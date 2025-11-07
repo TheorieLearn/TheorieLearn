@@ -1,0 +1,19 @@
+{
+    "uuid": "33763967-aec4-48ab-9dd3-039d975e1b6c",
+    "title": "Regular Transformation: MID",
+    "topic": "Regular Transformation",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

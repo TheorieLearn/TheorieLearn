@@ -1,0 +1,15 @@
+<pl-question-panel>
+  <p>Consider the DFA drawn below.
+  </p>
+  <pl-graph>
+    {{params.dfa}}
+  </pl-graph>
+
+Evaluate $\delta^*({{params.start_state}}, {{params.input}})$.
+<br\>
+Keep in mind the output of $\delta^*$ for a DFA. Is it a singular state? Is it a set of states?
+<br\>
+<br\>
+</pl-question-panel>
+
+<pl-string-input label="$\delta^*({{params.start_state}}, {{params.input}})=$" answers-name="ans" remove-leading-trailing="true"></pl-string-input>

@@ -1,0 +1,53 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn_2var.html"
+      ></pl-variable>
+  </pl-template>
+  <p>
+  Subproblem Definition:
+  </p>
+  <center><b>Define $MinMinutes(i,j)$ to be the minimum number of minutes needed to earn at least $i$ points from questions $j$ to $n$.</b></center>
+  <hr/>
+
+  You determined in a previous question that $i$ and $j$ are bounded as follows:
+<br>
+$$0 \le i \le p$$
+
+$$1 \le j \le n$$
+... and further, that the final answer is given by
+$$MinMinutes(p, 1).$$
+We will now use these results to determine our base cases.
+
+<hr>
+
+<br>
+A base case occurs when $i \le $
+<pl-symbolic-input answers-name="ibaseval" variables="i,j,p,n" size="3" correct-answer="0"></pl-symbolic-input>.
+In this case, we should return <pl-multiple-choice answers-name="ibaseret" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">$\infty$</pl-answer>
+  <pl-answer correct="true">$0$</pl-answer>
+  <pl-answer correct="false">$-\infty$</pl-answer>
+  <pl-answer correct="false">$p$</pl-answer>
+  <pl-answer correct="false">$TimeNeeded[i]$</pl-answer>
+  <pl-answer correct="false">$TimeNeeded[n]$</pl-answer>
+</pl-multiple-choice>
+
+<hr>
+<br>
+A second base case occurs when $j >$
+<pl-symbolic-input answers-name="jbaseval" variables="i,j,p,n" size="3" correct-answer="n"></pl-symbolic-input> and
+$i > $<pl-symbolic-input answers-name="ibaseval2" variables="i,j,p,n" size="3" correct-answer="0"></pl-symbolic-input>.
+In this case, we should return <pl-multiple-choice answers-name="jbaseret" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">$\infty$</pl-answer>
+  <pl-answer correct="false">$0$</pl-answer>
+  <pl-answer correct="false">$-\infty$</pl-answer>
+  <pl-answer correct="false">$p$</pl-answer>
+  <pl-answer correct="false">$TimeNeeded[i]$</pl-answer>
+  <pl-answer correct="false">$TimeNeeded[n]$</pl-answer>
+</pl-multiple-choice>
+
+</pl-question-panel>

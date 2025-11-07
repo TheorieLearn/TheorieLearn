@@ -1,0 +1,26 @@
+<pl-question-panel>
+<markdown>
+  <div align="center">$\text{Prove that }|w^R| = |w| \text{ for every string } w.$</div>
+
+  Now that we have our boilerplate, we can the assemble steps for our base case.
+
+  For our base case, we suppose that $\textbf{w = }\pmb{\varepsilon}$.
+
+  To do this, you will need to use the following formal definitions and prior results.
+</markdown>
+<pl-template
+file-name="theorielearn/templates/string-lemma-template.html"
+directory="serverFilesCourse"
+></pl-template>
+
+</pl-question-panel>
+
+<pl-order-blocks solution-placement="bottom" feedback="first-wrong" answers-name="bc" source-blocks-order="random" indentation="false" grading-method="dag">
+  <pl-answer correct="true" tag="1" depends="">$|w^R| = |\varepsilon^R| \quad$ (because $w=\varepsilon$)</pl-answer>
+  <pl-answer correct="true" tag="2" depends="1">$= |\varepsilon| \quad$ (by definition of $^R$)</pl-answer>
+  <pl-answer correct="true" tag="3" depends="2">$= |w| \quad$ (because $w=\varepsilon$)</pl-answer>
+  <!-- Distractors -->
+  <pl-answer correct="false">$|w^R| = |\varepsilon| \quad$ (by definition of $\varepsilon$)</pl-answer>
+  <pl-answer correct="false">$|w^R| = |\varepsilon^R| \quad$ (by definition of $^R$)</pl-answer>
+  <pl-answer correct="false">$= |w| \quad$ (by definition of ||)</pl-answer>
+</pl-order-blocks>

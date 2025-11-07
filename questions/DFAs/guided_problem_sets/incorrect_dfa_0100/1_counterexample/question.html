@@ -1,0 +1,56 @@
+<pl-question-panel>
+<pl-graph>
+  {{params.dfa}}
+</pl-graph>
+<markdown>
+Jeff claims that the DFA shown above accepts the language of all strings containing the substring $0100$. However, you don't trust Jeff, so you start looking for counterexamples. A counterexample is either
+- an input that is in the language but rejected by the DFA, or
+- an input that is not in the language but accepted by the DFA.
+</markdown>
+<hr>
+</pl-question-panel>
+
+
+<pl-hide-in-panel answer="true">
+<markdown>
+What is a string that the DFA accepts which is not in the language? (type `none` if there are none, `e` for the empty string.)
+</markdown>
+<pl-string-input answers-name="notinl"></pl-string-input>
+<pl-submission-panel><font color="red"><em><br>{{feedback.notinl}}</em></font><br></pl-submission-panel>
+
+<br>
+<br>
+
+<markdown>
+What is a string that the DFA rejects which is in the language? (type `none` if there are none, `e` for the empty string.)
+</markdown>
+<pl-string-input answers-name="inl"></pl-string-input>
+<pl-submission-panel><font color="red"><em><br>{{feedback.inl}}</em></font><br></pl-submission-panel>
+</pl-hide-in-panel>
+
+<!--
+<br>
+<br>
+
+In order to fix the DFA, we would need to change the
+<pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+    <pl-answer>0-transition</pl-answer>
+    <pl-answer correct="true">1-transition</pl-answer>
+</pl-multiple-choice>
+out of the state
+<pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+    <pl-answer>e</pl-answer>
+    <pl-answer>0</pl-answer>
+    <pl-answer>01</pl-answer>
+    <pl-answer correct="true">010</pl-answer>
+    <pl-answer>0100</pl-answer>
+</pl-multiple-choice>
+to go to
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer>e</pl-answer>
+    <pl-answer>0</pl-answer>
+    <pl-answer correct="true">01</pl-answer>
+    <pl-answer>010</pl-answer>
+    <pl-answer>0100</pl-answer>
+</pl-multiple-choice>
+instead. -->

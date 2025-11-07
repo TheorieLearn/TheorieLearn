@@ -1,0 +1,23 @@
+{
+    "uuid": "b9332a37-bb74-4f80-b20d-a628b23298e9",
+    "title": "Regular Transformation: Moving 1 Forward",
+    "topic": "Regular Transformation",
+    "tags": [
+        "azyin2",
+        "Regular Transformation",
+        "fa22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

@@ -1,0 +1,17 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1, 2\}$.
+
+Provide a regular expression for the following language:
+
+***<center>The set of all strings in $\Sigma^*$ that do not contain at least one of the symbols in the alphabet</center>***
+
+As an example, the strings $00110, 2112, 0022, 00$ are in the language, but $0121$ is not.
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1" alphabet="012">
+    (0+1)*+(1+2)*+(0+2)*
+</tl-regex-input>

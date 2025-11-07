@@ -1,0 +1,24 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/hamcycle_to_hampath.html"
+    ></pl-variable>
+</pl-template>
+<markdown>
+In the previous questions, we established that we want to design an algorithm that takes a graph $G$ as input and outputs a graph $G'$. We also determined that this algorithm must be designed so that input $G$ has a Hamiltonian cycle if and only if the output $G’$ has a Hamiltonian path.
+
+In this question, you will create pseudocode to define this algorithm. Assume we have an arbitrary input graph $G$. Drag the blocks below to form a complete block of pseudocode that describes the process of constructing $G'$.
+</markdown>
+</pl-question-panel>
+
+<pl-order-blocks answers-name="pseudocode">
+{{#params.pseudocode_lines}}
+    <pl-answer>{{.}}</pl-answer>
+{{/params.pseudocode_lines}}
+</pl-order-blocks>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+</pl-submission-panel>

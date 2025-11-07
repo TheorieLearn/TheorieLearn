@@ -1,0 +1,106 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn.html"
+      ></pl-variable>
+  </pl-template>
+  <p>
+  Subproblem Definition:
+  </p>
+  <center><b>Define $MinMinutes(i,j,k)$ to be the minimum number of minutes needed to earn at least $i$ points from questions $j$ to $n$, starting with a streak of length $k$.</b></center>
+  <hr/>
+
+  You determined in a previous question that $i$, $j$, and $k$ are bounded as follows:
+<br>
+$$0 \le i \le p$$
+
+$$1 \le j \le n$$
+
+$$0 \le k \le n-1$$
+<br> ... and further, that the final answer is given by
+$$MinMinutes(p, 1, 0).$$
+<br/>
+We will now use these results to determine our base cases.
+
+<hr>
+
+$i$:
+<br>
+A base case occurs when $i$ <pl-dropdown answers-name="ibase">
+  <pl-answer correct="false">$\ge$</pl-answer>
+  <pl-answer correct="true">$\le$</pl-answer>
+  <pl-answer correct="false">$=$</pl-answer>
+  <pl-answer correct="false">$>$</pl-answer>
+  <pl-answer correct="false">$<$</pl-answer>
+</pl-dropdown>
+<pl-symbolic-input answers-name="ibaseval" variables="j,k,p,n" size="3" correct-answer="0"></pl-symbolic-input>.
+In this case, we should return <pl-dropdown answers-name="ibaseret">
+  <pl-answer correct="false">$\infty$</pl-answer>
+  <pl-answer correct="true">$0$</pl-answer>
+  <pl-answer correct="false">$-\infty$</pl-answer>
+  <pl-answer correct="false">$p$</pl-answer>
+  <pl-answer correct="false">TimeNeeded[i]</pl-answer>
+  <pl-answer correct="false">TimeNeeded[n]</pl-answer>
+</pl-dropdown>
+
+<hr>
+
+$j$:
+<br>
+A base case occurs when $j$ <pl-dropdown answers-name="jbase">
+  <pl-answer correct="false">$\ge$</pl-answer>
+  <pl-answer correct="false">$\le$</pl-answer>
+  <pl-answer correct="true">$=$</pl-answer>
+  <pl-answer correct="false">$>$</pl-answer>
+  <pl-answer correct="false">$<$</pl-answer>
+</pl-dropdown>
+<pl-symbolic-input answers-name="jbaseval" variables="i,j,k,p,n" size="3" correct-answer="n"></pl-symbolic-input>.
+In this case, we should return <pl-dropdown answers-name="jbaseret">
+  <pl-answer correct="true">$\infty$</pl-answer>
+  <pl-answer correct="false">$0$</pl-answer>
+  <pl-answer correct="false">$-\infty$</pl-answer>
+  <pl-answer correct="false">$p$</pl-answer>
+  <pl-answer correct="false">TimeNeeded[i]</pl-answer>
+  <pl-answer correct="false">TimeNeeded[n]</pl-answer>
+</pl-dropdown>
+
+<hr>
+$k$:
+<br>
+...wait a second, do we need a base case for $k$?
+<br>
+$k$ can <pl-dropdown answers-name="k1">
+  <pl-answer correct="true">increase</pl-answer>
+  <pl-answer correct="false">deacrease</pl-answer>
+</pl-dropdown> by at <pl-dropdown answers-name="k2">
+  <pl-answer correct="true">most</pl-answer>
+  <pl-answer correct="false">least</pl-answer>
+</pl-dropdown>
+<pl-symbolic-input answers-name="k3" variables="i,j,k,p,n" size="3" correct-answer="1"></pl-symbolic-input>
+with each iteration.
+<br>
+$k$ will therefore always be <pl-dropdown answers-name="k4">
+  <pl-answer correct="true">less than</pl-answer>
+  <pl-answer correct="false">greater than</pl-answer>
+  <pl-answer correct="false">less than or equal to</pl-answer>
+  <pl-answer correct="false">greater than or equal to</pl-answer>
+  <pl-answer correct="false">equal to</pl-answer>
+</pl-dropdown>
+  <pl-dropdown answers-name="k5">
+    <pl-answer correct="true">j</pl-answer>
+    <pl-answer correct="false">i</pl-answer>
+  </pl-dropdown>, which is bounded by
+<pl-dropdown answers-name="k6">
+  <pl-answer correct="true">n</pl-answer>
+  <pl-answer correct="false">i</pl-answer>
+  <pl-answer correct="false">j</pl-answer>
+  <pl-answer correct="false">0</pl-answer>
+  <pl-answer correct="false">p</pl-answer>
+</pl-dropdown>.
+Therefore, $k$ cannot exceed <pl-symbolic-input answers-name="k7" variables="i,j,k,p,n" size="3" correct-answer="n-1"></pl-symbolic-input>,
+so we don't need to constrain it any further.
+
+</pl-question-panel>

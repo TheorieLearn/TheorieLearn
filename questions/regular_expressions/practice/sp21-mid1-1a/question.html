@@ -1,0 +1,23 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+$$\{ w \in \Sigma^* \mid w \textbf{ does not have the substring } 111\}$$
+
+As an example, the string $11001$ is in the language, but $111101$ is not.
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (0+10+110)*(e+1+11)
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        We cannot have more than two $1$s appear without immediarely following a $0$ or the end of the string.
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,33 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all strings not containing 000.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+It's often helpful to view regular expressions from the perspective of blocks (introduced in the previous problem). In particular, "not containg substring" conditions can often be rephrased as a constraint on the blocks in the string. What are the constraints on the blocks in strings not containing 000? 
+</markdown>
+</pl-question-panel>
+
+Blocks of
+<pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">0s</pl-answer>
+    <pl-answer>1s</pl-answer>
+</pl-multiple-choice>
+must have length
+<pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">at most</pl-answer>
+    <pl-answer>at least</pl-answer>
+    <pl-answer>exactly</pl-answer>
+    <pl-answer>not equal to</pl-answer>
+</pl-multiple-choice>
+<pl-integer-input answers-name="q3" display="inline" show-help-text="false" size="4" correct-answer="2"></pl-integer-input> and blocks of
+<pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+    <pl-answer>0s</pl-answer>
+    <pl-answer correct="true">1s</pl-answer>
+</pl-multiple-choice> can have any length.
+
+<pl-submission-panel>
+<p><em>{{feedback.feedback}}</em></p>
+</pl-submission-panel>

@@ -1,0 +1,21 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings containing $010$ or containing at least
+  three $1$s.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+(0+1)*010(0+1)* + (0+1)*10*10*1(0+1)*
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=1>
+    The 'or' can be achieved by taking the union of two regular expressions.
+  </pl-hint>
+</pl-hidden-hints>

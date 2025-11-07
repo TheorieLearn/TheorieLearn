@@ -1,0 +1,27 @@
+<pl-question-panel>
+    Construct an NFA that accepts the language defined by the following regular expression over the alphabet $\{0, 1, 2\}$:
+
+    $$(((01)^* 0 + 2)(100)^* 1)^* \cdot (1^* + 0^* 2^*)$$
+    <hr>
+    </pl-question-panel>
+    <tl-fsm-builder answers-name="q" fsm-type="nfa" alphabet="012">
+        <correct-answer>
+            {
+                "states": ["s", "a", "b", "c", "d", "e", "f", "g", "h"],
+                "input_symbols": ["2", "1", "0"],
+                "transitions": {
+                    "s": {"": ["a", "f", "g"], "2": ["c"]},
+                    "a": {"0": ["b", "c"]},
+                    "b": {"1": ["a"]},
+                    "c": {"1": ["d", "s"]},
+                    "d": {"0": ["e"]},
+                    "e": {"0": ["c"]},
+                    "f": {"1": ["f"]},
+                    "g": {"": ["h"], "0": ["g"]},
+                    "h": {"2": ["h"]}
+                },
+                "initial_state": "s",
+                "final_states": ["f", "h"]
+            }
+        </correct-answer>
+    </tl-fsm-builder>

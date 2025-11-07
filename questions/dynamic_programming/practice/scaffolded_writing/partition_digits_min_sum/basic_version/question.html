@@ -1,0 +1,20 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="is-open">True</pl-variable>
+        <pl-variable
+          name="problem-statement"
+          directory="serverFilesCourse"
+          file-name="theorielearn/problem_statements/partition_digits_min_sum_basic_version.html"
+        ></pl-variable>
+</pl-template>
+<markdown>
+Write a viable subproblem definition that can be used to solve the problem above.
+</markdown>
+</pl-question-panel>
+
+<tl-scaffolded-writing answers-name="subproblem_definition"></tl-scaffolded-writing>
+<pl-hidden-hints>
+  <pl-hint show-after-submission="5">
+    A correct answer is: "Define $MinSum(i,j)$ to be the minimum sum that can be obtained from $A[i...n]$ using at most $j$ 1-digit terms."
+  </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,35 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/valid_shuffle.html"
+      ></pl-variable>
+  </pl-template>
+    <h5>English Definition</h5>
+    <center><b>Define $ValidShuffle(i, j)$ to be True if $C[1…i+j]$ is a valid shuffle of $A[1…i]$ and $B[1…j]$ and False otherwise.</b></center>
+    <br>
+    <br>
+    <h5>Recursive Definition</h5>
+    $$
+    ValidShuffle(i, j):=
+    \begin{cases}
+    True & \text{if } i = 0 \text{ and } j = 0\\
+    \begin{align*}
+    (A(i) = C(i+j) \land ValidShuffle(i-1, j)) \lor \\
+    (B(j) = C(i+j) \land ValidShuffle(i, j-1))
+    \end{align*}
+     & \text{otherwise}
+    \end{cases}
+    $$
+  <br/>
+  We now need to determine the evaluation order for our memoization structure.
+  In what order do we have to evaluate each problem in order to make sure that all of its dependencies are satisfied? <b>Note: Make sure you have proper indentation.</b>
+  </pl-question-panel>
+  <pl-order-blocks answers-name="eval" grading-method="dag" indentation="true">
+    <pl-answer correct="true" tag="1">For $i$, in increasing order:</pl-answer>
+    <pl-answer correct="true" tag="2">For $j$, in increasing order:</pl-answer>
+    <pl-answer correct="false" tag="3">For $i$, in decreasing order:</pl-answer>
+    <pl-answer correct="false" tag="4">For $j$, in decreasing order:</pl-answer>
+    <pl-answer correct="true" tag="5">Compute $ValidShuffle(i,j)$</pl-answer>
+  </pl-order-blocks>

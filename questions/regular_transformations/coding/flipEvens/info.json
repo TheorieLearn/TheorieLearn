@@ -1,0 +1,19 @@
+{
+    "uuid": "8ddd460d-e904-4b8d-8b14-c45faa4fba5e",
+    "title": "Regular Transformation: Flip Evens",
+    "topic": "Regular Transformation",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

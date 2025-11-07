@@ -1,0 +1,57 @@
+<pl-question-panel>
+<markdown>
+Construct a DFA that accepts the language $L$ described below over the alphabet $\Sigma=\{0,1\}$:
+
+Strings that contain odd-length run of $0$s, followed immediately by an even-length run of $1$s.
+</markdown>
+    <hr>
+    </pl-question-panel>
+    <tl-fsm-builder answers-name="q" fsm-type="dfa">
+    <correct-answer>
+        {
+            "final_states": [
+                "e1",
+                "ok"
+            ],
+            "initial_state": "s",
+            "input_symbols": [
+                "0",
+                "1"
+            ],
+            "states": [
+                "e0",
+                "ok",
+                "o0",
+                "o1",
+                "e1",
+                "s"
+            ],
+            "transitions": {
+                "s": {
+                    "0": "o0",
+                    "1": "s"
+                },
+                "o0": {
+                    "0": "e0",
+                    "1": "o1"
+                },
+                "e0": {
+                    "0": "o0",
+                    "1": "s"
+                },
+                "o1": {
+                    "0": "o0",
+                    "1": "e1"
+                },
+                "e1": {
+                    "0": "ok",
+                    "1": "o1"
+                },
+                "ok": {
+                    "0": "ok",
+                    "1": "ok"
+                }
+            }
+        }
+    </correct-answer>
+    </tl-fsm-builder>

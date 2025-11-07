@@ -1,0 +1,34 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings such that every prefix $x$ satisfies
+  $|\#_0(x) - \#_1(x)| \le 2$.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+  (0(01)*1 + 1(10)*0)*(e + 0(01)*0 + 1(10)*1 + 0(01)* + 1(10)*)
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=2>
+    Consider the graph of $y = \#_0(x) - \#_1(x)$ vs. the length of $x$.
+    This graph goes up or down by 1 every time we append another symbol to $x$.
+    Furthermore, the graph must stay between the horizontal lines $y=-2$ and $y=2$.
+    Now, imagine we cut the graph into pieces every time it touches $y=0$.
+    Then, each of those pieces must either be completely above the y-axis, or
+    completely below the y-axis. Furthermore, each of those pieces, except for the last piece,
+    must be balanced.
+  </pl-hint>
+  <pl-hint show-after-submission=4>
+    Write a regular expression for all balanced strings where the graph of $y = \#_0(x) - \#_1(x)$
+    stays completely above the y-axis (except for the two endpoints, which touch the y-axis).
+    Write another one for where the graph stays completely below the y-axis. Then, write two more
+    for the same thing, except without the balanced restriction (i.e. it doesn't have to end
+    on the y-axis).
+  </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,56 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/tree_max_ind_set.html"
+    ></pl-variable>
+  </pl-template>
+
+  <p>For example on the following tree: </p>
+  <pl-graph>
+    digraph G {
+      -10 -> 5
+      -10 -> 6
+      -10 -> 10
+      10 -> -4
+      5 -> 1
+      6 -> 2
+      6 -> 3
+      2 -> 8
+    }
+    </pl-graph>
+    <p>Here the maximum fun is obtained by inviting the employee's with the fun values of $\{-10, 1, 3, 3, 8\}$ for a total fun value of 2.</p>
+<hr/>
+</pl-question-panel>
+
+<pl-question-panel>
+<p>Since our structure is a tree, this lends itself quite naturally to a recursive definition based on the subtree rooted at any particular vertex.</p>
+<p>
+  We will use the following subproblem definition for the rest of the question:
+</p>
+<center><b>Define $MaxFun(v, o)$ to be the maximum total fun values of a subset of employees chosen from the subtree rooted at $v$ where $o$ represents whether $v$ is included or not.</b></center>
+<!-- <hr/> -->
+
+<br/>
+<br/>
+Next, what would be the final answer to the question prompt?
+<br/>
+<br/>
+
+<center>
+$MaxFun \Big($
+<pl-multiple-choice order="ascend" answers-name="ans1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">root</pl-answer>
+  <pl-answer correct="false">rightmost leaf node</pl-answer>
+  <pl-answer correct="false">leftmost leaf node</pl-answer>
+</pl-multiple-choice>,
+<pl-multiple-choice order="ascend" answers-name="ans2" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">Include</pl-answer>
+  <pl-answer correct="false">Exclude</pl-answer>
+</pl-multiple-choice>
+$ \Big)$
+</center>
+
+</pl-question-panel>

@@ -1,0 +1,16 @@
+<pl-question-panel>
+    <b>You must correctly solve this problem multiple times to receive full credit.</b>
+    <hr>
+    Consider the language $$L = {{params.non_regular_language}}$$
+    A fooling set for $L$ is $$F = {{params.fooling_set}}$$
+    We've picked two distinct strings from the fooling set: ${{params.fooling_set_member_1_display}}$ and ${{params.fooling_set_member_2_display}}$.
+    Give a distinguishing suffix for these two strings.
+    (If your distinguishing suffix is $\varepsilon$, type "e". You may also type "0^{n}" or "1^{n}" to repeat 0 or 1 $n$ times, respectively.)
+    <br><br>
+    (Note that for a fooling set question on a written homework or exam, you need to be able to distinguish <i>all</i> pairs in your proof.
+    To give you some practice on concrete examples, we are only asking you to distinguish specific pairs for this exercise.)
+    <br><br>
+</pl-question-panel>
+<pl-hide-in-panel answer="true">
+    <pl-string-input answers-name="distinguishing_suffix"></pl-string-input>
+</pl-hide-in-panel>

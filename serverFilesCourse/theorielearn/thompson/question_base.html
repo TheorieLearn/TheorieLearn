@@ -1,0 +1,22 @@
+<pl-question-panel>
+  {{params.description}}
+  <pl-graph>
+    {{params.nfa}}
+  </pl-graph>
+
+  <hr/>
+  Please provide instances of two types of counterexamples in the input boxes below.
+  <ul>
+    <li>If there are no such counterexamples, write "None" in the relevant box.</li>
+    <ul>
+    <li>If the NFA is correct, you would write "None" in both boxes.</li>
+    </ul>
+    <li>In the case of the empty string, submit "e" as your answer.</li>
+  </ul>
+
+<p>Give a string in the language described by ${{params.regex_latex}}$ that is not accepted by the student's NFA.</p>
+<pl-string-input placeholder="ex. 101010" answers-name="false_negative"></pl-string-input>
+
+<p><br/>Give a string not in the language described by ${{params.regex_latex}}$ that is accepted by the student's NFA.</p>
+<pl-string-input placeholder="ex. 101010" answers-name="false_positive"></pl-string-input>
+</pl-question-panel>

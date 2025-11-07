@@ -1,0 +1,37 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/valid_shuffle.html"
+      ></pl-variable>
+    </pl-template>
+    <p>
+      Recall the subproblem definition that determines a valid shuffle:
+    </p>
+    <center><b>Define $ValidShuffle(i, j)$ to be True if $C[1…i+j]$ is a valid shuffle of $A[1…i]$ and $B[1…j]$, False otherwise.</b></center>
+    <hr/>
+
+    What is the set of values for $i$ and $j$ that would be a valid input to $ValidShuffle(i, j)$? Fill out the expression in terms of $n$ and $m$.
+    <br/>
+    <br/>
+  </pl-question-panel>
+  <center>
+  <pl-symbolic-input variables="n,m" answers-name="low1" display="inline" size="3" show-help-text="false" correct-answer="0" placeholder=""></pl-symbolic-input>
+  $\leq i \leq$
+  <pl-symbolic-input variables="n,m" answers-name="high1" display="inline" size="3" show-help-text="false" correct-answer="n" placeholder=""></pl-symbolic-input>
+    <br/>
+  <pl-symbolic-input variables="n,m" answers-name="low2" display="inline" size="3" show-help-text="false" correct-answer="0" placeholder=""></pl-symbolic-input>
+  $\leq j \leq$
+  <pl-symbolic-input variables="n,m" answers-name="high2" display="inline" size="3" show-help-text="false" correct-answer="m" placeholder=""></pl-symbolic-input>
+  </center>
+  <br/>
+  <pl-question-panel>
+  Next, what would be the final answer to the question prompt?
+  <br/>
+  <br/>
+  </pl-question-panel>
+  <center>
+  $ValidShuffle \Big($ <pl-symbolic-input variables="n,m" show-help-text="false" answers-name="final" display="inline" size="3" correct-answer="n" placeholder=""></pl-symbolic-input>,
+  <pl-symbolic-input variables="n,m" show-help-text="false" answers-name="final2" display="inline" size="3" correct-answer="m" placeholder=""></pl-symbolic-input> $ \Big)$
+  </center>

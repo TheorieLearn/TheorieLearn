@@ -1,0 +1,23 @@
+{{{params.html}}}
+
+<pl-question-panel>
+<pl-hidden-hints>
+    <pl-hint>
+        The identity $\binom{n}{2} + n = \binom{n+1}{2}$ may be helpful.
+    </pl-hint>
+    <pl-hint>
+        Use the same idea as the $\{0^{n^2} \mid n \ge 0\}$ problem from lab. That solution depended on the identity
+        $$n^2 + (2n + 1) = (n + 1)^2.$$
+        Try to utilize the identity from the previous hint in a similar way to solve this problem.
+    </pl-hint>
+    <pl-hint>
+        The solution to that lab problem depended on the observation that if $i < j$, then
+        $j^2+2i+1$ is not a perfect square, because we can "squeeze" it between two perfect consecutive squares:
+        $$j^2 < j^2+2i+1 < (j+1)^2.$$
+
+        For this problem, if you can choose a suffix $z$ such that
+        $$\binom{n}{2} < |yz| < \binom{n+1}{2},$$
+        then you know for sure that $yz \notin L$.
+    </pl-hint>
+</pl-hidden-hints>
+</pl-question-panel>

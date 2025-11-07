@@ -1,0 +1,19 @@
+{
+    "uuid": "e76163e9-0ab3-453a-9b97-d3ca2f069c25",
+    "title": "Fooling Set: k sqrt(k)",
+    "topic": "Fooling Sets",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

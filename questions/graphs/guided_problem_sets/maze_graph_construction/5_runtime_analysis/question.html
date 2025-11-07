@@ -1,0 +1,39 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/maze_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Runtime Analysis</h3>
+    To finish, we need to analyze the runtime of our algorithm.
+</pl-question-panel>
+
+<ul>
+    <li>$|V'| =$
+        <pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">|V|</pl-answer>
+            <pl-answer>|V|^2</pl-answer>
+            <pl-answer>|V|^3</pl-answer>
+        </pl-multiple-choice></li>
+    <li>$|E'| =$
+        <pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+            <pl-answer>|E|^2</pl-answer>
+            <pl-answer>|logE|</pl-answer>
+            <pl-answer correct="true">|E|</pl-answer>
+        </pl-multiple-choice></li>
+    <li>The overall time complexity of the algorithm is
+        <pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+            <pl-answer>O(|V'|^3)</pl-answer>
+            <pl-answer correct="true">O(|V'| + |E'|)</pl-answer>
+            <pl-answer>O(|V'|log|E'|)</pl-answer>
+        </pl-multiple-choice>
+        $=$
+        <pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">O(|V| + |E|)</pl-answer>
+            <pl-answer>O(|V|^2)</pl-answer>
+            <pl-answer>O(|V|log|E|)</pl-answer>
+        </pl-multiple-choice></li>
+</ul>

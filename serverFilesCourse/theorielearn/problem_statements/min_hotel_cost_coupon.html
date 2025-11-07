@@ -1,0 +1,16 @@
+<p>Momo is planning a road trip along a highway with $n$ mile markers, numbered from $1$ through $n$. Momo is currently at mile marker $1$, and she would like to travel to mile marker $n$. She can only drive 1 or 2 miles forward on a single day.</p>
+
+<p>The costs of hotels at each mile are provided in the array $HotelCosts[1..n]$.</p>
+
+<p><i>Note: Momo does not have to stay in a hotel at mile $1$ and mile $n$. Thus, the first and last elements of $HotelCosts$ will always be 0. Also, Momo cannot stay in the same hotel two nights in a row.</i></p>
+
+<p>We have a new update:
+<b>Right before Momo leaves, she discovers a stash of $k$ coupons. Each coupon allows her to stay at a hotel for free.</b></p>
+
+<p>Determine the minimum possible total cost of Momo's trip, given that she can stay in up to $k$ hotels for free.</p>
+
+<h4>Example</h4>
+
+<p>If $HotelCosts = [0, 128, 225, 1, 374, 3, 0]$ and $k = 1$, then one optimal itinerary is to stay overnight at mile markers 2, 4, 6 and use a coupon at mile 2, which costs $1+3=4$. Note that 3, 4, 6 (using a coupon at mile 3) is also optimal.</p>
+
+<p>If $k = 2$ instead, then the (only) optimal itinerary is to stay overnight at mile 3 and 5 and use a coupon at both of those hotels; the cost of this trip would be 0.</p>

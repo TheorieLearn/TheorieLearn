@@ -1,0 +1,13 @@
+{
+    "uuid": "e3bd927d-dfee-4ed7-b5a3-4ce11b29e3b3",
+    "title": "Regular Expressions: Runs of 0s have length >= 3",
+    "topic": "Regular Expressions",
+    "tags": [
+      "erobson2",
+      "summer22",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

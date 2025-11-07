@@ -1,0 +1,13 @@
+{
+    "uuid": "11b5c0a4-1f89-4f2e-b65b-6be81c5dc534",
+    "title": "Regular Expressions: |#0 - 2*#1| <= 1",
+    "topic": "Regular Expressions",
+    "tags": [
+      "erobson2",
+      "summer22",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

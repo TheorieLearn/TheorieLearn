@@ -1,0 +1,75 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/grasslearn_2var.html"
+    ></pl-variable>
+</pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+    <center><b>Define $MinMinutes(i,j)$ to be the minimum number of minutes needed to earn at least $i$ points from questions $j$ to $n$.</b></center>
+  <br/>
+  <markdown>
+  Now, we will address the first step of the general problem-solving advice. Notice that you have two choices at the current question $j$:
+  1. Skip the question
+  2. Answer the question correctly
+  <br/>
+  Let's analyze the consequences of each choice on our variables $i$ and $j$. You may assume you will not exceed the bounds you determined in the previous question.
+  Allowed variables and functions are: <code>MinMinutes</code>, <code>TimeNeeded</code>, <code>i</code>, <code>j</code>, <code>n</code>, and <code>p</code>.
+  <em>Note that due to autograder limitations, you must write</em> <code>TimeNeeded[i]</code><em> and </em><code>Points[i]</code><em> as </em><code>TimeNeeded(i)</code> <em> and </em><code>Points(i)</code><em> respectively (i.e.,
+    use </em><code>TimeNeeded</code> <em> and </em><code>Points</code> <em> as functions rather than arrays).</em>
+</markdown>
+<hr>
+</pl-question-panel>
+
+
+<p><b>Choice 1: Suppose you skip question $j$.</b>
+  <br/>
+How many points do you still need if you skip question $j$?
+<pl-symbolic-input variables="n,p,i,j" answers-name="skippoints" display="inline" size="30" show-help-text="true" correct-answer="i"></pl-symbolic-input>
+<br/>
+What is the next question you can answer after skipping question $j$?
+<pl-symbolic-input variables="n,p,i,j" answers-name="skipnext" display="inline" size="30" show-help-text="true" correct-answer="j+1"></pl-symbolic-input>
+<br/>
+<br/>
+Finally, construct an expression for the value of $MinMinutes(i,j)$, <b>assuming you skip question $j$</b>:
+<pl-string-input label="$MinMinutes(i,j)=$" display="block" size="40" placeholder="Symbolic input"  answers-name="skipfull" show-help-text="false"></pl-string-input>
+
+
+<br/>
+
+
+<p><b>Choice 2: Suppose you answer question $j$ correctly.</b>
+  <br/>
+How many points do you still need if you answer question $j$ correctly?
+
+<pl-string-input answers-name="anspoints" display="inline" size="30" show-help-text="true" placeholder="Symbolic input"></pl-string-input>
+<pl-submission-panel><font color="red"><em><br>{{feedback.anspoints}}</em></font><br></pl-submission-panel>
+<br/>
+What is the next question you can answer after answering question $j$?
+<pl-symbolic-input variables="n,p,i,j" answers-name="ansnext" display="inline" size="30" show-help-text="true" correct-answer="j+1"></pl-symbolic-input>
+<br/>
+Finally, construct an expression for the value of $MinMinutes(i,j)$, <b>assuming you correctly answer question $j$</b>:
+<pl-string-input label="$MinMinutes(i,j)=$" display="block" size="40" placeholder="Symbolic input"  answers-name="ansfull" show-help-text="false" size="3"></pl-string-input>
+<br/>
+<hr>
+
+Now, let's put these two cases together.
+<br><br>
+To compute $MinMinutes(i, j)$, we will take the
+<pl-multiple-choice answers-name="drop1" hide-letter-keys="true" display="dropdown">
+  <pl-answer correct="true">minimum</pl-answer>
+  <pl-answer correct="false">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of these two cases. We can now construct a complete recursive definition for $MinMinutes(i,j)$.
+
+<br><br>
+In the box below, use your answers to construct a complete recursive expression for the value of $MinMinutes(i,j)$.
+<br>
+<br>
+<pl-string-input display="block" label="$MinMinutes(i,j)=$" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+<br><em>*Note: <code>min</code> and <code>max</code> are included in the list of allowed functions.</em>
+<hr>

@@ -1,0 +1,45 @@
+<pl-question-panel>
+    <markdown>
+Assume we have the alphabet $\Sigma = \{0, 1, 2\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings in $\Sigma^*$ that have at least four $0$'s and exactly two $1$'s.</center>***
+<hr>
+    </markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1" alphabet="012">
+    pa = (0+2)*0(0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*1(0+2)*
+    pb = (0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*1(0+2)*0(0+2)*
+    pc = (0+2)*0(0+2)*0(0+2)*1(0+2)*1(0+2)*0(0+2)*0(0+2)*
+    pd = (0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*1(0+2)*
+    pe = (0+2)*1(0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*
+    pf = (0+2)*1(0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*0(0+2)*
+    pg = (0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*
+    ph = (0+2)*0(0+2)*1(0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*
+    pi = (0+2)*0(0+2)*1(0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*
+    pj = (0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*
+    pk = (0+2)*1(0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*
+    pl = (0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*0(0+2)*1(0+2)*
+    pm = (0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*
+    pn = (0+2)*1(0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*0(0+2)*
+    po = (0+2)*0(0+2)*0(0+2)*0(0+2)*1(0+2)*1(0+2)*0(0+2)*
+    (pa) + (pb) + (pc) + (pd) + (pe) + (pf) + (pg) + (ph) + (pi) + (pj) + (pk) + (pl) + (pm) + (pn) + (po)
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=0>
+        You might want to generate this one programmatically instead of doing it by hand.
+    </pl-hint>
+    <pl-hint show-after-submission=3>
+        Consider all of the different numbers of $0$'s that you could have before the first 1.
+
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        Remember that $2$ is in the alphabet. Since there are no restrictions on it you should make sure that any amount
+
+        of them can be at any point in a valid string.
+    </pl-hint>
+</pl-hidden-hints>

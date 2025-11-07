@@ -1,0 +1,64 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost_coupon.html"
+    ></pl-variable>
+  </pl-template>
+  <b>Let $MinCost(i, j)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$ (including the
+    cost of the hotel at mile $i$) with $j$ remaining coupons.</b>
+  <br/>
+  <br/>
+
+From the previous question, we have a recursive definition as follows:
+$$
+\begin{equation}
+MinCost(i, j)=  \min \begin{cases}
+  HotelCosts(i) + MinCost(i + 1, j)\\
+  HotelCosts(i) + MinCost(i + 2, j) \\
+  MinCost(i + 1, j - 1) \\
+  MinCost(i + 2, j - 1) \end{cases}
+\end{equation}
+$$
+
+We also know that the definition breaks for $i=n$, $i = n - 1$, and $j = 0$. We have provided all of the possible combinations
+of these inputs that would cause a recursive subcall to break. Please provide an expression for $MinCost(i, j)$ for each of
+these cases.
+<br/>
+<br/>
+Again, allowed variables/functions are <code>MinCost</code>, <code>HotelCosts</code>, <code>min</code>, <code>max</code>,
+<code>n</code>, <code>k</code>, <code>i</code>, and <code>j</code>. <em>Note that due to autograder limitations, you must write</em> <code>HotelCosts[i]</code><em> as </em><code>HotelCosts(i)</code> <em>(i.e.,
+use </em><code>HotelCosts</code><em> as a function rather than an array).</em>
+<br><br>
+</pl-question-panel>
+<p>
+Case 1: $i = n,\; j = 0$:
+</p>
+<p>
+<pl-string-input label="$MinCost(i, j)=$" show-help-text="false" answers-name="base0" display="block" size="60"></pl-string-input>
+</p>
+<p>
+Case 2: $i = n,\; j > 0$:
+</p>
+<p>
+<pl-string-input label="$MinCost(i, j)=$" show-help-text="false"  answers-name="base1" display="block" size="60"></pl-string-input>
+</p>
+<p>
+Case 3: $i = n-1,\; j = 0$:
+</p>
+<p>
+<pl-string-input label="$MinCost(i, j)=$" show-help-text="false"  answers-name="base2" display="block" size="60"></pl-string-input>
+</p>
+<p>
+Case 4: $i = n-1,\; j > 0$:
+</p>
+<p>
+<pl-string-input label="$MinCost(i, j)=$" show-help-text="false"  answers-name="base3" display="block" size="60"></pl-string-input>
+</p>
+<p>
+Case 5: $i < n-1,\; j = 0$:
+</p>
+<p>
+<pl-string-input label="$MinCost(i, j)=$" show-help-text="false"  answers-name="base4" display="block" size="60"></pl-string-input>
+</p>

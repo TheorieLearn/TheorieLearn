@@ -1,0 +1,118 @@
+<pl-question-panel>
+  <p>
+    Consider an NFA $S$ representing the regular expression $(010)^*$ over the states $a$, $b$, and $c$, shown below.
+  </p>
+  <pl-graph>
+    strict digraph {
+  	graph [bb="0,0,242,75",
+  		rankdir=LR
+  	];
+  	node [label="\N"];
+  	a	 [color=black,
+  		fontcolor=black,
+  		height=0.61111,
+  		pos="60,22",
+  		shape=doublecircle,
+  		width=0.61111];
+  	b	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="144,57",
+  		shape=circle,
+  		width=0.5];
+  	a -> b	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="104,48.5",
+  		pos="e,127.28,50.289 80.433,30.295 91.607,35.064 105.77,41.109 117.79,46.241"];
+  	c	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="224,27",
+  		shape=circle,
+  		width=0.5];
+  	b -> c	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="184,49.5",
+  		pos="e,206.86,33.208 161.16,50.784 171.62,46.762 185.46,41.438 197.4,36.847"];
+  	c -> a	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="144,22.5",
+  		pos="e,81.919,18.524 206.3,22.804 194.11,19.966 177.15,16.476 162,15 138.57,12.717 112.01,14.739 92.012,17.186"];
+  	"~"	 [height=0,
+  		pos="0,22",
+  		shape=point,
+  		width=0];
+  	"~" -> a	 [pos="e,37.856,22 1.1664,22 2.7183,22 14.889,22 27.668,22"];
+  }
+  </pl-graph>
+  <p>
+    Consider an additional NFA $T$ representing the regular expression $0100^*$ over the states $d$, $e$, $f$, and $g$, shown below.
+  </p>
+  <pl-graph>
+    strict digraph {
+  	graph [bb="0,0,322,77",
+  		rankdir=LR
+  	];
+  	node [label="\N"];
+  	d	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="56,22",
+  		shape=circle,
+  		width=0.5];
+  	e	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="136,22",
+  		shape=circle,
+  		width=0.5];
+  	d -> e	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="96,29.5",
+  		pos="e,117.74,22 74.311,22 84.106,22 96.578,22 107.67,22"];
+  	f	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="216,22",
+  		shape=circle,
+  		width=0.5];
+  	e -> f	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="176,29.5",
+  		pos="e,197.74,22 154.31,22 164.11,22 176.58,22 187.67,22"];
+  	g	 [color=black,
+  		fontcolor=black,
+  		height=0.61111,
+  		pos="300,22",
+  		shape=doublecircle,
+  		width=0.61111];
+  	f -> g	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="256,29.5",
+  		pos="e,277.85,22 234.39,22 244.11,22 256.51,22 267.85,22"];
+  	g -> g	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="300,69.5",
+  		pos="e,308.01,42.581 291.99,42.581 290.89,52.845 293.55,62 300,62 304.13,62 306.71,58.243 307.74,52.844"];
+  	"~"	 [height=0,
+  		pos="0,22",
+  		shape=point,
+  		width=0];
+  	"~" -> d	 [pos="e,37.942,22 1.1549,22 2.6725,22 15.097,22 27.628,22"];
+  }
+  </pl-graph>
+  <p>
+    For this set of questions, we will be following a student's thought process in designing an NFA
+    for the union of these two regular expressions:
+    <center>$(010)^*+0100^*$</center>
+    <br/>
+    There are no available points for this question. To continue, simply go to the next question.
+  </p>
+</pl-question-panel>

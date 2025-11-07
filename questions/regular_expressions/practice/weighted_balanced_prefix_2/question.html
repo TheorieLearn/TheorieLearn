@@ -1,0 +1,23 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings such that every prefix $x$ satisfies
+  $|\#_0(x) - 2\cdot\#_1(x)| \le 2$.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+  (001+010+100)*(e+0+1+00+01+10)
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=1>
+    Try constructing the string one symbol at a time.
+    What are the possible values of the first symbol?
+    The first two symbols? The first three symbols? And so on...
+  </pl-hint>
+</pl-hidden-hints>

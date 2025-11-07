@@ -1,0 +1,126 @@
+<pl-question-panel>
+  <p>
+    Consider an NFA $S$ representing the regular expression $(10+0)11^*$ over the states $a$, $b$, $c$, and $d$, shown below.
+  </p>
+  <pl-graph>
+    strict digraph {
+  	graph [bb="0,0,322,75",
+  		rankdir=LR
+  	];
+  	node [label="\N"];
+  	a	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="56,57",
+  		shape=circle,
+  		width=0.5];
+  	c	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="216,51",
+  		shape=circle,
+  		width=0.5];
+  	a -> c	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="136,65.5",
+  		pos="e,197.93,53.214 74.088,57.586 79.784,57.755 86.165,57.917 92,58 131.13,58.559 140.98,57.957 180,55 182.56,54.806 185.22,54.568 187.89\
+  ,54.305"];
+  	b	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="136,18",
+  		shape=circle,
+  		width=0.5];
+  	a -> b	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="96,46.5",
+  		pos="e,119.62,25.689 72.41,49.295 83.307,43.846 98.14,36.43 110.63,30.185"];
+  	d	 [color=black,
+  		fontcolor=black,
+  		height=0.61111,
+  		pos="300,51",
+  		shape=doublecircle,
+  		width=0.61111];
+  	c -> d	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="256,58.5",
+  		pos="e,277.85,51 234.39,51 244.11,51 256.51,51 267.85,51"];
+  	b -> c	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="176,43.5",
+  		pos="e,199.24,44.332 152.78,24.678 163.46,29.196 177.79,35.258 190.01,40.426"];
+  	d -> c	 [color=black,
+  		fontcolor=black,
+  		label=ε,
+  		lp="256,39.5",
+  		pos="e,231.31,41.134 281.53,38.161 272.84,33.281 262.07,29.444 252,32 248.04,33.005 244.05,34.558 240.24,36.352"];
+  	"~"	 [height=0,
+  		pos="0,57",
+  		shape=point,
+  		width=0];
+  	"~" -> a	 [pos="e,37.942,57 1.1549,57 2.6725,57 15.097,57 27.628,57"];
+  }
+  </pl-graph>
+
+  <p>
+    Consider an additional NFA $T$ representing the regular expression $10(10)^*$ over the states $e$, $f$, and $g$, shown below.
+  </p>
+  <pl-graph>
+    strict digraph {
+  	graph [bb="0,0,242,71",
+  		rankdir=LR
+  	];
+  	node [label="\N"];
+  	e	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="56,18",
+  		shape=circle,
+  		width=0.5];
+  	f	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="136,53",
+  		shape=circle,
+  		width=0.5];
+  	e -> f	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="96,43.5",
+  		pos="e,119.24,45.928 72.784,25.083 83.463,29.874 97.791,36.304 110.01,41.785"];
+  	g	 [color=black,
+  		fontcolor=black,
+  		height=0.61111,
+  		pos="220,23",
+  		shape=doublecircle,
+  		width=0.61111];
+  	f -> g	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="176,46.5",
+  		pos="e,199.06,30.294 153.2,47.073 163.59,43.273 177.37,38.229 189.64,33.741"];
+  	g -> e	 [color=black,
+  		fontcolor=black,
+  		label=ε,
+  		lp="136,18.5",
+  		pos="e,74.046,15.516 198.35,18.191 185.64,15.48 168.97,12.37 154,11 138.07,9.5415 133.97,10.086 118,11 106.83,11.639 94.556,12.931 83.969\
+  ,14.234"];
+  	"~"	 [height=0,
+  		pos="0,18",
+  		shape=point,
+  		width=0];
+  	"~" -> e	 [pos="e,37.942,18 1.1549,18 2.6725,18 15.097,18 27.628,18"];
+  }
+  </pl-graph>
+  <p>
+    For this set of questions, we will be following a student's thought process in designing an NFA
+     for the concatenation of these two regular expressions:
+    <center>$(10+0)11^*10(10)^*$</center>
+    <br/>
+    There are no available points for this question. To continue, simply go to the next question.
+  </p>
+</pl-question-panel>

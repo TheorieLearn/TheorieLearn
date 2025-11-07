@@ -1,0 +1,72 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/hamcycle_to_hampath.html"
+    ></pl-variable>
+</pl-template>
+The pseudocode of the reduction is shown below:
+$$
+\begin{align*}
+&G' \leftarrow ~ \text{copy of} ~ G \\
+&v \leftarrow ~ \text{an arbitrary vertex in} ~ G' \\
+&\text{Add a new vertex} ~ w ~ \text{to} ~ G' \\
+&\text{Connect} ~ w ~ \text{to every neighbor of} ~ v \\
+&\text{Add a new vertex} ~ s ~ \text{to} ~ G' \\
+&\text{Add a new vertex} ~ t ~ \text{to} ~ G' \\
+&\text{Connect} ~ s ~ \text{to} ~ v \\
+&\text{Connect} ~ t ~ \text{to} ~ w \\
+\end{align*}
+$$
+<p>
+<em>Note: this reduction might be slightly different than the one you came up with in the previous question.
+Please read the reduction carefully and construct the proof below based on this version of the reduction.</em>
+</p>
+
+<p>
+In order to show that our reduction is correct, we need to prove the "if and only if" claim that we stated in an earlier problem.
+</p>
+
+<p>
+In this question, we will prove the backwards direction of the "if and only if" claim. In other words, we want to prove that
+
+$$ G' ~ \text{has a Hamiltonian path} \implies G ~ \text{has a Hamiltonian cycle}$$
+
+Let $n$ be the number of vertices in $G$. Then, the number of vertices in $G'$ is $n+3$.
+</p>
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="path_to_cycle" source-blocks-order="random" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="defP"> Suppose $G'$ has a Hamiltonian path $P$.</pl-answer>
+
+    <pl-answer correct="false"> Suppose $G$ has a Hamiltonian path $P$.</pl-answer>
+
+    <pl-answer correct="true" tag="sDeg" depends="defP"> $s$ has degree 1 in $G'$, so it must appear at the start or end of $P$.</pl-answer>
+    <pl-answer correct="true" tag="tDeg" depends="defP"> $t$ has degree 1 in $G'$, so it must appear at the start or end of $P$.</pl-answer>
+
+    <pl-answer correct="true" tag="wlog" depends="tDeg,sDeg"> Without loss of generality, we can assume $s$ appears at the start and $t$ appears at the end of $P$ (otherwise reverse $P$). </pl-answer>
+
+
+    <pl-answer correct="true" tag="sNeighbor" depends="wlog"> The only neighbor of $s$ is $v$, so $v$ must be the second vertex in $P$.</pl-answer>
+
+    <pl-answer correct="false"> The only neighbor of $s$ is $v$, so $v$ must be the second-to-last vertex in $P$</pl-answer>
+
+    <pl-answer correct="true" tag="tNeighbor" depends="wlog"> The only neighbor of $t$ is $w$, so $w$ must be the second-to-last vertex in $P$.</pl-answer>
+
+    <pl-answer correct="false"> The only neighbor of $t$ is $w$, so $w$ must be the second vertex in $P$ </pl-answer>
+
+    <pl-answer correct="true" tag="redefP" depends="tNeighbor,sNeighbor"> Thus, we can write $P = s, v, \dots, w, t$. Let $u$ be the vertex that comes before $w$.</pl-answer>
+
+
+    <pl-answer correct="true" tag="defQ" depends="redefP"> Let $Q$ be the subpath of $P$ from $v$ to $u$.</pl-answer>
+
+    <pl-answer correct="true" tag="once" depends="defQ"> $Q$ contains every vertex of $G$ exactly once and no other vertices. Thus, $Q$ is a Hamiltonian path in $G$.</pl-answer>
+
+    <pl-answer correct="false">$Q$ contains every vertex of $G'$ exactly once and no other vertices. Thus, $Q$ is a Hamiltonian path in $G'$.</pl-answer>
+
+    <pl-answer correct="true" tag="uw" depends="redefP"> $uw$ is an edge in $G'$, therefore $uv$ is an edge in $G$.</pl-answer>
+
+    <pl-answer correct="true" tag="end" depends="uw">Therefore, adding the edge $uv$ to $Q$ gives us a Hamiltonian cycle in $G$.</pl-answer>
+</pl-order-blocks>

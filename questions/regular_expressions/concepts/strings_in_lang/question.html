@@ -1,0 +1,16 @@
+<pl-question-panel>  
+  <p>Consider the regular expression ${{params.regex}}$.
+    <br/>
+    Which of the following strings are matched by this regular expression?
+  </p>
+</pl-question-panel>
+
+<pl-checkbox answers-name="ans" weight="1">
+  {{#params.strings_in_lang}}
+    <pl-answer correct="true">${{.}}$</pl-answer>
+  {{/params.strings_in_lang}}
+
+  {{#params.strings_not_in_lang}}
+    <pl-answer>${{.}}$</pl-answer>
+  {{/params.strings_not_in_lang}}
+</pl-checkbox>

@@ -1,0 +1,26 @@
+<pl-question-panel>
+  <b> For the next few questions, you are tasked with transforming an input graph
+  to a new graph in order to solve a traversal problem. </b>
+  <br>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/multiple_vertex_color_graph.html"
+    ></pl-variable>
+</pl-template>
+  <hr>
+
+  <h3>Information to Track</h3>
+  First, we must determine what information needs to be kept track about past decisions in traversing the graph to inform future decisions.
+  Please select the options below that would be <b>necessary</b> to keep track of to help solve the problem:
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1" fixed-order="true">
+  <pl-answer feedback="Knowing the precise number of vertices traversed is unecessary.">
+    The number of vertices you have traversed per color.</pl-answer>
+  <pl-answer correct="true">If you have traversed a vertex for each color: red, green, or blue.</pl-answer>
+  <pl-answer feedback="Knowing a global number of vertices is not required since you only need to keep track of local vertices you encountered.">
+    The total number of vertices per color in the graph.</pl-answer>
+</pl-checkbox>

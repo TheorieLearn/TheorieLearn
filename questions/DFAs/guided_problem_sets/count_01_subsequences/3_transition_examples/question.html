@@ -1,0 +1,23 @@
+<pl-question-panel>
+<markdown>
+**You must correctly solve this problem multiple times to receive full credit.**
+
+---
+
+From the previous question, we realized that in order to count the number of $01$ subsequences, we also need to keep track of how many 0s are in the prefix that we've read so far.
+
+Note that $\sigma(0, w)$ is the number of times the subsequence $0$ appears in $w$, which is the same as the number of 0s in $w$. Thus, our program needs to keep track of $\sigma(0, w)$ and $\sigma(01, w)$ as we read the string. This question is focused on how to update both of those values in conjunction with each other.
+
+Let $w$ be the prefix we have read so far; assume that $\sigma(0, w) = {{params.num0s}}$ and $\sigma(01, w) = {{params.num01s}}$.
+</markdown>
+</pl-question-panel>
+
+<markdown>
+If the next character we read is a 0, then
+- $\sigma(0, w \bullet 0) = $ <pl-integer-input answers-name="0-transition-num0s" size=5 show-help-text=false></pl-integer-input>
+- $\sigma(01, w \bullet 0) = $ <pl-integer-input answers-name="0-transition-num01s" size=5 show-help-text=false></pl-integer-input>
+
+If the next character we read is a 1, then
+- $\sigma(0, w \bullet 1) = $ <pl-integer-input answers-name="1-transition-num0s" size=5 show-help-text=false></pl-integer-input>
+- $\sigma(01, w \bullet 1) = $ <pl-integer-input answers-name="1-transition-num01s" size=5 show-help-text=false></pl-integer-input>
+</markdown>

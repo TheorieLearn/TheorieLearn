@@ -1,0 +1,19 @@
+{
+    "uuid": "61fab77f-e054-4f5d-876d-fc23160b2a8b",
+    "title": "Fooling Set: {0^m 1^n | gcd(m, m) = 1}",
+    "topic": "Fooling Sets",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

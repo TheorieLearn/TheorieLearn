@@ -1,0 +1,25 @@
+{{! For rendering the individual inputs and information on feedback graphs}}
+{{#row_input}}
+    <hr></hr>
+    {{attributes_sentence}}
+    <br></br>
+    <pl-string-input placeholder="{{placeholder_1}}" answers-name="{{answers_name_1}}" size="15" show-help-text="false" remove-spaces="true" correct-answer="{{correct_answer_1}}"></pl-string-input>
+    $\to$
+    <pl-string-input placeholder="{{placeholder_2}}" answers-name="{{answers_name_2}}" size="15" show-help-text="false" remove-spaces="true" correct-answer="{{correct_answer_2}}"></pl-string-input>
+{{/row_input}}
+
+{{#submit_info}}
+    <hr></hr>
+    <br>
+    After submission, a new graph will be generated that reflects your inputed edge definitions along with the original graph for comparison:
+    <br>
+    <br>
+{{/submit_info}}
+
+{{! For combing inputs, information, and feedback graphs}}
+{{{inputs_and_info}}}
+{{#feedback_pl_graph}}
+    <pl-graph>
+        {{combined_graphs}}
+    </pl-graph>
+{{/feedback_pl_graph}}

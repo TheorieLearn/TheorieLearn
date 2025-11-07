@@ -1,0 +1,11 @@
+<p>Consider a directed graph $G$, where each edge is colored either
+red, white, or blue. A walk in $G$ has no Russian flag if and only if there is
+no instance of a white edge, followed by a blue edge, then a red edge, within the walk. More formally,
+for any walk $v_0\rightarrow v_1
+\rightarrow \ldots \rightarrow v_k$ has no Russian flag if, for
+every integer $i\in{0,\dots,k-3}$, the edge color for $v_i \rightarrow v_{i+1}$, $v_{i+1} \rightarrow v_{i+2}$, and $v_{i+2} \rightarrow v_{i+3}$
+are not white, blue, and red, respectively.</p>
+
+<p>Describe an efficient algorithm to determine whether a destination vertex $t$ is
+reachable from $s$ in a given
+edge-colored directed graph $G$ with no Russian flags.</p>

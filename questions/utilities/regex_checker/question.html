@@ -1,0 +1,16 @@
+<pl-question-panel>
+<markdown>
+Enter a **regular expression** and a **test string** to check if your regex accepts the string.
+</markdown>
+</pl-question-panel>
+
+<pl-string-input answers-name="regex" label="Regular Expression:" placeholder="(0+1)*0(0+1)"></pl-string-input>
+<pl-string-input answers-name="test_string" label="Test String:" placeholder="100"></pl-string-input>
+
+<pl-submission-panel>
+
+  <div style="margin-top: 10px;">
+    <strong>Result:</strong> {{feedback.message}}
+  </div>
+
+</pl-submission-panel>

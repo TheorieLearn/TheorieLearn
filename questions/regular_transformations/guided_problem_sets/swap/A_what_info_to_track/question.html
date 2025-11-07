@@ -1,0 +1,65 @@
+<pl-question-panel>
+<markdown>
+For regular language transformation problems, a good first step is to think
+about what additional information you need to record about the input string as
+it's being read. This will inform how to construct an NFA or DFA corresponding
+to the language transformation.
+
+Consider the language transformation from before:
+
+$\mathsf{SWAP}(L) := \{\mathsf{swap}(w) \mid w \in L \}$, where $\mathsf{swap}(w)$
+is defined recursively as
+
+$$
+  \mathsf{swap}(w) = \begin{cases}
+    w &\text{if } |w| \leq 1\\
+    ba \bullet \mathsf{swap}(x) &\text{if } w = ab \bullet x \text{ for some } a, b \in \Sigma \text{ and } x \in \Sigma^*
+  \end{cases}
+$$
+
+We are designing a DFA $M'$ which accepts $\mathsf{SWAP}(L)$. Since $L$ is
+regular, we can assume there is some DFA $M$ which decides it.
+
+It's clear from the description of the problem that we need to know whether the
+index of a character we've read in is even or odd. In this question, we'll be
+asking about what additional information is needed for a DFA to decide the language.
+</markdown>
+</pl-question-panel>
+
+<hr>
+<p>If we've just read in a character $a$ which we know has an even index (starting from 1) in $w$, what other information do we need to determine how to transition in the DFA we're designing?</p>
+
+<pl-hide-in-panel answer="true">
+<pl-multiple-choice answers-name="read-even" fixed-order="true">
+    <pl-answer>The character read two indices before $a$ (if it exists).</pl-answer>
+    <pl-answer correct="true">The character read one index before $a$ (if it exists).</pl-answer>
+    <pl-answer>The character read one index after $a$ (if it exists).</pl-answer>
+    <pl-answer>The character read two indices after $a$ (if it exists).</pl-answer>
+    <pl-answer>None of the above</pl-answer>
+</pl-multiple-choice>
+</pl-hide-in-panel>
+
+<br>
+<p>If we've just read in a character $b$ which we know has an odd index (starting from 1) in $w$, what other information do we need to determine how to transition in the DFA we're designing?</p>
+
+<pl-hide-in-panel answer="true">
+<pl-multiple-choice answers-name="read-odd" fixed-order="true">
+    <pl-answer>The character read two indices before $b$ (if it exists).</pl-answer>
+    <pl-answer>The character read one index before $b$ (if it exists).</pl-answer>
+    <pl-answer>The character read one index after $b$ (if it exists).</pl-answer>
+    <pl-answer>The character read two indices after $b$ (if it exists).</pl-answer>
+    <pl-answer correct="true">None of the above</pl-answer>
+</pl-multiple-choice>
+</pl-hide-in-panel>
+
+<br>
+<p>If we've just read in a character $a$ and had a character $b$ stored previously, what should our new DFA $M'$ do?</p>
+
+<pl-hide-in-panel answer="true">
+<pl-multiple-choice answers-name="simulate-stored" fixed-order="true">
+    <pl-answer correct="true">Simulate $M$ reading in $ab$.</pl-answer>
+    <pl-answer>Simulate $M$ reading in $ba$.</pl-answer>
+    <pl-answer>Simulate $M$ reading in $b$ and store $a$ for later.</pl-answer>
+    <pl-answer>Simulate $M$ reading in $a$ and store $b$ for later.</pl-answer>
+</pl-multiple-choice>
+</pl-hide-in-panel>

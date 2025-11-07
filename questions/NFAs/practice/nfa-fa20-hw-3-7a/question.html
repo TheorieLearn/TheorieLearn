@@ -1,0 +1,78 @@
+<pl-question-panel>
+Assume we have the alphabet $\Sigma = \{3, 7, 4\}$.
+
+Convert the following regular expression into an NFA:
+
+$$\Sigma^* 3 \Sigma^* 7 \Sigma^* 4 \Sigma^*$$
+<hr>
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa" alphabet="374">
+    <correct-answer>
+        {
+            "final_states": [
+                "c"
+            ],
+            "initial_state": "s",
+            "input_symbols": [
+                "7",
+                "4",
+                "3"
+            ],
+            "states": [
+                "b",
+                "a",
+                "c",
+                "s"
+            ],
+            "transitions": {
+                "a": {
+                    "3": [
+                        "a"
+                    ],
+                    "4": [
+                        "a"
+                    ],
+                    "7": [
+                        "a",
+                        "b"
+                    ]
+                },
+                "b": {
+                    "3": [
+                        "b"
+                    ],
+                    "4": [
+                        "b",
+                        "c"
+                    ],
+                    "7": [
+                        "b"
+                    ]
+                },
+                "c": {
+                    "3": [
+                        "c"
+                    ],
+                    "4": [
+                        "c"
+                    ],
+                    "7": [
+                        "c"
+                    ]
+                },
+                "s": {
+                    "3": [
+                        "s",
+                        "a"
+                    ],
+                    "4": [
+                        "s"
+                    ],
+                    "7": [
+                        "s"
+                    ]
+                }
+            }
+        }
+    </correct-answer>
+</tl-fsm-builder>

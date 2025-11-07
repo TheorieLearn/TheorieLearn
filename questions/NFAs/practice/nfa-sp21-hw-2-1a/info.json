@@ -1,0 +1,13 @@
+{
+  "uuid": "879ae2a8-2217-44ad-8ab2-ad82087eaa8a",
+  "title": "NFA Construction: Exactly one block of 1s of even length",
+  "topic": "NFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "samuelr6",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "88897f00-98cd-46a0-9685-f896dacce939",
+    "title": "Subproblem Definition: Maximize Sum of Partitioned Digits (Version 1)",
+    "topic": "Dynamic Programming",
+    "tags": [
+      "jasonx3",
+      "Guided Practice",
+      "sp22",
+      "Scaffolded Writing"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

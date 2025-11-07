@@ -1,0 +1,14 @@
+{
+  "uuid": "108f0360-8048-4470-a237-1bf46f071668",
+  "title": "Longest Common Subsequence: Recursive Definition Pt. 2",
+  "topic": "Dynamic Programming",
+  "tags": [
+    "ajin7",
+    "Guided Practice",
+    "fa23"
+  ],
+  
+  "type": "v3",
+  "showCorrectAnswer": false,
+  "singleVariant": true
+}

@@ -1,0 +1,38 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<markdown>
+Recall that:
+$$isInA(i) \text{ is true if and only if } s[1 .. i] \in A.$$
+
+We've come up with our recurrence and a way to memoize it. Let's analyze its performance with respect to $n$, the size of the input.
+
+There are
+<pl-big-o-input answers-name="subproblem-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+subproblems.
+
+---
+
+For each subproblem, we call $isInL_1L_2()$
+<pl-big-o-input answers-name="is-in-a-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+times.
+
+Furthermore, $isInL_1L_2()$ takes
+<pl-big-o-input answers-name="is-in-a-runtime" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+time.
+
+So, it takes
+<pl-big-o-input answers-name="subproblem-time" variable="n" correct-answer="n**2" display='inline' size='5'></pl-big-o-input>
+time to evaluate each subproblem.
+
+---
+So, our total runtime is
+<pl-big-o-input answers-name="total-runtime" variable="n" correct-answer="n**3" display='inline' size='5'></pl-big-o-input>.
+</markdown>

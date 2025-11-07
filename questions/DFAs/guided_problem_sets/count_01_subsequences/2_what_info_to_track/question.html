@@ -1,0 +1,52 @@
+<pl-question-panel>
+<markdown>
+For some DFA construction problems, a good first step is to think about how you would write a program to recognize the language. The program should be in the following form:
+```
+function is_in_language(string):
+    initialize variables
+
+    for character in string:
+        update variables based on character
+
+    return True or False depending on the final values of the variables
+```
+
+How do we decide what variables to declare? Well, it would make sense to store a counter of how many times we've seen the subsequence $01$ in the prefix that we've read so far. That information allows us to determine whether to return True or False when we reach the end of the program.
+
+We need to be able update our counter every time we read a new character (this is the body of the for-loop). In other words, if $w$ is the prefix that we've read so far, we want to know what happens to our counter when we append $0$ or $1$ to $w$. This question focuses on how to perform that update.
+
+Assume that we know $\sigma(01, w) = 7$.
+</markdown>
+</pl-question-panel>
+
+<p>What is $\sigma(01, w \bullet 0)$?</p>
+
+<pl-multiple-choice answers-name="append0" fixed-order="true">
+    <pl-answer>6</pl-answer>
+    <pl-answer correct=true>7</pl-answer>
+    <pl-answer>8</pl-answer>
+    <pl-answer>9</pl-answer>
+    <pl-answer>10</pl-answer>
+    <pl-answer>Not enough information; we need to know the number of 0s in $w$.</pl-answer>
+    <pl-answer>Not enough information; we need to know the number of 1s in $w$.</pl-answer>
+</pl-multiple-choice>
+
+<br>
+<p>What is $\sigma(01, w \bullet 1)$?</p>
+
+<pl-multiple-choice answers-name="append1" fixed-order="true">
+    <pl-answer>6</pl-answer>
+    <pl-answer>7</pl-answer>
+    <pl-answer>8</pl-answer>
+    <pl-answer>9</pl-answer>
+    <pl-answer>10</pl-answer>
+    <pl-answer correct=true>Not enough information; we need to know the number of 0s in $w$.</pl-answer>
+    <pl-answer>Not enough information; we need to know the number of 1s in $w$.</pl-answer>
+</pl-multiple-choice>
+
+<pl-submission-panel>
+<br>
+<markdown>
+*Hint: consider the strings $01111111$ and $00000001$. What happens when we append 1 to these two strings?*
+</markdown>
+</pl-submission-panel>

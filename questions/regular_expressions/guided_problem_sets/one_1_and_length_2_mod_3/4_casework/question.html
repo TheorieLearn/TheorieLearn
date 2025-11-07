@@ -1,0 +1,48 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings $w$ such that $|w|\bmod 3 = 2$ and $w$ contains exactly one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+The next step is to build regular expressions for each of the cases you identified in the previous part. With this step, we will have successfully converted the language intersection into a language union ("and" -> "or").
+
+From the previous part, we know that the language accepts:
+- Strings in the form $0^x 1 0^y$ where $x \equiv 1 \pmod{3}$ and $y \equiv 0 \pmod{3}$.
+- Strings in the form $0^x 1 0^y$ where $x \equiv 0 \pmod{3}$ and $y \equiv 1 \pmod{3}$.
+- Strings in the form $0^x 1 0^y$ where $x \equiv 2 \pmod{3}$ and $y \equiv 2 \pmod{3}$.
+</markdown>
+</pl-question-panel>
+
+<pl-question-panel>
+<markdown>
+Give a regular expression for strings in the form $0^x 1 0^y$ where $x \equiv 1 \pmod{3}$ and $y \equiv 0 \pmod{3}$.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+0(000)*1(000)*
+</tl-regex-input>
+
+<pl-question-panel>
+<br/>
+<markdown>
+Give a regular expression for strings in the form $0^x 1 0^y$ where $x \equiv 0 \pmod{3}$ and $y \equiv 1 \pmod{3}$.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q2">
+(000)*1(000)*0
+</tl-regex-input>
+
+<pl-question-panel>
+<br/>
+<markdown>
+Give a regular expression for strings in the form $0^x 1 0^y$ where $x \equiv 2 \pmod{3}$ and $y \equiv 2 \pmod{3}$.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q3">
+00(000)*1(000)*00
+</tl-regex-input>

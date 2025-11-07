@@ -1,0 +1,91 @@
+<pl-question-panel>
+<markdown>
+### Problem: Shortest Walk with Intermediate Set Constraint
+
+#### Setup
+
+* Directed Graph ($G$): A directed graph. Edge weights can be assumed to be non-negative.
+* Source Vertex ($s$): The starting point of the walk.
+* Target Vertex ($t$): The desired endpoint of the walk.
+* Required Vertex Set ($X$): A set of vertices within the graph that must be included at least once in the walk.
+
+#### Goal
+
+Determine if there exists a walk from the source vertex $s$ to the target vertex $t$ that includes at least one vertex from the set $X$. If such a walk exists, find the length of the *shortest* possible walk that meets this condition. If no qualifying walk exists, the answer should be infinity.
+
+##### Example
+In the graph below, if $s=2$, $t=4$, and $X=\{3,1\}$, then your algorithm should output $1+3+4+2=10$.
+
+<pl-graph>
+    digraph G {
+      2 -> 0 [label=1]
+      0 -> 3 [label=3]
+      3 -> 0 [label=4]
+      0 -> 4 [label=2]
+      2 -> 1 [label=812]
+      1 -> 4 [label=374]
+    }
+</pl-graph>
+</markdown>
+<markdown>
+We will consider a new approach to solve this problem instead of graph layering.
+</markdown>
+</pl-question-panel>
+
+<hr/>
+<markdown>
+Let's break down how we might solve this problem:
+
+* **Splitting the Problem**
+Can we divide this challenge into smaller, easier pieces? What if we focus on these two parts separately:
+1. Finding the shortest path from $s$ to any vertex in $X$.
+2. Finding the shortest path from any vertex in $X$ to $t$.
+
+Think about how we would do this.
+</markdown>
+For finding the shortest path from $s$ to any vertex in $X$ most efficiently, we can:
+run
+<pl-multiple-choice order="ascend" answers-name="AlgoDijk1" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">Dijkstra</pl-answer>
+    <pl-answer>BFS</pl-answer>
+    <pl-answer>Bellman-Ford</pl-answer>
+    <pl-answer>Floyd Warshall</pl-answer>
+</pl-multiple-choice>
+algorithm from
+<pl-multiple-choice order="ascend" answers-name="StartVDijk1" display="dropdown" hide-letter-keys="true">
+    <pl-answer>t</pl-answer>
+    <pl-answer correct="true">s</pl-answer>
+    <pl-answer>u</pl-answer>
+    <pl-answer>X</pl-answer>
+    <pl-answer>x</pl-answer>
+</pl-multiple-choice>
+vertex to all vertices in
+<pl-multiple-choice order="ascend" answers-name="GraphDijk1" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">G</pl-answer>
+    <pl-answer>G.rev()</pl-answer>
+</pl-multiple-choice>
+
+<hr/>
+Finding shortest path from all vertices in $X$ to $t$ is the same as finding shortest path from $t$ to all vertices in $X$ in the reverse graph G.rev().
+
+
+To do this we find shortest path from:
+<pl-multiple-choice order="ascend" answers-name="StartVDijk2" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">t</pl-answer>
+    <pl-answer>s</pl-answer>
+    <pl-answer>u</pl-answer>
+    <pl-answer>X</pl-answer>
+    <pl-answer>x</pl-answer>
+</pl-multiple-choice>
+vertex to all vertices in X, which can be done using
+<pl-multiple-choice order="ascend" answers-name="AlgoDijk2" display="dropdown" hide-letter-keys="true">
+    <pl-answer>Bellman-Ford</pl-answer>
+    <pl-answer>BFS</pl-answer>
+    <pl-answer correct="true">Dijkstra</pl-answer>
+    <pl-answer>Floyd Warshall</pl-answer>
+</pl-multiple-choice>
+on the graph
+<pl-multiple-choice order="ascend" answers-name="GraphDijk2" display="dropdown" hide-letter-keys="true">
+    <pl-answer>G</pl-answer>
+    <pl-answer correct="true">G.rev()</pl-answer>
+</pl-multiple-choice>

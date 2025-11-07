@@ -1,0 +1,43 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/maze_graph.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+  </hr>
+
+  <h3>Constructing G'</h3>
+  To make the newly constructed graph more clear, we will recreate the problem statement with a small example.
+  Start state: $s$, high-risk paths: $\{s\to t\}$, hierogylphic edges: $\{t\to s\}$, goal: $t$, recharge stations:
+  $\{a\}$. In the diagram below,
+  "R" represents high-risk and "H" represents hieroglyphics.
+  <pl-graph>
+    {{{params.original_graph}}}
+  </pl-graph>
+  From this, we generate our new graph $G' = (V', E')$. Recall from the previous part that $V' = V \times H \times C$.
+  Now, we need to define the transitions to complete our graph construction. After entering the rules for $E'$ and
+  clicking the submit button,
+  a new $G'$ will be generated based on your given rules. Keep in mind some rules may not affect this example graph
+  but should nonetheless be written to generalize to other graphs.
+  <br></br>
+  To write the rules, specify a start vertex to an end vertex. The arrow direction "$\to$" indicates the direction of
+  the edge.
+  Each vertex such as (u, NotSeen, Full) is specified by three components, each coming from sets $V$, $H$, and $C$, just
+  as you defined before.
+  To represent an element from:
+
+  <ul>
+    <li>$V$: Write "u" to represent any outgoing vertex from $G$ and "v" to any matching incoming vertex from $G$.</li>
+    <li>$H$: Write "NS" to represent "NotSeen" and "S" to represent "Seen". Write "h" to represent a generic element of
+      $H$ (i.e., by using "h", you are saying that the specified edge should be added for both $h =$ Seen and $h =$
+      NotSeen).</li>
+    <li>$C$: Write "F" to represent "Full" and "E" to represent "Empty. Write "c" to represent a generic element in $C$
+      (i.s., by using "c", you are saying that the specified edge should be added for both $c =$ Full and $c =$ Empty.
+    </li>
+  </ul>
+</pl-question-panel>
+
+{{{params.html}}}

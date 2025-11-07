@@ -1,0 +1,60 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour.html"
+    ></pl-variable>
+  </pl-template>
+  <markdown>
+  ### Subproblem Definition
+
+  Let $\mathsf{WorldTour}(S,i)$ be the cheapest tour with the following properties:
+  - The tour starts from 0.
+  - The tour passes through the cities in $S$ exactly once.
+  - The tour does not pass through any cities in $V \setminus S$.
+  - The tour ends at $i$, for $i \notin S$.
+  </markdown>
+  <hr>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+</pl-question-panel>
+
+We have to figure out what choice to consider when computing $\mathsf{WorldTour}(S,i)$.
+Remember that this choice should allow us to reduce the subproblem to smaller
+instances of the subproblem that can be answered recursively.
+With that in mind,
+our choice boils down to picking the
+<pl-multiple-choice answers-name="drop1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">last</pl-answer>
+  <pl-answer correct="true">second to last</pl-answer>
+  <pl-answer correct="false">first</pl-answer>
+  <pl-answer correct="false">second</pl-answer>
+</pl-multiple-choice>
+vertex of the path.
+
+<br>
+
+What is the length of the shortest path we can get for $\mathsf{WorldTour}(S,i)$
+if we choose $t$ to be the
+<pl-multiple-choice answers-name="drop2" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">last</pl-answer>
+  <pl-answer correct="true">second to last</pl-answer>
+  <pl-answer correct="false">first</pl-answer>
+  <pl-answer correct="false">second</pl-answer>
+</pl-multiple-choice>
+vertex in the path?
+Express your answer in terms of $d,S,t,i$, and recursive calls to $\mathsf{WorldTour}$.
+Use $S - s$ to denote $S \setminus \{s\}$.
+<br>
+<br>
+<pl-string-input display="block" size="15" placeholder="symbolic expression" show-help-text="false" answers-name="ans1"></pl-string-input>
+<br>
+$\mathsf{WorldTour}(S,i)$ should be the
+<pl-multiple-choice answers-name="drop3" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">minimum</pl-answer>
+  <pl-answer correct="false">maximum</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+</pl-multiple-choice>
+of the preceding expression over all $t \in $
+<pl-string-input display="inline" size="4" placeholder="set" show-help-text="false" answers-name="ans2" correct-answer="S" remove-spaces=true remove-leading-trailing=true></pl-string-input> .

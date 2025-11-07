@@ -1,0 +1,33 @@
+<pl-question-panel>
+    Construct an NFA that accepts the following regular expression:
+
+    $$((01)^*(10)^* + 00)^* \cdot (1 + 00 + \varepsilon) \cdot (11)^*$$
+
+    <hr>
+    </pl-question-panel>
+    <tl-fsm-builder answers-name="q" fsm-type="nfa">
+        <correct-answer>
+            {
+                "states": ["a", "b", "d", "e", "g", "h", "k", "t", "u", "i", "v", "j", "s", "end"],
+                "input_symbols": ["1", "0"],
+                "transitions": {
+                    "s": {"": ["t"]},
+                    "a": {"0": ["b"], "": ["d"]},
+                    "b": {"1": ["a"]},
+                    "d": {"1": ["e"], "": ["t"]},
+                    "e": {"0": ["d"]},
+                    "g": {"0": ["h"]},
+                    "h": {"0": ["k"]},
+                    "k": {"": ["t"]},
+                    "t": {"": ["u", "a"]},
+                    "u": {"0": ["i"], "1": ["v"], "": ["v"]},
+                    "i": {"0": ["v"]},
+                    "v": {"1": ["j"], "": ["end"]},
+                    "j": {"1": ["v"]},
+                    "end": {}
+                },
+                "initial_state": "s",
+                "final_states": ["end"]
+            }
+        </correct-answer>
+    </tl-fsm-builder>

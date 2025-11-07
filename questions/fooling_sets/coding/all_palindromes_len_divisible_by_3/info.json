@@ -1,0 +1,23 @@
+{
+    "uuid": "a5237296-ba7f-429a-a6f2-0322e59f3fe8",
+    "title": "Fooling Set: Palindromes length divisble by 3",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "summer22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

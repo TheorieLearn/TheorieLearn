@@ -1,0 +1,23 @@
+{
+    "uuid": "0477645c-1259-4e30-bb7e-4dfbf34b5e3e",
+    "title": "Fooling Set: 0^i 0^j, j = sqrt(i)",
+    "topic": "Fooling Sets",
+    "tags": [
+        "zhuofan7",
+        "fa22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

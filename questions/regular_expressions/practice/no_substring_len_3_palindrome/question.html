@@ -1,0 +1,35 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>Strings in $(0 + 1)^{∗}$
+in which no substring of length $3$ or more is a palindrome.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+empty = e
+lenOne = 1 + 0
+lenTwo = 00 + 01 + 10 + 11
+lenThree = 001 + 011 + 100 + 110
+lenFour = 0011 + 1100
+empty + lenOne + lenTwo + lenThree + lenFour
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=2>
+        The empty string should be in this language.
+    </pl-hint>
+    <pl-hint show-after-submission=4>
+        There are strings of length 4 in this language.
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        There are a finite number of strings in this language.
+    </pl-hint>
+    <pl-hint show-after-submission=8>
+        You should enumerate every string in this language.
+    </pl-hint>
+</pl-hidden-hints>

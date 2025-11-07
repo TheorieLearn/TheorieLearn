@@ -1,0 +1,30 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<b><i>The remainder of this section in the GPS will be using the prefix definition of the subproblem, that is:</i></b>
+
+$$isInA(i) \text{ is true if and only if } s[1 .. i] \in A.$$
+
+Defining a subproblem is no good if we don't know how to call it to obtain our final answer!
+
+First, we should specify the domain of our function. $isInA()$ evaluates whether a prefix of a string $s[1..n]$ is in $A$.
+This function takes in an integer $i$, that represents the end index of the prefix. What possible values could $i$ take on?
+(Remember that the empty string is a prefix of $s$, represented by $s[1..0]$.)
+<p>
+    <center>
+        <pl-string-input answers-name="lower-bound" correct-answer="0" show-help-text="false" size="5"></pl-string-input>
+        $ \leq \space i \leq$
+        <pl-string-input answers-name="upper-bound" correct-answer="n" show-help-text="false" size="5"></pl-string-input>
+    </center>
+</p>
+
+Given our subproblem definition, our final answer is given by $isInA\Big($
+    <pl-string-input answers-name="argument" correct-answer="n" show-help-text="false" size="5"></pl-string-input>
+$\Big)$.

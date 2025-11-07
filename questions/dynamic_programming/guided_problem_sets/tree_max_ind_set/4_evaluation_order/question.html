@@ -1,0 +1,35 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/tree_max_ind_set.html"
+    ></pl-variable>
+  </pl-template>
+  <h5>English Definition</h5>
+  Let $MaxFun(v, o)$ be the maximum amount of fun achievable from the subtree rooted at $v$ given that we will include $v$ if $o = \text{Include}$ and exclude $v$ if $o = \text{Exclude}$.
+  <br/>
+  <br/>
+<h5>Recursive Definition</h5>
+  $$
+  \begin{equation}
+  MaxFun(i)=\begin{cases}
+    Fun[v] +  \underset{\forall c \in Adj[v]}{sum}MaxFun(c, Exclude)& \text{if o = Include}\\
+    \underset{\forall c \in Adj[v]}{sum} max\{MaxFun(c, Include), MaxFun(c, Exclude)\} & \text{otherwise}
+    \end{cases}
+  \end{equation}
+  $$
+  <em>(We will define the empty sum as $0$ to account for the base case)</em>
+<br/> <br/>
+We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+
+<br/>
+<br/>
+</pl-question-panel>
+We should fill in
+<pl-multiple-choice answers-name="drop1" order="ascend" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">pre order</pl-answer>
+  <pl-answer correct="true">post order</pl-answer>
+  <pl-answer correct="false">level order</pl-answer>
+</pl-multiple-choice> order of the vertices in the tree.

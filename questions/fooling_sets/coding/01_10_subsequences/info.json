@@ -1,0 +1,19 @@
+{
+    "uuid": "dc2b6346-eda1-4b3c-b2fa-5cda0bae333b",
+    "title": "Fooling Set: Equal number of 01 and 10 subsequences",
+    "topic": "Fooling Sets",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

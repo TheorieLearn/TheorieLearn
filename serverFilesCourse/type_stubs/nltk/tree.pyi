@@ -1,0 +1,16 @@
+from typing import Callable, List, Optional, Sequence, Type, TypeVar, Union
+
+T = TypeVar("T", bound=Tree)
+
+class Tree(List[Union[str, Tree]]):
+    """
+    A Tree is just a list of children with an extra attribute for storing the label at the root.
+    Terminal children are represented as strings in the list, and non-terminal children are Trees.
+    """
+
+    def __init__(self, label: str, children: Optional[List[Union[str, Tree]]] = None) -> None: ...
+    def subtrees(self, filter: Optional[Callable[[Tree], bool]] = None) -> Sequence[Tree]: ...
+    def label(self) -> str: ...
+    def leaves(self) -> List[str]: ...
+    @classmethod
+    def fromstring(cls: Type[T], s: str) -> T: ...

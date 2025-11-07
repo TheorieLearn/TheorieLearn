@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+Recall that
+$isInA(i) = True$ if and only if $s[1..i] \in A$. Similarly, $isInB(i) = True$ if and only if $s[1..i] \in B$.
+<hr>
+Defining a subproblem is no good if we don't know how to call it to obtain our final answer!
+<br>
+Given our subproblem definitions, what function do we call to obtain our final answer?
+(Recall that $A = (L_1L_2)^*$, and $B = (L_1L_2)^*L_1$.)
+<pl-multiple-choice answers-name="function-name" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">isInA</pl-answer>
+    <pl-answer correct="false">isInB</pl-answer>
+</pl-multiple-choice>
+<br>
+What is our input to this function?
+<pl-string-input answers-name="argument" correct-answer="n" show-help-text="false" size="5"></pl-string-input>

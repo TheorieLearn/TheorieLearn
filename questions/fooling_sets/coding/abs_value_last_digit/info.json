@@ -1,0 +1,19 @@
+{
+    "uuid": "28c5a043-d8cb-4df0-8614-7ce65abec556",
+    "title": "Fooling Set: Last digit of |#0 - #1| is 9",
+    "topic": "Fooling Sets",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

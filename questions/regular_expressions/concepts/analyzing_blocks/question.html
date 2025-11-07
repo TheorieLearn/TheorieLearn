@@ -1,0 +1,32 @@
+<pl-question-panel>
+<markdown>
+A *block* (also known as a *run*) is a maximal non-empty substring of identical symbols. All binary strings alternate between blocks of 0s and blocks of 1s. For example, $001011000 = 00 \cdot 1 \cdot 0 \cdot 11 \cdot 000$.
+
+The regular expression $00^*$ describes a block of 0s ($0^*$ doesn't work because blocks cannot be empty). Similarly, the regular expression $11^*$ describes a block of 1s.
+
+The regular expression $((00^*)(11^*))^*$ matches *some* strings that alternate between blocks of 0s ($00^*$) and blocks of 1s ($11^*$), but it does not match *all* such strings. Why not?
+</markdown>
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1">
+    <pl-answer>It doesn't match the empty string.</pl-answer>
+    <pl-answer>It doesn't match strings that start with a 0-run.</pl-answer>
+    <pl-answer correct="true">It doesn't match strings that end with a 0-run.</pl-answer>
+    <pl-answer correct="true">It doesn't match strings that start with a 1-run.</pl-answer>
+    <pl-answer>It doesn't match strings that end with a 1-run.</pl-answer>
+</pl-checkbox>
+
+<pl-question-panel>
+<markdown>
+How would you modify $((00^*)(11^*))^*$ to match all strings that alternate between blocks of 0s and blocks of 1s?
+</markdown>
+</pl-question-panel>
+
+<pl-checkbox answers-name="q2" weight="1">
+    <pl-answer correct="true">$1^*((00^*)(11^*))^*0^*$</pl-answer>
+    <pl-answer correct="true">$(\epsilon + 11^*)((00^*)(11^*))^*(\epsilon + 00^*)$</pl-answer>
+    <pl-answer>$11^*((00^*)(11^*))^*00^*$</pl-answer>
+    <pl-answer>$0^*((00^*)(11^*))^*1^*$</pl-answer>
+    <pl-answer>$((00^*)(11^*))^*0^*$</pl-answer>
+    <pl-answer>$1^*((00^*)(11^*))^*$</pl-answer>
+</pl-checkbox>

@@ -1,0 +1,11 @@
+{
+    "uuid": "d4b58c49-6771-4103-ae64-7c937b2cc493",
+    "title": "CFGs: Strings not of the Form {ww | w in {0, 1}*}",
+    "topic": "Context-Free Grammars",
+    "tags": [
+      "stevenp6",
+      "fa21",
+      "Guided Practice"
+    ],
+    "type": "v3"
+}

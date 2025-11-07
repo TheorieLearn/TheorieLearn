@@ -1,0 +1,57 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/grasslearn.html"
+    ></pl-variable>
+</pl-template>
+<p>
+Recall the subproblem definition that can be used to minimize the necessary time on Grasslearn (note that the variable names may be different from your response):
+</p>
+<center><b>Define $MinMinutes(i,j,k)$ to be the minimum number of minutes needed to earn at least $i$ points from questions $j$ to $n$, starting with a streak of length $k$.</b></center>
+<hr/>
+
+What are the sets of values for $i$, $j$, and $k$ that would be valid inputs to $MinMinutes(i, j, k)$? Fill out the expressions for the domains in terms of $n$ and $p$.
+$k$ is the streak length <i>before</i> you answer the current question correctly.
+
+<br/>
+<br/>
+</pl-question-panel>
+<center>
+<pl-symbolic-input variables="n,p" answers-name="lowi" display="inline" size="3" show-help-text="false" correct-answer="0"></pl-symbolic-input>
+$\leq i \leq$
+<pl-symbolic-input variables="n,p" answers-name="highi" display="inline" size="3" show-help-text="false" correct-answer="p"></pl-symbolic-input>
+
+<br/>
+<br/>
+
+<pl-symbolic-input variables="n,p" answers-name="lowj" display="inline" size="3" show-help-text="false" correct-answer="1"></pl-symbolic-input>
+$\leq j \leq$
+<pl-symbolic-input variables="n,p" answers-name="highj" display="inline" size="3" show-help-text="false" correct-answer="n"></pl-symbolic-input>
+
+<br/>
+<br/>
+
+<pl-symbolic-input variables="n,p" answers-name="lowk" display="inline" size="3" show-help-text="false" correct-answer="0"></pl-symbolic-input>
+$\leq k \leq$
+<pl-symbolic-input variables="n,p" answers-name="highk" display="inline" size="3" show-help-text="false" correct-answer="n"></pl-symbolic-input>
+<pl-submission-panel><font color="red"><em><br>{{feedback.highk}}</em></font><br></pl-submission-panel>
+
+
+</center>
+<br/>
+<pl-question-panel>
+
+Next, what would be the final answer to the question prompt?
+<br/>
+<br/>
+
+</pl-question-panel>
+
+<center>
+$MinMinutes \Big($ <pl-symbolic-input variables="n,p" answers-name="finali" display="inline" size="3" show-help-text="false" correct-answer="p"></pl-symbolic-input>,
+<pl-symbolic-input variables="n,p" show-help-text="false" answers-name="finalj" display="inline" size="3" correct-answer="1"></pl-symbolic-input>,
+<pl-symbolic-input variables="n,p" show-help-text="false" answers-name="finalk" display="inline" size="3" correct-answer="0"></pl-symbolic-input>$ \Big)$
+</center>

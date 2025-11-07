@@ -1,0 +1,36 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+            name="problem-statement"
+            directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/multiple_vertex_color_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Using $G'$ to Solve the Problem</h3>
+    Next, we need to use our constructed graph $G'$ to solve our problem. $v$ represents an arbitrary vertex in $G$.
+</pl-question-panel>
+
+Specifically, we need to find the shortest path from
+<pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(s, 0, 0, 0)</pl-answer>
+    <pl-answer>(v, 1, 1, 1)</pl-answer>
+    <pl-answer>(v, 0, 0, 0)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+    <pl-answer>(s, 0, 0, 0)</pl-answer>
+    <pl-answer correct="true">(v, 1, 1, 1)</pl-answer>
+    <pl-answer>(v, 0, 0, 0)</pl-answer>
+</pl-multiple-choice>
+in $G'$.
+So, to solve the problem in the most efficient way, we should run
+
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer feedback="Is Bellman Ford's algorithm the fastest algorithm to solve this problem?">Bellman Ford's Algorithm</pl-answer>
+    <pl-answer score="1.0" correct="true">Breadth-First Search</pl-answer>
+    <pl-answer score="0.5" feedback="That's correct, but not the most efficient choice.">Dijkstra's Algorithm</pl-answer>
+    <pl-answer feedback="Does Kosaraju-Sharir's algorithm solve the problem?">Kosaraju-Sharir's Algorithm</pl-answer>
+</pl-multiple-choice>
+on $G'$.
+<pl-submission-panel><font color="red"><em><br>{{feedback.q3}}</em></font><br></pl-submission-panel>

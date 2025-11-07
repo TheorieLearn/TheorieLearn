@@ -1,0 +1,20 @@
+You find yourself, along with a team of explorers, inside a mysterious indoor maze.
+Legends say there is a teleportation device hidden within that you wish to find.
+But beware, maze guardians are said protect the teleportation device, finding intruders and kicking them out.
+Being prepared, you bring a map that highlights the maze's pathways,
+which indicate where maze guardians have a higher probability of appearing.
+You, along with your teammates, carry a charged invisibility device that must be used to traverse these high-risk path segments.
+However, the invisibility device's batteries will be depleted after use and must be recharged at charging stations in the maze.
+Further, certain walls of the maze contain mysterious hieroglyphics that you and your team want to study.
+Finally, the walls of the maze are narrow so to avoid traffic, your team marked path segments as one-way on the map.
+<br></br>
+You convert your map to an unweighted, directed graph $G=(V, E)$ where $V$ represent intersections in the maze and $E$ represents path segments.
+<ul>
+    <li> A subset of edges are marked as high-risk. </li>
+    <li> A subset of edges are marked as containing hieroglyphics. </li>
+    <li> A subset of vertices are marked as charging stations. </li>
+    <li> The teleportation device is located at $t$, which is in $V$. </li>
+    <li> Your starting position $s$ is also in $V$. </li>
+</ul>
+Your mission is to find the shortest path (defined by the least number of edges traversed) from $s$ to $t$, traversing at least one edge containing mysterious hieroglyphics.
+<br></br>

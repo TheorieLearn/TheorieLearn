@@ -1,0 +1,14 @@
+<pl-question-panel>
+<markdown>
+We now have a regular expression for:
+- every string in the language with length less than 3
+- every string in the language with length equal to 3
+- every string in the language with length greater than 3.
+We can combine these expressions to create the final expression for our language, as every string in the language falls into one of the above categories.
+Using the expressions from the previous three questions, construct a regular expression for the language containing every string except for 000.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+(e+(0+1)+(0+1)(0+1)) + (001+010+011+100+101+110+111) +(((0+1)(0+1)(0+1)(0+1))(0+1)*)
+</tl-regex-input>

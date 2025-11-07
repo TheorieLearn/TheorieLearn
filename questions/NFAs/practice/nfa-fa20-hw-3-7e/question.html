@@ -1,0 +1,46 @@
+<pl-question-panel>
+
+Construct an NFA that accepts this language:
+
+$$L = \{w \in \{3,7,4\}^* \mid w ~ \text{such that every maximal substring of consecutive $7$'s is even in size}\}$$
+
+<hr>
+
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa" alphabet="374">
+    <correct-answer>
+        {
+            "final_states": [
+                "s"
+            ],
+            "initial_state": "s",
+            "input_symbols": [
+                "3",
+                "4",
+                "7"
+            ],
+            "states": [
+                "s",
+                "a"
+            ],
+            "transitions": {
+                "a": {
+                    "7": [
+                        "s"
+                    ]
+                },
+                "s": {
+                    "3": [
+                        "s"
+                    ],
+                    "4": [
+                        "s"
+                    ],
+                    "7": [
+                        "a"
+                    ]
+                }
+            }
+        }
+    </correct-answer>
+</tl-fsm-builder>

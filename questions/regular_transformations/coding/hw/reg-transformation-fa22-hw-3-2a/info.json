@@ -1,0 +1,23 @@
+{
+    "uuid": "e46e5156-ecc1-4d7a-9a6b-315c000fc7a8",
+    "title": "Regular Transformation: double(L)",
+    "topic": "Regular Transformation",
+    "tags": [
+        "azyin2",
+        "Regular Transformation",
+        "fa22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

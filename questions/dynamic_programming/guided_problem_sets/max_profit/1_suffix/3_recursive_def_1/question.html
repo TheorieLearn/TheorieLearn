@@ -1,0 +1,37 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+    <center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $i$ through $n$, inclusive.</b></center>
+  <br/>
+  <markdown>
+  Now, we will address the first step of the general problem-solving advice. Notice that Burr has two choices at the current trial $i$:
+  1. Don't take the trial
+  2. Take the trial
+  Let's analyze the consequences of each choice.
+</markdown>
+<hr>
+</pl-question-panel>
+<p><b>Choice 1:</b> What are the possible trials that Burr can still choose from if Burr doesn't take trial $i$?
+<pl-multiple-choice answers-name="case1">
+  <pl-answer correct="true">Any of the trials $i+1$ through $n$, inclusive</pl-answer>
+  <pl-answer correct="false">Only trial $i + skip[i]$</pl-answer>
+  <pl-answer correct="false">Only trial $i + 1$</pl-answer>
+  <pl-answer correct="false">Only trial $skip[i]$</pl-answer>
+  <pl-answer correct="false">Any of the trials $i$ through $n$, inclusive</pl-answer>
+</pl-multiple-choice></p>
+
+</pl-question-panel>
+<p><b>Choice 2:</b> If he takes the trial, what are the possible trials that Burr can take after trial $i$?
+<pl-multiple-choice answers-name="case2">
+  <pl-answer correct="true">Any of the trials $skip[i] + i + 1$ through $n$, inclusive</pl-answer>
+  <pl-answer correct="false">Only trial $i + skip[i]$</pl-answer>
+  <pl-answer correct="false">Only trial $i + 1$</pl-answer>
+  <pl-answer correct="false">Any of the trials $skip[i] + i$ through $n$, inclusive</pl-answer>
+  <pl-answer correct="false">Any of the trials $i+1$ through $n$, inclusive</pl-answer>
+</pl-multiple-choice></p>

@@ -1,0 +1,13 @@
+{
+    "uuid": "2253fea1-e755-4e3b-bbf0-2cc1b9f067ba",
+    "title": "Check if two regexes are equivalent",
+    "topic": "Regular Expressions",
+    "tags": [
+        "utilities",
+        "regex",
+        "katieli3"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

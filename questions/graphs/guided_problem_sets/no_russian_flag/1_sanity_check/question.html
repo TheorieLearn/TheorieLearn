@@ -1,0 +1,34 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/no_russian_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr />
+<markdown>
+In the graph below, find the shortest walk from $s$ to $t$ that has no Russian flags.
+</markdown>
+
+<pl-graph>
+digraph G {
+  rankdir=LR
+  s -> a [label=white]
+
+  a -> b [label=blue]
+  a -> c [label=white]
+
+  b -> t [label=red]
+
+  c -> a [label="   ", xlabel=blue]
+  c -> b [label="   ", xlabel=blue]
+}
+</pl-graph>
+
+Answer by typing the ordered list of nodes in the walk. For example for the walk $s \to a \to b$, you would enter "sab" into the text box.
+<br/>
+</pl-question-panel>
+
+<pl-string-input label="No Russian flag walk" answers-name="nrfw" weight="1" allow-blank="true" correct-answer="sacabt"></pl-string-input>

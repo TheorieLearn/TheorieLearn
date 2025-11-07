@@ -1,0 +1,72 @@
+<pl-question-panel>
+
+Suppose we're trying to prove the following language is undecidable:
+
+$$
+    \text{AcceptPalindrome} ~ := \{\langle M \rangle ~ | ~ M ~ \text{accepts at least one palindrome}\}
+$$
+
+One of the ways to prove undecidability is to <b>reduce from a known undecidable language</b>. In this case,
+we will reduce from the halting problem. The reduction will demonstrate that if there exists an algorithm
+$\textbf{DecideAcceptPalindrome}$ that correctly decides $\text{AcceptPalindrome}$, then we can construct an algorithm
+to decide
+
+$$
+    \text{Halt} ~ := \{\langle M,w \rangle ~ | ~ M ~ \text{halts on input} ~ w\}
+$$
+
+Since we know $\text{Halt}$ is undecidable, then this will prove $\text{AcceptPalindrome}$ must be undecidable.
+Suppose we come up with the following (correct) reduction:
+
+$$
+\begin{align*}
+&\underline{\textbf{DecideHalt}(\langle M,w\rangle):}\\
+&\text{Encode the following algorithm} ~ M': \\
+&\quad\begin{bmatrix}
+\underline{M'(x):}\qquad\qquad\quad\\
+\text{Run} ~ M ~ \text{on input} ~ w\\
+\text{return True} \quad\quad~~~
+\end{bmatrix}\\
+&\text{if} ~ \textbf{DecideAcceptPalindrome}(\langle M' \rangle):\\
+&\quad\text{return True}\\
+&\text{else:}\\
+&\quad\text{return False}\\
+\end{align*}
+$$
+
+<p>
+All that's left is to show our reduction is correct. To do this, we need to show the algorithm $M$ halts on the
+given input $w$ if and only if $\textbf{DecideHalt}$ returns $\text{True}$.
+</p>
+
+<p>
+In this question, we will prove the forward direction of the "if and only if" claim. In other words, we want to prove
+
+$$ M ~ \text{halts on} ~ w \implies \textbf{DecideHalt}(\langle M,w \rangle) ~ \text{returns True} $$
+
+</p>
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="path_to_cycle" source-blocks-order="random" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="init"> Suppose $M$ halts on input $w$.</pl-answer>
+
+    <pl-answer correct="true" tag="macceptsall" depends="init"> Then $M'$ accepts every input string $x$. </pl-answer>
+
+    <pl-answer correct="true" tag="macceptspal" depends="macceptsall"> In particular, $M'$ accepts the palindrome "ILLINILLI". </pl-answer>
+
+    <pl-answer correct="true" tag="dapaccepts" depends="macceptspal"> So $\textbf{DecideAcceptPalindrome}$ accepts the encoding $\langle M' \rangle$. </pl-answer>
+
+    <pl-answer correct="true" tag="dhaccepts" depends="dapaccepts"> So $\textbf{DecideHalt}$ correctly accepts the encoding $\langle M,w \rangle$. </pl-answer>
+
+    <pl-answer correct="false"> Suppose $M$ does not halt on input $w$.</pl-answer>
+
+    <pl-answer correct="false"> Then $M'$ diverges on every input string $x$. </pl-answer>
+
+    <pl-answer correct="false"> In particular, $M'$ does not accept any palindromes. </pl-answer>
+
+    <pl-answer correct="false"> So $\textbf{DecideAcceptPalindrome}$ rejects the encoding $\langle M' \rangle$. </pl-answer>
+
+    <pl-answer correct="false"> So $\textbf{DecideHalt}$ correctly rejects the encoding $\langle M,w \rangle$. </pl-answer>
+
+</pl-order-blocks>

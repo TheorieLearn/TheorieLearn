@@ -1,0 +1,67 @@
+<pl-question-panel>
+    <markdown>
+Create a DFA in the area below for the following language:
+
+***<center>All binary strings that do not contain $011001$ as a substring.</center>***
+    </markdown>
+    <hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="dfa">
+    <correct-answer>
+        {
+            "states":[
+               "f",
+               "d",
+               "s",
+               "c",
+               "e",
+               "b",
+               "a"
+            ],
+            "input_symbols":[
+               "0",
+               "1"
+            ],
+            "transitions":{
+               "s":{
+                  "1":"s",
+                  "0":"a"
+               },
+               "a":{
+                  "1":"b",
+                  "0":"a"
+               },
+               "b":{
+                  "1":"c",
+                  "0":"a"
+               },
+               "c":{
+                  "0":"d",
+                  "1":"s"
+               },
+               "d":{
+                  "0":"e",
+                  "1":"b"
+               },
+               "e":{
+                  "1":"f",
+                  "0":"a"
+               },
+               "f":{
+                  "0":"f",
+                  "1":"f"
+               }
+            },
+            "initial_state":"s",
+            "final_states":[
+               "d",
+               "c",
+               "s",
+               "e",
+               "b",
+               "a"
+            ]
+         }
+    </correct-answer>
+</tl-fsm-builder>

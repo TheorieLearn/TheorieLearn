@@ -1,0 +1,43 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/multiple_vertex_color_graph.html"
+    ></pl-variable>
+</pl-template>
+  <hr>
+
+  <h3>Constructing G'</h3>
+  To make the newly constructed graph more clear, we will recreate the problem statement with a small example.
+  Start state: $s$, red vertices: R1 and R2, blue vertices: B.
+  <pl-graph>
+    {{{params.original_graph}}}
+  </pl-graph>
+  From this, we generate our new graph $G' = (V', E')$. Recall from the previous part that $V' = (V \cup \{s\}) \times R \times B \times G$.
+  Now, we need to define the transitions to complete our graph construction.
+  <br>
+  <br>
+  <b>For simplicity and for this question only, we simplify the problem so that
+  $\mathbf{V' = (V \cup \{s\}) \times R \times B}$ even though the edge definitions for green vertices should be written as well in a real solution.
+  </b> After entering the rules for $E'$ and clicking the submit button, a new $G'$ will be generated based on your given rules.
+  Keep in mind some rules may not affect this example graph but should nonetheless be written to generalize to other graphs.
+  <br>
+  <br>
+  To write the rules, specify a start vertex to an end vertex. The arrow direction "$\to$" indicates the direction of
+  the edge.
+  Each vertex such as (u, NotSeen, Full) is specified by three components, each coming from sets $V$, $H$, and $C$, just
+  as you defined before.
+  <br>
+  <u>Please the read the following to learn how to format your inputs.</u> To represent an element from:
+
+  <ul>
+    <li>$V$: Write "u" to represent any outgoing vertex from $G$ and "v" to any matching incoming vertex from $G$. <b>Write $s$ for the sentinel start in $V'$</b></li>
+    <li>$R$: Write "0" to represent no red vertices encountered and "1" to represent at least one red vertex was encountered. Write "r" to represent a generic element of
+      $R$ (i.e., by using "r", you are saying that the specified edge should be added for both $r = 0$ and $r = 1$).</li>
+    <li>$B$: "0" to represent no blue vertices encountered and "1" to represent at least one blue vertex was encountered. Write "b" to represent a generic element of
+      $R$ (i.e., by using "b", you are saying that the specified edge should be added for both $b = 0$ and $b = 1$).</li>
+  </ul>
+</pl-question-panel>
+
+{{{params.html}}}

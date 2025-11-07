@@ -1,0 +1,19 @@
+{
+    "uuid": "8020d147-7661-45cb-8c94-946f119b0c34",
+    "title": "Fooling Set: Same number of even and odd blocks",
+    "topic": "Fooling Sets",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "uuid": "98fe4ef7-fc73-4353-8055-9312de67827b",
+    "title": "Regular Transformation: DelOnes(L)",
+    "topic": "Regular Transformation",
+    "tags": [
+        "zhuofan7",
+        "Regular Transformation",
+        "fa22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

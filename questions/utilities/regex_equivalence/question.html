@@ -1,0 +1,24 @@
+<pl-question-panel>
+<markdown>
+Enter two regular expressions to check if they are **equivalent**.
+That is, whether they describe the same language.
+</markdown>
+</pl-question-panel>
+
+<pl-string-input
+  answers-name="regex1"
+  label="Regular Expression 1:"
+  placeholder="(0+1)*0(0+1)">
+</pl-string-input>
+
+<pl-string-input
+  answers-name="regex2"
+  label="Regular Expression 2:"
+  placeholder="(0+1)*1(0+1)">
+</pl-string-input>
+
+<pl-submission-panel>
+  <div style="margin-top: 10px;">
+    <strong>Result:</strong> {{feedback.message}}
+  </div>
+</pl-submission-panel>

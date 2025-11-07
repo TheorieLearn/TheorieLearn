@@ -1,0 +1,23 @@
+{
+    "uuid": "5233db48-39c8-443d-831e-9e220902854d",
+    "title": "Fooling Set: Min #0, #1 divisisble by 5",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "Fall22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

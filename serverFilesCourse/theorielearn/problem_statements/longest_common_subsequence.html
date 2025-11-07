@@ -1,0 +1,27 @@
+<p>
+    Your friend Neil does research in DNA sequencing. Knowing you're taking a course in algorithms,
+    he came to you for help on a problem, on which he says he's been stuck for days: given two sequences
+    of DNAs, can you design an algorithm to tell how "similar" they are?
+</p>
+
+<p>
+    To make this problem more precise, we'd like to measure the similarity of two strings by computing
+    their <i>longest common subsequence</i>. As a reminder, a <i>subsequence</i> of a string $S$ is any
+    string that can be derived from the original by deleting some characters in $S$ without changing the
+    relative order of any two characters.
+</p>
+
+<p>
+    Our input will be two strings, $A[1..n]$ and $B[1..m]$. <b> Determine the length of the longest common
+    subsequence between $A$ and $B$</b>. The longest common subsequence may not be unique, but we're only
+    interested in the length for this problem.
+</p>
+
+<h4>Example</h4>
+
+<p>
+    If $A$="A<font color=red>CA</font>C<font color=red>T</font>C<font color=red>GC</font>" 
+    and $B$="<font color=red>CATG</font>A<font color=red>C</font>AG", then one possible longest common
+    subsequence is <font color=red>CATGC</font>. You can check that it is not the unique common
+    subsequence of length 5, but there are none of length 6.
+</p>

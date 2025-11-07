@@ -1,0 +1,74 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/valid_shuffle.html"
+        ></pl-variable>
+    </pl-template>
+    <center><b>Define $ValidShuffle(i, j)$ to be True if $C[1…i+j]$ is a valid shuffle of $A[1…i]$ and $B[1…j]$, False otherwise.</b></center>
+    From the previous question, we have three cases that represent the value of $ValidShuffle(i,j)$:
+    <ol>
+        <li>$C[i+j] = A[i] \to$ Determine Valid Shuffle of $i-1$ and $j$</li>
+        <li>$C[i+j] = B[i] \to$ Determine Valid Shuffle of $i$ and $j-1$</li>
+        <li>Otherwise, return False.</li>
+    </ol>
+
+    We will now give an expression for the value of each of these cases. Keep in mind how you use the subproblem definition of $ValidShuffle$
+    when defining these expressions.
+    <br/>
+    Allowed functions are <code>ValidShuffle(a,b), Or(expr1, expr2), And(expr1, expr2), Equals(expr1, expr2), A, B, C</code>
+    <br/>
+    Allowed variables are <code>i , j, n, m</code>
+    <br/>
+    <em>Note, due to autograder limitations, you must write</em> <code>A[x], B[x], C[x]</code><em> as </em><code>A(x), B(x), C(x)</code> <em>(i.e.,
+        use </em><code>A,B,C</code><em> as functions rather than arrays).</em></em>
+</pl-question-panel>
+<br/>
+<br/>
+<b>Case 1:</b> Determine Valid Shuffle of $i-1$ and $j$
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 2:</b> Determine Valid Shuffle of $i$ and $j-1$
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans2" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+
+We can now represent each case by using a logical "and" with the respective character equality:
+<br/>
+<br/>
+<b>Case 1:</b> $C[i+j] = A[i]$ and Determine Valid Shuffle of $i-1$ and $j$
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans3" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 2:</b> $C[i+j] = B[j]$ and Determine Valid Shuffle of $i$ and $j-1$
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans4" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+
+Finally, we can implicitly represent the third case by combining the first and second cases. For brevity, let the expression from <b>Case 1</b> be represented by the variable <code>CaseA</code>
+and the expression from <b>Case 2</b> be represented by the variable <code>CaseB</code>. <em>Note: Do not copy the whole expression from previous parts into this input.</em>
+<br/>
+<br/>
+<b>Final Expression:</b>
+<br/>
+<br/>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+
+Let's also handle the base case necessary for our recursion: If both $i$ and $j$ are 0, what should $ValidShuffle(i,j)$ return?
+
+<pl-multiple-choice answers-name="base_case">
+    <pl-answer correct="true">True</pl-answer>
+    <pl-answer correct="false" feedback="Vacuously, The shuffle of the empty string and empty string is the empty string, so ValidShuffle(0,0) should return True.">False</pl-answer>
+</pl-multiple-choice>

@@ -1,0 +1,84 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn.html"
+      ></pl-variable>
+  </pl-template>
+  <h5>
+  Subproblem Definition:
+  </h5>
+  <center><b>Define $MinMinutes(i,j,k)$ to be the minimum number of minutes needed to earn at least $i$ points from questions $j$ to $n$, starting with a streak of length $k$.</b></center>
+  <hr/>
+<h5>Recursive Definition</h5>
+$$
+MinMinutes(i,j,k):=
+\begin{cases}
+0 & \text{if } i \le 0\\
+\infty &\text{if } j \ge n \text{ (and }i>0\text{)}\\
+\text{min}\begin{cases}
+          MinMinutes(i, j+1, 0), \\
+          TimeNeeded[j] + MinMinutes(i-(k+1), j+1, k+1)
+          \end{cases} & \text{otherwise}
+\end{cases}
+$$
+<hr>
+
+We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+
+<br/>
+<br/>
+</pl-question-panel>
+We should fill in a(n)...
+<pl-multiple-choice answers-name="dropi" hide-letter-keys="true">
+  <pl-answer correct="true">increasing</pl-answer>
+  <pl-answer correct="false">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $i$,...
+<br><br>
+...a(n)...
+<pl-multiple-choice answers-name="dropj" hide-letter-keys="true">
+  <pl-answer correct="false">increasing</pl-answer>
+  <pl-answer correct="true">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $j$,...
+<br><br>
+...and a(n)...
+<pl-multiple-choice answers-name="dropk" hide-letter-keys="true">
+  <pl-answer correct="false">increasing</pl-answer>
+  <pl-answer correct="true">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $k$.
+
+<hr>
+We can memoize the recurrance with a...
+<pl-multiple-choice answers-name="memo" hide-letter-keys="true">
+  <pl-answer correct="false">1D array.</pl-answer>
+  <pl-answer correct="false">2D array.</pl-answer>
+  <pl-answer correct="true">3D array.</pl-answer>
+  <pl-answer correct="false">hashmap.</pl-answer>
+</pl-multiple-choice>
+
+<hr>
+
+How should the loops be nested? $1$ indicates the outermost loop, and $3$ the innermost.
+If the relative order of any loops doesn't matter, give them the same priority.
+<br><br>
+
+$i$: <pl-multiple-choice answers-name="ipriority" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">1</pl-answer>
+  <pl-answer correct="false">2</pl-answer>
+  <pl-answer correct="false">3</pl-answer>
+</pl-multiple-choice>
+<br>
+$j$: <pl-multiple-choice display="dropdown" answers-name="jpriority" hide-letter-keys="true">
+  <pl-answer correct="true">1</pl-answer>
+  <pl-answer correct="false">2</pl-answer>
+  <pl-answer correct="false">3</pl-answer>
+</pl-multiple-choice>
+<br>
+$k$: <pl-multiple-choice display="dropdown" answers-name="kpriority" hide-letter-keys="true">
+  <pl-answer correct="false">1</pl-answer>
+  <pl-answer correct="true">2</pl-answer>
+  <pl-answer correct="false">3</pl-answer>
+</pl-multiple-choice>

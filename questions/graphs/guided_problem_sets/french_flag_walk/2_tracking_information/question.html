@@ -1,0 +1,26 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/french_flag.html"
+    ></pl-variable>
+</pl-template>
+
+<hr />
+<markdown>
+While we move around $G$, we need to keep track of our current vertex, and we also need to keep track of one additional piece of information in order to ensure that our walk obeys the rules of a French Flag Walk.
+Which of the following pieces of information could we keep track of to ensure that our walk is a valid French Flag Walk?
+</markdown>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ffw_info" weight="1">
+    <pl-answer score="0.5" feedback="This option is technically viable, but it contains extraneous information which is not needed to ensure the validity of our walk, and keeping track of this extraneous information will slow down our algorithm. Please select a piece of information which is sufficient and <em>minimal</em>."> The last edge traversed.</pl-answer>
+    <pl-answer score="1.0" feedback="Good! Note that '<em>the number of edges traversed so far, modulo 3</em>' is also a correct option. Throughout the rest of the problem, we will be designing an algorithm based on tracking this piece of information."> The color of the last edge traversed.</pl-answer>
+    <pl-answer score="0.5" feedback="This option is technically viable, but it contains extraneous information which is not needed to ensure the validity of our walk, and keeping track of this extraneous information will slow down our algorithm. Please select a piece of information which is sufficient and <em>minimal</em>."> The next edge that we must traverse.</pl-answer>
+    <pl-answer score="1.0" feedback="Good! Note that '<em>the number of edges traversed so far, modulo 3</em>' is also a correct option. Throughout the rest of the problem, we will be designing an algorithm based on tracking this piece of information."> The color that must be used next in the walk.</pl-answer>
+    <pl-answer score="0.5" feedback="This option is technically viable, but it contains extraneous information which is not needed to ensure the validity of our walk, and keeping track of this extraneous information will slow down our algorithm. Please select a piece of information which is sufficient and <em>minimal</em>."> The number of edges traversed so far.</pl-answer>
+    <pl-answer correct="true" score="1.0" feedback="Good!"> The number of edges traversed so far, modulo 3.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of unique edges traversed so far.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem.">  The number of unique edges traversed so far, modulo 3.</pl-answer>
+</pl-multiple-choice>

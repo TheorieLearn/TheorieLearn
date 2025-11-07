@@ -1,0 +1,50 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/no_russian_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr/>
+<markdown>
+In the last question, we determined what values we could track. We found that tracking "the previous two colors traversed" was correct.
+Indeed, we could solve the question using this information. However, for the remainder of this problem set we will track the following information:
+
+**The longest suffix of colors traversed that is a prefix of [White, Blue, Red].**
+
+This allows us to keep track of what color sequence we just traversed that would contribute to the color pattern of the Russian flag.
+So, if the last color traversed does not contribute to the Russian flag color pattern, we do not need to keep track of the last color. Otherwise,
+we keep track of the last colors traversed that match the color pattern.
+
+We *could* modify our reachability algorithm to store one of these values and perform our search. However, algorithm modifications can be tricky and introduce lots of edge cases.
+Instead, we will proceed with a different approach: we will encode this information into a new graph, and run a standard reachability algorithm on this new graph.
+
+We will define a new, directed graph $G' = (V', E')$.
+Using the idea that we want to track *the longest suffix of colors traversed that is a prefix of [White, Blue, Red]*, what should our new set of vertices $V'$ be?
+
+</markdown>
+
+<hr/>
+<ul>
+    <li>Make sure to write both the braces, and elements seperated by commas.</li>
+    <li>The order of elements does not matter</li>
+    <li>"None" represents no colors seen that contribute to the pattern of the Russian flag.</li>
+    <li>"W" represents white, "R" represents red, "B" represents blue.</li>
+    <li>Chain color symbols together to represent the ordered colors just traversed.
+        For example "WRR" represents the last three edge traversed were white, red, and red just before reaching the current vertex.
+        Another example is "W", which represents having just traversed a white edge.</li>
+</ul>
+</pl-question-panel>
+
+$V' = V$
+
+<pl-multiple-choice order="ascend" answers-name="oper" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">$\times$</pl-answer>
+    <pl-answer>$\cup$</pl-answer>
+    <pl-answer>$/$</pl-answer>
+    <pl-answer>$\oplus$</pl-answer>
+    <pl-answer>$\cap$</pl-answer>
+</pl-multiple-choice>
+
+<pl-string-input answers-name="nodes" weight="1" allow-blank="true" placeholder="ex. {None, W, WR, WRB}" show-help-text="false"></pl-string-input>

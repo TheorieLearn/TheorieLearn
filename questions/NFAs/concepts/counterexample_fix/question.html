@@ -1,0 +1,122 @@
+<pl-question-panel>
+<markdown>
+Create an NFA in the area below for the following language:
+
+***<center>The language described by the regular expression $(10)^* + ((10)^*1)^*$.</center>***
+
+In other words, fix the incorrect NFA from the previous problem. To help you get started,
+the incorrect NFA is reproduced below:
+
+<pl-graph>
+    strict digraph {
+        graph [bb="0,0,178,111",
+            rankdir=LR
+        ];
+        node [label="\N"];
+        q1	 [color=black,
+            fontcolor=black,
+            height=0.65273,
+            pos="62,53",
+            shape=doublecircle,
+            width=0.65273];
+        q3	 [color=black,
+            fontcolor=black,
+            height=0.65273,
+            pos="154,87",
+            shape=doublecircle,
+            width=0.65273];
+        q1 -> q3	 [color=black,
+            fontcolor=black,
+            label=1,
+            lp="108,98.5",
+            pos="e,130.47,90.877 77.989,70.322 85.088,77.221 94.165,84.373 104,88 109.06,89.866 114.62,90.747 120.12,91.016"];
+        q2	 [color=black,
+            fontcolor=black,
+            height=0.54162,
+            pos="154,19",
+            shape=circle,
+            width=0.54162];
+        q1 -> q2	 [color=black,
+            fontcolor=black,
+            label=1,
+            lp="108,42.5",
+            pos="e,135.16,24.362 83.694,43.443 90.144,40.593 97.318,37.551 104,35 110.85,32.384 118.34,29.803 125.35,27.503"];
+        q3 -> q1	 [color=black,
+            fontcolor=black,
+            label=ε,
+            lp="108,76.5",
+            pos="e,84.626,59.558 132.31,77.443 125.86,74.593 118.68,71.551 112,69 106.32,66.833 100.21,64.69 94.291,62.71"];
+        q2 -> q1	 [color=black,
+            fontcolor=black,
+            label=0,
+            lp="108,21.5",
+            pos="e,76.88,34.56 135.21,13.244 125.65,11.115 113.85,10.065 104,14 96.725,16.907 90.004,21.788 84.197,27.131"];
+        "~"	 [height=0,
+            pos="0,53",
+            shape=point,
+            width=0];
+        "~" -> q1	 [pos="e,38.215,53 1.0435,53 1.8748,53 14.499,53 27.95,53"];
+    }
+</pl-graph>
+
+</markdown>
+<hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="nfa">
+    <correct-answer>
+    {
+        "states":[
+            "s",
+            "4",
+            "3",
+            "0",
+            "2",
+            "1"
+        ],
+        "input_symbols":[
+            "0",
+            "1"
+        ],
+        "transitions":{
+            "s":{
+                "":[
+                    "0",
+                    "2"
+                ]
+            },
+            "0":{
+                "1":[
+                    "1"
+                ]
+            },
+            "1":{
+                "0":[
+                    "0"
+                ]
+            },
+            "2":{
+                "1":[
+                    "4",
+                    "3"
+                ]
+            },
+            "3":{
+                "0":[
+                    "2"
+                ]
+            },
+            "4":{
+                "":[
+                    "2"
+                ]
+            }
+        },
+        "initial_state":"s",
+        "final_states":[
+            "4",
+            "0"
+        ]
+    }
+    </correct-answer>
+</tl-fsm-builder>

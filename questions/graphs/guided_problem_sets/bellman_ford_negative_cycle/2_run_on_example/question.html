@@ -1,0 +1,66 @@
+<pl-hide-in-panel answer="true">
+    <p>
+        We can apply our findings to an example.
+        Consider the following graph, which contains a negative cycle.
+    </p>
+    <p>
+        <pl-graph>
+            {{params.graph_data}}
+        </pl-graph>
+    </p>
+    <hr>
+    <p>
+        First, identify a negative cycle in the graph.
+        (Your answer should be a comma-separated list of numbers,
+        where each number corresponds to the node labeled with that number in the graph.
+        Each node in the negative cycle should appear exactly once.
+        The numbers should be ordered such that we can find a negative cycle
+        by following the edges between each consecutive pair of nodes,
+        and then following the edge from the last node to the first node.)
+    </p>
+    <p>
+        <pl-string-input answers-name="cycle-sequence" show-help-text="false" remove-spaces="true"></pl-string-input>
+    </p>
+    <p>
+        What is the weight of this negative cycle?
+        <pl-integer-input answers-name="negative-cycle-weight" size="5" show-help-text="false"></pl-integer-input>
+    </p>
+    <hr>
+    <p>
+        We've picked a source vertex $s$, which has label ${{params.source_vertex}}$.
+    </p>
+    <p>
+        Then, running Bellman-Ford, we find that:
+        <center class="inequality" style="padding-bottom: 1em;">
+            <pl-integer-input answers-name="lesser-weight" size=1 show-help-text="false"></pl-integer-input>
+            $= dist($
+
+            <pl-integer-input answers-name="node-id-1" size=1 show-help-text="false"></pl-integer-input>
+            ,
+            <pl-integer-input answers-name="edge-count-1" size="1" show-help-text="false"></pl-integer-input>
+
+            $) < dist($
+
+            <pl-integer-input answers-name="node-id-2" size=1 show-help-text="false"></pl-integer-input>
+            ,
+            <pl-integer-input answers-name="edge-count-2" size=1 show-help-text="false"></pl-integer-input>
+
+            $) = $
+
+            <pl-integer-input answers-name="greater-weight" size=1 show-help-text="false"></pl-integer-input>
+        </center>
+
+        which demonstrates the existence of a negative cycle!
+    </p>
+    <p>
+        <b>Note: </b> For the $dist$ function calls, the first parameter is an integer identifying the destination node.
+        The second argument is an integer specifying an upper bound on the number of edges.
+        The return value of each call to $dist$ is an integer representing the weight of a walk.
+    </p>
+</pl-hide-in-panel>
+<pl-submission-panel>
+    <font color="red">
+        <em><p>{{feedback.cycle}}</p></em>
+        <em><p>{{feedback.dist}}</p></em>
+    </font>
+</pl-submission-panel>

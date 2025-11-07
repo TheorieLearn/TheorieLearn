@@ -1,0 +1,19 @@
+{
+    "uuid": "8fe43127-f47f-432b-a2b4-30fe1af0d393",
+    "title": "Regular Transformation: Insert 0",
+    "topic": "Regular Transformation",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

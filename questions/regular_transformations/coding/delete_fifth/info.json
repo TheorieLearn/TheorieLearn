@@ -1,0 +1,22 @@
+{
+    "uuid": "4935bfbc-ab8c-4cb0-8bca-6f4f05c20db9",
+    "title": "Regular Transformation: Delete Fifth",
+    "topic": "Regular Transformation",
+    "tags": [
+        "erobson2",
+        "Regular Transformation"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

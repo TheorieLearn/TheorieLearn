@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Choosing our Algorithm</h3>
+    We've know that a path of length $L$ from $v_i$ to $v_j$ cooresponds to trading one unit of currency $i$ into
+    some amount of currency $j$. With this in mind, what is the suitable graph algorithm to help solve our original
+    problem?
+</pl-question-panel>
+<pl-multiple-choice answers-name="q1" hide-letter-keys="true" fixed-order="true">
+    <pl-answer correct="false" feedback="DFS can't find shortest paths. Why would that be an issue?">Depth
+        First Search</pl-answer>
+    <pl-answer correct="false" feedback="Our graph is weighted. Can BFS still help us on a weighted graph?">Breadth
+        First
+        Search</pl-answer>
+    <pl-answer correct="false"
+        feedback="Our graph may have negative weights. Is Dijsktra's still efficient on such graphs?">Dijkstra's</pl-answer>
+    <pl-answer correct="true">Bellman-Ford</pl-answer>
+</pl-multiple-choice>
+
+<pl-submission-panel>{{{feedback.q1}}}</pl-submission-panel>

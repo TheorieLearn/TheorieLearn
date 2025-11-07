@@ -1,0 +1,20 @@
+<pl-question-panel>
+<markdown>
+For regular language transformation problems, it's important that you fully
+understand the transformation in question. A good first step is to think about
+a very simple language and consider what strings are accepted by the transformed language.
+
+Consider the following language transformation:
+
+$$\mathsf{INSERT01}(L) := \{ x01y \mid xy \in L \}$$
+
+<hr>
+Suppose that $L = \{ 10 \}$. What strings are contained in $\mathsf{INSERT01}(L)$?
+<pl-checkbox answers-name="what-strings-contained" hide-answer-panel=true>
+    <pl-answer correct="true">0110</pl-answer>
+    <pl-answer correct="true">1001</pl-answer>
+    <pl-answer correct="true">1010</pl-answer>
+    <pl-answer>0101</pl-answer>
+    <pl-answer>0011</pl-answer>
+    <pl-answer>1100</pl-answer>
+</pl-checkbox>

@@ -1,0 +1,80 @@
+<pl-question-panel>
+  <p>
+    Consider the following NFA representing the regular expression $(011)^*000$, shown below.
+  </p>
+  <pl-graph>
+    strict digraph {
+  	graph [bb="0,0,322,102",
+  		rankdir=LR
+  	];
+  	node [label="\N"];
+  	a	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="56,25",
+  		shape=circle,
+  		width=0.5];
+  	b	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="136,60",
+  		shape=circle,
+  		width=0.5];
+  	a -> b	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="96,51.5",
+  		pos="e,119.24,52.928 72.784,32.083 83.463,36.874 97.791,43.304 110.01,48.785"];
+  	d	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="216,80",
+  		shape=circle,
+  		width=0.5];
+  	b -> d	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="176,78.5",
+  		pos="e,198.48,75.765 153.54,64.241 163.68,66.84 176.88,70.226 188.45,73.192"];
+  	c	 [color=black,
+  		fontcolor=black,
+  		height=0.5,
+  		pos="216,18",
+  		shape=circle,
+  		width=0.5];
+  	b -> c	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="176,48.5",
+  		pos="e,199.89,26.138 152.41,51.702 163.38,45.797 178.33,37.744 190.87,30.991"];
+  	e	 [color=black,
+  		fontcolor=black,
+  		height=0.61111,
+  		pos="300,80",
+  		shape=doublecircle,
+  		width=0.61111];
+  	d -> e	 [color=black,
+  		fontcolor=black,
+  		label=0,
+  		lp="256,87.5",
+  		pos="e,277.85,80 234.39,80 244.11,80 256.51,80 267.85,80"];
+  	c -> a	 [color=black,
+  		fontcolor=black,
+  		label=1,
+  		lp="136,25.5",
+  		pos="e,74.046,22.516 197.81,17.408 178.41,16.878 145.91,16.404 118,18 106.83,18.639 94.556,19.931 83.969,21.234"];
+  	"~"	 [height=0,
+  		pos="0,25",
+  		shape=point,
+  		width=0];
+  	"~" -> a	 [pos="e,37.942,25 1.1549,25 2.6725,25 15.097,25 27.628,25"];
+  }
+  </pl-graph>
+  <p>
+    For this set of questions, we will be following a student's thought process in designing an
+    NFA for the Kleene star of this regular expression:
+    <center>$((011)^*000)^*$</center>
+    <br/>
+    There are no available points for this question. To continue, simply go to the next question.
+  </p>
+</pl-question-panel>

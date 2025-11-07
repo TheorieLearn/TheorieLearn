@@ -1,0 +1,40 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/maze_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Using G' to Solve the Problem</h3>
+    Next, we need to use our constructed graph $G'$ to solve our problem.
+</pl-question-panel>
+
+Specifically, we need to find the shortest path from
+<pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(s, NS, F)</pl-answer>
+    <pl-answer>(s, NS, E)</pl-answer>
+    <pl-answer>(s, S, F)</pl-answer>
+    <pl-answer>(s, S, E)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(t, S, F) or (t, S, E)</pl-answer>
+    <pl-answer>(t, S, F) or (t, NS, F)</pl-answer>
+    <pl-answer>(t, S, F) or (t, NS, E)</pl-answer>
+    <pl-answer>(t, S, F)</pl-answer>
+    <pl-answer>(t, S, E)</pl-answer>
+    <pl-answer>(t, NS, F)</pl-answer>
+    <pl-answer>(t, NS, E)</pl-answer>
+</pl-multiple-choice>
+in $G'$.
+So, to solve the problem in the most efficient way, we should run
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer>Bellman Ford's Algorithm</pl-answer>
+    <pl-answer correct="true">Breadth-First Search</pl-answer>
+    <pl-answer>Dijkstra's Algorithm</pl-answer>
+    <pl-answer>Kosaraju-Sharir's Algorithm</pl-answer>
+    <pl-answer>Depth-First Search</pl-answer>
+</pl-multiple-choice>
+on $G'$.

@@ -1,0 +1,35 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>Strings in $(0 + 1)^{∗}$
+    in which no prefix of length $2$ or more is a palindrome.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+empty = e
+startsOne = 10*
+startsZero = 01*
+empty + startsOne + startsZero
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=2>
+        The empty string should be in this language.
+    </pl-hint>
+    <pl-hint show-after-submission=4>
+        If the string starts with 1, what must its second symbol be?
+        If the string starts with 0, what must its second symbol be?
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        The final answer should be the union of three regular expressions
+    </pl-hint>
+    <pl-hint show-after-submission=8>
+        If the string starts with 1, then 1 cannot appear in the string again.
+        If the string starts with 0, then 0 cannot appear in the string again.
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,54 @@
+<pl-question-panel>
+Create a DFA in the area below for the following language:
+
+<markdown>
+***<center>The set of all strings in $\{0, 1, 2\}^*$ that do not contain the substring $012$.</center>***
+</markdown>
+
+<hr>
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="dfa" alphabet="012">
+<correct-answer>
+    {
+        "final_states": [
+            "s",
+            "0",
+            "01"
+        ],
+        "initial_state": "s",
+        "input_symbols": [
+            "2",
+            "1",
+            "0"
+        ],
+        "states": [
+            "s",
+            "012",
+            "01",
+            "0"
+        ],
+        "transitions": {
+            "0": {
+                "0": "0",
+                "1": "01",
+                "2": "s"
+            },
+            "01": {
+                "0": "0",
+                "1": "s",
+                "2": "012"
+            },
+            "012": {
+                "0": "012",
+                "1": "012",
+                "2": "012"
+            },
+            "s": {
+                "0": "0",
+                "1": "s",
+                "2": "s"
+            }
+        }
+    }
+</correct-answer>
+</tl-fsm-builder>

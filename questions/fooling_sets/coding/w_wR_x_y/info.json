@@ -1,0 +1,23 @@
+{
+    "uuid": "e9270f3d-b265-4a6d-b4d4-5e0437543f57",
+    "title": "Fooling Set: ww^R xy",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "summer22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

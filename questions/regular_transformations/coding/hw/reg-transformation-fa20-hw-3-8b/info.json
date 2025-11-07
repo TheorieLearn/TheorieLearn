@@ -1,0 +1,23 @@
+{
+    "uuid": "232fdd50-6ebd-45c2-baf5-27d533ceb20a",
+    "title": "Regular Transformation: ThereAndBack(L)",
+    "topic": "Regular Transformation",
+    "tags": [
+        "zhuofan7",
+        "Regular Transformation",
+        "fa22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

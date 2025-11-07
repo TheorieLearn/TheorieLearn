@@ -1,0 +1,44 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+  From the previous question, we have two valid subproblem definitions:
+  <ul>
+    <li>
+      Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $1$ to mile $i$, including the
+      cost of the hotel at mile $i$.
+    </li>
+    <li>
+      Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$, including the
+      cost of the hotel at mile $i$.
+    </li>
+  </ul>
+
+  We will be exploring both of these definitions, beginning with the prefix definition:
+  <br/>
+  <b>Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $1$ to mile $i$, including the
+  cost of the hotel at mile $i$.</b>
+  <hr/>
+
+  What is the set of values for $i$ that would be a valid input to $MinCost(i)$? Fill out the expression for the domain in terms of $n$.
+  <br/>
+  <br/>
+</pl-question-panel>
+<center>
+<pl-symbolic-input variables="n" answers-name="low1" display="inline" size="3" show-help-text="false" size="1" correct-answer="1"></pl-symbolic-input>
+$\leq i \leq$
+<pl-symbolic-input variables="n" answers-name="high1" display="inline" size="3" show-help-text="false" size="1" correct-answer="n"></pl-symbolic-input>
+</center>
+<br/>
+<pl-question-panel>
+Next, what would be the final answer to the question prompt?
+<br/>
+<br/>
+</pl-question-panel>
+<center>
+$MinCost \Big($ <pl-symbolic-input variables="n" show-help-text="false" answers-name="final" display="inline" size="3" correct-answer="n"></pl-symbolic-input> $ \Big)$
+</center>

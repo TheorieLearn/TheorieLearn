@@ -1,0 +1,26 @@
+<pl-question-panel>
+    <b> For the next few questions, you are tasked with developing a graph algorithm to solve a problem related to
+        currency exchange rates.</b>
+    <br>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="is-open">True</pl-variable>
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Determining the Problem Type</h3>
+    On a very high level, we need to determine what kind of graph problem we'd like to solve before we start developing
+    our algorithm.
+    <br>
+    <br>
+    What textbook graph problem does this most closely resemble?
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="q1" hide-letter-keys="true">
+    <pl-answer correct="true">Shortest path</pl-answer>
+    <pl-answer>Reachability</pl-answer>
+    <pl-answer>Cycle detection</pl-answer>
+</pl-multiple-choice>
+
+<pl-submission-panel>{{{feedback.q1}}}</pl-submission-panel>

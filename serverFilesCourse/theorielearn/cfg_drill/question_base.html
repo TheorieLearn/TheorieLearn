@@ -1,0 +1,29 @@
+<pl-question-panel>
+    Consider the context-free grammar with the following rule(s):
+
+    $$\begin{aligned}{{params.latex_rules}}\end{aligned}$$
+
+    Derive ${{params.target_string}}$ from this grammar.
+    <hr>
+    <details class="mb-3">
+      <summary>Example</summary>
+      Consider the grammar with $S \rightarrow 0S1 \space | \space \varepsilon$ as its only rule.
+      Then, the string $0011$ can be derived as follows:
+      <markdown>
+      S
+      0S1
+      00S11
+      0011</markdown>
+    </details>
+</pl-question-panel>
+<pl-file-editor
+  file-name="derivation.txt"
+>
+S
+[add derivation lines here]
+{{params.target_string}}
+</pl-file-editor>
+
+<pl-submission-panel>
+  <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

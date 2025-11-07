@@ -1,0 +1,13 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression that accepts the language $L$ described below over the alphabet $\Sigma=\{0,1\}$:
+
+Strings that contain an odd-length run of $0$s followed immediately by an even-length run of $1$s.
+</markdown>
+<hr>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (e+(0+1)*1)0(00)*11(11)*(0(0+1)*+e)
+</tl-regex-input>

@@ -1,0 +1,38 @@
+<pl-question-panel>
+<markdown>
+Provide a context free grammar that generates the following language:
+
+***<center>{{{params.language_description}}}</center>***
+
+<hr></hr>
+
+##### Instructions
+
+Your code should define the CFG object `cfg`. When writing production rules, make sure to include a space between variables (e.g. `S -> A B | C` instead of `S -> AB | C`). In the second version, NLTK would interpret `AB` as a single variable.
+
+Also, to handle empty strings, you should just not write anything where you would normally write $\epsilon$. For example, $S \rightarrow \epsilon$ should be written as `S ->`, and $A \rightarrow A0 \mid \epsilon$ should be written as `A -> A '0' |`.
+
+Note that the left-hand side of the first production rule should be the start symbol; NLTK doesn't place any special importance on the symbol $S$.
+</markdown>
+
+<pl-file-editor
+    file-name="user_code.py"
+    ace-mode="ace/mode/python">
+from nltk.grammar import CFG
+
+# This starter code generates the language 0*1*
+
+cfg = CFG.fromstring("""
+    S -> A B
+    A -> A '0' |
+    B -> B '1' |
+""")
+
+</pl-file-editor>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

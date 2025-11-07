@@ -1,0 +1,51 @@
+  
+<pl-question-panel>
+<markdown>
+You are given two DFAs.
+
+*(Note that the state names in the following DFAs are arbitrary as they are randomly generated.
+In general, you should **both** provide a brief description of each state in your DFA **and** use descriptive state names.)*
+</markdown>
+  <b>Here is what the first DFA looks like:</b>
+  <br>
+  <pl-graph>
+    {{params.first_dfa}}
+  </pl-graph>
+  
+  <br><br>
+  
+  <b>And here is a description of the second DFA:</b>
+  <br>
+  {{{params.second_dfa}}}
+  
+  <br><br>
+  
+  Let $A_1$ and $A_2$ denote the set of accepting states in the first and second DFAs, respectively.
+  Consider the product construction of these two DFAs, where the accepting states in this product construction is {{{params.set_description}}}.
+  <hr>
+  </pl-question-panel>
+
+  The product construction only accepts strings that are accepted by
+  <pl-multiple-choice answers-name="select_dfa_type" display="dropdown" hide-letter-keys="true">
+    {{#params.select_dfa_type_answers}}
+        <pl-answer correct={{correct}}>{{{description}}}</pl-answer>
+    {{/params.select_dfa_type_answers}}
+  </pl-multiple-choice>
+   of the component DFAs.
+  
+  The start state is: $($ <pl-integer-input answers-name="initial_state_1" size="1" show-help-text="false"></pl-integer-input> $,$ <pl-integer-input answers-name="initial_state_2" size="1" show-help-text="false"></pl-integer-input> $)$
+  
+  <br><br>
+
+  $\delta(({{params.transition_start_state_1}},
+  {{params.transition_start_state_2}}), {{params.transition_symbol}} ) = ($
+  <pl-integer-input answers-name="end_state_1" size="1" show-help-text="false"></pl-integer-input> $,$ <pl-integer-input answers-name="end_state_2" size="1" show-help-text="false"></pl-integer-input> $)$
+  
+  <br><br>
+  
+  Select all accepting states from the following list:
+  <pl-checkbox answers-name="accept_states" weight="1">
+    {{#params.accept_states_answers}}
+        <pl-answer correct={{correct}}>{{{description}}}</pl-answer>
+    {{/params.accept_states_answers}}
+  </pl-checkbox>

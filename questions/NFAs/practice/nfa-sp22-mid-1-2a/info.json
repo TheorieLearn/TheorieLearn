@@ -1,0 +1,13 @@
+{
+  "uuid": "7f7cb797-d4f1-4626-acb1-19100429f2a4",
+  "title": "NFA Construction: (01 + 1)*(0*1 + 1*0)(10 + 0)*",
+  "topic": "NFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "erobson2",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

@@ -1,0 +1,181 @@
+<pl-question-panel>
+<markdown>
+Construct {{^is_nfa}}a DFA{{/is_nfa}} {{#is_nfa}}an NFA{{/is_nfa}} that accepts the following language:
+
+***<center>{{{language_description}}}</center>***
+
+{{{commentary}}}
+
+<hr></hr>
+
+##### Instructions
+
+Your code should define the finite automata `fa` by providing the states, input symbols, transitions, initial state, and accepting states. Note that you can use any type that you want for the states, as long as it's hashable. For example, you can have the states be integers, strings, tuples, etc. You can even mix different types within the same DFA/NFA, for example: `states = {5, (3, "even"), "FAIL"}` is perfectly fine.
+
+
+
+<details class="mb-3">
+<summary>Examples</summary>
+
+{{^is_nfa}}
+Here is an example of how you would define a DFA that accepts all strings in $0^*1^*$:
+
+```python
+from automata.fa.dfa import DFA
+
+states = {'notSeen1', 'seen1', 'fail'}
+input_symbols = {'0', '1'}
+
+transitions = {
+    'notSeen1': {'0': 'notSeen1', '1': 'seen1'},
+    'seen1': {'0': 'fail', '1': 'seen1'},
+    'fail': {'0': 'fail', '1': 'fail'}
+}
+
+initial_state = 'notSeen1'
+final_states = {'notSeen1', 'seen1'}
+
+fa = DFA(states=states, input_symbols=input_symbols, transitions=transitions,
+         initial_state=initial_state, final_states=final_states)
+```
+
+You will likely want to define the DFA programatically instead of writing out all of the states and transitions manually.
+For example, here is a DFA that utilizes product construction to accept all strings that have at least 5 ones
+*or* have a total length congruent to 2 mod 3:
+
+```python
+from automata.fa.dfa import DFA
+
+states = {(i, j) for i in range(6) for j in range(3)}
+# Equivalent to {(i, j) | 0 <= i < 6, 0 <= j < 3}, or {0, 1, 2, 3, 4, 5} x {0, 1, 2}
+
+# i tracks the number of ones seen so far but stops incrementing once we reach 5,
+# because we don't care about any additional ones. j tracks the current length mod 3.
+
+input_symbols = {'0', '1'}
+
+transitions = {q: {} for q in states}
+for (i, j) in states:
+    transitions[(i, j)]['0'] = (i, (j + 1) % 3)
+    transitions[(i, j)]['1'] = (min(i + 1, 5), (j + 1) % 3)
+
+initial_state = (0, 0)
+final_states = {(i, j) for (i, j) in states if i == 5 or j == 2}
+
+fa = DFA(states=states, input_symbols=input_symbols, transitions=transitions,
+         initial_state=initial_state, final_states=final_states)
+```
+{{/is_nfa}}
+
+{{#is_nfa}}
+Here is an example of how you would define an NFA that accepts all strings in $0^*1^*$:
+
+```python
+from automata.fa.nfa import NFA
+
+states = {'q0', 'q1'}
+input_symbols = {'0', '1'}
+
+transitions = {
+    'q0': {'0': {'q0'}, '': {'q1'}},  # the '' denotes an epsilon transition
+    'q1': {'1': {'q1'}}
+}
+
+initial_state = 'q0'
+final_states = {'q1'}
+
+fa = NFA(states=states, input_symbols=input_symbols, transitions=transitions,
+         initial_state=initial_state, final_states=final_states)
+```
+
+You will likely want to define the NFA programatically instead of writing out
+all of the states and transitions manually. For example, here is an NFA that
+accepts all strings that have at least 5 ones *or* have a total length congruent
+to 2 mod 3:
+
+```python
+from automata.fa.nfa import NFA
+
+states = {'start'} \
+            .union({('numOnes', i) for i in range(6)}) \
+            .union({('totalLength', i) for i in range(3)})
+
+input_symbols = {'0', '1'}
+
+transitions = {q: {} for q in states}
+
+# two epsilon transitions from the start state
+transitions['start'][''] = {('numOnes', 0), ('totalLength', 0)}
+
+for i in range(6):
+    transitions[('numOnes', i)]['0'] = {('numOnes', i)}
+    transitions[('numOnes', i)]['1'] = {('numOnes', min(i + 1, 5))}
+
+for i in range(3):
+    for a in input_symbols:
+        transitions[('totalLength', i)][a] = {('totalLength', (i + 1) % 3)}
+
+initial_state = 'start'
+final_states = {('numOnes', 5), ('totalLength', 2)}
+
+fa = NFA(states=states, input_symbols=input_symbols, transitions=transitions,
+         initial_state=initial_state, final_states=final_states)
+```
+
+Note that we aren't using product construction here. Instead, we created a start
+state that has $\epsilon$-transitions into two separate machines. One of the
+machines is responsible for checking "at least 5 ones", and the other one is
+responsible for checking "total length congruent to 2 mod 3". If either of the
+machines accepts the string, then the overall NFA will also accept the string.
+{{/is_nfa}}
+</details>
+
+<details class="mb-3">
+<summary>Debugging Tips</summary>
+
+If you get an error that looks like the one below, that probably means your `transitions` dictionary contains a value which isn't in the set of states you specified for your DFA/NFA.
+```
+automata.base.exceptions.InvalidStateError: end state __ for transition on __ is not valid
+```
+
+{{#is_nfa}}
+For NFA problems, make sure that `transitions[q][a]` is a **set**. If `transitions[q][a]` is a string instead of a set, it will be treated as a set of characters, which will probably result in the error above.
+{{/is_nfa}}
+
+Also, you might find it useful to simulate your DFA/NFA on a specific input and see what state it is in after reading each symbol, which you can do using the code provided below:
+```python
+try:
+    for q in fa.read_input_stepwise(some_arbitrary_string):
+        print(q)
+except:
+    pass
+```
+</details>
+
+</markdown>
+
+<pl-file-editor
+    file-name="user_code.py"
+    ace-mode="ace/mode/python">
+{{^is_nfa}}from automata.fa.dfa import DFA{{/is_nfa}}{{#is_nfa}}from automata.fa.nfa import NFA{{/is_nfa}}
+
+states =
+
+input_symbols = {'0', '1'}
+
+transitions =
+
+initial_state =
+
+final_states =
+
+fa = {{^is_nfa}}DFA{{/is_nfa}}{{#is_nfa}}NFA{{/is_nfa}}(states=states, input_symbols=input_symbols, transitions=transitions,
+         initial_state=initial_state, final_states=final_states)
+</pl-file-editor>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

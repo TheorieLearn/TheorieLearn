@@ -1,0 +1,44 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn_2var.html"
+      ></pl-variable>
+  </pl-template>
+
+Just in case you are curious, below are the complete recursive definitions for $MinMinutes$ and $MaxPoints$. Notice they are quite similar in structure.
+
+<br><br>
+
+
+<h5>Min Minutes</h5>
+
+$$
+MinMinutes(i,j):=
+\begin{cases}
+0 & \text{if } i \le 0\\
+\infty &\text{if } j \ge n \text{ (and }i>0\text{)}\\
+\text{min}\begin{cases}
+          MinMinutes(i, j+1), \\
+          TimeNeeded[j] + MinMinutes(i-Points[i], j+1)
+          \end{cases} & \text{otherwise}
+\end{cases}
+$$
+
+<h5>Max Points</h5>
+
+$$
+MaxPoints(i,j):=
+\begin{cases}
+-\infty & \text{if } i < 0\\
+0 &\text{if } j \ge n \text{ or }i=0\\
+\text{max}\begin{cases}
+          MaxPoints(i, j+1), \\
+          Points[j] + MaxPoints(i-TimeNeeded[i], j+1)
+          \end{cases} & \text{otherwise}
+\end{cases}
+$$
+
+</pl-question-panel>

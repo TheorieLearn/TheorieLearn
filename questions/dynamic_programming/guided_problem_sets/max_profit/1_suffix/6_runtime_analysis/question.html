@@ -1,0 +1,22 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+  </pl-template>
+  <p>
+    Great job! Finally, let's do a runtime analysis on our DP algorithm. Consider array accesses to all be $O(1)$, and give expressions with respect to $n$.
+  </p>
+<br><br>
+</pl-question-panel>
+
+
+There are </pl-symbolic-input><pl-symbolic-input show-help-text="false" variables="n" correct-answer="n" answers-name="ans" display="inline" size="1"></pl-symbolic-input> subproblems, and
+each subproblem takes
+<pl-big-o-input answers-name="ans2" variable="n" correct-answer="1" display='inline' size='1'></pl-big-o-input>
+time to evaluate.
+
+The overall runtime is then
+<pl-big-o-input answers-name="ans3" variable="n" correct-answer="n" display='inline' size='1'></pl-big-o-input>.

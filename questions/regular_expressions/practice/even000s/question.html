@@ -1,0 +1,34 @@
+<pl-question-panel>
+<markdown>
+Provide a regular expression for the following language:
+
+***<center>All binary strings in which the substring $000$ appears an even
+  number of times.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+  oddRun = (000(00)*11*)
+  evenRun = ((0+00(00)*)11*)
+  1* evenRun*((oddRun) evenRun* (oddRun) evenRun*)*(e + 1* + 0 + 00(00)* + (oddRun) evenRun*000(00)*)
+</tl-regex-input>
+
+<pl-hidden-hints>
+  <pl-hint show-after-submission=2>
+    For what values of $n$ does the substring $000$ appear in $0^n$ an odd
+    number of times?
+  </pl-hint>
+  <pl-hint show-after-submission=4>
+    Consider the maximal blocks of 0s that appear in a string. For example,
+    in $10001101110000100000$, the maximal blocks of $0$s are
+    $$1(000)11(0)111(0000)1(00000).$$
+    Then, consider the number of occurrences of $000$ contributed by each block.
+  </pl-hint>
+  <pl-hint show-after-submission=6>
+    Some of these blocks contribute an odd number of occurrences of $000$.
+    We want those types of blocks to appear an even number of times.
+  </pl-hint>
+</pl-hidden-hints>

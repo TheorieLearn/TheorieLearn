@@ -1,0 +1,89 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+        ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+Recall that:
+$$isInA(i) \text{ is true if and only if } s[1 .. i] \in A.$$
+
+There are two cases that we need to consider.
+<br>
+<b>Case 1 $(i = 0)$:</b> $s[1..i]$ is
+<pl-multiple-choice answers-name="empty-string-membership" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">in</pl-answer>
+    <pl-answer correct="false">not in</pl-answer>
+</pl-multiple-choice> $(L_1L_2)^*$, so $isInA(0)$ =
+<pl-multiple-choice answers-name="isInA-empty-string" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">True</pl-answer>
+    <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>.
+<br>
+<b>Case 2 $(i \geq 1)$:</b>
+For this case, in order for $s[1..i]$ to be in  $(L_1L_2)^*$,
+we must be able to extract a suffix from $s[1..i]$ that is in $L_1L_2$.
+<br><br>
+<i>The choice that we are considering is what suffix to extract.</i>
+Let $j$ be the starting index of the suffix. The possible values of $j$ are integers that fall into the interval $[$
+<pl-symbolic-input answers-name="split-start" show-help-text="false" size="5" variables="i,n" correct-answer="1"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="split-end" show-help-text="false" size="5" variables="i,n" correct-answer="i"></pl-symbolic-input>
+$]$
+
+<br><br>
+<p>
+    <i>For each case, we need an expression that determines the "value" of that case.</i>
+    For this specific problem, we need a boolean expression that determines whether extracting the suffix at $j$ is valid or not.
+</p>
+<p>
+    It will be useful to define a helper method, $isInL_1L_2()$, that will be discussed in the next question.
+    <b>$isInL_1L_2()$ takes in a string and returns True if and only if the string is in $L_1L_2$.</b>
+</p>
+Formally speaking, we can conclude that $j$ is a valid index if and only if
+<br>
+$isInA\Big($
+<pl-symbolic-input answers-name="prefix-end-index" variables="j,i,n" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+$\Big)$
+
+<pl-multiple-choice answers-name="conjunction" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">and</pl-answer>
+    <pl-answer correct="false">or</pl-answer>
+</pl-multiple-choice>
+<br>
+$isInL_1L_2\Big(s[$
+<pl-symbolic-input answers-name="suffix-start-index" variables="j,i,n" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+$.. i]\Big)$.
+
+<hr>
+
+So, to evaluate $isInA(i)$, we can simply enumerate over the possibilites for $j$.
+
+$isInA(i)$ is true if and only if <pl-multiple-choice answers-name="quantifier" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">for all indices</pl-answer>
+    <pl-answer correct="true">there exists an index</pl-answer>
+    <pl-answer correct="false">there exists exactly one index</pl-answer>
+</pl-multiple-choice>
+$j$ where
+$j \in [$<pl-symbolic-input answers-name="earliest-suffix-index" variables="i,n" correct-answer="1" show-help-text="false" size="5"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="latest-suffix-index" variables="i,n" correct-answer="i" show-help-text="false" size="5"></pl-symbolic-input>
+$]$
+such that
+<br>
+$isInA\Big($
+<pl-symbolic-input answers-name="prefix-end-index-2" variables="j,i,n" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+$\Big)$
+
+<pl-multiple-choice answers-name="conjunction-2" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">and</pl-answer>
+    <pl-answer correct="false">or</pl-answer>
+</pl-multiple-choice>
+
+$isInL_1L_2\Big(s[$
+<pl-symbolic-input answers-name="suffix-start-index-2" variables="i,j,n" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+$.. i]\Big)$.

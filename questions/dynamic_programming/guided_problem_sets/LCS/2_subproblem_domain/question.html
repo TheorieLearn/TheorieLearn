@@ -1,0 +1,37 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/longest_common_subsequence.html"
+      ></pl-variable>
+    </pl-template>
+    <p>
+      We will use the following subproblem definition for the rest of the question:
+    </p>
+    <center><b>Define $LCS(i, j)$ to be the length of the longest common subsequence between $A[1..i]$ and $B[1..j]$.</b></center>
+    <hr/>
+
+    What is the set of values for $i$ and $j$ that would be a valid input to $LCS(i, j)$? Fill out the expression in terms of $n$ and $m$.
+    <br/>
+    <br/>
+  </pl-question-panel>
+  <center>
+  <pl-symbolic-input variables="n,m" answers-name="low1" display="inline" size="3" show-help-text="false" correct-answer="0" placeholder=""></pl-symbolic-input>
+  $\leq i \leq$
+  <pl-symbolic-input variables="n,m" answers-name="high1" display="inline" size="3" show-help-text="false" correct-answer="n" placeholder=""></pl-symbolic-input>
+    <br/>
+  <pl-symbolic-input variables="n,m" answers-name="low2" display="inline" size="3" show-help-text="false" correct-answer="0" placeholder=""></pl-symbolic-input>
+  $\leq j \leq$
+  <pl-symbolic-input variables="n,m" answers-name="high2" display="inline" size="3" show-help-text="false" correct-answer="m" placeholder=""></pl-symbolic-input>
+  </center>
+  <br/>
+  <pl-question-panel>
+  Next, what would be the final answer to the question prompt?
+  <br/>
+  <br/>
+  </pl-question-panel>
+  <center>
+  $LCS \Big($ <pl-symbolic-input variables="n,m" show-help-text="false" answers-name="final" display="inline" size="3" correct-answer="n" placeholder=""></pl-symbolic-input>,
+  <pl-symbolic-input variables="n,m" show-help-text="false" answers-name="final2" display="inline" size="3" correct-answer="m" placeholder=""></pl-symbolic-input> $ \Big)$
+  </center>

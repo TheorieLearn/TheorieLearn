@@ -1,0 +1,2 @@
+class DPCodingException(Exception):
+    pass

@@ -1,0 +1,19 @@
+{
+    "uuid": "74659f51-439d-4dfd-a4c9-f8dad261967c",
+    "title": "Regular Transformation: Reverse",
+    "topic": "Regular Transformation",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

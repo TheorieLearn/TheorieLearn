@@ -1,0 +1,88 @@
+<pl-question-panel>
+Construct an NFA for the language described by the following regular expression:
+
+$$(1(010)^* (11)^* + 010)^*$$
+
+<hr>
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa">
+    <correct-answer>
+        {
+            "final_states": [
+                "s"
+            ],
+            "initial_state": "s",
+            "input_symbols": [
+                "0",
+                "1"
+            ],
+            "states": [
+                "a",
+                "s",
+                "c",
+                "f",
+                "g",
+                "b",
+                "d",
+                "h",
+                "e"
+            ],
+            "transitions": {
+                "a": {
+                    "": [
+                        "d"
+                    ],
+                    "0": [
+                        "b"
+                    ]
+                },
+                "b": {
+                    "1": [
+                        "c"
+                    ]
+                },
+                "c": {
+                    "0": [
+                        "a"
+                    ]
+                },
+                "d": {
+                    "": [
+                        "f"
+                    ],
+                    "1": [
+                        "e"
+                    ]
+                },
+                "e": {
+                    "1": [
+                        "d"
+                    ]
+                },
+                "f": {
+                    "": [
+                        "s"
+                    ]
+                },
+                "g": {
+                    "1": [
+                        "h"
+                    ]
+                },
+                "h": {
+                    "0": [
+                        "f"
+                    ]
+                },
+                "s": {
+                    "0": [
+                        "g"
+                    ],
+                    "1": [
+                        "a"
+                    ]
+                }
+            }
+          }
+    </correct-answer>
+</tl-fsm-builder>

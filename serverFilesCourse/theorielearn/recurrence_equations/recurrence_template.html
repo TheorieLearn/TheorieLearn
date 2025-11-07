@@ -1,0 +1,22 @@
+<div class="card my-2">
+    <div class="card-header">
+        Random Code Recurrence Test
+        <pl-code>
+def {{funcname}}(n):
+{{code}}
+        </pl-code>
+    </div>
+    <div class="card-body">
+        <pl-question-panel>
+            <p>
+                How times is {{externfunc}} called by the above recurrence? <br>
+
+                Enter your answer in terms of T() and O(). <br>
+                There should be exactly one big O term in your answer, and it should be the most simplified state. <br>
+                There should be at least one (but possibly more) calls to the function T in your answer. <br>
+                Enter the first (head) level of the recurrence relation - DO NOT attempt to "unroll" the recurrence relation. <br>
+            </p>
+        </pl-question-panel>
+        <pl-symbolic-input answers-name="custom_function_2" variables="n" custom-functions="O,T" label="$T(n)=$"></pl-symbolic-input>
+    </div>
+</div>

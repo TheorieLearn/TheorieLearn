@@ -1,0 +1,24 @@
+<pl-question-panel>
+<markdown>
+Now that we've figured out our state set, we can specify the other components of our DFA. You should be able to extract these directly from the pseudocode that we wrote a couple of questions ago. In particular:
+- The start state is based on what values the variables are initialized to at the start of the program.
+- The transition function should encapsulate how the variables are updated in the body of the for-loop.
+- The accept states are based on the logic for deciding whether to return True at the end of the program.
+
+The placeholder text in each input box shows example formatting for how you should submit your answer.
+
+$s = $ <pl-string-input answers-name="start_state" show-help-text=false size=20 placeholder="(4, 3)"></pl-string-input>
+
+$\delta((num0s, num01s), 0) = $ <pl-string-input answers-name="transition0" show-help-text=false placeholder="((num0s + num01s) mod 7, num01s + 1)"></pl-string-input>
+
+$\delta((num0s, num01s), 1) = $ <pl-string-input answers-name="transition1" show-help-text=false placeholder="((num0s + num01s) mod 7, num01s + 1)"></pl-string-input>
+
+$A = \Big\{(num0s, num01s) \in Q \;\Big|$
+<pl-string-input answers-name="accept_condition" show-help-text=false size=20 placeholder="num0s + num01s = 6"></pl-string-input>
+$\Big\}$
+</markdown>
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+</pl-submission-panel>

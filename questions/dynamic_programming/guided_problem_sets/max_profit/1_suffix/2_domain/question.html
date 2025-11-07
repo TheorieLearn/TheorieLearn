@@ -1,0 +1,33 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+  </pl-template>
+  <p>
+    Recall the subproblem definition that can be used to solve Burr's problem:
+  </p>
+  <center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $i$ through $n$, inclusive.</b></center>
+  <hr/>
+
+  What is the set of values for $i$ that would be a valid input to $MaxProfit(i)$? Fill out the expression for the domain in terms of $n$.
+  <br/>
+  <br/>
+</pl-question-panel>
+<center>
+<pl-symbolic-input variables="n" answers-name="low1" display="inline" size="3" show-help-text="false" correct-answer="1"></pl-symbolic-input>
+$\leq i \leq$
+<pl-symbolic-input variables="n" answers-name="high1" display="inline" size="3" show-help-text="false" correct-answer="n+1"></pl-symbolic-input>
+<pl-submission-panel><font color="red"><em><br>{{feedback.high1}}</em></font><br></pl-submission-panel>
+</center>
+<br/>
+<pl-question-panel>
+Next, what would be the final answer to the question prompt?
+<br/>
+<br/>
+</pl-question-panel>
+<center>
+$MaxProfit \Big($ <pl-symbolic-input variables="n" show-help-text="false" answers-name="final" display="inline" size="3" correct-answer="1"></pl-symbolic-input> $ \Big)$
+</center>

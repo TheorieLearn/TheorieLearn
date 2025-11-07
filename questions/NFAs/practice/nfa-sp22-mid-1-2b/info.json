@@ -1,0 +1,14 @@
+{
+  "uuid": "95fb7b47-38c1-4e6c-9f82-9acca877d278",
+  "title": "NFA Construction: Begins with 0101 or doesn't end with 0101",
+  "topic": "NFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "erobson2",
+    "ericjin2",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

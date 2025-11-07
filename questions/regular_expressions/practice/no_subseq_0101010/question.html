@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings in $\Sigma^*$ that do not contain the subsequence $0101010$.</center>***
+<hr>
+    </markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    1*0*1*0*1*0*1*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Try to think of a given string as individual blocks of $0$'s and $1$'s.
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        Think about how many runs of zeros in the string could be.
+    </pl-hint>
+</pl-hidden-hints>

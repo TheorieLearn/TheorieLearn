@@ -1,0 +1,41 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings containing at least two 0s and at least one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+Before starting to construct our expression, we should begin with a key observation about this language:
+</markdown>
+</pl-question-panel>
+
+A string is in this language if and only if it contains a
+<pl-multiple-choice answers-name="p1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">subsequence</pl-answer>
+  <pl-answer>substring</pl-answer>
+</pl-multiple-choice>
+with
+<pl-multiple-choice answers-name="p2" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">exactly</pl-answer>
+  <pl-answer>greater than</pl-answer>
+  <pl-answer>less than</pl-answer>
+</pl-multiple-choice>
+two 0s and
+<pl-multiple-choice answers-name="p3" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">exactly</pl-answer>
+  <pl-answer>greater than</pl-answer>
+  <pl-answer>less than</pl-answer>
+</pl-multiple-choice>
+one 1.
+
+<pl-question-panel>
+<hr>
+<markdown>
+Note: A *subsequence* is sequence that can be derived from another sequence by deleting some elements without changing the order of the remaining elements. This is different from a *substring*, which is a **contiguous** subsequence. For example, 111 is a subsequence of 10101, but it is not a substring. 010 is both a subsequence and substring of 10101.
+</markdown>
+</pl-question-panel>
+
+<pl-submission-panel>
+  <p><em>{{feedback.feedback}}</em></p>
+</pl-submission-panel>

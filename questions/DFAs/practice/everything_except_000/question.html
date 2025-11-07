@@ -1,0 +1,56 @@
+<pl-question-panel>
+<markdown>
+Create a DFA in the area below for the following language:
+
+***<center>Every binary string except $000$.</center>***
+
+</markdown>
+<hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="dfa">
+  <correct-answer>
+  {
+      "states":[
+          "acc",
+          "2",
+          "3",
+          "1",
+          "0"
+      ],
+      "input_symbols":[
+          "0",
+          "1"
+      ],
+      "transitions":{
+          "0":{
+              "0":"1",
+              "1":"acc"
+          },
+          "1":{
+              "0":"2",
+              "1":"acc"
+          },
+          "2":{
+              "0":"3",
+              "1":"acc"
+          },
+          "3":{
+              "0":"acc",
+              "1":"acc"
+          },
+          "acc":{
+              "0":"acc",
+              "1":"acc"
+          }
+      },
+      "initial_state":"0",
+      "final_states":[
+          "acc",
+          "2",
+          "0",
+          "1"
+      ]
+  }
+  </correct-answer>
+</tl-fsm-builder>

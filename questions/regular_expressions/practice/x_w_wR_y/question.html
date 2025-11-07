@@ -1,0 +1,29 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>$\{ x w w^R y \mid w, x, y \in \Sigma^+ \}$</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+anyNotEmpty = (0+1)(0+1)*
+middle = 00 + 11
+anyNotEmpty (middle) anyNotEmpty
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=0>
+        Lets work backwards, say you have some string from the language, say $z$. So $z = x w w^R y$
+        for nonempty $x, w, y$. Since $w$ is not empty we know $w = pa$ for some character $a$ and
+        string $p$. So $w^R = a p^R$. Therefore $z = x p a a p^R y$, which contains the substring $aa$.
+        Moreover, $xp$ and $p^R y$ each have at least one symbol and can be anything. Find a way to
+        put any value $aa$ could be between any combination of characters and you have a string in
+        the language.
+    </pl-hint>
+</pl-hidden-hints>

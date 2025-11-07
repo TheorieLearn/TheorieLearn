@@ -1,0 +1,26 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/maze_graph.html"
+      ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Runtime Analysis</h3>
+    To finish, we need to analyze the runtime of our algorithm. Use $n$, the number of rows or columns in the height map, as the only symbol for the following inputs.
+    <br>
+    <br>
+</pl-question-panel>
+
+$G'$ has
+<pl-symbolic-input answers-name="q1" variables="n" correct-answer="2*n**2" size="20"></pl-symbolic-input>
+edges.
+<br>
+$G'$ has
+<pl-symbolic-input answers-name="q2" variables="n" correct-answer="9*n**2" size="20"></pl-symbolic-input>
+vertices.
+<br>
+In terms of $n$, the total runtime to construct $G'$ and run an algorithm that
+solves the question is
+<pl-big-o-input answers-name="q3" variable="n" correct-answer="n**2" size="20"></pl-big-o-input>

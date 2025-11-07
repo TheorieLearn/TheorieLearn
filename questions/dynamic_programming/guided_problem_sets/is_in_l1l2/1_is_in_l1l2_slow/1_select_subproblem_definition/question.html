@@ -1,0 +1,67 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<markdown>
+When approaching a dynamic programming question, the _first and foremost_ task is to create an English definition
+for your recursive subproblem.
+
+There are many distinct but precise definitions you could use to define a subproblem. Label each of the sample definitions with the number corresponding to the reasoning
+that most accurately describes the effectiveness of the definition.
+For example, if the definition is precise, you would put "5" in the corresponding "Analysis" input box. You may repeat choices.
+</markdown>
+<hr/>
+<ol>
+<!--1--><li>The subproblem definition presents a scenario but does not clearly state what quantity it outputs.</li>
+<!--2--><li>The subproblem definition does not define a function with parameters, which we need to have in order to use in the recursive formula.</li>
+<!--3--><li>The function does not take in integers as parameters, which prevents us from memoizing the subproblems into a finite-sized array/data structure.</li>
+<!--4--><li>The subproblem definition outputs a quantity that is ineffective in finding our solution.</li>
+<!--5--><li>This definition is precise, and the final answer can be determined using our subproblems.</li>
+</ol>
+<hr/>
+</pl-question-panel>
+
+<ol type="a">
+    <li>
+      <b>Definition: </b>$isInA(i)$ is true if and only if $s[i .. n] \in A$.
+      <br/>
+      <b>Analysis: </b><pl-integer-input answers-name="ans1" show-help-text="false" display="inline" size="1" correct-answer="5"></pl-integer-input>
+    </li>
+    <br/>
+    <li>
+      <b>Definition: </b>$isInA(s[i .. n])$ is true if and only if $s[i .. n] \in A$.
+      <br/>
+      <b>Analysis: </b> <pl-integer-input answers-name="ans2" show-help-text="false" display="inline" size="1" correct-answer="3"></pl-integer-input>
+    </li>
+    <br/>
+    <li>
+        <b>Definition: </b>$isInA(i)$ is the answer for $i$.
+        <br/>
+        <b>Analysis: </b> <pl-integer-input answers-name="ans3" show-help-text="false" display="inline" size="1" correct-answer="1"></pl-integer-input>
+    </li>
+    <br/>
+    <li>
+        <b>Definition: </b>$isInA(i)$ is the value at index $i$ of the memoization table.
+        <br/>
+        <b>Analysis: </b> <pl-integer-input answers-name="ans4" show-help-text="false" display="inline" size="1" correct-answer="1"></pl-integer-input>
+    </li>
+    <br/>
+    <li>
+        <b>Definition: </b>Our subproblem evaluates to true if the prefix is in $A$, false otherwise.
+        <br/>
+        <b>Analysis: </b> <pl-integer-input answers-name="ans5" show-help-text="false" display="inline" size="1" correct-answer="2"></pl-integer-input>
+    </li>
+    <br/>
+    <li>
+        <b>Definition: </b>$isInA(i)$ is true if and only if $s[1 .. i] \in A$.
+        <br/>
+        <b>Analysis: </b><pl-integer-input answers-name="ans6" show-help-text="false" display="inline" size="1" correct-answer="5"></pl-integer-input>
+    </li>
+</ol>

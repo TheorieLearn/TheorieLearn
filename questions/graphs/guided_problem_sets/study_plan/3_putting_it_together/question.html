@@ -1,0 +1,49 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/study_plan.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+
+  We've seen that a topological sort gives us a valid order to study topics in. But we often end up with
+  unnecessary topics in our study plan! Given the time-sensitivity of this task, we need a way to ensure
+  we are only studying topics that are <em>absolutely necessary</em> to study before topic $t$. Complete the
+  sentence below to construct the strongest claim possible about a valid study plan.
+
+
+</pl-question-panel>
+
+<br><br>
+
+<pl-scaffolded-writing name="cs374" type="graph">
+  <cfg-name>
+    STRUCTURE2 -> STRUCTURE
+  </cfg-name>
+
+  <cfg-transition>
+    START -> "A topic $s$ must be studied" WHEN_RELATIVE_TO "topic $t$ if and only if it is" PROPERTY PLACE "in" STRUCTURE
+
+    WHEN_RELATIVE_TO -> "before" | "after"
+    PROPERTY -> "reachable from" | "listed before" | "listed after" | "in the same strong component as" | "in a cycle with"
+    PLACE -> "t" | "a source vertex" | "a sink vertex"
+    STRUCTURE -> "G" | "the reversal of" STRUCTURE2 | "a topological sort of " STRUCTURE2
+    STRUCTURE2 -> "G" | "a topological sort of G" | "the reversal of G"
+
+
+
+  </cfg-transition>
+
+</pl-scaffolded-writing>
+
+<pl-submission-panel><font color="red"><em><br>{{feedback.flipped}}</em></font><br></pl-submission-panel>
+
+<!--
+  This approach will always work because the student can study a topic only if they have satisfied all prereqs
+  This approach will not always work because the student can study a topic without having satisfied all prereqs
+  This approach will not always work because the student cannot study a topic unless they have satisfied any
+  This approach will never work because the student cannot study a topic if they have satisfied all prereqs
+ -->

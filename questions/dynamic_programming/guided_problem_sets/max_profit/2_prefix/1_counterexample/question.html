@@ -1,0 +1,103 @@
+<pl-question-panel>
+
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+</pl-template>
+<markdown>
+You and your groupmate Tom Oko are casually talking about the Burr DP problem you just learned in your PrairieLearn assignment.
+Tom says, "I'm not sure why they specifically presented the suffix definition of the subproblem; there's no reason we can't use the prefix",
+and rewrites the subproblem definition to the following:
+<br>
+<center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $1$ through $i$, inclusive. The final answer is $MaxProfit(n)$.</b></center>
+<br>
+You look at this definition and reply, "I think you're right, this does seem like a valid subproblem definition".
+Excited by the newfound support for her idea, Tom shows you her algorithm:
+</markdown>
+    <div style="margin: 30px; padding: 20px; border: 1px solid red;">
+        <p>First we define $j$ to be the largest index that satisfies the expression $j + skip[j] < i$.
+            If no such index exists, $j = 0$. </p>
+        To compute $MaxProfit(i)$, either:
+        <ol>
+            <li>Burr doesn’t take trial $i$, which can be expressed by $MaxProfit(i - 1)$.</li>
+            <li>Burr takes trial $i$, which can be expressed by $profit[i] + MaxProfit(j)$.
+                In other words, [profit gained at trial $i$] + [max profit from trials $i$ through $j$]</li>
+        </ol>
+        <b>Recursive Formula:</b>
+        $$
+        MaxProfit(i):=
+        \begin{cases}
+        0  & \text{if } i = 0\\
+        \text{max}\{MaxProfit(i - 1), profit[i] + MaxProfit(j)\} & \text{otherwise} \\
+        \end{cases}
+        $$
+        <b>Evaluation Order: </b> Evaluate $MaxProfit(i)$ from $i = 1$ up to $n$.
+    </div>
+
+<style>
+table.format th {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 10px;
+    text-align: center;
+}
+
+table.format td {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 8px;
+    text-align: center;
+}
+
+table.format td input {
+    text-align: center;
+}
+
+table.format td span.form-inline {
+    margin-left: 0 !important;
+}
+
+</style>
+
+<markdown>
+You read and reread her algorithm, and it seems to make sense. <em>Or does it?</em>
+
+Try stepping through Tom's recursive formula and seeing what values we get for $MaxProfit(i)$ with the following values for $profit$ and $skip$.
+The table has been provided for you. The very left column is the expected values of $MaxProfit(i)$, which should be determined solely by the subproblem definition.
+The last two column values should be derived from Tom's recursive formula above.
+
+- profit = [5, 90, 2, 1, 100, 20]
+- skip &nbsp; = [1, &nbsp; 3, 1, 3, &nbsp; &nbsp; 2, &nbsp; 4]
+
+</markdown>
+</pl-question-panel>
+
+<table class='format' style='border: 2px solid black; width: 100%;'>
+    <tr>
+        <th>$i$</th>
+        <th>$MaxProfit(i)$ according to <i>Subproblem Definition</i></th>
+        <th></th>
+        <th>$j$ according to <i>Recursive Formula</i></th>
+        <th>$MaxProfit(i)$ according to <i>Recursive Formula</i></th>
+
+    </tr>
+
+    {{#params.row_data}}
+    <tr>
+        <td>${{i}}$</td>
+        <td><pl-integer-input answers-name='maxprofit_{{i}}_subdef' show-help-text=false size=5></pl-integer-input></td>
+        <td></td>
+        <td><pl-integer-input answers-name='j_{{i}}_algorithm' show-help-text=false size=5></pl-integer-input></td>
+        <td><pl-integer-input answers-name='maxprofit_{{i}}_algorithm' show-help-text=false size=5></pl-integer-input></td>
+    </tr>
+    {{/params.row_data}}
+</table>
+
+<br>
+
+
+<p>What is the first $i$ where the algorithm doesn’t compute $MaxProfit(i)$ correctly?
+<pl-integer-input answers-name='incorrect_i' show-help-text=false size=2 correct-answer=5></pl-integer-input>
+</p>
+<p>So now you know the algorithm is incorrect because you found a counterexample, but before alerting Tom, you want to understand the reason why this went wrong.</p>

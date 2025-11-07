@@ -1,0 +1,63 @@
+<pl-question-panel>
+After completing the reduction, you mention what you were able to prove to your
+friend, Tom Oko. She then exclaims
+<br>
+<br>
+<center>
+  <b>"Wait, you wrote a dynamic programming algorithm for Momo's World Tour? Then
+  that means you have an efficient algorithm for an NP-hard problem, so you've
+  shown that $\mathsf{P} = \mathsf{NP}$!!"</b>
+</center>
+<br>
+Tom then ran off to tell the professor about this, sure that you would be given
+a Turing Award and
+<a href="https://en.wikipedia.org/wiki/Millennium_Prize_Problems">a million dollars</a>
+for all your hard work. You were skeptical of what Tom said,
+since the dynamic program you wrote didn't seem as efficient as the others you'd seen in
+class.
+<br>
+<br>
+To disprove Tom's statement, let's analyze the runtime of our DP algorithm.
+Assume all array accesses take constant time, and give expressions with respect to $n$, the number of cities.
+We've reproduced the recursive definition below:
+<br>
+$$
+  \mathsf{WorldTour}(S,i)
+  =
+  \begin{cases}
+    d(i,0) &\text{if } S = \varnothing\\
+    \min_{t \in S} d(i,t) + \mathsf{WorldTour}(S-t,t) &\text{otherwise}
+  \end{cases}
+$$
+<br>
+<em>Note: Multiplication must be expressed as </em><code>a*b</code><em> and
+  exponentiation must be expressed as </em><code>a^b</code><em> in the
+  symbolic input. Also, recall that your answers must omit constant factors,
+  and so in particular, $O(2^{n-c})$ for any constant $c$ must be simplified.</em>
+<br>
+<br>
+</pl-question-panel>
+
+There are 
+  <pl-big-o-input answers-name="ans" variable="n" correct-answer="n * 2**n" display='inline' size='7'></pl-big-o-input>
+subproblems, and each subproblem takes 
+  <pl-big-o-input answers-name="ans2" variable="n" correct-answer="n" display='inline' size='7'></pl-big-o-input>
+time to evaluate. The overall runtime is then
+  <pl-big-o-input answers-name="ans3" variable="n" correct-answer="n**2 * 2**n" display='inline' size='7'></pl-big-o-input>.
+
+<br>
+<br>
+
+Thus, our dynamic program is a(n)
+<pl-multiple-choice answers-name='reduction1' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>exponential</pl-answer>
+    <pl-answer correct=false>polynomial</pl-answer>
+</pl-multiple-choice>
+time algorithm for $\mathsf{WorldTour}$, which
+<pl-multiple-choice answers-name='reduction2' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>does not</pl-answer>
+    <pl-answer correct=false>does</pl-answer>
+</pl-multiple-choice>
+imply that $\mathsf{P} = \mathsf{NP}$. However, this
+algorithm is still <b><i>much, much</i></b> more efficient than the
+naive $O(n!)$ algorithm we discussed earlier!

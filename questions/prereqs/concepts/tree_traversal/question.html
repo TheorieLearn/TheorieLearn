@@ -1,0 +1,87 @@
+<!-- Intro, what is root -->
+<pl-question-panel>
+<markdown>
+{{params.who}} has generated a random 21-node full binary tree, in which each node is labeled with a consonant in the English alphabet (Y is considered a consonant for this tree). Unfortunately, the only record that {{params.who}} wrote down for this tree were the following traversals of the nodes:
+
+{{#params.inorder}}
+<div>
+  Inorder: <tt style="color:#f00;font-weight:bold;">{{{params.inorder}}}</tt>
+</div>
+<br>
+{{/params.inorder}}
+
+{{#params.preorder}}
+<div>
+  Preorder: <tt style="color:#f00;font-weight:bold;">{{{params.preorder}}}</tt>
+</div>
+<br>
+{{/params.preorder}}
+
+{{#params.postorder}}
+<div>
+  Postorder: <tt style="color:#f00;font-weight:bold;">{{{params.postorder}}}</tt>
+</div>
+<br>
+{{/params.postorder}}
+
+
+The goal of this problem is to figure out the **{{{params.answer}}}** traversal of {{params.who}}'s tree, given the other two traversals above.
+
+*(Your answers to the following questions should be strings of capital letters, spaces will be ignored.)*
+
+<hr>
+</markdown>
+</pl-question-panel>
+
+What is the root of {{params.who}}'s tree?
+(Where does the root appear in the {{{params.second}}} traversal?)
+<br>
+<br>
+<pl-string-input answers-name="root" label="Root = " size="4" remove-spaces="true"></pl-string-input>
+
+<!-- Inorder: Left Subtree, Right Subtree -->
+<br>
+<br>
+<markdown>
+What is the {{{params.first}}} traversal of the **left** subtree of the root? (This should be a **{{{params.firstl}}}** of the {{{params.first}}} traversal of the entire tree.)
+</markdown>
+<pl-string-input answers-name="first-left" remove-spaces="true"></pl-string-input>
+
+<br>
+<br>
+<markdown>
+What is the {{{params.first}}} traversal of the **right** subtree of the root? (This should be a **{{{params.firstr}}}** of the {{{params.first}}} traversal of the entire tree.)
+</markdown>
+<pl-string-input answers-name="first-right" remove-spaces="true"></pl-string-input>
+
+<!-- Whatever's Left: Left Subtree, Right Subtree -->
+<br>
+<br>
+<markdown>
+What is the {{{params.second}}} traversal of the **left** subtree of the root?
+</markdown>
+<pl-string-input answers-name="second-left" remove-spaces="true"></pl-string-input>
+
+<br>
+<br>
+<markdown>
+What is the {{{params.second}}} traversal of the **right** subtree of the root?
+</markdown>
+<pl-string-input answers-name="second-right" remove-spaces="true"></pl-string-input>
+
+
+<!-- Full Answer -->
+<br>
+<br>
+<pl-question-panel>
+  <markdown>
+  Now we have two recursive subproblems:
+  * Given {{params.first}} and {{{params.second}}} traversals of the left subtree, what is its {{{params.answer}}} traversal?
+  * Given {{params.first}} and {{{params.second}}} traversals of the right subtree, what is its {{{params.answer}}} traversal?
+  </markdown>
+</pl-question-panel>
+<markdown>
+Combining the answers to these recursive subproblems with the root should give you the answer to the final question:
+**What is the {{{params.answer}}} traversal of {{params.who}}'s tree?**
+</markdown>
+<pl-string-input answers-name="ans" remove-spaces="true"></pl-string-input>

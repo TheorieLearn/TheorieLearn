@@ -1,0 +1,57 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="is-open">True</pl-variable>
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/hamcycle_to_hampath.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+
+In order to do this, we need to provide a polynomial-time reduction from
+<pl-multiple-choice answers-name="dropdown1" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">HAM-CYCLE</pl-answer>
+    <pl-answer>HAM-PATH</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice answers-name="dropdown2" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer>HAM-CYCLE</pl-answer>
+    <pl-answer correct="true">HAM-PATH</pl-answer>
+</pl-multiple-choice>
+.
+<br>
+
+This reduction would demonstrate that if we were able to solve
+<pl-multiple-choice answers-name="dropdown3" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer>HAM-CYCLE</pl-answer>
+    <pl-answer correct="true">HAM-PATH</pl-answer>
+</pl-multiple-choice>
+in polynomial time, then we'd also be able to solve
+<pl-multiple-choice answers-name="dropdown4" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">HAM-CYCLE</pl-answer>
+    <pl-answer>HAM-PATH</pl-answer>
+</pl-multiple-choice>
+in polynomial time.
+<br><br>
+
+To define this reduction, we need to design an algorithm that takes as input:
+<pl-multiple-choice answers-name="input">
+    <pl-answer correct="true">an arbitrary graph $G$</pl-answer>
+    <pl-answer>a graph $G$ that has a Hamiltonian cycle (but we don't know what the Hamiltonian cycle is)</pl-answer>
+    <pl-answer>a graph $G$ and a Hamiltonian cycle in $G$</pl-answer>
+    <pl-answer>a graph $G$ that has a Hamiltonian path (but we don't know what the Hamiltonian path is)</pl-answer>
+    <pl-answer>a graph $G$ and a Hamiltonian path in $G$</pl-answer>
+</pl-multiple-choice>
+<br>
+
+and outputs:
+<pl-multiple-choice answers-name="output">
+    <pl-answer correct="true">a new graph $G'$</pl-answer>
+    <pl-answer>a new graph $G'$ that has a Hamiltonian cycle (but we don't know what the Hamiltonian cycle is)</pl-answer>
+    <pl-answer>a new graph $G'$ and a Hamiltonian cycle in $G'$</pl-answer>
+    <pl-answer>a new graph $G'$ that has a Hamiltonian path (but we don't know what the Hamiltonian path is)</pl-answer>
+    <pl-answer>a new graph $G'$ and a Hamiltonian path in $G'$</pl-answer>
+    <pl-answer>a Hamiltonian cycle in $G$</pl-answer>
+    <pl-answer>a Hamiltonian path in $G$</pl-answer>
+</pl-multiple-choice>

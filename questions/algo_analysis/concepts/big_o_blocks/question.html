@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <p>
+        <strong>Sort the following functions in order from smallest/fastest to biggest/slowest.</strong>
+        In your solution, $f(n)$ should appear above $g(n)$ if and only if $f(n) = O(g(n))$.
+    </p>
+    Reminder:
+    <ul>
+        <li>$\lg n$ is shorthand for $\log_2 n$ ("binary logarithm")</li>
+        <li>$\ln n$ is shorthand for $\log_e n$ ("natural logarithm")</li>
+        <li>$\log n$ is shorthand for $\log_b n$ for some base $b$ that you don't know or care about ("logarithm")</li>
+    </ul>
+</pl-question-panel>
+
+<pl-order-blocks answers-name="ans1" grading-method="ranking" partial-credit="lcs">
+    {{#params.functions}}
+    <pl-answer ranking="{{rank}}" correct="true">${{formula}}$</pl-answer>
+    {{/params.functions}}
+</pl-order-blocks>

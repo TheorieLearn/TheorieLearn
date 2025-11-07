@@ -1,0 +1,19 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings $w$ such that $|w|\bmod 3 = 2$ and $w$ contains exactly one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+In the previous question, we determined that $x + y \equiv 1 \pmod{3}$.
+What are the possible residues for $x$ and $y$ modulo 3? Note that residues modulo 3 must be between 0 and 2, inclusive. Write your answers as ordered pairs in a list format (e.g. if the possible values are $x=1$, $y=1$ and $x=2$, $y=2$, write `[[1, 1], [2, 2]]`).
+
+</markdown>
+</pl-question-panel>
+
+<pl-matrix-input answers-name="ordered_pairs"></pl-matrix-input>
+
+<pl-submission-panel>
+  <p><em>{{feedback.ordered_pairs}}</em></p>
+</pl-submission-panel>

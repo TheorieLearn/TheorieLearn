@@ -1,0 +1,37 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+  </pl-template>
+  <h5>English Definition</h5>
+  <center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $i$ through $n$, inclusive.</b></center>
+  <br>
+  <br>
+<h5>Recursive Definition</h5>
+$$
+MaxProfit(i):=
+\begin{cases}
+profit[i] & \text{if } i + 1 > n\\
+\text{max}\{MaxProfit(i + 1), profit[i]\} & \text{else if } i + skip[i] + 1 > n\\
+\text{max}\begin{cases}
+          MaxProfit(i + 1), \\
+          profit[i] + MaxProfit(i + skip[i] + 1)
+          \end{cases} & \text{otherwise}
+\end{cases}
+$$
+
+
+We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+
+<br/>
+<br/>
+</pl-question-panel>
+We should fill in a(n)
+<pl-multiple-choice answers-name="drop1" order="ascend" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">increasing</pl-answer>
+  <pl-answer correct="true">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $i$.

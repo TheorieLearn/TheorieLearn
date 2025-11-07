@@ -1,0 +1,29 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/no_russian_flag.html"
+    ></pl-variable>
+</pl-template>
+
+<hr />
+<markdown>
+While we move around $G$, we need to keep track of our current vertex, and we also need to keep track of one additional piece of information in order to ensure that our walk obeys the rules of a No Russian Flag Walk.
+Which of the following pieces of information could we keep track of to ensure that our walk is a valid No Russian Flag Walk?
+</markdown>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="nrfw_info" weight="1">
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The color of the last edge traversed.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The vertex that must be traversed next in the walk.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of unique colors traversed so far.</pl-answer>
+    <pl-answer correct="true" score="1.0" feedback="Good!"> The previous two colors traversed.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of unique vertices traversed so far.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of vertices traversed so far, modulo 3.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of unique edges traversed so far.</pl-answer>
+    <pl-answer score="0.0" feedback="Keeping track of this piece of information does not help us solve the problem."> The number of edges traversed so far, modulo 3.</pl-answer>
+    <pl-answer score="0.5" feedback="This option is technically viable, but it contains extraneous information which is not needed to ensure the validity of our walk, and keeping track of this extraneous information will slow down our algorithm.
+                                     Please select a piece of information which is sufficient and <em>minimal</em>."> The previous three colors traversed.</pl-answer>
+</pl-multiple-choice>
+<pl-submission-panel>{{{feedback.nrfw_info}}}</pl-submission-panel>

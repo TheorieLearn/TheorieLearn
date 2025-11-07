@@ -1,0 +1,22 @@
+{
+    "uuid": "40dc072e-e968-490f-ae79-8496a66f10c5",
+    "title": "Fooling Set: First, Middle, End Match",
+    "topic": "Fooling Sets",
+    "tags": [
+        "erobson2",
+        "Fooling Sets"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

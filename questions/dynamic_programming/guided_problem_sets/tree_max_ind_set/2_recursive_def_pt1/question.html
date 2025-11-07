@@ -1,0 +1,34 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/tree_max_ind_set.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+  <center><b>Recall that $MaxFun(v, o)$ is the maximum total fun values of a subset of employees chosen from the subtree rooted at $v$ where $o$ represents whether $v$ is included or not.</b></center>
+  <br/>
+  <p>
+    Now, we will address the first step of the above advice. When we are considering $MaxFun(v, o)$, notice that the problem breaks down into the following cases:
+    <ol>
+      <li>$o = \text{Include}$, so vertex $v$ is included in our subset</li>
+      <li>$o = \text{Exclude}$ so vertex $v$ is excluded in our subset</li>
+    </ol>
+
+    Let's analyze how our subproblem changes for each of those cases:
+  </p>
+<br>
+</pl-question-panel>
+<p><b>Case 1:</b> If our solution has $o = \text{Include}$ so that vertex $v$ is included in the subset, what are the options of $o$ for all the children of vertex $v$?
+<pl-checkbox answers-name="case1" weight="1">
+    <pl-answer correct="false">Include</pl-answer>
+    <pl-answer correct="true">Exclude</pl-answer>
+</pl-checkbox></p>
+
+</pl-question-panel>
+<p><b>Case 2:</b> If our solution has $o = \text{Exclude}$ so that vertex $v$ is excluded from the subset, what are the options of $o$ for all the children of vertex $v$?
+  <pl-checkbox answers-name="case2" weight="1">
+    <pl-answer correct="true">Include</pl-answer>
+    <pl-answer correct="true">Exclude</pl-answer>
+</pl-checkbox></p>

@@ -1,0 +1,67 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/longest_common_subsequence.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+  <center><b>Define $LCS(i, j)$ to be the length of the longest common subsequence between $A[1..i]$ and $B[1..j]$.</b></center>
+  <br/>
+  <markdown>
+  Now, we will address the first step of the above advice. When we are considering the $A[1..i]$ and $B[1..j]$, notice that the problem breaks down into the following cases:
+  1. Our solution subsequence does not use the character at $A[i]$;
+  2. Our solution subsequence does not use the character at $B[j]$;
+  3. $A[i] = B[j]$, and our solution subsequence uses that character.
+
+  Let's analyze how our subproblem changes for each of those cases:
+    </markdown>
+  <hr>
+</pl-question-panel>
+<p><b>Choice 1:</b> If our solution character chooses to not use the character at $A[i]$, what are the remaining strings of $A$ and $B$ that we need to consider,
+  with respect to our subproblem definition? <i>(Hint: pick two of the following, one for each of A and B)</i>
+<pl-checkbox answers-name="case1" fixed-order="True">
+  <pl-answer correct="false" feedback="We've already decided what to do with $A[i]$">$A[i]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$B[j]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$A[i-1]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$B[j-1]$</pl-answer>
+  <pl-answer correct="true">$A[1..i-1]$</pl-answer>
+  <pl-answer correct="false" feedback="This uses $B[j]$ instead of $A[i]$">$B[1..j-1]$</pl-answer>
+  <pl-answer correct="false" feedback="This does not reduce our subproblem.">$A[1..i]$</pl-answer>
+  <pl-answer correct="true">$B[1..j]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$A[1..i+1]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$B[1..j+1]$</pl-answer>
+</pl-multiple-choice></p>
+
+</pl-question-panel>
+<p><b>Choice 2:</b> If our solution character chooses to not use the character at $B[j]$, what are the remaining strings of $A$ and $B$ that we need to consider,
+  with respect to our subproblem definition?
+<pl-checkbox answers-name="case2" fixed-order="True">
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$A[i]$</pl-answer>
+  <pl-answer correct="false" feedback="We've already decided what to do with $B[j]$">$B[j]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$A[i-1]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$B[j-1]$</pl-answer>
+  <pl-answer correct="false" feedback="This uses $A[i]$ instead of $B[j]$">$A[1..i-1]$</pl-answer>
+  <pl-answer correct="true">$B[1..j-1]$</pl-answer>
+  <pl-answer correct="true">$A[1..i]$</pl-answer>
+  <pl-answer correct="false" feedback="This does not reduce our subproblem.">$B[1..j]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$A[1..i+1]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$B[1..j+1]$</pl-answer>
+</pl-multiple-choice></p>
+
+</pl-question-panel>
+<p><b>Choice 3:</b> If $A[i] = B[j]$, and our solution uses that character, what are the remaining strings of $A$ and $B$ that we need to consider,
+  with respect to our subproblem definition?
+<pl-checkbox answers-name="case3" fixed-order="True">
+  <pl-answer correct="false" feedback="We've already decided what to do with $A[i]$">$A[i]$</pl-answer>
+  <pl-answer correct="false" feedback="We've already decided what to do with $B[j]$">$B[j]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$A[i-1]$</pl-answer>
+  <pl-answer correct="false" feedback="We need the entire remaining string to form a subsequence.">$B[j-1]$</pl-answer>
+  <pl-answer correct="true">$A[1..i-1]$</pl-answer>
+  <pl-answer correct="true">$B[1..j-1]$</pl-answer>
+  <pl-answer correct="false" feedback="This does not reduce our subproblem correctly.">$A[1..i]$</pl-answer>
+  <pl-answer correct="false" feedback="This does not reduce our subproblem correctly.">$B[1..j]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$A[1..i+1]$</pl-answer>
+  <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$B[1..j+1]$</pl-answer>
+</pl-multiple-choice></p>

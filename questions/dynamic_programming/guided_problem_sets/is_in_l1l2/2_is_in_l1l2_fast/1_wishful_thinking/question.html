@@ -1,0 +1,56 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="is-open">True</pl-variable>
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+        ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+In the last section, we created a dynamic programming algorithm to solve the above problem.
+While this is a good start, we can do better by making some subtle improvements by creating a <i>second subproblem definition</i>.
+<br>
+For our previous algorithm,
+we were calling our helper function $isInL_1L_2()$
+<pl-big-o-input answers-name="subproblem-calls" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+times for every subproblem, and this helper function takes
+<pl-big-o-input answers-name="helper-function-runtime" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+time.
+<br>
+Currently the reason we need to call $isInL1L2()$
+is because we’re trying to extract a suffix from $s$ that belongs to $L_1L_2$,
+and then test if the prefix is in $(L_1L_2)^*$ using a smaller subproblem.
+If $s$ is non-empty, $s$ must have a suffix that is in
+<pl-multiple-choice answers-name="suffix-membership" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">L_1</pl-answer>
+    <pl-answer correct="true">L_2</pl-answer>
+</pl-multiple-choice>.
+We could try to extract this suffix,
+which we can verify in
+<pl-multiple-choice answers-name="suffix-membership-runtime" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">constant</pl-answer>
+    <pl-answer correct="false">linear</pl-answer>
+    <pl-answer correct="false">quadratic</pl-answer>
+    <pl-answer correct="false">cubic</pl-answer>
+</pl-multiple-choice>
+time using
+<pl-multiple-choice answers-name="suffix-function" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">isInL1L2</pl-answer>
+    <pl-answer correct="false">isInL1</pl-answer>
+    <pl-answer correct="true">isInL2</pl-answer>
+</pl-multiple-choice>.
+<br>
+Then we need to test if the prefix is in
+<pl-multiple-choice answers-name="prefix-function" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(L_1L_2)*L1 </pl-answer>
+    <pl-answer correct="false">(L_1L_2)*</pl-answer>
+    <pl-answer correct="false">L1</pl-answer>
+    <pl-answer correct="false">L2</pl-answer>
+    <pl-answer correct="false">(L_2L_1)*</pl-answer>
+</pl-multiple-choice>.
+<br>
+However, we don’t have a way to test that because it’s not a subproblem!
+<br>
+<b>WISHFUL THINKING:</b> Let’s make it a subproblem, so that we can get the info we need!

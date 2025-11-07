@@ -1,0 +1,91 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+          name="problem-statement"
+          directory="serverFilesCourse"
+          file-name="theorielearn/problem_statements/intermediate_vertex.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+
+<markdown>
+In the previous part we learnt that we need to track information whether a vertex from the set $X$ has been visited or not.
+</markdown>
+
+</pl-question-panel>
+<hr/>
+
+<markdown>
+Could you introduce a simple way to represent whether or not a vertex from the set $X$ has been visited along the current walk?
+Use a binary state: 0 (not visited in $X$) or 1 (visited in $X$) in some form to represent this information.
+Let $u$ be a vertex in the graph, can we use a tuple with vertex $u$ to show the state of not having/having visited a vertex from the set $X$?
+</markdown>
+
+<markdown>
+Let's formalize the new vertex set.
+Let $V$ be the set of vertices in the graph and $E$ be the set of edges in the graph. We can define a new vertex set $V'$.
+</markdown>
+$V' = V$
+<pl-multiple-choice order="ascend" answers-name="operatorV" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">×</pl-answer>
+    <pl-answer>∪</pl-answer>
+    <pl-answer>/</pl-answer>
+    <pl-answer>⊕</pl-answer>
+    <pl-answer>∩</pl-answer>
+</pl-multiple-choice>
+
+<pl-string-input answers-name="nodes" weight="1" allow-blank="true" placeholder="ex. {None, 0, 1, u, v}" show-help-text="false"></pl-string-input>
+
+<hr/>
+<markdown>
+Now we have the new vertex set $V'$, we need to define the new edge set $E'$.
+
+Let us now consider replicating the original graph's edges in the new graph. We need to ensure that the new graph's edges are consistent with the original graph's edges.
+Ignore the edges to change the vertex state of having visited a vertex in X for now.
+Suppose the original graph has an edge from vertex $u$ to vertex $v$ with weight $w$. How can we replicate this edge in the new graph?
+</markdown>
+
+<li>
+    Then we should have a new edge from:
+    <ul>
+        (u, 0) to
+        <pl-multiple-choice order="ascend" answers-name="edge1" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">(v, 0), weight=w</pl-answer>
+            <pl-answer>(v, 1), weight=w</pl-answer>
+            <pl-answer>(v, 0), weight=0</pl-answer>
+            <pl-answer>(v, 1), weight=0</pl-answer>
+            <pl-answer>Nothing</pl-answer>
+        </pl-multiple-choice>
+         in $E'$.
+    </ul>
+    <ul>
+        (u, 1) to
+        <pl-multiple-choice order="ascend" answers-name="edge2" display="dropdown" hide-letter-keys="true">
+            <pl-answer>(v, 0), weight=0</pl-answer>
+            <pl-answer correct="true">(v, 1), weight=w</pl-answer>
+            <pl-answer>(v, 0), weight=w</pl-answer>
+            <pl-answer>(v, 1), weight=0</pl-answer>
+            <pl-answer>Nothing</pl-answer>
+        </pl-multiple-choice>
+         in $E'$.
+    </ul>
+</li>
+
+<markdown>
+Let us consider when we should move from a vertex state of not having visited a vertex from the set $X$ to having visited a vertex from the set $X$.
+
+This is quite straightforward. If we are at a vertex $(u,0)$ and u is in the set $X$, then we should move to the state $(u,1)$. Does this edge have a weight?
+Additionally,
+do we need the edge (u, 0) to (v, 1) under any circumstance if we have the edge (v, 0) to (v, 1) if v is in the set $X$?
+</markdown>
+<pl-multiple-choice answers-name="need_info" weight="1">
+    <pl-answer score="0.0" feedback="We can reach (v, 1) from (u, 0) through (v, 0) with the same cost with current setup"> We need (u, 0) to (v, 1)</pl-answer>
+    <pl-answer score="1.0" feedback="" correct="true"> We do not need (u, 0) to (v, 1)</pl-answer>
+</pl-multiple-choice>
+
+<markdown>
+What should be the weight of the edge (u, 0) to (u, 1) if u is in $X$?
+</markdown>
+<pl-symbolic-input show-help-text="false" variables="u,v,w" correct-answer="0" answers-name="same_v_weight" display="inline" size="5"></pl-symbolic-input>
+
+<hr/>

@@ -1,0 +1,99 @@
+<style>
+  details.instructions {
+      border: 1px solid rgba(0, 0, 0, .125);
+      padding: .5em .5em 0;
+      margin-bottom: 15px;
+      background-color: rgba(0, 0, 0, .03);
+  }
+
+  .instructions summary {
+      font-weight: bold;
+      margin: -.5em -.5em 0;
+      padding: .5em;
+      outline: none;
+  }
+
+  details.instructions[open] {
+      padding: .5em;
+  }
+
+  details.instructions[open] summary {
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+      margin-bottom: .5em;
+  }
+</style>
+
+<pl-question-panel>
+<markdown>
+Construct an *infinite* fooling set to prove that the following language is not regular:
+
+***<center>{{{language_description}}}</center>***
+
+<hr></hr>
+
+##### Instructions
+
+Given a positive integer $i$, `getFoolingSetElement(i)` should return the
+$i^\text{th}$ element of your fooling set. (Note that sets are not ordered,
+but in order for the autograder to work, we must assign an order to the
+elements in your fooling set.)
+In other words, you define your fooling set as
+$F = \{ \mathsf{getFoolingSetElement}(i) \mid i \in \mathbb{N} \}$.
+
+To prove that your construction is correct, you must show that there exists a
+distinguishing suffix for all pairs of distinct elements in your fooling set.
+Given two positive integers $i$ and $j$, let $x$ be the $i^\text{th}$ element of
+your fooling set, and let $y$ be the $j^\text{th}$ element of your fooling set.
+Then, `getDistinguishingSuffix(i, j)` should return a string $z$ such that either
+* $xz \in L$ and $yz \notin L$, or
+* $xz \notin L$ and $yz \in L$.
+
+Note that $x$ and $y$ are *arbitrary*, and your function should return a string $z$ that works in all situations.
+</markdown>
+
+<details class="instructions rounded mb-3">
+<summary>Helpful Tips and Examples</summary>
+
+<markdown>
+In Python, string exponentiation can be achieved with the `*` operator, and string
+concatenation can be achieved with the `+` operation. For example, $0^n1^n$ could
+be concisely expressed as `'0' * n + '1' * n`; there's no need to use a for loop
+to construct this string.
+
+For example, given the language $L = \{0^n1^n \mid n \ge 0\}$, we could construct the fooling set
+$F = \{0^i \mid i \ge 1\}$. The $i^\text{th}$ element of this fooling set would be $0^i$.
+Then, to distinguish the elements $x = 0^i$ and $y = 0^j$ (where, without loss
+of generality, we assume $i < j$), we could
+use the suffix $z = 1^i$ (because $xz \in L$ and $yz \notin L$).
+Here's how you would express this in Python:
+
+```python3
+def getFoolingSetElement(i: int) -> str:
+    return '0' * i
+
+def getDistinguishingSuffix(i: int, j: int) -> str:
+    return '1' * min(i, j)
+```
+
+Note that taking the minimum is necessary because we assumed that $i < j$.
+</markdown>
+</details>
+
+
+
+<pl-file-editor
+    file-name="user_code.py"
+    ace-mode="ace/mode/python">
+def getFoolingSetElement(i: int) -> str:
+    return '' # Your code here
+
+def getDistinguishingSuffix(i: int, j: int) -> str:
+    return '' # Your code here
+</pl-file-editor>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

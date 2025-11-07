@@ -1,0 +1,66 @@
+<pl-question-panel>
+
+As a reminder, we're trying to prove the following language is undecidable:
+
+$$
+    \text{AcceptPalindrome} ~ := \{\langle M \rangle ~ | ~ M ~ \text{accepts at least one palindrome}\}
+$$
+
+And we're using the following reduction:
+
+$$
+
+\begin{align*}
+&\underline{\textbf{DecideHalt}(\langle M,w\rangle):}\\
+&\text{Encode the following algorithm} ~ M': \\
+&\quad\begin{bmatrix}
+\underline{M'(x):}\qquad\qquad\quad\\
+\text{Run} ~ M ~ \text{on input} ~ w\\
+\text{return True} \quad\quad~~~
+\end{bmatrix}\\
+&\text{if} ~ \textbf{DecideAcceptPalindrome}(\langle M' \rangle):\\
+&\quad\text{return True}\\
+&\text{else:}\\
+&\quad\text{return False}\\
+\end{align*}
+$$
+
+<p>
+We need to show the algorithm $M$ halts on the
+given input $w$ if and only if $\textbf{DecideHalt}$ returns $\text{True}$.
+</p>
+
+<p>
+In this question, we will prove the reverse direction of the "if and only if" claim. This time, we will prove the
+contrapositive. In other words, we want to prove
+
+$$ M ~ \text{diverges on} ~ w \implies \textbf{DecideHalt}(\langle M,w \rangle) ~ \text{returns False} $$
+
+This will complete the proof, and allow us to conclude that the algorithm $\textbf{DecideAcceptPalindrome}$ cannot exist.
+
+</p>
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="path_to_cycle" source-blocks-order="random" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="init"> Suppose $M$ does not halt on input $w$.</pl-answer>
+
+    <pl-answer correct="true" tag="mrejectsall" depends="init"> Then $M'$ diverges on every input string $x$. </pl-answer>
+
+    <pl-answer correct="true" tag="mrejectspal" depends="mrejectsall"> In particular, $M'$ does not accept any palindromes. </pl-answer>
+
+    <pl-answer correct="true" tag="daprejects" depends="mrejectspal"> So $\textbf{DecideAcceptPalindrome}$ rejects the encoding $\langle M' \rangle$. </pl-answer>
+
+    <pl-answer correct="true" tag="dhrejects" depends="daprejects"> So $\textbf{DecideHalt}$ correctly rejects the encoding $\langle M,w \rangle$. </pl-answer>
+
+    <pl-answer correct="false"> Suppose $M$ does not halt on input $w$.</pl-answer>
+
+    <pl-answer correct="false"> Then $M'$ accepts every input string $x$. </pl-answer>
+
+    <pl-answer correct="false"> In particular, $M'$ accepts the palindrome "ILLINILLI". </pl-answer>
+
+    <pl-answer correct="false"> So $\textbf{DecideAcceptPalindrome}$ accepts the encoding $\langle M' \rangle$. </pl-answer>
+
+    <pl-answer correct="false"> So $\textbf{DecideHalt}$ correctly accepts the encoding $\langle M,w \rangle$. </pl-answer>
+
+</pl-order-blocks>

@@ -1,0 +1,111 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+        ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+Recall that
+$isInA(i) = True$ if and only if $s[1..i] \in A$. Similarly, $isInB(i) = True$ if and only if $s[1..i] \in B$.
+<hr>
+
+Our recurrences are as follows (this describes the same thing you've constructed in the last question, just in a different notation):
+
+$$
+isInA(i) =
+\begin{cases}
+  True &i = 0\\
+  \bigvee_{j \in [1, i]} (isInB(j - 1) \wedge isInL_2(s[j ... i])) &\text{otherwise}
+\end{cases}
+$$
+
+$$
+isInB(i) =
+\begin{cases}
+  False &i = 0\\
+  \bigvee_{j \in [1, i]} (isInA(j - 1) \wedge isInL_1(s[j ... i])) &\text{otherwise}
+\end{cases}
+$$
+
+Now that we've defined our recursive function, we need to figure out how to use memoization to speed up our recursive function.
+<br>
+The input to both of our recursive functions is an integer $i$ such that $i \in [$
+<pl-symbolic-input answers-name="start" variables="n" correct-answer="0" show-help-text="false" size="5"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="end" variables="n" correct-answer="n" show-help-text="false" size="5"></pl-symbolic-input>
+$]$.
+That means we need two 1-D tables of size <pl-symbolic-input answers-name="size" variables="n" correct-answer="n + 1" show-help-text="false" size="5"></pl-symbolic-input>
+<hr>
+These functions are mutually recursive. Check the following pseudocode snippets that define a correct evaluation order.
+From the recursive formulas, we can see that:
+<ol>
+    <li>
+        $isInA(i)$ depends on $isInB(j)$ for values of $j < i$.
+    </li>
+    <li>
+        $isInB(i)$ depends on $isInA(j)$ for values of $j < i$.
+    </li>
+</ol>
+
+For each pseudocode snippet below, select the statement which best characterizes the evaluation order.
+
+<markdown>
+```
+for i from 0 to n:
+    evaluate isInA(i)
+for i from 0 to n:
+    evaluate isInB(i)
+```
+</markdown>
+<pl-multiple-choice answers-name="dep1" fixed-order="true">
+    <pl-answer correct="true">$isInA$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">$isInB$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">Neither recurrence has their dependencies satisfied.</pl-answer>
+    <pl-answer correct="false">Both recurrences have their dependencies satsified.</pl-answer>
+</pl-multiple-choice>
+<br>
+<markdown>
+```
+for i from 0 to n:
+    evaluate isInA(i)
+    evaluate isInB(i)
+```
+</markdown>
+<pl-multiple-choice answers-name="dep2" fixed-order="true">
+    <pl-answer correct="false">$isInA$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">$isInB$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">Neither recurrence has their dependencies satisfied.</pl-answer>
+    <pl-answer correct="true">Both recurrences have their dependencies satsified.</pl-answer>
+</pl-multiple-choice>
+<br>
+<markdown>
+```
+for i from 0 to n:
+    evaluate isInB(i)
+    evaluate isInA(i)
+```
+</markdown>
+<pl-multiple-choice answers-name="dep3" fixed-order="true">
+    <pl-answer correct="false">$isInA$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">$isInB$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">Neither recurrence has their dependencies satisfied.</pl-answer>
+    <pl-answer correct="true">Both recurrences have their dependencies satsified.</pl-answer>
+</pl-multiple-choice>
+<br>
+<markdown>
+```
+for i from n down to 0:
+    evaluate isInA(i)
+for i from n down to 0:
+    evaluate isInB(i)
+```
+</markdown>
+<pl-multiple-choice answers-name="dep4" fixed-order="true">
+    <pl-answer correct="true">$isInA$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">$isInB$'s dependencies aren't satisfied.</pl-answer>
+    <pl-answer correct="false">Neither recurrence has their dependencies satisfied.</pl-answer>
+    <pl-answer correct="false">Both recurrences have their dependencies satsified.</pl-answer>
+</pl-multiple-choice>

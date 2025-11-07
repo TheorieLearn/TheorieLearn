@@ -1,0 +1,20 @@
+{
+    "uuid": "da4b2519-92ee-4a39-9da2-c0520fb79bd5",
+    "title": "Minimum Hotel Cost (Suffix): Put it together (Coding Practice)",
+    "topic": "Dynamic Programming",
+    "singleVariant": true,
+    "tags": [
+        "azyin2",
+        "Guided Practice",
+        "sp22"
+    ],
+    "type": "v3",
+    "gradingMethod": "External",
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": ["/"],
+        "entrypoint": "/python_autograder/run.sh",
+        "timeout": 10
+    }
+  }

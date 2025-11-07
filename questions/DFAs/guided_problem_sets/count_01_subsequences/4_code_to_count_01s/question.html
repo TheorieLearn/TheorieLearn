@@ -1,0 +1,62 @@
+<pl-question-panel>
+<markdown>
+Recall that the language we're working with is $L = \{w \mid \sigma(01, w) \equiv 4 \pmod 7\}$.
+
+One important detail to mention is that we can't actually store our counters directly, because these counters are *unbounded*. In order to convert a program into a DFA, the variables we declare in the program need to be restricted to a *finite* number of possible values. (Recall that DFA stands for deterministic *finite* automata.)
+
+In this problem, the way to achieve that is by storing the value of the counters *modulo 7* (i.e. the remainder when the counters are divided by 7). Why? Because the language only cares about the value modulo 7.
+
+In the pseudocode below, `num0s` stores the number of $0$s in the prefix we've read so far modulo 7, and `num01s` stores the number of $01$ subsequences in the prefix we've read so far modulo 7.
+
+Based on the concrete examples you saw in the previous part, fill in the missing lines of pseudocode to properly update `num0s` and `num01s`.
+
+```
+function is_in_language(string):
+    num0s ← ?
+    num01s ← ?
+
+    for each character c in the string:
+        if c = '0':
+            // missing line 1
+        else if c = '1':
+            // missing line 2
+        
+    return ?
+```
+</markdown>
+</pl-question-panel>
+
+<markdown>
+What value should $num0s$ be initialized to?
+<pl-integer-input answers-name="num0s" correct-answer=0 size=5 show-help-text=false></pl-integer-input>
+
+What value should $num01s$ be initialized to?
+<pl-integer-input answers-name="num01s" correct-answer=0 size=5 show-help-text=false></pl-integer-input>
+
+What should be inserted at `missing line 1`?
+<pl-multiple-choice answers-name="line1">
+    <pl-answer correct=true>$num0s \leftarrow (num0s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num0s \leftarrow (num01s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num0s \leftarrow (num0s + num01s) \bmod 7$</pl-answer>
+    <pl-answer>$num01s \leftarrow (num0s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num01s \leftarrow (num01s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num01s \leftarrow (num0s + num01s) \bmod 7$</pl-answer>
+</pl-multiple-choice>
+
+What should be inserted at `missing line 2`?
+<pl-multiple-choice answers-name="line2">
+    <pl-answer>$num0s \leftarrow (num0s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num0s \leftarrow (num01s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num0s \leftarrow (num0s + num01s) \bmod 7$</pl-answer>
+    <pl-answer>$num01s \leftarrow (num0s + 1) \bmod 7$</pl-answer>
+    <pl-answer>$num01s \leftarrow (num01s + 1) \bmod 7$</pl-answer>
+    <pl-answer correct=true>$num01s \leftarrow (num0s + num01s) \bmod 7$</pl-answer>
+</pl-multiple-choice>
+</markdown>
+
+We should return True if and only if $\;$ <pl-multiple-choice answers-name="return-lhs" display="dropdown" hide-letter-keys="true">
+    <pl-answer>num0s</pl-answer>
+    <pl-answer correct=true>num01s</pl-answer>
+</pl-multiple-choice> $\; =$
+<pl-integer-input answers-name="return-rhs" correct-answer=4 size=5 show-help-text=false></pl-integer-input>
+$\;$ at the end of the program.

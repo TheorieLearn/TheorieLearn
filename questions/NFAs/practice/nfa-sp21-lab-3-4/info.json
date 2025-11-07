@@ -1,0 +1,13 @@
+{
+  "uuid": "1e493b8d-2454-45c8-970c-9b60f4589c74",
+  "title": "Convert Regex to NFA",
+  "topic": "NFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "samuelr6",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

@@ -1,0 +1,35 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+
+{{{params.preamble}}}
+</pl-question-panel>
+
+<hr/>
+<markdown>
+  Let's develop the dynamic programming algorithm according to how you learned in lecture! _[(See textbook)](https://courses.engr.illinois.edu/cs374/fa2021/A/notes/03-dynprog.pdf#page=10)_
+  When approaching a dynamic programming question, the _first and foremost_ task is to create an English definition
+  for your recursive subproblem. No matter how trivial the problem may seem, having a clean definition for the subproblem
+  is *imperative* to creating a convincingly correct algorithm.
+
+  <b> For this part, we would like you to construct a prefix subproblem definition.</b>
+
+  Keep in mind that a viable subproblem definition must satisfy all of the following requirements. (Each requirement below has been assigned a short label so that we can easily refer to it later on.)
+</markdown>
+<hr/>
+<ul>
+    <li><b>Declare Function</b>: The definition must declare a function with a descriptive name and parameters that can be memoized.</li>
+    <li><b>Clearly State Output</b>: The definition must clearly state what quantity the function outputs.</li>
+    <li><b>Explain Parameters</b>: The definition must explain how the function's input parameters affect the output of the function. Furthermore, all variables mentioned in the definition must either be defined in the original problem or declared as function parameters.</li>
+    <li><b>Can Compute Final Answer</b>: We can compute the final answer requested by the original problem using these subproblems. (This can either involve a single subproblem function call that directly returns the final answer, or combining together multiple function calls to obtain the final answer.)</li>
+    <li><b>Reduces Recursively</b>: Each subproblem can be reduced to smaller problems that are also handled by the subproblem definition. In other words, it must be possible to write a recursive formula for computing the function declared in the subproblem definition.</li>
+</ul>
+<hr/>
+
+<tl-scaffolded-writing answers-name="subproblem_definition"></tl-scaffolded-writing>

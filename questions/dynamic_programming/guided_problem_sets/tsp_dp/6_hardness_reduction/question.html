@@ -1,0 +1,79 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour_2.html"
+    ></pl-variable>
+  </pl-template>
+
+  Now that you've derived a recurrence, you take a break from thinking
+  about algorithms for this problem. While sitting in Grainger Library, your
+  friend Stavini Panini comes up to you and mentions the following:
+  <br>
+  <br>
+  <center><b>
+  "That problem really reminds me of the Hamiltonian Cycle problem from lecture!
+  In both problems, you have to find a cycle that visits each vertex exactly once."
+  </b></center>
+
+  <br>
+  You remember that Hamiltonian Cycle is NP-hard, and based on what Stavini said,
+  you think you might be able to show that Momo's World Tour is NP-hard as well.
+  Show that Momo's World Tour is NP-hard by reducing from Hamiltonian Cycle below.
+
+  <br>
+  <br>
+
+  We let $\mathsf{MinWorldTour}(G,d)$ denote the solution to Momo's World Tour
+  with input graph $G$ and distance function $d$. Use $n$ to denote the number
+  of vertices in $G$. Type "infinity" to denote $\infty$.
+</pl-question-panel>
+
+<hr>
+
+$\mathsf{HamiltonianCycle}(G):$<br>
+
+Define the function $d : E \rightarrow \mathbb{R}$ as $d(e) = 1$ for all $e \in E$
+<br>
+
+<!-- Fill in which case is true and which is false -->
+If $\mathsf{MinWorldTour}(G,d) = $
+<pl-string-input display="inline" size="3" placeholder="?" show-help-text="false" answers-name="ans1" correct-answer="n" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+return <code>True</code>, otherwise if $\mathsf{MinWorldTour}(G,d) = $
+<pl-string-input display="inline" size="3" placeholder="?" show-help-text="false" answers-name="ans2" correct-answer="infinity" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+return <code>False</code>.
+
+<hr>
+
+Let $T_{WT}$ be the runtime of $\mathsf{MinWorldTour}(G,d)$ and $T_{Ham}$ be the runtime
+of $\mathsf{HamiltonianCycle}(G)$. The above reduction implies that
+
+$T_{Ham} \;$
+<pl-multiple-choice answers-name='inequality' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>≤</pl-answer>
+    <pl-answer correct=false>≥</pl-answer>
+    <pl-answer correct=false>=</pl-answer>
+</pl-multiple-choice>
+$\; T_{WT} + O(E)$.
+
+Our reduction runs in
+<pl-multiple-choice answers-name='runtime-class' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>polynomial</pl-answer>
+    <pl-answer correct=false>exponential</pl-answer>
+</pl-multiple-choice>
+time.
+
+Thus, we can conclude if we had a polynomial time algorithm solving
+<pl-multiple-choice answers-name='reduction1' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>WorldTour</pl-answer>
+    <pl-answer correct=false>HamiltonianCycle</pl-answer>
+</pl-multiple-choice>
+, then this would imply a polynomial time algorithm for
+<pl-multiple-choice answers-name='reduction2' display="dropdown" hide-letter-keys="true">
+    <pl-answer correct=true>HamiltonianCycle</pl-answer>
+    <pl-answer correct=false>WorldTour</pl-answer>
+</pl-multiple-choice>
+. Since $\mathsf{HamiltonianCycle}$ is NP-hard, then $\mathsf{MinWorldTour}$ is
+NP-hard as well!

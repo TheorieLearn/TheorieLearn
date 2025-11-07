@@ -1,0 +1,11 @@
+<pl-question-panel>
+<markdown>
+Recall that $(\epsilon + 11^*)((00^*)(11^*))^*(\epsilon + 00^*)$ matches all binary strings by describing alternating blocks of 0s and 1s. Modify this regular expression to only match binary strings not containing 000.
+
+*Hint: replace the subexpression representing "unrestricted 0-runs" with a more restrictive expression that enforces the desired constraint on the length of 0-runs.*
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+(e+11*)((0+00)(11*))*(e+0+00)
+</tl-regex-input>

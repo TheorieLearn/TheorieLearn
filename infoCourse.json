@@ -1,0 +1,28 @@
+{
+  "uuid": "bc771e2c-42fb-4c59-b583-d9e94eef32ba",
+  "name": "TheorieLearn Public",
+  "title": "Public PrairieLearn Course for TheorieLearn questions and elements.",
+  "assessmentSets": [
+    {
+      "abbreviation": "GPS",
+      "name": "Guided Problem Sets",
+      "heading": "Example assessments for a theory course",
+      "color": "orange2"
+    },
+    {
+      "abbreviation": "PRAC",
+      "name": "Practice Problems",
+      "heading": "Every Practice Exercise we have by topic",
+      "color": "blue3"
+    },
+    {
+      "abbreviation": "ELEM",
+      "name": "Elements + Utilities",
+      "heading": "Showcases and playgrounds of individual elements",
+      "color": "red2"
+    }
+  ],
+  "topics": [],
+  "tags": [],
+  "sharingSets": []
+}

@@ -1,0 +1,17 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Analyzing the Runtime of our Algorithm</h3>
+    At this point, we've essentially finished our algorithm. We construct a graph with proper vertices, edges and weights,
+    then run a standard graph algorithm. What will be the runtime, in terms of $n$, to fill $V[1 \dots n]$?
+    <br>
+</pl-question-panel>
+<pl-big-o-input answers-name="q1" variable="n" correct-answer="n**3" size="20"></pl-big-o-input>
+
+<pl-submission-panel>
+    {{feedback.q1}}
+</pl-submission-panel>

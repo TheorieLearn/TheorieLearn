@@ -1,0 +1,39 @@
+<pl-question-panel>
+<markdown>
+  <div align="center">$\text{Prove that }|w^R| = |w| \text{ for every string } w.$</div>
+
+  Now, it's time for the inductive case.
+
+  In the inductive case, we suppose that *$\textbf{w = ax}$*
+
+  We are trying to come to the conclusion that $|w^R| = |w|$ from $w = ax$.
+
+
+</markdown>
+<pl-template
+file-name="theorielearn/templates/string-lemma-template.html"
+directory="serverFilesCourse"
+></pl-template>
+</pl-question-panel>
+
+<pl-order-blocks solution-placement="bottom" feedback="first-wrong" answers-name="ic" source-blocks-order="random" indentation="false" grading-method="dag">
+  <pl-answer correct="true" tag="0" depends="">$|w^R| = |(ax)^R| \quad$ (because $w = ax$)</pl-answer>
+  <pl-answer correct="true" tag="1" depends="0">$ = |x^R \bullet a| \quad$ (by definition of $^R$)</pl-answer>
+  <pl-answer correct="true" tag="2" depends="1">= $|x^R| + |a| \quad$ (by Lemma 2)</pl-answer>
+  <pl-answer correct="true" tag="3" depends="2">= $|x| + |a| \quad$ (by Induction Hypothesis)</pl-answer>
+  <pl-answer correct="true" tag="4" depends="3">= $|ax| \quad$ (by Lemma 2)</pl-answer>
+  <pl-answer correct="true" tag="5" depends="4">= $|w|$ (because $w=ax$)</pl-answer>
+  <!-- Route 2,, cannot have multiple routes :( -->
+  <!-- <pl-answer correct="true" tag="5" depends="2">= $|x| + |a| \quad$ (by Induction Hypothesis) </pl-answer>
+  <pl-answer correct="true" tag="6" depends="5">= $|x| + 1 \quad$ (by definition of $||$)</pl-answer> -->
+  <!-- Route 3, cannot have multiple routes :( -->
+  <!-- <pl-answer correct="true" tag="3a" depends="3">= $|x| + 1 \quad$ (by definition of $||$)</pl-answer> -->
+
+<!-- Distractors -->
+  <!-- Incorrect Definition -->
+  <pl-answer correct="false">$|w^R| = |(x \bullet a)^R| \quad$ (by definition of $^R$)</pl-answer>
+
+
+  <!-- <pl-answer correct="false">= $|x| + |a| \quad$ (by Induction Hypothesis)</pl-answer> -->
+
+</pl-order-blocks>

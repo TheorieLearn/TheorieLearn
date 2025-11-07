@@ -1,0 +1,30 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>$\{ 0^n 1^m : n + m \text{ is divisible by } 5 \}.$</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+fiveZ = 00000
+fiveO = 11111
+(fiveZ)*(fiveO)*+ 0(fiveZ)*1111(fiveO)*+ 00(fiveZ)*111(fiveO)*+ 000(fiveZ)*11(fiveO)*+ 0000(fiveZ)*1(fiveO)*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=2>
+        Try different cases for different numbers of $0$'s and $1$'s mod 5.
+    </pl-hint>
+    <pl-hint show-after-submission=4>
+        If the length of strings in the language is divisible by 5, then
+        the number of $0$'s mod 5 plus the number of $1$'s mod 5 must be
+        equal to 0. What different cases for the number of $0$'s and $1$'s
+        are there?
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,98 @@
+<pl-question-panel>
+<markdown>
+Let $L$ be an arbitrary regular language over the alphabet $\Sigma = \{0, 1\}$, and let $M$ be a DFA that accepts $L$. Prove that the language $L'$ (defined below) is also regular by constructing a DFA or NFA that accepts $L'$.
+
+***<center>{{{language_description}}}</center>***
+
+{{{commentary}}}
+
+<hr></hr>
+
+##### Instructions
+
+Your code should define the function `transform(M)`, where `M` is a DFA that accepts the original language $L$. This function should return either a DFA or NFA that accepts $L'$ (it's up to you to decide which one to use for each problem).
+
+<details class="mb-3">
+<summary>Example</summary>
+
+Here is an example of how you would implement the `transform` function for the language
+
+$$insert1(L) = \{x1y \mid xy \in L\}.$$
+
+Intuitively, $insert1(L)$ is the set of all strings that can be obtained from strings in $L$ by inserting exactly one 1. We can construct an NFA $M'$ that nondeterministically chooses a 1 in the input string to ignore, and simulates $M$ running on the rest of the input string.
+* The state $(q, before)$ means (the simulation of) $M$ is in state $q$ and $M'$ has not yet skipped over a 1.
+* The state $(q, after)$ means (the simulation of) $M$ is in state $q$ and $M'$ has already skipped over a 1.
+
+```python
+from automata.fa.nfa import NFA
+
+def transform(M: DFA):
+    states = {(q, label) for q in M.states for label in ['before', 'after']}
+    input_symbols = {'0', '1'}
+
+    transitions = {q: {} for q in states}
+    for q in M.states:
+        transitions[(q, 'before')]['0'] = {(M.transitions[q]['0'], 'before')}
+        transitions[(q, 'before')]['1'] = {(M.transitions[q]['1'], 'before'), (q, 'after')}
+
+        for a in input_symbols:
+            transitions[(q, 'after')][a] = {(M.transitions[q][a], 'after')}
+
+    initial_state = (M.initial_state, 'before')
+    final_states = {(q, 'after') for q in M.final_states}
+
+    return NFA(states=states, input_symbols=input_symbols, transitions=transitions,
+               initial_state=initial_state, final_states=final_states)
+```
+</details>
+
+<details class="mb-3">
+<summary>Debugging Tips</summary>
+
+If you get an error that looks like the one below, that probably means your `transitions` dictionary contains a value which isn't in the set of states you specified for your DFA/NFA.
+```
+automata.base.exceptions.InvalidStateError: end state __ for transition on __ is not valid
+```
+
+If you're returning an NFA, make sure that `transitions[q][a]` is a **set**. If `transitions[q][a]` is a string instead of a set, it will be treated as a set of characters, which will probably result in the error above.
+
+Also, you might find it useful to simulate your DFA/NFA on a specific input and see what state it is in after reading each symbol, which you can do using the code provided below:
+```python
+try:
+    for q in fa.read_input_stepwise(some_arbitrary_string):
+        print(q)
+except:
+    pass
+```
+</details>
+
+</markdown>
+
+<pl-file-editor
+    file-name="user_code.py"
+    ace-mode="ace/mode/python">
+from automata.fa.dfa import DFA
+from automata.fa.nfa import NFA
+
+def transform(M: DFA):
+    states =
+
+    input_symbols = {'0', '1'}
+
+    transitions =
+
+    initial_state =
+
+    final_states =
+
+    # You can change this to return a DFA if you wish
+    return NFA(states=states, input_symbols=input_symbols, transitions=transitions,
+               initial_state=initial_state, final_states=final_states)
+</pl-file-editor>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    <pl-external-grader-results></pl-external-grader-results>
+    <pl-file-preview></pl-file-preview>
+</pl-submission-panel>

@@ -1,0 +1,26 @@
+<pl-question-panel>
+    <p>Assume we have the alphabet $\Sigma = \{0, 1\}$.</p>
+    <p>Consider the language $L = {{params.l}}$.</p>
+    <p>Observe that $w = {{params.w}} \in L$.</p>
+    <p>Assume that $w$ has pattern $w = {{params.p}}, |x|>0, |y|>0$. </p>
+</pl-question-panel>
+
+<pl-question-panel>
+<p>Give one example of $x$ and $y$ to match the pattern of $w$.</p>
+<p>
+    <pl-string-input answers-name="x1" label="$x=$" size="20"></pl-string-input>
+    <pl-string-input answers-name="y1" label="$y=$" size="20"></pl-string-input>
+</p>
+</pl-question-panel>
+
+<pl-submission-panel><font color="red"><em>{{feedback.y1}}</em></font><br></pl-submission-panel>
+
+<pl-question-panel>
+<p>Give another example (distinct from above) of $x$ and $y$ to match the pattern of $w$.</p>
+<p> 
+    <pl-string-input answers-name="x2" label="$x=$" size="20"></pl-string-input>
+    <pl-string-input answers-name="y2" label="$y=$" size="20"></pl-string-input>
+</p>
+</pl-question-panel>
+
+<pl-submission-panel><font color="red"><em>{{feedback.y2}}</em></font></pl-submission-panel>

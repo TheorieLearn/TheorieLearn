@@ -1,0 +1,124 @@
+<pl-question-panel>
+<markdown>
+Incremental subset construction is a method of constructing the corresponding DFA from a given NFA by performing a breadth-first search of the DFA graph.
+
+For this exercise, follow the steps detailed in [Jeff's textbook](https://courses.engr.illinois.edu/cs374al1/fa2023/notes/models/04-nfa.pdf) to fill out the table.
+</markdown>
+
+<pl-graph>
+  {{params.nfa_graph}}
+</pl-graph>
+
+<head>
+<style>
+table.format th {
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 10px;
+  text-align: center;
+}
+
+
+table.format td{
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 8px;
+  text-align: center;
+}
+
+table.format td input {
+  text-align: center;
+}
+
+table.format td span.form-inline {
+  margin-left: 0 !important;
+}
+
+</style>
+</head>
+
+<body>
+
+<pl-template file-name="theorielearn/templates/latex-symbol-replacer.mustache" directory="serverFilesCourse"></pl-template>
+
+<markdown>
+For all input fields in the table:
+- To represent the empty set, copy and paste the following symbol: `∅`, or use the corresponding $\LaTeX$ command.
+- Otherwise, you should input the concatenation of all the NFA states in the set (the same way that it's done in the textbook).
+  - For example, you should enter `ecf` to represent `{e, c, f}`.
+  - Order of the states does not matter.
+  - Do not incorporate $\varepsilon\text{-reach}$ when filling out the $\delta'$ columns.
+- For the $q' \in A'?$ column, you should enter either `yes` or `no`.
+</markdown>
+
+<table class='format' style="border: 2px solid black; width: 100%;">
+  <tr>
+    <th>$q'$</th>
+    <th>$q' \in A'?$</th>
+    <th>$\delta'(q', 0)$</th>
+    <th>$\varepsilon\text{-reach}(\delta'(q', 0))$</th>
+    <th>$\delta'(q', 1)$</th>
+    <th>$\varepsilon\text{-reach}(\delta'(q', 1))$</th>
+  </tr>
+  {{#params.table_rows}}
+    {{#is_finished}}
+    <tr>
+      <td>${{^q}} \varnothing {{/q}} {{q}}$</td>
+      <td>{{is_accepting}}</td>
+      <td>${{^transition_0}} \varnothing {{/transition_0}} {{transition_0}}$</td>
+      <td>${{^e0_reach}} \varnothing {{/e0_reach}} {{e0_reach}}$</td>
+      <td>${{^transition_1}} \varnothing {{/transition_1}} {{transition_1}}$</td>
+      <td>${{^e1_reach}} \varnothing {{/e1_reach}} {{e1_reach}}$</td>
+    </tr>
+    {{/is_finished}}
+    {{#is_current}}
+    <tr>
+      <td>${{^q}} \varnothing {{/q}} {{q}}$</td>
+      <td><pl-string-input answers-name="{{params.current_row_number}}-is_accepting" show-help-text=false size=4></pl-string-input></td>
+      <td><pl-string-input answers-name="{{params.current_row_number}}-transition_0" show-help-text=false size=8></pl-string-input></td>
+      <td><pl-string-input answers-name="{{params.current_row_number}}-e0_reach"     show-help-text=false size=8></pl-string-input></td>
+      <td><pl-string-input answers-name="{{params.current_row_number}}-transition_1" show-help-text=false size=8></pl-string-input></td>
+      <td><pl-string-input answers-name="{{params.current_row_number}}-e1_reach"     show-help-text=false size=8></pl-string-input></td>
+    </tr>
+    {{/is_current}}
+    {{#is_upcoming}}
+    <tr>
+      <td>${{^q}} \varnothing {{/q}} {{q}}$</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    {{/is_upcoming}}
+  {{/params.table_rows}}
+</table>
+
+{{^params.is_done}}
+  <br>
+  <markdown>
+  What states should be added to our table after this step?
+  - States which are already in the table should not be added again.
+  - If there are no states to add, submit a blank input.
+  - If there is one state to add, enter the state.
+  - If there are two states to add, submit your answer as a comma separated list.
+    - For example, you could submit `∅, bfd`
+  </markdown>
+
+  <pl-string-input answers-name="{{params.current_row_number}}-states_to_add" allow-blank=true></pl-string-input>
+{{/params.is_done}}
+</body>
+</pl-question-panel>
+
+<pl-submission-panel>
+{{#params.is_done}}
+  Good job! You've completed the subset construction.
+{{/params.is_done}}
+{{^params.is_done}}
+  {{#params.last_submission_correct}}
+    Good job! Complete the next row in the subset construction above.
+  {{/params.last_submission_correct}}
+  {{^params.last_submission_correct}}
+    Your row in the subset construction was not correct.
+  {{/params.last_submission_correct}}
+{{/params.is_done}}
+
+</pl-submission-panel>

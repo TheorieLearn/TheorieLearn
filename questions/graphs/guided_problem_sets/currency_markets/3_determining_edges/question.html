@@ -1,0 +1,37 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Determining our Edges</h3>
+    We've established what the vertices of our graph will represent. We now need to determine the structure of our
+    edges.
+    <br><br>
+    Our graph should be...
+</pl-question-panel>
+<br>
+<pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+    <pl-answer
+        feedback="Think about what these edges should represent. Does it make sense that $v_i \rightarrow v_j$ is different from $v_j \rightarrow v_i$?">undirected</pl-answer>
+    <pl-answer correct="true"
+        feedback="Correct! An edge $v_i \rightarrow v_j$ cooresponds to a different currency trade than an edge $v_j \rightarrow v_i$.">directed</pl-answer>
+</pl-multiple-choice>
+<br>
+<pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true"
+        feedback="Correct! We need edges from every vertex to every other, as it is possible to trade any currency into any other.">complete</pl-answer>
+    <pl-answer
+        feedback="Think about what these edges should represent. Does it make sense to only have certain vertices adjacent to each other?">cyclic</pl-answer>
+    <pl-answer
+        feedback="Think about what these edges should represent. Does it make sense to only have certain vertices adjacent to each other?">bipartite</pl-answer>
+</pl-multiple-choice>
+<br>
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer
+        feedback="Think about what these edges should represent. Do we need to include extra numerical information within the edges?">unweighted</pl-answer>
+    <pl-answer correct="true"
+        feedback="Correct! We need to encode information about exchange rates in the weights. We'll handle that next question.">weighted</pl-answer>
+</pl-multiple-choice>
+<pl-submission-panel>{{{feedback.q1}}} {{{feedback.q2}}} {{{feedback.q3}}}</pl-submission-panel>

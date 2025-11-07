@@ -1,0 +1,54 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/alternating_length_path.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+    <hr>
+    <h3>Using $G'$ to Solve the Problem</h3>
+<br>
+Next, we need to use our constructed graph $G'$ to solve our problem.
+How do paths in $G$ and $G'$ correspond?
+<br>
+<br>
+
+<pl-order-blocks answers-name="path_correspondence" source-blocks-order="alphabetized" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="init"> Let $P = v_0 \to v_1 \to \dots \to v_n$ be a path in $G$.</pl-answer>
+
+    <pl-answer correct="true" tag="gprimepath" depends="init"> Then, by construction, $G'$ contains the
+        corresponding path $P' = (v_0,+) \to (v_1,-) \to \dots \to (v_n,\pm)$.</pl-answer>
+
+    <pl-answer correct="true" tag="altlenequals" depends="gprimepath"> Furthermore, the alternating length of $P$
+        in $G$ is equal to the length of $P'$ in $G'$.</pl-answer>
+
+    <pl-answer correct="false"> Let $P' = v_1 \to v_2 \to \dots \to v_n$ be a path in $G'$.</pl-answer>
+
+    <pl-answer correct="false"> Then, by construction, $G$ contains the
+        corresponding path $P = v_0+ \to v_1 \to \dots \to v_n$. </pl-answer>
+
+    <pl-answer correct="false"> Furthermore, the length of $P$
+        in $G$ is equal to the alternating length of $P'$ in $G'$. </pl-answer>
+
+</pl-order-blocks>
+<br>
+
+So, we need to find the longest path from
+<pl-multiple-choice answers-name="q1" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(s, +)</pl-answer>
+    <pl-answer>(s, -)</pl-answer>
+    <pl-answer>(t, +)</pl-answer>
+    <pl-answer>(t, -)</pl-answer>
+</pl-multiple-choice>
+to
+<pl-multiple-choice answers-name="q2" order="fixed" display="dropdown" hide-letter-keys="true">
+    <pl-answer>(t, +)</pl-answer>
+    <pl-answer>(t, -)</pl-answer>
+    <pl-answer>(s, +)</pl-answer>
+    <pl-answer>(s, -)</pl-answer>
+    <pl-answer correct="true">(t, +) or (t, -)</pl-answer>
+    <pl-answer>(s, +) or (s, -)</pl-answer>
+</pl-multiple-choice>
+in $G'$.</p>

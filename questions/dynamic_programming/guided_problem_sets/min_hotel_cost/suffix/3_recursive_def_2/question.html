@@ -1,0 +1,65 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+
+  <b>Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$, including the
+    cost of the hotel at mile $i$.</b>
+  <br/>
+  <br/>
+
+  From the previous question, we have two exhaustive cases representing the value of $MinCost(i)$:
+  <ol>
+  <li>[The cost of the hotel at mile $i$] + [The minimum cost of traveling from mile $i + 1$ to mile $n$, including the cost of the hotel at mile $i + 1$]</li>
+  <li>[The cost of the hotel at mile $i$] + [The minimum cost of traveling from mile $i + 2$ to mile $n$, including the cost of the hotel at mile $i + 2$]</li>
+  </ol>
+
+  We will now give an expression for the value of each of these cases. Keep in mind how you can use the subproblem definition of $MinCost$
+  when defining these expressions. Allowed variables/functions are <code>MinCost</code>, <code>HotelCosts</code>,
+  <code>n</code>, and <code>i</code>. <em>Note that due to autograder limitations, you must write</em> <code>HotelCosts[i]</code><em> as </em><code>HotelCosts(i)</code> <em>(i.e.,
+  use </em><code>HotelCosts</code><em> as a function rather than an array).</em>
+  <br>
+  <br>
+</pl-question-panel>
+
+<b>Case 1:</b> [The cost of the hotel at mile $i$] + [The minimum cost of traveling from mile $i + 1$ to mile $n$, including the cost of the hotel at mile $i + 1$]
+<br>
+<br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 2:</b> [The cost of the hotel at mile $i$] + [The minimum cost of traveling from mile $i + 2$ to mile $n$, including the cost of the hotel at mile $i + 2$]
+<br><br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input" answers-name="ans2" show-help-text="false"></pl-string-input>
+
+<pl-question-panel>
+<hr>
+Finally, we will address the last step of the DP problem-solving bullet points.
+</pl-question-panel>
+<br/>
+<br/>
+
+To compute $MinCost(i)$, we combine together the two cases by taking the
+<pl-multiple-choice answers-name="drop1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">minimum</pl-answer>
+  <pl-answer correct="false">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of these two expressions. This will lead us to give the recursive defintion for $MinCost(i)$:
+<br>
+<br>
+<pl-string-input display="block" label="$MinCost(i)=$" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+<em>*Note: min and max are included in the list of viable functions</em>
+<hr>
+<pl-question-panel>
+  We now have to be careful about our $MinCost$ function domain $1\leq i \leq n$. In what case(s) would our recursive
+  formula break?
+  <br><br>
+</pl-question-panel>
+  <pl-string-input label="List" display="inline" size="20" placeholder="1, 2, 4, n - 2, n-1"  answers-name="base" show-help-text="false"></pl-string-input>

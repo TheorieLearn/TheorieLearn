@@ -1,0 +1,21 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All binary strings that contains an even number of $0$'s and an even number of $1$'s.</center>***
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (11 + 00 + (10 + 01)(11 + 00)*(10 + 01))*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Start from a DFA and convert it to a regular expression.
+    </pl-hint>
+</pl-hidden-hints>

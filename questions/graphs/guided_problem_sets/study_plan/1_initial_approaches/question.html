@@ -1,0 +1,63 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/study_plan.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+  For example, the following graph displays dependencies between some topics in CS 374.
+
+  <pl-graph>digraph "Example" {"DFA/NFAs" -> "Graphs"; "Induction" -> "Div & Conquer"; "Div & Conquer" -> "DP"; "DP" -> "Graphs"}</pl-graph>
+
+  A valid study plan would be $\textbf{[Induction, Div&Conquer, DP, DFAs/NFAs, Graphs]}$, but <em>not</em> $\textbf{ [Induction, Div&Conquer, DP, Graphs, DFAs/NFAs]}$,
+  since the student would study graphs before learning about DFAs/NFAs, which is a prerequisite.
+
+  <hr>
+
+  <h3>Initial Approaches</h3>
+  The student has the first instinct to use the DAG shortest path algorithm to find the shortest path to topic $T$.
+  Will this approach guarantee a valid study plan?
+</pl-question-panel>
+  <hr>
+
+<pl-scaffolded-writing name="cs374" type="graph">
+  <cfg-name>
+    WHEN -> ________
+    WHEN2 -> ________
+    BOOL -> ________
+    HOWMANY -> ________
+  </cfg-name>
+
+  <cfg-transition>
+    START -> "This approach will" WHEN "work because the student" WHEN2 "study a topic" BOOL "having satisfied" HOWMANY "prerequisite(s)."
+    WHEN -> "always" | "not always" | "never"
+    WHEN2 -> "will never" | "will always" | "can"
+    BOOL -> "after" | "without" | "only after"
+    HOWMANY -> "all" | "exactly one" | "any" | "no"
+
+
+  </cfg-transition>
+</pl-scaffolded-writing>
+
+
+  <pl-hidden-hints>
+    <pl-hint show-after-submission="3">
+      Look at the example graph above. Would the shortest path guarantee all prerequisites are satisfied?
+    </pl-hint>
+  </pl-hidden-hints>
+
+
+
+
+<pl-submission-panel><font color="red"><em><br>{{feedback.flipped}}</em></font><br></pl-submission-panel>
+
+<!--
+  This approach will always work because the student can study a topic only if they have satisfied all prereqs
+  This approach will not always work because the student can study a topic without having satisfied all prereqs
+  This approach will not always work because the student cannot study a topic unless they have satisfied any
+  This approach will never work because the student cannot study a topic if they have satisfied all prereqs
+
+
+ -->

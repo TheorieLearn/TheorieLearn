@@ -1,0 +1,23 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn_2var.html"
+      ></pl-variable>
+  </pl-template>
+  <p>
+    Great job! Finally, let's do a runtime analysis on our DP algorithm. Consider array accesses to all be $O(1)$, and give expressions with respect to $n$ and $p$.
+  </p>
+<br><br>
+</pl-question-panel>
+
+
+There are </pl-symbolic-input><pl-symbolic-input show-help-text="false" variables="n,p" correct-answer="n*p" answers-name="ans" display="inline" size="6"></pl-symbolic-input> subproblems, and
+each subproblem takes
+<pl-symbolic-input answers-name="ans2" variables="n,p" label="O(" suffix=")" correct-answer="1" display='inline' size='4'></pl-symbolic-input>
+time to evaluate.
+
+The overall runtime is then
+<pl-symbolic-input answers-name="ans3" variables="n,p" label="O(" suffix=")" correct-answer="n*p" display='inline' size='6'></pl-symbolic-input>.

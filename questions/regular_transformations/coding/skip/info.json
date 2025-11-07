@@ -1,0 +1,23 @@
+{
+    "uuid": "8d1f24d0-de05-424e-bd60-13ee82564a26",
+    "title": "Regular Transformation: Skip",
+    "topic": "Regular Transformation",
+    "tags": [
+        "Fall22",
+        "clarage2",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

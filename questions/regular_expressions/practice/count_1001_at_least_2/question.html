@@ -1,0 +1,27 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{1, 0\}$.
+Let $\#(x, y)$ denote the number of times the string $x$ appears in string $y$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings $w \in \Sigma^*$ for which $\#(1001, w) \geq 2$</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+any = (1+0)*
+disjoint = any (1001) any (1001) any
+overlap = any (1001001) any
+disjoint + overlap
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+      You should separately handle the case where the two 1001 strings overlap and the case were the two
+      strings of 1001 are disjoint.
+    </pl-hint>
+</pl-hidden-hints>

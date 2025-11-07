@@ -1,0 +1,23 @@
+{
+    "uuid": "ad8bb5bb-5b57-4456-81e5-1f37f3541d5d",
+    "title": "Regular Transformation: XOR(L)",
+    "topic": "Regular Transformation",
+    "tags": [
+        "zhuofan7",
+        "Regular Transformation",
+        "fa22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

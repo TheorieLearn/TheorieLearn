@@ -1,0 +1,86 @@
+<pl-question-panel>
+<markdown>
+Create a DFA in the area below for the following language:
+
+***<center>All binary strings of length at least $5$ such that symbols at positions divisible by $5$ are all $0$'s.</center>***
+</markdown>
+<hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="dfa">
+    <correct-answer>
+        {
+            "states":[
+               "q'0",
+               "q1",
+               "q'1",
+               "q'4",
+               "q4",
+               "1",
+               "q2",
+               "q3",
+               "q0",
+               "q'3",
+               "q'2"
+            ],
+            "input_symbols":[
+               "0",
+               "1"
+            ],
+            "transitions":{
+               "q0":{
+                  "0":"q1",
+                  "1":"q1"
+               },
+               "q1":{
+                  "0":"q2",
+                  "1":"q2"
+               },
+               "q2":{
+                  "0":"q3",
+                  "1":"q3"
+               },
+               "q3":{
+                  "0":"q4",
+                  "1":"q4"
+               },
+               "q4":{
+                  "0":"q'0",
+                  "1":"1"
+               },
+               "q'0":{
+                  "0":"q'1",
+                  "1":"q'1"
+               },
+               "q'1":{
+                  "0":"q'2",
+                  "1":"q'2"
+               },
+               "q'2":{
+                  "0":"q'3",
+                  "1":"q'3"
+               },
+               "q'3":{
+                  "0":"q'4",
+                  "1":"q'4"
+               },
+               "q'4":{
+                  "0":"q'0",
+                  "1":"1"
+               },
+               "1":{
+                  "0":"1",
+                  "1":"1"
+               }
+            },
+            "initial_state":"q0",
+            "final_states":[
+               "q'0",
+               "q'1",
+               "q'4",
+               "q'3",
+               "q'2"
+            ]
+         }
+    </correct-answer>
+</tl-fsm-builder>

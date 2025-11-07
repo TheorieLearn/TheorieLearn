@@ -1,0 +1,50 @@
+<pl-question-panel>
+<markdown>
+For regular language transformation problems, a good first step is to think
+about what additional information you need to record about the input string as
+it's being read. This will inform how to construct an NFA or DFA corresponding
+to the language transformation.
+
+Consider the language transformation from before:
+
+$$\mathsf{INSERT01}(L) := \{ x01y \mid xy \in L \}$$
+
+We are designing a NFA $M'$ which accepts $\mathsf{insert01}(L)$. Since $L$ is
+regular, we can assume there is some NFA $M$ which decides it.
+
+We clearly need to record any prefix of a possible inserted $01$ we've seen so far.
+In this question, we'll be
+asking about what additional information is needed for a NFA to decide the language.
+</markdown>
+</pl-question-panel>
+
+<hr>
+<p>If we've just read in the character $0$ but not any inserted $01$ yet, what
+   elements of $\mathsf{INSERT01}(L)$ could this belong to?</p>
+
+<pl-checkbox answers-name="read-zero" hide-answer-panel=true>
+    <pl-answer correct="true">The character could belong to $x$</pl-answer>
+    <pl-answer correct="true">The character could belong to the inserted $01$.</pl-answer>
+    <pl-answer>The character could belong to $y$.</pl-answer>
+</pl-checkbox>
+
+<br>
+<p>If we've just read in the character $1$ but not any inserted $01$ yet, what
+   elements of $\mathsf{INSERT01}(L)$ could this belong to?</p>
+
+<pl-checkbox answers-name="read-one" hide-answer-panel=true>
+    <pl-answer correct="true">The character could belong to $x$</pl-answer>
+    <pl-answer correct="true">The character could belong to the inserted $01$.</pl-answer>
+    <pl-answer>The character could belong to $y$.</pl-answer>
+</pl-checkbox>
+
+
+<br>
+<p>If we've just read in the character $0$ after a $01$, what
+   elements of $\mathsf{INSERT01}(L)$ could this belong to?</p>
+
+<pl-checkbox answers-name="read-zero-after" hide-answer-panel=true>
+    <pl-answer correct="true">The character could belong to $x$</pl-answer>
+    <pl-answer correct="true">The character could belong to the inserted $01$.</pl-answer>
+    <pl-answer correct="true">The character could belong to $y$.</pl-answer>
+</pl-checkbox>

@@ -1,0 +1,12 @@
+{
+    "uuid": "7d79b699-25d6-467b-a399-18005a66f8d0",
+    "title": "Using Bellman-Ford to Detect Negative Cycles: Introduction",
+    "topic": "Graph Algorithms",
+    "singleVariant": true,
+    "tags": [
+        "stevenp6",
+        "Guided Practice",
+        "fa21"
+    ],
+    "type": "v3"
+}

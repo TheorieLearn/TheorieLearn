@@ -1,0 +1,72 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour.html"
+    ></pl-variable>
+  </pl-template>
+  <markdown>
+  ### Subproblem Definition
+
+  Let $\mathsf{WorldTour}(S,i)$ be the cheapest tour with the following properties:
+  - The tour starts from 0.
+  - The tour passes through the cities in $S$ exactly once.
+  - The tour does not pass through any cities in $V \setminus S$.
+  - The tour ends at $i$, for $i \notin S$.
+  </markdown>
+  <hr>
+</pl-question-panel>
+
+With the preceeding recursive definition, we can now write the final recurrence.
+Express this in terms of $d,S,t,i$, and recursive calls to $\mathsf{WorldTour}$, using $S - s$ to denote $S \setminus \{s\}$.
+If you need to use the empty set, copy and paste this symbol: ∅
+<br>
+<br>
+In the recursive case, we have that
+<br>
+$\mathsf{WorldTour}(S,i) = \min\limits_{t \in S} \Big($
+<pl-string-input display="inline" size="25" placeholder="Symbolic input"  answers-name="recursive" show-help-text="false"></pl-string-input>
+$\Big)$
+<br>
+<br>
+And our base case is
+<br>
+$\mathsf{WorldTour}(T,i) = $
+<pl-string-input display="inline" size="15" placeholder="Symbolic input"  answers-name="base_case1" show-help-text="false"></pl-string-input>
+for $T = $
+<pl-string-input display="inline" size="15" placeholder="?"  answers-name="base_case2" correct-answer="∅" show-help-text="false" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+and $i = 1, \dots, n-1$.
+<br>
+
+<hr>
+Momo almost forgot something: she still wants to return home! Now, she instead
+needs to determine the cheapest cycle starting and ending at $0$, visiting all
+other cities $R = \{1, \dots, n-1\}$ exactly once. Since she is still
+starting from the same location, you realize that you can find the cheapest
+tour she can take using the same recursive subproblem, but with a different
+final answer. What should the final answer be for this problem, in terms of
+$i$, $n$, $d$, $R$, and recursive calls to $\mathsf{WorldTour}$?
+(You may use the set difference operator, as described above.)
+<br>
+<br>
+
+<pl-string-input display="block" label="$\min_{1 \leq i \leq n-1}$" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+
+
+<pl-submission-panel>
+  <hr>
+  {{#feedback.recursive}}
+  <b>Recursive Case Feedback:</b> {{{feedback.recursive}}}
+  <br>
+  {{/feedback.recursive}}
+
+  {{#feedback.base_case1}}
+  <b>Base Case Feedback:</b> {{{feedback.base_case1}}}
+  <br>
+  {{/feedback.base_case1}}
+
+  {{#feedback.final}}
+  <b>Final Case Feedback:</b> {{{feedback.final}}}
+  {{/feedback.final}}
+</pl-submission-panel>

@@ -1,0 +1,90 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost_coupon.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+
+  <b>Let $MinCost(i, j)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$ (including the
+    cost of the hotel at mile $i$) with $j$ remaining coupons.</b>
+  <br/>
+  <br/>
+
+  From the previous question, we have four exhaustive cases representing the value of $MinCost(i, j)$:
+  <ol>
+  <li>Momo doesn't use a coupon at hotel $i$ and travels forward 1 mile</li>
+  <li>Momo doesn't use a coupon at hotel $i$ and travels forward 2 miles</li>
+  <li>Momo uses a coupon at hotel $i$ and travels forward 1 mile</li>
+  <li>Momo uses a coupon at hotel $i$ and travels forward 2 miles</li>
+  </ol>
+
+  We will now give an expression for the value of each of these cases. Keep in mind how you can use the subproblem definition of $MinCost$
+  when defining these expressions. Allowed variables/functions are <code>MinCost</code>, <code>HotelCosts</code>, <code>min</code>, <code>max</code>,
+  <code>n</code>, <code>k</code>, <code>i</code>, and <code>j</code>. <em>Note that due to autograder limitations, you must write</em> <code>HotelCosts[i]</code><em> as </em><code>HotelCosts(i)</code> <em>(i.e.,
+  use </em><code>HotelCosts</code><em> as a function rather than an array).</em>
+  <br>
+  <br>
+</pl-question-panel>
+
+<b>Case 1:</b> Momo doesn't use a coupon at hotel $i$ and travels forward 1 mile
+<br>
+<br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+
+<b>Case 2:</b> Momo doesn't use a coupon at hotel $i$ and travels forward 2 miles
+<br><br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input" answers-name="ans2" show-help-text="false"></pl-string-input>
+<br><br>
+
+<b>Case 3:</b> Momo uses a coupon at hotel $i$ and travels forward 1 mile
+<br>
+<br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans3" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+
+<b>Case 4:</b> Momo uses a coupon at hotel $i$ and travels forward 2 miles
+<br><br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input" answers-name="ans4" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<pl-question-panel>
+<hr>
+Finally, we will address the last step of the DP problem-solving bullet points.
+</pl-question-panel>
+<br/>
+<br/>
+
+To compute $MinCost(i, j)$, we combine together the four cases by taking the
+<pl-multiple-choice answers-name="drop1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">minimum</pl-answer>
+  <pl-answer correct="false">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of the expressions. This will lead us to give the recursive defintion for $MinCost(i, j)$:
+<br>
+<br>
+<pl-string-input display="block" label="$MinCost(i)=$" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+<em>*Note: if you use min/max, please submit in the form </em><code>max(arg1, arg2, arg3, arg4)</code> <em>rather than equivalent expressions such as </em> <code>max(arg1, max(arg2, arg3, arg4))</code><em>.</em>
+<hr>
+<pl-question-panel>
+  <p>
+  We now have to be careful about our $MinCost$ function domain $1\leq i \leq n$, $0\leq j \leq k$.
+  Let's consider each of these parameters separately. What values of $i$ would cause any recursive subcalls to break?.
+</p>
+</pl-question-panel>
+<p>
+  <pl-string-input label="List" display="inline" size="20" placeholder="1, 2, 4, n - 1, n"  answers-name="basei" show-help-text="false"></pl-string-input>
+</p>
+<pl-question-panel>
+  <p>
+  Now, what values of $j$ would cause any recursive subcalls to break?
+</p>
+</pl-question-panel>
+<pl-string-input label="List" display="inline" size="20" placeholder="1, 2, 4, n - 1, n"  answers-name="basej" show-help-text="false"></pl-string-input>

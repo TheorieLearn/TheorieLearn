@@ -1,0 +1,28 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/tree_max_ind_set.html"
+      ></pl-variable>
+    </pl-template>
+    <p>
+      Great job! Finally, let's do a runtime analysis on our DP algorithm. Consider array accesses to all be $O(1)$ for any vertex $v_i$. Let $n$ be to total number of vertices in the tree.
+    </p>
+  <br><br>
+  </pl-question-panel>
+
+  There are <pl-big-o-input show-help-text="false" answers-name="ans1" variable="n" correct-answer="n" display='inline' size='3'></pl-big-o-input> subproblems.
+  <br>
+  The work for solving the subproblem at a given node $v$ is $O($
+    <pl-multiple-choice order="ascend" answers-name="ans2" display="dropdown" hide-letter-keys="true">
+      <pl-answer correct="true">degree(v)</pl-answer>
+      <pl-answer correct="false">n</pl-answer>
+      <pl-answer correct="false">1</pl-answer>
+    </pl-multiple-choice>
+    $)$
+    </center>
+  <br>
+  Since $G$ is a tree, the sum of the degree of all vertices is: <pl-big-o-input show-help-text="false" answers-name="ans3" variable="n" correct-answer="n" display='inline' size='3'></pl-big-o-input>
+  <br/>
+  The overall runtime is then <pl-big-o-input show-help-text="false" answers-name="ans4" variable="n" correct-answer="n" display='inline' size='3'></pl-big-o-input>

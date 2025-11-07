@@ -1,0 +1,44 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+</pl-template>
+<markdown>
+Recall the example given in the last question:
+- profit = [5, 90, 2, 1, 100, 20]
+- skip &nbsp; = [1, &nbsp; 3, 1, 3, &nbsp; &nbsp; 2,  &nbsp;4]
+We can see $i = 5$ is the first index where the recursive formula fails to compute the correct answer.
+Our recursive formula computes: $MaxProfit(5) = profit[5] + MaxProfit(3)$.
+However, the issue is that $MaxProfit(3)$ does not compute exactly what we want.
+</markdown>
+</pl-question-panel>
+
+<p>What trials could have been the most recently selected trial prior to trial 5, as a result of calling the subproblem $MaxProfit(3)$?
+<pl-string-input label="List" display="inline" size="15" placeholder="1, 2, 3, 4"  answers-name="incorrect_trials" show-help-text="false"></pl-string-input></p>
+<p>On the other hand, what trials are actually allowed to be selected as the most recent trial immediately before trial 5?
+<pl-string-input label="List" display="inline" size="15" placeholder="1, 2, 3, 4"  answers-name="correct_trials" show-help-text="false"></pl-string-input></p>
+
+<pl-question-panel>
+<markdown>
+Do you see how giving Burr the choice to take or not take the trial in the recursive definition is the issue?
+In general, the condition that $j + skip[i] < i$ only guarantees trial $j$ to be valid as the most recent trial before trial $i$.
+However, $MaxProfit(j)$ might choose any trial in $\{1 .. j\}$ as the most recent trial before trial $i$.
+This is the issue with Tom Oko's algorithm.
+
+<p>
+    If we wish to use a prefix definition, we need to make it required that the trial $j$ is taken in the subproblem rather than giving a choice to take or not take trial $j$.
+    Therefore we must introduce a constraint in the subproblem definition.
+</p>
+<center><b>
+    Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $1$ through $i$, under the constraint that Burr takes trial $i$.
+</b></center>
+<p>
+    To finish off, you should work with Tom to implement the algorithm for this subproblem definition.
+    Is it more efficient than the one we presented in the previous PrairieLearn question?
+    We'll leave that for you two to determine.
+</p>
+</markdown>
+</pl-question-panel>

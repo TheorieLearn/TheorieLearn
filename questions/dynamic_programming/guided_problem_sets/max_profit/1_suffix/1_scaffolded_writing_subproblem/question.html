@@ -1,0 +1,19 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+</pl-template>
+
+<p>Write a viable subproblem definition that can be used to solve the problem above.</p>
+</pl-question-panel>
+
+<tl-scaffolded-writing answers-name="subproblem_definition"></tl-scaffolded-writing>
+<pl-hidden-hints>
+  <pl-hint show-after-submission="5">
+    A correct answer is: "Define $MaxProfit(i)$ to be the maximum profit that can be obtained from trials $i$ through $n$."
+  </pl-hint>
+</pl-hidden-hints>

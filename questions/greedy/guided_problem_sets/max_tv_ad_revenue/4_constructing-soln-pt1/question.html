@@ -1,0 +1,28 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/max_tv_ad_revenue.html"
+    ></pl-variable>
+</pl-template>
+<hr>
+<p>In the previous approaches, we only considered one part of the given information about our advertisers. Instead of greedily choosing advertisers based solely on amount or time, let’s consider the
+<pl-multiple-choice answers-name="statistic" display="dropdown" hide-letter-keys="true">
+<pl-answer correct="False">sum</pl-answer>
+<pl-answer correct="True">ratio</pl-answer>
+<pl-answer correct="False">product</pl-answer>
+<pl-answer correct="False">difference</pl-answer>
+</pl-multiple-choice>
+between both amount and time and construct the following strategy:</p>
+
+<p><i>“Sort the advertisers in decreasing order with respect to the value
+<pl-multiple-choice answers-name="value" display="dropdown" hide-letter-keys="true">
+<pl-answer correct="False">P[i]+L[i]</pl-answer>
+<pl-answer correct="True">P[i]/L[i]</pl-answer>
+<pl-answer correct="False">L[i]/P[i]</pl-answer>
+<pl-answer correct="False">P[i]L[i]</pl-answer>
+<pl-answer correct="False">L[i]-P[i]</pl-answer>
+<pl-answer correct="False">P[i]-L[i]</pl-answer>
+</pl-multiple-choice>
+, and distribute the time slot in this order.”</i></p>

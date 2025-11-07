@@ -1,0 +1,43 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/max_tv_ad_revenue.html"
+    ></pl-variable>
+</pl-template>
+<hr>
+<p>A possible approach to solving this problem is to use a greedy strategy. Because we want to maximize our revenue, it may be reasonable to prioritize advertisers that are willing to pay the most amount. As a result, consider the following strategy:</p>
+
+<p><i>“Sort the advertisers in decreasing order with respect to the amount they are willing to pay. Distribute the time slot in this order.”</i></p>
+
+<p>For example, if n = 3, W = 5, L = [1, 2, 5], and P = [5, 10, 40], our strategy would indicate that we should allocate the entire amount of time to the third advertiser, receiving a revenue of 40, which is the maximum amount for this set of advertisers. <b>Can you think of a counterexample where this strategy breaks down?</b></p>
+
+<p>Provide your answer in the form of the problem parameters $n$, $W$, $L[1..n]$, and $P[1..n]$. Also provide an array $X_{W}[1..n]$, where each element $X[i]$ represents the time (in minutes) allocated to the advertisement from the $i$-th advertiser with the strategy described in this problem, and an array $X_{C}[1..n]$ which represents the optimal solution.</p>
+
+<pl-integer-input answers-name="n" label="$n =$" weight=0></pl-integer-input>
+<br><br>
+<pl-number-input answers-name="W" label="$W =$" weight=0></pl-number-input>
+<br><br>
+<pl-string-input answers-name="L" label="$L =$" placeholder="comma-separated list" weight=0></pl-string-input>
+<br><br>
+<pl-string-input answers-name="P" label="$P =$" placeholder="comma-separated list" weight=0></pl-string-input>
+<br><br>
+<pl-string-input answers-name="X_w" label="$X_W =$" placeholder="comma-separated list"></pl-string-input>
+<br><br>
+<pl-string-input answers-name="X_c" label="$X_C =$" placeholder="comma-separated list"></pl-string-input>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    {{{feedback.L}}}
+    {{{feedback.P}}}
+    {{{feedback.X_c}}}
+    {{{feedback.X_w}}}
+    {{{format_errors.n}}}
+    {{{format_errors.W}}}
+    {{{format_errors.L}}}
+    {{{format_errors.P}}}
+    {{{format_errors.X_c}}}
+    {{{format_errors.X_w}}}
+</pl-submission-panel>

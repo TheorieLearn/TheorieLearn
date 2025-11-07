@@ -1,0 +1,23 @@
+{
+    "uuid": "7b3dcde1-4fdc-41c7-bc81-5ca48cd566bd",
+    "title": "Fooling Set: 0^(3^(n))",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "Free Response",
+        "Fall22"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

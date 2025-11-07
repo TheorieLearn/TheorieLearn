@@ -1,0 +1,63 @@
+<pl-question-panel>
+<markdown>
+Given a language $L \subseteq \{0,1\}^*$, we define
+
+$$
+  \mathsf{INSERT01}(L) := \{ x01y \mid xy \in L \}.
+$$
+
+---
+
+We assume that we have a DFA $M = (Q, \{0,1\}, \delta, s, A)$ that accepts $L$.
+Using this, we will construct a NFA $M' = (Q', \{0,1\}, \delta', s', A')$ that accepts $\mathsf{INSERT01}(L)$.
+
+In the previous question, you got some practice with constructing $M'$ given a concrete $M$.
+Now, we are asking you generalize that transformation to an abstract $M$.
+In other words, you should define the components of $M'$ *symbolically* by referring to the components of $M$.
+
+You will need to copy and paste these characters for some of your answers: `δ`, `ε`
+
+<pl-template file-name="theorielearn/set-input-instructions/template.html" directory="serverFilesCourse"></pl-template>
+
+Recall that in the definition of an NFA transition function, the output values are sets.
+When filling in the transition functions below, use the same format that you used
+for the concrete example in the previous problem.
+<hr>
+</markdown>
+</pl-question-panel>
+
+<markdown>
+$Q' =$
+<pl-string-input answers-name="states-1" correct-answer="Q" show-help-text=false size=1 remove-spaces="true" allow-blank=true></pl-string-input>
+$\;\times\;$
+<pl-string-input answers-name="states-2" correct-answer="{ε, 0, 01}" show-help-text=false size=20 remove-spaces="true" allow-blank=true></pl-string-input>
+$\;$
+
+$s' =$
+<pl-string-input answers-name="start-state" correct-answer="(s, ε)" show-help-text=false size=5 allow-blank=true></pl-string-input>
+
+$\delta' ((q, \varepsilon), 0) =$
+<pl-string-input answers-name="transition-empty-0" correct-answer="{(δ(q, 0), ε), (q, 0)}" show-help-text=false size=20 allow-blank=true></pl-string-input>
+
+
+$\delta' ((q, \varepsilon), 1) =$
+<pl-string-input answers-name="transition-empty-1" correct-answer="{(δ(q, 1), ε)}" show-help-text=false size=20 allow-blank=true></pl-string-input>
+
+
+$\delta' ((q, 0), 0) =$
+<pl-string-input answers-name="transition-0-0" correct-answer="{}" show-help-text=false size=20 allow-blank=true></pl-string-input>
+
+
+$\delta' ((q, 0), 1) =$
+<pl-string-input answers-name="transition-0-1" correct-answer="{(q, 01)}" show-help-text=false size=20 allow-blank=true></pl-string-input>
+
+$\delta' ((q, 01), a) =$
+<pl-string-input answers-name="transition-01" correct-answer="{(δ(q, a), 01)}" show-help-text=false size=20  allow-blank=true></pl-string-input>
+
+$A' =$
+<pl-string-input answers-name="accepting-states-1" correct-answer="A" show-help-text=false size=1 allow-blank=true></pl-string-input>
+$\times$
+<pl-string-input answers-name="accepting-states-2" correct-answer="{01}" show-help-text=false size=20 allow-blank=true></pl-string-input>
+
+</markdown>
+</pl-question-panel>

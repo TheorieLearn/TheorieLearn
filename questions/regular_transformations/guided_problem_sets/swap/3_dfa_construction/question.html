@@ -1,0 +1,54 @@
+<pl-question-panel>
+<markdown>
+$\mathsf{SWAP}(L) := \{\mathsf{swap}(w) \mid w \in L \}$, where $\mathsf{swap}(w)$
+is defined recursively as
+
+$$
+  \mathsf{swap}(w) = \begin{cases}
+    w &\text{if } |w| \leq 1\\
+    ba \bullet \mathsf{swap}(x) &\text{if } w = ab \bullet x \text{ for some } a, b \in \Sigma \text{ and } x \in \Sigma^*
+  \end{cases}
+$$
+
+---
+
+We assume that we have a DFA $M = (Q, \Sigma, \delta, s, A)$ that accepts $L$.
+Using this, we will construct a DFA $M' = (Q', \Sigma, \delta', s', A')$ that accepts $\mathsf{SWAP}(L)$.
+
+In the previous question, you got some practice with constructing $M'$ given a concrete $M$.
+Now, we are asking you generalize that transformation to an abstract $M$.
+In other words, you should define the components of $M'$ *symbolically* by referring to the components of $M$.
+
+You will need to copy and paste these characters for some of your answers: `δ`, `ε`, `∈`, `Σ`
+
+Note: in the questions below, $a \neq \varepsilon$. In other words, $a$ always refers to an element of $\Sigma$.
+<hr>
+</markdown>
+</pl-question-panel>
+
+<markdown>
+$Q' =$
+<pl-string-input answers-name="states-1" correct-answer="Q" show-help-text=false size=1 remove-spaces="true" allow-blank=true></pl-string-input>
+$\;\times\; \Big( \Big\{$
+<pl-string-input answers-name="states-2" correct-answer="ε" show-help-text=false size=1 remove-spaces="true" allow-blank=true></pl-string-input>
+$\; \Big\} \; \cup$
+<pl-string-input answers-name="states-3" correct-answer="Σ" show-help-text=false size=1 remove-spaces="true" allow-blank=true></pl-string-input>
+$\;\Big)$
+
+$s' =$
+<pl-string-input answers-name="start-state" correct-answer="(s, ε)" show-help-text=false size=5 remove-spaces="true" allow-blank=true></pl-string-input>
+
+$\delta' ((q, \varepsilon), a) =$
+<pl-string-input answers-name="transition-1" correct-answer="(q, a)" show-help-text=false size=10 remove-spaces="true" allow-blank=true></pl-string-input>
+
+$\delta' ((q, a), b) =$
+<pl-string-input answers-name="transition-2" correct-answer="(δ(δ(q, b), a), ε)" show-help-text=false size=10 remove-spaces="true" allow-blank=true weight=3></pl-string-input>
+
+$A' = \Big\{ (q, \varepsilon) \; \Big| \;$
+<pl-string-input answers-name="accepting-states-1" correct-answer="q ∈ A" show-help-text=false size=5 remove-spaces="true" allow-blank=true></pl-string-input>
+$\Big\}
+\cup
+\Big\{ (q, a) \; \Big| \; $
+<pl-string-input answers-name="accepting-states-2" correct-answer="δ(q, a) ∈ A" show-help-text=false size=5 remove-spaces="true" allow-blank=true></pl-string-input>
+$\Big\}$
+</markdown>

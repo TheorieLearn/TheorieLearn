@@ -1,0 +1,32 @@
+<pl-question-panel>
+<markdown>
+Create an NFA in the area below for the following language:
+
+***<center>The language given by the regular expression:</center>*** $$\{0^a(0+1)^{*}0^a | a > 0\}$$ *<center>(Hint: this may not look at first like a regular langauge, but it is)</center>*
+
+</markdown>
+<hr>
+</pl-question-panel>
+
+<tl-fsm-builder answers-name="q" fsm-type="nfa">
+    <correct-answer>
+    {
+        "states": [
+            "0",
+            "1",
+            "2"
+        ],
+        "input_symbols": [
+            "1",
+            "0"
+        ],
+        "transitions": {
+            "0": {"0": ["1"]},
+            "1": {"0": ["1", "2"], "1": ["1"]},
+            "2": {}
+        },
+        "initial_state": "0",
+        "final_states": ["2"]
+    }
+    </correct-answer>
+</tl-fsm-builder>

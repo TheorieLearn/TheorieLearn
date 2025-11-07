@@ -1,0 +1,38 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/alternating_length_path.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Constructing Vertices in $G'$</h3>
+    Now, after noting what information we should track, we need to formally define the set of vertices in the new graph $G'=(V',E')$.
+    </pl-question-panel>
+    We define $V'$ by composing these sets:
+    <br>
+    <br>
+    <ul>
+        <li> $V$: the vertices of the original graph $G$ </li>
+        <li> $S=$
+            <pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+                <pl-answer>{0, 1, ..., |V|}</pl-answer>
+                <pl-answer correct="true">{+, -}</pl-answer>
+                <pl-answer>{0, 1, ..., |E|}</pl-answer>
+            </pl-multiple-choice>
+            ,
+            <br>
+            representing
+            <pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+                <pl-answer correct="true">the coefficient of the next edge weight in the alternating length</pl-answer>
+                <pl-answer>how many vertices you have traversed in total</pl-answer>
+                <pl-answer>the fewest possible number of vertices left to be traversed before reaching t</pl-answer>
+            </pl-multiple-choice> </li>
+        </ul>
+        Mathematically, we define $V'$ =
+        <pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+            <pl-answer>V ∪ S</pl-answer>
+            <pl-answer correct="true">V x S</pl-answer>
+            <pl-answer>V ∩ S</pl-answer>
+        </pl-multiple-choice>

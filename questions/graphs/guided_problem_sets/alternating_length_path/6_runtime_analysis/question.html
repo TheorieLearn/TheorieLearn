@@ -1,0 +1,29 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/alternating_length_path.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Runtime Analysis</h3>
+    To finish, we need to analyze the runtime of our algorithm. Use "V" to represent the number of vertices in the original
+    graph $G$ and "E" to represent the number of edges in the original graph $G$.
+</pl-question-panel>
+<br>
+<br>
+$G'$ has <b>exactly</b>
+<pl-symbolic-input answers-name="q1" variables="V,E" correct-answer="2*V" size="20"></pl-symbolic-input>
+vertices.
+<br>
+<br>
+$G'$ has <b>exactly</b>
+<pl-symbolic-input answers-name="q2" variables="V,E" correct-answer="2*E" size="20"></pl-symbolic-input>
+edges.
+<br>
+<br>
+The total runtime to construct $G'$ and run an algorithm that solves the question is
+<br>
+<!-- <pl-big-o-input answers-name="q3" variables="V, E" correct-answer="V + E" size="20"></pl-big-o-input> -->
+$O($<pl-symbolic-input answers-name="q3" variables="V,E" correct-answer="V + E" size="20"></pl-symbolic-input>$)$

@@ -1,0 +1,50 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings containing at least two 0s and at least one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+The next step is to build regular expressions for each of the cases you identified in the previous part. With this step, we will have successfully converted the language intersection into a language union ("and" -> "or").
+
+From the previous part, we know that the language accepts:
+- Strings containing "001" as a subsequence.
+- Strings containing "010" as a subsequence.
+- Strings containing "100" as a subsequence.
+
+Notice that these cases are not necessarily disjoint (e.g., "1001" has both "100" and "001" as a subsequence). However, the important thing is that these cases are exhaustive; every string in the language belongs to at least one of these three cases.
+</markdown>
+</pl-question-panel>
+
+<pl-question-panel>
+<markdown>
+Give a regular expression for all strings containing "001" as a subsequence.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+(0 + 1)*0(0 + 1)*0(0 + 1)*1(0 + 1)*
+</tl-regex-input>
+
+<pl-question-panel>
+<br/>
+<markdown>
+Give a regular expression for all strings containing "010" as a subsequence.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q2">
+(0 + 1)*0(0 + 1)*1(0 + 1)*0(0 + 1)*
+</tl-regex-input>
+
+<pl-question-panel>
+  <br/>
+<markdown>
+Give a regular expression for all strings containing "100" as a subsequence.
+</markdown>
+</pl-question-panel>
+
+<tl-regex-input answers-name="q3">
+(0 + 1)*1(0 + 1)*0(0 + 1)*0(0 + 1)*
+</tl-regex-input>

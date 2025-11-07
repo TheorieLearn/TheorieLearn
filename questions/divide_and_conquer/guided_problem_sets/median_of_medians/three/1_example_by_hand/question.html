@@ -1,0 +1,55 @@
+<pl-question-panel>
+If you are unfamiliar with <code>MomSelect5</code>, refresh yourself by reading the textbook
+<a href="https://courses.engr.illinois.edu/cs374/sp2021/notes/01-recursion.pdf#page=17">here</a>. It is important that you understand
+the reasoning behind this algorithm before attempting these questions.
+We will be analyzing a slight variation on this algorithm: <code>MomSelect3</code>
+<br/>
+<br/>
+<markdown>
+Consider the pseudocode shown below for selection using the median of medians technique. `MomSelect3(A, k)` will efficiently select
+the `k`th smallest element of `A`, an array of **distinct** comparable elements.
+We have also provided a (space-inefficient) implementation of `Partition` to standardize the element order of your answers.
+</markdown>
+<hr/>
+<pl-figure file-name="pseudocode.png" directory="clientFilesQuestion"></pl-figure>
+<hr/>
+<markdown>
+```
+A = [
+  {{params.input_array}}
+]
+```
+
+If `MomSelect3` is called on the array shown above, what would be the arguments passed to the *first* recursive call to `MomSelect3`?
+
+</markdown>
+</pl-question-panel>
+
+<pl-string-input answers-name="A1" label="$A=$"
+    remove-spaces="true" size="100" placeholder="[1, 2, 3]"></pl-string-input>
+<br></br>
+<pl-integer-input answers-name="k1" label="$k=$"></pl-integer-input>
+<br></br>
+
+<pl-question-panel>
+<markdown>
+If the original call to `MomSelect3` had $k={{params.k_low}}$, what would be the arguments passed to the *second* recursive call to `MomSelect3`?
+</markdown>
+</pl-question-panel>
+
+<pl-string-input answers-name="A_low" label="$A=$"
+    remove-spaces="true" size="100" placeholder="[1, 2, 3]"></pl-string-input>
+<br></br>
+<pl-integer-input answers-name="k_low" label="$k=$"></pl-integer-input>
+<br></br>
+
+<pl-question-panel>
+<markdown>
+If the original call to `MomSelect3` had $k={{params.k_high}}$, what would be the arguments passed to the *second* recursive call to `MomSelect3`?
+</markdown>
+</pl-question-panel>
+
+<pl-string-input answers-name="A_high" label="$A=$"
+    remove-spaces="true" size="100" placeholder="[1, 2, 3]"></pl-string-input>
+<br></br>
+<pl-integer-input answers-name="k_high" label="$k=$"></pl-integer-input>

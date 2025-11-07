@@ -1,0 +1,12 @@
+<p>For your algorithms class, you have to use an online learning platform called GrassLearn to complete your homework. Your homework consists of $n$ questions, and you have to complete them in order (i.e., you cannot skip a question and go back to it later). GrassLearn keeps track of your <em>streak</em>. Your streak starts at 0 at the beginning of an assignment, it increments by 1 every time you answer a question correctly, and it resets to 0 when you answer a question incorrectly. When you answer a question correctly, you earn $s$ points, where $s$ is the length of your streak after answering that question.</p>
+
+<p>Let $TimeNeeded[1..n]$ be an array of positive integers where $TimeNeeded[i]$ is the number of minutes required to answer Question $i$ correctly. You can assume that you don't spend any time on questions that you answer incorrectly.</p>
+
+<p>In order to get a grade that you're happy with, you want to earn at least $p$ total points on this assignment. What is the minimum number of minutes you need to spend in order to achieve this goal?</p>
+
+<h4>Example</h4>
+<p>Consider $TimeNeeded = [20, 10, 5, 100, 2, 1]$.</p>
+<ul>
+    <li>If $p = 6$, then answering Questions 2, 3, 5, and 6 correctly will earn $1+2+1+2=6$ points, and this will take $10+5+2+1=18$ minutes.</li>
+    <li>If $p = 7$, then answering Questions 1, 2, 3, and 6 correctly will earn $1+2+3+1=7$ points, and this will take $20+10+5+1=36$ minutes.</li>
+</ul>

@@ -1,0 +1,58 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all strings except 000.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem.
+This is not the only approach, and we are not trying to suggest that it is the best approach.
+Our sole intent is to introduce one possible way of building regular expressions.
+
+---
+
+Every regular expression you construct should have two qualities:
+
+1. It should be correct. To get a perfect score, your regular expression must match every string in the language, and nothing else.
+2. It should be understandable. That means it should be written in a way such that a human or a computer could verify its correctness in a reasonable amount of time. Readability is just as important as correctness.
+
+Your regular expression does *not* have to be "elegant", nor do you have to optimize the number of characters you're using.
+When writing algorithms, you may have been told that you should strive to achieve lower time bounds.
+For regular expressions, there is no such equivalent -- your aim should be to communicate your ideas as clearly as possible.
+
+Thus, in this problem, we will construct a regular expression that is not necessarily concise, but is correct and understandable.
+
+---
+Before starting to construct our expression, we should begin with a couple of key observations:
+</markdown>
+</pl-question-panel>
+
+This language only excludes the string 000, which has length
+<pl-integer-input answers-name="1.1" display="inline" show-help-text="false" size="4" correct-answer="3"></pl-integer-input>.
+<br>
+That means the language accepts:
+<ul>
+    <li>
+        <pl-multiple-choice answers-name="1.2" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">all</pl-answer>
+            <pl-answer>some</pl-answer>
+            <pl-answer>no</pl-answer>
+        </pl-multiple-choice>
+    string(s) with length strictly less than 3,</li>
+    <li>
+        <pl-multiple-choice answers-name="1.3" display="dropdown" hide-letter-keys="true">
+            <pl-answer>all</pl-answer>
+            <pl-answer correct="true">some</pl-answer>
+            <pl-answer>no</pl-answer>
+        </pl-multiple-choice>
+        string(s) with length 3, and
+    </li>
+    <li>
+        <pl-multiple-choice answers-name="1.4" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">all</pl-answer>
+            <pl-answer>some</pl-answer>
+            <pl-answer>no</pl-answer>
+        </pl-multiple-choice>
+        string(s) with length strictly greater than 3.
+    </li>
+</ul>
+
+<pl-question-panel>
+</pl-question-panel>

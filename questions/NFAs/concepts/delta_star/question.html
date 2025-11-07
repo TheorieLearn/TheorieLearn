@@ -1,0 +1,18 @@
+<pl-question-panel>
+    <p>Consider the following NFA.
+    </p>
+    <pl-graph>
+        {{params.nfa}}
+    </pl-graph>
+
+    Evaluate $\delta^*({{params.start_state}}, {{params.input}})$.
+    Keep in mind the output of $\delta^*$ for a NFA. Is it a singular state or a set of states? Also, how do epsilon transitions affect the answer?
+    <ul>
+      <li>As an example, if states a, b, and c are possible from the given transitions, then write {a, b, c}.</li>
+      <li>If your answer has no states, please write an empty set "{}" or copy and paste "∅".</li>
+      <li>Order of the states does not matter.</li>
+    </ul>
+  </pl-question-panel>
+
+<pl-string-input label="$\delta^*({{params.start_state}}, {{params.input}})=$" answers-name="ans"
+                 remove-leading-trailing="true"></pl-string-input>

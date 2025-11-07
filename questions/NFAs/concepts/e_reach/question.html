@@ -1,0 +1,16 @@
+<pl-question-panel>
+    <p>Consider the following NFA.
+    </p>
+    <pl-graph>
+        {{params.nfa}}
+    </pl-graph>
+
+    What is the $\epsilon$-reach of state ${{params.state}}$?
+    <ul>
+      <li>As an example, if states a, b, and c are in the $\epsilon$-reach from the given state, then write {a, b, c}.</li>
+      <li>If your answer has no states, please write an empty set "{}" or copy and paste "∅".</li>
+      <li>Order of the states does not matter.</li>
+    </ul>
+</pl-question-panel>
+
+<pl-string-input label="$\epsilon$-$\mathsf{reach}({{params.state}}) = $" answers-name="ereach" weight="1" allow-blank="true"></pl-string-input>

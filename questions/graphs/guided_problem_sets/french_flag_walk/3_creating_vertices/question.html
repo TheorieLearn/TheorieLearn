@@ -1,0 +1,37 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/french_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr/>
+<markdown>
+In the last question, we determined what values we could track.
+
+**We will proceed by tracking the number of edges traversed so far, modulo 3**
+
+We *could* modify our reachability algorithm to store one of these values as perform our search. However, algorithm modifications can be tricky and introduce lots of edge cases.
+Instead, we will proceed with a different approach: we will encode this information into a new graph, and run a standard reachability algorithm on this new graph.
+
+We will define a new graph $G' = (V', E')$. Using the idea that we want to track *the number of edges traversed so far modulo 3*, what should our new set of vertices $V'$ be?
+</markdown>
+
+<hr/>
+<ul>
+    <li>Make sure to write both the braces, and elements seperated by commas.</li>
+    <li>The order of elements does not matter</li>
+</ul>
+</pl-question-panel>
+
+$V' = V$
+<pl-multiple-choice order="ascend" answers-name="oper" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">×</pl-answer>
+    <pl-answer>∪</pl-answer>
+    <pl-answer>\</pl-answer>
+    <pl-answer feedback="This is the symmetric difference of your sets.">⊕</pl-answer>
+    <pl-answer>∩</pl-answer>
+</pl-multiple-choice>
+
+<pl-string-input answers-name="nodes" weight="1" allow-blank="true" placeholder="{173,374,473}" show-help-text="false"></pl-string-input>

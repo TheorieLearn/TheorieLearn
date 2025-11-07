@@ -1,0 +1,108 @@
+<pl-question-panel>
+Construct an NFA for the following language:
+
+$$\{ x \in \{0,1\}^*: (\text{number of $0$'s in $x$ is divisible by $3$}) \text{ or } (x \text{ does not end with } 0110) \}.$$
+
+<hr>
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa">
+<correct-answer>
+    {
+        "final_states": [
+            "a",
+            "d",
+            "e",
+            "f",
+            "g"
+        ],
+        "initial_state": "s",
+        "input_symbols": [
+            "0",
+            "1"
+        ],
+        "states": [
+            "d",
+            "h",
+            "s",
+            "a",
+            "c",
+            "f",
+            "g",
+            "b",
+            "e"
+        ],
+        "transitions": {
+            "a": {
+                "0": [
+                    "b"
+                ],
+                "1": [
+                    "a"
+                ]
+            },
+            "b": {
+                "0": [
+                    "c"
+                ],
+                "1": [
+                    "b"
+                ]
+            },
+            "c": {
+                "0": [
+                    "a"
+                ],
+                "1": [
+                    "c"
+                ]
+            },
+            "d": {
+                "0": [
+                    "e"
+                ],
+                "1": [
+                    "d"
+                ]
+            },
+            "e": {
+                "0": [
+                    "e"
+                ],
+                "1": [
+                    "f"
+                ]
+            },
+            "f": {
+                "0": [
+                    "e"
+                ],
+                "1": [
+                    "g"
+                ]
+            },
+            "g": {
+                "0": [
+                    "h"
+                ],
+                "1": [
+                    "d"
+                ]
+            },
+            "h": {
+                "0": [
+                    "e"
+                ],
+                "1": [
+                    "f"
+                ]
+            },
+            "s": {
+                "": [
+                    "a",
+                    "d"
+                ]
+            }
+        }
+      }
+</correct-answer>
+</tl-fsm-builder>

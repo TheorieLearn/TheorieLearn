@@ -1,0 +1,11 @@
+<p> Let $G$ be a directed <b>acyclic</b> graph, in which every edge $e \in E$ has a weight
+$w(e),$ which could be positive, negative, or zero. More formally, for any path $P = v_0 \to
+v_1 \to v_2 \to \cdots \to v_\ell$ in $G$, the <i>alternating length</i> of $P$
+is defined as</p>
+
+$$
+AltLen(P) = \sum_{i=0}^{\ell-1} (-1)^i\cdot w(v_i \rightarrow v_{i+1}).
+$$
+
+<p>Describe an algorithm to find a path from $s$ to $t$ with the largest alternating length,
+given the graph $G$, the edge weights $w(e)$, and vertices $s$ and $t$ as input.</p>

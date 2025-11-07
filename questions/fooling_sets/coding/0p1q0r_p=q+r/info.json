@@ -1,0 +1,22 @@
+{
+    "uuid": "1f765e6e-3518-42de-9b7d-da4544d6f502",
+    "title": "Fooling Set: {0p1q0r | p = q + r}",
+    "topic": "Fooling Sets",
+    "tags": [
+        "ericjin2",
+        "Fooling Sets"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

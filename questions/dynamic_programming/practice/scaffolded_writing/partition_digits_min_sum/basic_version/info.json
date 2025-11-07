@@ -1,0 +1,14 @@
+{
+  "uuid": "67370be5-5b41-49c5-b51c-bea3567f0de2",
+  "title": "Subproblem Definition: Minimize Sum of Partitioned Digits (Version 1)",
+  "topic": "Dynamic Programming",
+  "tags": [
+    "elisamc2",
+    "Guided Practice",
+    "fa24",
+    "Scaffolded Writing"
+  ],
+  "type": "v3",
+  "showCorrectAnswer": false,
+  "singleVariant": true
+}

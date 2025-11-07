@@ -1,0 +1,13 @@
+{
+    "uuid": "3cd3acd1-d0e6-4cd6-a049-f64c0d13d20b",
+    "title": "DFA Construction: Odd run of 0s, even run of 1s",
+    "topic": "DFA Construction",
+    "singleVariant": true,
+    "showCorrectAnswer": false,
+    "tags": [
+        "ghuber3",
+        "Free Response",
+        "fa23"
+    ],
+    "type": "v3"
+}

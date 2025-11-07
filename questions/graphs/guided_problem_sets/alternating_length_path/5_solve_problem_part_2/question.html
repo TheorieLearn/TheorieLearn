@@ -1,0 +1,71 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/alternating_length_path.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+    <hr>
+    <h3>Using $G'$ to Solve the Problem</h3>
+<br>
+For this part, we'll write $v^+ = (v,+)$ and $v^- = (v,-)$ as shorthands.
+<br>
+<br>
+We now know that we should find the longest path from $s^+$ to $t^\pm$ in $G'$.
+Earlier, we determined that this problem should be solved with a DAG transformation.
+Now, given $G$ is a DAG, how do we know that $G'$ is a DAG?
+
+<br>
+<br>
+
+<pl-order-blocks answers-name="gprime_is_dag" source-blocks-order="alphabetized" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="init"> Because we know $G$ is a DAG, it has
+        some topological order $v_1,v_2,\dots,v_n$. Consider an arbitary vertex $v_i$. </pl-answer>
+
+    <pl-answer correct="true" tag="edgeorderp" depends="init"> By construction of $G'$, $v_i^+$ can only have
+        in-neighbors in $\{v_0^\pm\dots v_{i-1}^\pm\}$ and out-neighbors in $\{v_{i+1}^\pm \dots v_n^\pm\}$
+    </pl-answer>
+
+    <pl-answer correct="true" tag="edgeorderm" depends="init"> By construction of $G'$, $v_i^-$ can only have
+        in-neighbors in $\{v_0^\pm\dots v_{i-1}^\pm\}$ and out-neighbors in $\{v_{i+1}^\pm \dots v_n^\pm\}$
+    </pl-answer>
+
+    <pl-answer correct="true" tag="gprime_topo" depends="edgeorderp,edgeorderm"> Then, the permutation $v_1^+,v_1^-,v_2^+,
+        v_2^-,$$\dots,v_n^+,v_n^-$ is a topological order for $G'$.</pl-answer>
+
+    <pl-answer correct="true" tag="dag" depends="gprime_topo"> We can then conclude that $G'$ must be a DAG.</pl-answer>
+
+    <pl-answer correct="false"> Because we know $G$ is a DAG, we can enumerate its
+        strongly connected components $\{C_1,C_2,\dots,C_k\}$. Consider an arbitrary SCC $C_i$. </pl-answer>
+
+    <pl-answer correct="false"> By construction of $G'$, $v_i^+$ can only have
+        in-neighbors in $\{v_0^+\dots v_{i-1}^+\}$ and out-neighbors in $\{v_{i+1}^+ \dots,v_n^+,v_1^-,v_2^-,\dots,v_n^-\}$
+    </pl-answer>
+
+    <pl-answer correct="false"> By construction of $G'$, $v_i^-$ can only have
+        in-neighbors in $\{v_0^-\dots v_{i-1}^-\}$ and out-neighbors in $\{v_{i+1}^- \dots,v_n^-,v_1^+,v_2^+,\dots,v_n^+\}$
+    </pl-answer>
+
+    <pl-answer correct="false"> Then, the permutation $v_1^+,v_2^+,
+        \dots,v_n^+,$$v_1^-,v_2^-,\dots,v_n^-$ is a topological order for $G'$. </pl-answer>
+
+    <pl-answer correct="false"> Then, the permutation $v_1^-,v_2^-,
+        \dots,v_n^-,$$v_1^+,v_2^+,\dots,v_n^+$ is a topological order for $G'$. </pl-answer>
+
+</pl-order-blocks>
+
+<br>
+
+So, to solve the problem in the most efficient way, we should run
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer>Bellman and Ford's algorithm</pl-answer>
+    <pl-answer>breadth-first search</pl-answer>
+    <pl-answer>Dijkstra's algorithm</pl-answer>
+    <pl-answer>Kosaraju and Sharir's algorithm</pl-answer>
+    <pl-answer correct="true">toplogical sort and dynamic programming</pl-answer>
+    <pl-answer correct="true">the LongestPath algorithm in the textbook</pl-answer>
+</pl-multiple-choice>
+on $G'$.
+<pl-submission-panel><font color="red"><em><br>{{feedback.q3}}</em></font><br></pl-submission-panel>

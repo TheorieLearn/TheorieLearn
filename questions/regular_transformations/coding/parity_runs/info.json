@@ -1,0 +1,23 @@
+{
+    "uuid": "1cd96555-cc8d-4553-8bb4-42e279d4c362",
+    "title": "Regular Transformation: Parity Runs",
+    "topic": "Regular Transformation",
+    "tags": [
+        "nehant2",
+        "Free Response",
+        "Regular Transformation"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

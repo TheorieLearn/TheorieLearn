@@ -1,0 +1,32 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/height_map_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+    <h3>Using G' to Solve the Problem</h3>
+    Next, we need to use our constructed graph $G'$ to solve our problem. Let "si" and "sj" be the starting
+    row and column of the height map where you begin your climb. Let "ti" and "tj" be the ending row and column
+    of the height map where you end your climb. Please format your answers in the form "(a, b, c)", where "a", "b", "c" come from
+    your vertex definition. Note that there should be a space after each comma. You may find it useful to reread the problem statement
+    to figure out which state to start and end in.
+    <br>
+    <br>
+</pl-question-panel>
+
+Specifically, we need to find the longest path from the starting vertex:
+<pl-string-input answers-name="q1" correct-answer="(si, sj, up)" size="10" show-help-text="false"></pl-string-input>
+to the ending vertex:
+<pl-string-input answers-name="q2" correct-answer="(ti, tj, down)" size="10" show-help-text="false"></pl-string-input>
+in $G'$.
+Because $G'$ is a dag, we can solve the problem in the most efficient way using
+<pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+    <pl-answer>Bellman Ford's Algorithm</pl-answer>
+    <pl-answer>Dijkstra's Algorithm</pl-answer>
+    <pl-answer>Kosaraju-Sharir's Algorithm</pl-answer>
+    <pl-answer correct="true">Depth-First Search</pl-answer>
+</pl-multiple-choice>
+on $G'$.

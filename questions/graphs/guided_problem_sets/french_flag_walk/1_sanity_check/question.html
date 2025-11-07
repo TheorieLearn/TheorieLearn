@@ -1,0 +1,23 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/french_flag.html"
+    ></pl-variable>
+</pl-template>
+<hr />
+<markdown>
+Find the set of all vertices in $G$ that can be reached from $s={{params.starting_node}}$ through a French flag walk:
+</markdown>
+
+<pl-graph>{{params.graph}}</pl-graph>
+
+<ul>
+    <li>As an example, if nodes 2 and 3 are reachable from $s=1$, then write {1, 2, 3}.</li>
+    <li>Order of the nodes does not matter.</li>
+  </ul>
+</pl-question-panel>
+
+<pl-string-input label="Reachable Nodes" answers-name="ffw" weight="1" allow-blank="true"></pl-string-input>

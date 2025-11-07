@@ -1,0 +1,43 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/max_tv_ad_revenue.html"
+    ></pl-variable>
+</pl-template>
+<hr>
+<p>Our previous approach fails because we have only considered the prices each advertiser pays, ignoring the length of each advertisement. As a result, we might fail to look at possible time slot distributions with advertisers with short-length ads. Considering this, let's take a look at another possible greedy strategy:</p>
+
+<p><i>“Sort the advertisers in increasing order with respect to the length of their advertisements, and distribute the time slot in this order.”</i></p>
+
+<p>For example, if n = 4, W = 5, L = [5, 3, 1, 1], and P = [40, 30, 10, 10], we would give the time slot to the last three advertises in full and receive a revenue of 30 + 10 + 10 = 50, which is the maximum amount for this set of advertisers. <b>Again, can you think of a counterexample where this strategy fails to find the maximum?</b></p>
+
+<p>Provide your answer in the form of the problem parameters $n$, $W$, $L[1..n]$, and $P[1..n]$. Also provide an array $X_{W}[1..n]$, where each element $X[i]$ represents the time (in minutes) allocated to the advertisement from the $i$-th advertiser with the strategy described in this problem, and an array $X_{C}[1..n]$ which represents the optimal solution.</p>
+
+<pl-integer-input answers-name="n" label="$n =$"></pl-integer-input>
+<br><br>
+<pl-number-input answers-name="W" label="$W =$"></pl-number-input>
+<br><br>
+<pl-string-input answers-name="L" label="$L =$" placeholder="comma-separated list"></pl-string-input>
+<br><br>
+<pl-string-input answers-name="P" label="$P =$" placeholder="comma-separated list"></pl-string-input>
+<br><br>
+<pl-string-input answers-name="X_w" label="$X_W =$" placeholder="comma-separated list"></pl-string-input>
+<br><br>
+<pl-string-input answers-name="X_c" label="$X_C =$" placeholder="comma-separated list"></pl-string-input>
+
+</pl-question-panel>
+
+<pl-submission-panel>
+    {{{feedback.L}}}
+    {{{feedback.P}}}
+    {{{feedback.X_c}}}
+    {{{feedback.X_w}}}
+    {{{format_errors.n}}}
+    {{{format_errors.W}}}
+    {{{format_errors.L}}}
+    {{{format_errors.P}}}
+    {{{format_errors.X_c}}}
+    {{{format_errors.X_w}}}
+</pl-submission-panel>

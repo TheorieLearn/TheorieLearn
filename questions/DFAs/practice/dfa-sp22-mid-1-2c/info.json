@@ -1,0 +1,13 @@
+{
+  "uuid": "c7b596b0-73ee-4544-9661-eaa6d680450c",
+  "title": "DFA Construction: 0(0 + 1)*0 + 1(0 + 1)*1",
+  "topic": "DFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "erobson2",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

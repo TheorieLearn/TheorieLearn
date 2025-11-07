@@ -1,0 +1,147 @@
+<pl-question-panel>
+<markdown>
+In this exercise, we're focusing on solving recurrences via recursion trees.
+It may help to visualize the recurrence by drawing out the tree yourself.
+
+Consider the following recurrence:
+</markdown>
+$$T(n) = {{recursive_terms}} + O({{big_O_term}}), \quad T(1) = 1$$
+<markdown>
+For the purposes of analyzing the recurrence, we can replace the $O({{big_O_term}})$ term with ${{big_O_term}}$.
+This changes the final answer by a constant factor, which is irrelevant since we only care about the asymptotic complexity of the recurrence.
+Thus, we can rewrite the recurrence as:
+</markdown>
+$$T(n) = {{recursive_terms}} + {{big_O_term}}, \quad T(1) = 1$$
+<markdown>
+Now let's analyze the Big O of this recurrence.
+</markdown>
+
+
+<hr>
+</pl-question-panel>
+<style>
+table.format th {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 10px;
+    text-align: center;
+}
+
+table.format td {
+    border: 1px solid rgba(0,0,0,.125);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+table.format td input {
+    text-align: center;
+}
+
+table.format td span.form-inline {
+    margin-left: 0 !important;
+}
+
+</style>
+
+<markdown>
+For the **(Work Per Node, Number of Nodes)** column, the input must be formatted in order to be marked correctly.
+Enter your input as a tuple. If there are different values for the work per node, enter as comma separated tuples.
+Use `^` for exponentiation. You may use a calculator here. WolframAlpha is useful for displaying answers in fraction form instead of floating point. Complicated arithmetic will not appear on exams.
+
+The following are examples of valid inputs:
+- `(n, 1)`
+- `(n^2/9, 1), (n^2/4, 2)`
+- `(2*n/9, 1)`
+
+While these are invalid:
+- `n, 1` *Not a tuple!*
+- `((n/3)^2, 1), (1/4*n^2, 2)` *Incorrect formatting!*
+- `(2n/9, 1)` *Incorrect formatting!*
+</markdown>
+
+<br>
+
+<table class='format' style='border: 2px solid black; width: 100%;'>
+<tr>
+    <th>Level</th>
+    <th>(Work Per Node, Number of Nodes)</th>
+    <th>Total Work on Level</th>
+</tr>
+
+<tr>
+    <td>$Level$ $0$</td>
+    <td><pl-string-input answers-name='level0-work-per-node' remove-spaces=true normalize-to-ascii='true' show-help-text=false size=30></pl-string-input></td></td>
+    <td><pl-symbolic-input answers-name='level0-work-level' variables='n' show-help-text=false size=30></pl-symbolic-input></td></td>
+</tr>
+<tr>
+    <td>$Level$ $1$</td>
+    <td><pl-string-input answers-name='level1-work-per-node' remove-spaces=true normalize-to-ascii='true' show-help-text=false size=30></pl-string-input></td></td>
+    <td><pl-symbolic-input answers-name='level1-work-level' variables='n' show-help-text=false size=30></pl-symbolic-input></td></td>
+</tr>
+<tr>
+    <td>$Level$ $2$</td>
+    <td><pl-string-input answers-name='level2-work-per-node' remove-spaces=true normalize-to-ascii='true' show-help-text=false size=30></pl-string-input></td></td>
+    <td><pl-symbolic-input answers-name='level2-work-level' variables='n' show-help-text=false size=30></pl-symbolic-input></td></td>
+</tr>
+</table>
+
+<br>
+
+Can you try generalizing the total work for level $\ell$? (use l for your input)
+<br>
+<br>
+<pl-symbolic-input answers-name='levell' variables='n, l' show-help-text=false></pl-symbolic-input>
+
+<br>
+<br>
+
+<markdown>
+What pattern do you see?
+</markdown>
+&ensp; &#8226; Work per level is a(n)
+<pl-multiple-choice answers-name='work_pattern' display="dropdown" hide-letter-keys="true">
+    {{#corr_pattern}}
+        <pl-answer correct=true>{{.}}</pl-answer>
+    {{/corr_pattern}}
+    {{#incorr_pattern}}
+        <pl-answer correct=false>{{.}}</pl-answer>
+    {{/incorr_pattern}}
+</pl-multiple-choice>
+<br>
+
+<markdown>
+What insight do we gain from this pattern?
+</markdown>
+&ensp; &#8226; The Big O sum is
+<pl-multiple-choice answers-name='bigo_dom' display="dropdown" hide-letter-keys="true">
+    {{#corr_bigo}}
+        <pl-answer correct=true>{{.}}</pl-answer>
+    {{/corr_bigo}}
+    {{#incorr_bigo}}
+        <pl-answer correct=false>{{.}}</pl-answer>
+    {{/incorr_bigo}}
+</pl-multiple-choice>
+
+<br>
+
+{{#numlvls}}
+<markdown>
+What is total number of levels in this tree?
+To enter logs in the form $log_b(a)$, enter your input as `log(a, b)`.</markdown>
+<pl-symbolic-input answers-name='depth_of_tree' variables='n' show-help-text=false></pl-symbolic-input>
+<br>
+<br>
+{{/numlvls}}
+
+{{#leaves}}
+The work at the leaves is $n^\alpha$, where
+<pl-symbolic-input label='$\alpha = $'answers-name='work_at_leaves_exponent' show-help-text=false></pl-symbolic-input>
+{{/leaves}}
+
+<hr>
+
+<markdown>
+And finally, let's put it all together! What is the overall running time of the recurrence?
+</markdown>
+<center><pl-big-o-input answers-name="final_ans" variable="n" display='inline' size='15'></pl-big-o-input></center>
+</pl-question-panel>

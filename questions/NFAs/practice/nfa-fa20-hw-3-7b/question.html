@@ -1,0 +1,130 @@
+<pl-question-panel>
+
+Construct an NFA that accepts this language:
+
+$$L = \{w \in \{3,7,4\}^* \mid w ~ \text{contains the substrings $374$ and $473$}\}$$
+
+<hr>
+
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa" alphabet="374">
+    <correct-answer>
+        {
+            "final_states": [
+                "f"
+            ],
+            "initial_state": "s",
+            "input_symbols": [
+                "3",
+                "4",
+                "7"
+            ],
+            "states": [
+                "j",
+                "c",
+                "s",
+                "b",
+                "d",
+                "a",
+                "f",
+                "k",
+                "h",
+                "g",
+                "i",
+                "e"
+            ],
+            "transitions": {
+                "a": {
+                    "7": [
+                        "b"
+                    ]
+                },
+                "b": {
+                    "4": [
+                        "c",
+                        "d"
+                    ]
+                },
+                "c": {
+                    "3": [
+                        "c"
+                    ],
+                    "4": [
+                        "c",
+                        "d"
+                    ],
+                    "7": [
+                        "c"
+                    ]
+                },
+                "d": {
+                    "7": [
+                        "e"
+                    ]
+                },
+                "e": {
+                    "3": [
+                        "f"
+                    ]
+                },
+                "f": {
+                    "3": [
+                        "f"
+                    ],
+                    "4": [
+                        "f"
+                    ],
+                    "7": [
+                        "f"
+                    ]
+                },
+                "g": {
+                    "4": [
+                        "f"
+                    ]
+                },
+                "h": {
+                    "7": [
+                        "g"
+                    ]
+                },
+                "i": {
+                    "3": [
+                        "h",
+                        "i"
+                    ],
+                    "4": [
+                        "i"
+                    ],
+                    "7": [
+                        "i"
+                    ]
+                },
+                "j": {
+                    "3": [
+                        "i",
+                        "h"
+                    ]
+                },
+                "k": {
+                    "7": [
+                        "j"
+                    ]
+                },
+                "s": {
+                    "3": [
+                        "a",
+                        "s"
+                    ],
+                    "4": [
+                        "s",
+                        "k"
+                    ],
+                    "7": [
+                        "s"
+                    ]
+                }
+            }
+        }
+    </correct-answer>
+</tl-fsm-builder>

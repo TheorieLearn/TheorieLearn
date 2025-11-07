@@ -1,0 +1,17 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings $w$ such that $|w|\bmod 3 = 2$ and $w$ contains exactly one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+Notice that strings in this language are of the form $0^x$ $1$ $0^y$. Adhering to the definition of the language, what must be true of $x$ and $y$?
+
+*Grading note: If the answer is "4 mod 7", we will not accept equivalent answers such as "11 mod 7".
+</markdown>
+</pl-question-panel>
+
+<center>
+  $x + y \equiv$ <pl-integer-input answers-name="num1" display="inline" show-help-text="false" size="4" correct-answer="1"></pl-integer-input> mod <pl-integer-input answers-name="num2" display="inline" show-help-text="false" size="4" correct-answer="3"></pl-integer-input>.
+</center>

@@ -1,0 +1,50 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/maze_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Constructing Vertices in G'</h3>
+    Now, after noting what information we should track, we need to formally define the set of vertices in the new graph $G'=(V',E')$.
+</pl-question-panel>
+
+We define $V'$ as the product of three sets:
+<ul>
+    <li> $V$: the vertices of the original graph $G$ </li>
+    <li> $H=$
+        <pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+            <pl-answer>{0, 1, ..., |E|}</pl-answer>
+            <pl-answer>{SeenOnce, SeenTwice}</pl-answer>
+            <pl-answer correct="true">{NotSeen, Seen}</pl-answer>
+        </pl-multiple-choice>
+        , representing
+        <pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+            <pl-answer>the number of hieroglyphics seen</pl-answer>
+            <pl-answer correct="true">whether or not you have traversed an edge containing mysterious hieroglyphics.</pl-answer>
+            <pl-answer>the number of hieroglyphics in the maze</pl-answer>
+            <pl-answer>the number of edges in G without hieroglyphics</pl-answer>
+        </pl-multiple-choice> </li>
+    <li> $C=$
+        <pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+            <pl-answer>{Full}</pl-answer>
+            <pl-answer correct="true">{Full, Empty}</pl-answer>
+            <pl-answer>{Full, RechargeNow, Empty}</pl-answer>
+            <pl-answer>{0, 1, ..., |E|}</pl-answer>
+        </pl-multiple-choice>
+        , representing
+        <pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">the current charge of the invisibility device</pl-answer>
+            <pl-answer>the number of charging stations in the maze</pl-answer>
+            <pl-answer>the number of high-risk edges that have been traversed</pl-answer>
+        </pl-multiple-choice> </li>
+</ul>
+More concisely, we define $V'$ =
+<pl-multiple-choice answers-name="q5" display="dropdown" hide-letter-keys="true">
+    <pl-answer>V ∪ H ∪ C</pl-answer>
+    <pl-answer correct="true">V x H x C</pl-answer>
+    <pl-answer>V ∩ H ∩ C</pl-answer>
+</pl-multiple-choice>

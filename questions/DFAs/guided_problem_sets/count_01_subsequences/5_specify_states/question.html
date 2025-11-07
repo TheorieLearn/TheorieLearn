@@ -1,0 +1,46 @@
+<pl-question-panel>
+<markdown>
+*Please refer back to the pseudocode in the previous question while answering this question.*
+</markdown>
+
+What are the possible values that could be assigned to $num0s$ during the execution of the program?
+</pl-question-panel>
+
+<pl-integer-input answers-name="num0s-low" correct-answer=0 show-help-text=false size=5></pl-integer-input>
+$\le num0s \le$
+<pl-integer-input answers-name="num0s-hi" correct-answer=6 show-help-text=false size=5></pl-integer-input>
+<br><br>
+
+<pl-question-panel>
+<markdown>
+What are the possible values that could be assigned to $num01s$ during the execution of the program?
+</markdown>
+</pl-question-panel>
+
+<pl-integer-input answers-name="num01s-low" correct-answer=0 show-help-text=false size=5></pl-integer-input>
+$\le num01s \le$
+<pl-integer-input answers-name="num01s-hi" correct-answer=6 show-help-text=false size=5></pl-integer-input>
+<br><br>
+
+<pl-question-panel>
+<markdown>
+We want the the states of our DFA to encapsulate the current values of the variables in our program. We can do this by having our states be 2-tuples of the form $(num0s, num01s)$, where the first entry stores the current value of the variable $num0s$ and the second entry stores the current value of the variable $num01s$.
+
+Given this representation of state, what should the state set of our DFA be?
+</markdown>
+</pl-question-panel>
+
+$Q = \Big\{(num0s, num01s) \;\Big|$
+    <pl-integer-input answers-name="Q-num0s-low" correct-answer=0 show-help-text=false size=2></pl-integer-input>
+    $\le num0s \le$
+    <pl-integer-input answers-name="Q-num0s-hi" correct-answer=6 show-help-text=false size=2></pl-integer-input>
+    $,\;$
+    <pl-integer-input answers-name="Q-num01s-low" correct-answer=0 show-help-text=false size=2></pl-integer-input>
+    $\le num01s \le$
+    <pl-integer-input answers-name="Q-num01s-hi" correct-answer=6 show-help-text=false size=2></pl-integer-input>
+$\Big\}$
+
+<script>
+$("input[name^=Q-num]").width(20) // set width smaller than PL allows to keep it on one line
+$("input[name^=Q-num]").next().hide() // remove badges in question panel to keep it on one line
+</script>

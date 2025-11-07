@@ -1,0 +1,58 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/hamcycle_to_hampath.html"
+    ></pl-variable>
+</pl-template>
+The pseudocode of the reduction is shown below:
+$$
+\begin{align*}
+&G' \leftarrow ~ \text{copy of} ~ G \\
+&v \leftarrow ~ \text{an arbitrary vertex in} ~ G' \\
+&\text{Add a new vertex} ~ w ~ \text{to} ~ G' \\
+&\text{Connect} ~ w ~ \text{to every neighbor of} ~ v \\
+&\text{Add a new vertex} ~ s ~ \text{to} ~ G' \\
+&\text{Add a new vertex} ~ t ~ \text{to} ~ G' \\
+&\text{Connect} ~ s ~ \text{to} ~ v \\
+&\text{Connect} ~ t ~ \text{to} ~ w \\
+\end{align*}
+$$
+<p>
+<em>Note: this reduction might be slightly different than the one you came up with in the previous question.
+Please read the reduction carefully and construct the proof below based on this version of the reduction.</em>
+</p>
+
+<p>
+In order to show that our reduction is correct, we need to prove the "if and only if" claim that we stated in an earlier problem.
+</p>
+
+<p>
+In this question, we will prove the forward direction of the "if and only if" claim. In other words, we want to prove that
+
+$$ G ~ \text{has a Hamiltonian cycle} \implies G' ~ \text{has a Hamiltonian path}$$
+</p>
+
+Let $n$ be the number of vertices in $G$. Then, the number of vertices in $G'$ is $n+3$.
+
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="cycle_to_path" source-blocks-order="random" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="Cdef"> Suppose $G$ has a Hamiltonian cycle $C = u_1,u_2,\cdots,u_n.$</pl-answer>
+    <pl-answer correct="false"> Suppose $G'$ has a Hamiltonian cycle $C = u_1,u_2,\cdots,u_n.$</pl-answer>
+
+    <pl-answer correct="true" tag="wlog" depends="Cdef"> If necessary, we can rotate the indexing order so that $v$ is the first vertex of $C$. Thus, we can assume that $u_1=v$ without loss of generality.</pl-answer>
+    <pl-answer correct="false"> If necessary, we can rotate the indexing order so that $s$ is the first vertex of $P$. Thus, we can assume that $u_1=s$ without loss of generality.</pl-answer>
+
+    <pl-answer correct="true" tag="Pdef"> Let $P = s,u_1,u_2,\cdots,u_n,w,t$.</pl-answer>
+    <pl-answer correct="false"> Let $P = s,v,u_1,u_2,\cdots,u_n,w,t$.</pl-answer>
+    <pl-answer correct="false"> Let $P = t,u_1,u_2,\cdots,u_n,w,s$.</pl-answer>
+
+    <pl-answer correct="true" tag="once" depends="Pdef"> $P$ contains every vertex of $G'$ exactly once.</pl-answer>
+    <pl-answer correct="true" tag="adj" depends="Pdef"> Every pair of consecutive vertices in P is adjacent in $G'$.</pl-answer>
+
+    <pl-answer correct="true" tag="end" depends="once,adj"> Therefore, $P$ is a Hamiltonian path in $G'$, as desired.</pl-answer>
+    <pl-answer correct="false"> Therefore, $P$ is a Hamiltonian path in $G$, as desired.</pl-answer>
+</pl-order-blocks>

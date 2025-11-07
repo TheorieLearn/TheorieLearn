@@ -1,0 +1,14 @@
+{
+    "uuid": "145e4a3b-0c30-4185-a11b-43266b363225",
+    "title": "Regex string generator",
+    "topic": "Regular Expressions",
+    "tags": [
+        "utilities",
+        "regex",
+        "katieli3"
+    ],
+    "showCorrectAnswer": false,
+    "singleVariant": true,
+    "type": "v3",
+    "partialCredit": false
+}

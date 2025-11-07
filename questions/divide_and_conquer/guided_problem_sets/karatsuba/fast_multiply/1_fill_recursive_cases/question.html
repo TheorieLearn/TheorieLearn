@@ -1,0 +1,65 @@
+<pl-question-panel>
+<markdown>
+<div><pl-figure file-name="fast_multiply.png" directory="clientFilesCourse"></pl-figure></div>
+
+Consider a call to this function,
+where
+$$
+x = {{params.first_number}}, \space y = {{params.second_number}}, \space \text{and} \space n = {{params.n}}.
+$$
+This function multiplies two numbers together using a divide-and-conquer approach.
+
+**Note:** There's no need to worry about the internal details of what's going on inside of the recursive calls;
+all of that is handled by the Recursion Fairy!
+In other words, we can treat each recursive call as a black box.
+As you answer the following questions, the [Recursion Fairy](http://jeffe.cs.illinois.edu/teaching/algorithms/book/01-recursion.pdf#page=2)
+will correctly compute the product of its inputs (as long as they are smaller than $x$ and $y$),
+and you should not try to "unroll" or "step into" the recursive calls!
+</markdown>
+<hr>
+</pl-question-panel>
+
+{{#params.ordinals}}
+<p>What are the arguments passed to the <em>{{.}}</em> recursive call to `FastMultiply`?</p>
+
+<p>
+    $\texttt{FastMultiply}\Big($
+    <pl-integer-input answers-name="{{.}}_call_param_1" show-help-text=false size=5></pl-integer-input>
+    $\; , \;$
+    <pl-integer-input answers-name="{{.}}_call_param_2" show-help-text=false size=5></pl-integer-input>
+    $\; , \; 4 \Big)$
+</p>
+
+<pl-question-panel>
+<p>The Recursion Fairy tells you that this call returns: <code id="{{.}}_call_return_value"></code></p>
+
+<script>
+function recursion_fairy_magic_wand() {
+    x = $("input[name^='{{.}}_call_param_1']").val().trim();
+    y = $("input[name^='{{.}}_call_param_2']").val().trim();
+
+    let regex = /^-?\d+$/;
+    if (!regex.test(x) || !regex.test(y)) {
+        ret_val = "Invalid Inputs!";
+    } else{
+        ret_val = parseInt(x) * parseInt(y);
+    }
+
+    $("#{{.}}_call_return_value").text(ret_val);
+}
+
+$(recursion_fairy_magic_wand) // runs function on intial page load
+$("input[name^='{{.}}_call_param_']").blur(recursion_fairy_magic_wand) // runs function whenever input loses focus
+</script>
+</pl-question-panel>
+<hr>
+{{/params.ordinals}}
+
+<markdown>
+What is the final result returned by the function?
+(Your answer should be the sum of three integers, in the order that they are presented in the pseudocode.)
+
+<pl-integer-input answers-name="first_summand" show-help-text="false" size=15></pl-integer-input> $\; +$
+<pl-integer-input answers-name="second_summand" show-help-text="false" size=15></pl-integer-input> $\; +$
+<pl-integer-input answers-name="third_summand" show-help-text="false" size=15></pl-integer-input>
+</markdown>

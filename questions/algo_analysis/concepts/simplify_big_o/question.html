@@ -1,0 +1,56 @@
+<pl-question-panel>
+    <style>
+        table.format th {
+            border: 1px solid rgba(0, 0, 0, .125);
+            padding: 10px;
+            text-align: center;
+        }
+
+        table.format td {
+            border: 1px solid rgba(0, 0, 0, .125);
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        table.format td input {
+            text-align: center;
+        }
+
+        table.format td span.form-inline {
+            margin-left: 0 !important;
+        }
+    </style>
+</pl-question-panel>
+
+<pl-question-panel>
+    <p> Simplify the following Big-O notations so that $f(n) = O\Big(g(n)\Big)$. </p>
+    <hr>
+</pl-question-panel>
+
+<pl-question-panel>
+<markdown>
+The input should be symbolic expressions and must be formatted in order to be marked correctly.
+Use $\log(n)$ as natural logarithm. Use $\log(n, b)$ for $\log_b n$.
+See more directions from the help button.
+
+The following are examples of valid inputs:
+- `log(7, 4)`
+- `2*log(n)+2*n+5`
+
+While these are invalid:
+- `log 374` *Incorrect formatting!*
+</markdown>
+    <hr>
+</pl-question-panel>
+
+<table class='format' style='border: 1.5px solid black; width: 100%;'>
+    <tr>
+        <th>$f(n)$</th>
+        <th>$O\Big(g(n)\Big)$</th>
+    </tr>
+    <tr>
+        <td>${{params.f}}$</td>
+        <td><pl-big-o-input answers-name="f" variable="n"></pl-big-o-input></td>
+    </tr>
+</table>

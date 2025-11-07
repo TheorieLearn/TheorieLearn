@@ -1,0 +1,51 @@
+<style>
+        [id=details-{{uuid}}].instructions {
+            border: 1px solid rgba(0, 0, 0, .125);
+            padding: .5em .5em 0;
+            margin-bottom: 15px;
+            background-color: rgba(0, 0, 0, .03);
+        }
+
+        .instructions summary {
+            font-weight: bold;
+            margin: -.5em -.5em 0;
+            padding: .5em;
+            outline: none;
+        }
+
+        [id=details-{{uuid}}].instructions[open] {
+            padding: .5em;
+        }
+
+        [id=details-{{uuid}}].instructions[open] summary {
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            margin-bottom: .5em;
+        }
+</style>
+<script>
+    $(function() {
+        $('input[type="text"]').keyup(function() {
+            $(this).val($(this).val().replace('\\delta', 'δ'));
+            $(this).val($(this).val().replace('\\epsilon', 'ε'));
+            $(this).val($(this).val().replace('\\in', '∊'));
+            $(this).val($(this).val().replace('\\Sigma', 'Σ'));
+            $(this).val($(this).val().replace('\\varnothing', '∅'));
+        });
+    });
+</script>
+<div>
+    <details id="details-{{uuid}}" class="instructions rounded">
+    <summary> Unicode Symbol Input Instructions </summary>
+        <em>
+            To enter a special unicode symbol, type its corresponding $\LaTeX$ command, and it will be automatically replaced
+            with the symbol once you have finished typing it. The following replacements are supported:
+        </em>
+        <ul>
+            <li><code>\delta</code>: <code>δ</code></li>
+            <li><code>\epsilon</code>: <code>ε</code></li>
+            <li><code>\in</code>: <code>∊</code></li>
+            <li><code>\Sigma</code>: <code>Σ</code></li>
+            <li><code>\varnothing</code>: <code>∅</code></li>
+        </ul>
+    </details>
+</div>

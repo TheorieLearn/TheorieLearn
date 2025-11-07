@@ -1,0 +1,72 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+            name="problem-statement"
+            directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/multiple_vertex_color_graph.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Constructing Vertices in G'</h3>
+    Now, after noting what information we should track, we need to formally define the set of vertices in the new graph $G'=(V',E')$.
+</pl-question-panel>
+
+We define $V'$ as the product of four sets:
+<ul>
+    <li> $V$: the vertices of the original graph $G$ </li>
+    <li> $R=$
+        <pl-multiple-choice answers-name="q1" display="dropdown" hide-letter-keys="true">
+            <pl-answer>$\{0, 1, \dots, n\}$</pl-answer>
+            <pl-answer correct="true">$\{0, 1\}$</pl-answer>
+            <pl-answer>$\{count\}$</pl-answer>
+        </pl-multiple-choice>
+        ,
+        <br>
+        representing
+        <pl-multiple-choice answers-name="q2" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">if you have traversed a red vertex</pl-answer>
+            <pl-answer>how many red vertices you have traversed</pl-answer>
+            <pl-answer>the number of red vertices left to be traversed in the graph</pl-answer>
+        </pl-multiple-choice> </li>
+    <li> $B=$
+        <pl-multiple-choice answers-name="q3" display="dropdown" hide-letter-keys="true">
+            <pl-answer>$\{0, 1, \dots, n\}$</pl-answer>
+            <pl-answer correct="true">$\{0, 1\}$</pl-answer>
+            <pl-answer>$\{count\}$</pl-answer>
+        </pl-multiple-choice>
+        ,
+        <br>
+        representing
+        <pl-multiple-choice answers-name="q4" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">if you have traversed a blue vertex</pl-answer>
+            <pl-answer>how many blue vertices you have traversed</pl-answer>
+            <pl-answer>the number of blue vertices left to be traversed in the graph</pl-answer>
+        </pl-multiple-choice> </li>
+    <li> $G=$
+        <pl-multiple-choice answers-name="q5" display="dropdown" hide-letter-keys="true">
+            <pl-answer>$\{0, 1, \dots, n\}$</pl-answer>
+            <pl-answer correct="true">$\{0, 1\}$</pl-answer>
+            <pl-answer>$\{count\}$</pl-answer>
+        </pl-multiple-choice>
+        ,
+        <br>
+        representing
+        <pl-multiple-choice answers-name="q6" display="dropdown" hide-letter-keys="true">
+            <pl-answer correct="true">if you have traversed a green vertex</pl-answer>
+            <pl-answer>how many green vertices you have traversed</pl-answer>
+            <pl-answer>the number of green vertices left to be traversed in the graph</pl-answer>
+        </pl-multiple-choice> </li>
+</ul>
+Additionally, since the path can start at any vertex, you should add a new start vertex $s$ to your new graph.
+<br>
+<br>
+Mathematically, we define $V' =$
+<pl-multiple-choice answers-name="q7" display="dropdown" hide-letter-keys="true">
+    <pl-answer>$(V\cup \{s\})\cup R\cup B\cup G$</pl-answer>
+    <pl-answer correct="true">$(V \times R \times B \times G) \cup \{s\}$</pl-answer>
+    <pl-answer>$(V\cup \{s\})\cap R\cap B\cap G$</pl-answer>
+    <pl-answer>$(V\times \{s\})\cup R\cup B\cup G$</pl-answer>
+    <pl-answer>$(V\times \{s\})\times R\times B\times G$</pl-answer>
+    <pl-answer>$(V\times \{s\})\cap R\cap B\cap G$</pl-answer>
+</pl-multiple-choice>

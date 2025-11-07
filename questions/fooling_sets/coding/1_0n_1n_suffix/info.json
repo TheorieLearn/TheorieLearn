@@ -1,0 +1,23 @@
+{
+    "uuid": "ac9d29bd-9d54-4405-8c41-fc049c73508e",
+    "title": "Fooling Set: 10^n 1^n Suffix",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "summer22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

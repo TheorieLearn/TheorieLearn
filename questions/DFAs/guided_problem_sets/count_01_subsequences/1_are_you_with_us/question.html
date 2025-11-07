@@ -1,0 +1,45 @@
+<pl-question-panel>
+<markdown>
+**You must correctly solve this problem multiple times to receive full credit.**
+
+---
+
+In this problem, we define $\sigma(z, w)$ to be the number of times $z$ appears as a *subsequence* in $w$.
+(Note that this is **not** the same as $\#(z, w)$, which is the number of times
+$z$ appears as a substring in $w$.) For example, $\sigma(01, 0101) = 3$.
+
+Consider the following language: $L = \{w \mid \sigma(01, w) \equiv 4 \pmod 7\}$.
+
+The goal of this series of questions is to guide you through *one possible approach* for designing a DFA that accepts this language.
+
+---
+
+First, we'll start off with some concrete examples to make sure that we're on the same page.
+</markdown>
+</pl-question-panel>
+
+<p>
+How many times does the subsequence $01$ appear in ${{params.string_in_L}}$?
+<pl-integer-input answers-name="num_01_in" size=5 show-help-text=false></pl-integer-input>
+</p>
+
+<p>Is ${{params.string_in_L}}$ in $L$?</p>
+
+<pl-multiple-choice answers-name="is_in_L" fixed-order=true>
+    <pl-answer correct=true>Yes</pl-answer>
+    <pl-answer>No</pl-answer>
+</pl-multiple-choice>
+
+<hr>
+
+<p>
+How many times does the subsequence $01$ appear in ${{params.string_notin_L}}$?
+<pl-integer-input answers-name="num_01_notin" size=5 show-help-text=false></pl-integer-input>
+</p>
+
+<p>Is ${{params.string_notin_L}}$ in $L$?</p>
+
+<pl-multiple-choice answers-name="is_notin_L" fixed-order=true>
+    <pl-answer>Yes</pl-answer>
+    <pl-answer correct=true>No</pl-answer>
+</pl-multiple-choice>

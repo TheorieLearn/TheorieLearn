@@ -1,0 +1,65 @@
+<pl-question-panel>
+<markdown>
+  <div align="center">$\text{Prove that }|w^R| = |w| \text{ for every string } w.$</div>
+
+  In other words, prove that the length of a string is the same when that string is reversed.
+  The formal definition of $^R$ is as follows:
+  $$
+  w^R :=
+  \begin{cases}
+  \varepsilon & \text{if } w=\varepsilon\\
+  x^R \bullet a & \text{if } w=ax \text{ for some input symbol }a \text{ and some string }x\\
+  \end{cases}
+  $$
+  Let's practice writing induction proofs by proving some obvious claims about strings.
+  The first step of writing your own induction proofs is to write down the boilerplate.
+  So as an exercise, let's pick out good sentences to build our own in the order that we should think about this process.
+</markdown>
+  </pl-question-panel>
+  <pl-hide-in-panel answer="true">
+  <p><b>Universal Declaration:</b></p>
+  <pl-multiple-choice answers-name="boil1" weight="1" number-answers="4" hide-letter-keys="true">
+    <pl-answer correct="true">Let $w$ be an arbitrary string.</pl-answer>
+    <pl-answer correct="false">Let $|w|$ be an arbitrary non-negative integer.</pl-answer>
+    <pl-answer correct="false">Let $w^R$ be an arbitrary string.</pl-answer>
+    <pl-answer correct="false">Pick an arbitrary string.</pl-answer>
+    <pl-answer correct="false">Let $w$ be an arbitrary non-empty string.</pl-answer>
+    <pl-answer correct="false">Let $w$ be a string of length $n$.</pl-answer>
+  </pl-multiple-choice>
+  <pl-submission-panel><font color="red"><em>{{feedback.boil1}}</em></font><br></pl-submission-panel>
+  <br>
+  <p><b>Conclusion:</b></p>
+  <pl-multiple-choice answers-name="boil2" weight="1" hide-letter-keys="true">
+    <pl-answer correct="true">We conclude that $|w^R| = |w|$.</pl-answer>
+    <pl-answer correct="false">We conclude that $|x^R| = |x|$.</pl-answer>
+    <pl-answer correct="false">We conclude that $|w^R| = |x|$.</pl-answer>
+    <pl-answer correct="false">We conclude that $w^R = w$.</pl-answer>
+  </pl-multiple-choice>
+  <pl-submission-panel><font color="red"><em>{{feedback.boil2}}</em></font><br></pl-submission-panel>
+  <br>
+  <p><b>Induction Hypothesis:</b></p>
+  <pl-multiple-choice answers-name="boil3" weight="1" number-answers="4" hide-letter-keys="true">
+    <pl-answer correct="true">Assume for any string $x$ where $|x| < |w|$ that $|x^R| = |x|$.</pl-answer>
+    <pl-answer correct="true">Assume that $|x^R| = |x|$ for all strings $x$ shorter than $w$.</pl-answer>
+    <pl-answer correct="false">Assume for any string $x$ where $|x| > |w|$ that $|x^R| = |x|$.</pl-answer>
+    <pl-answer correct="false">Assume that the theorem is true for shorter strings.</pl-answer>
+    <pl-answer correct="false">Assume true for all shorter strings.</pl-answer>
+    <pl-answer correct="false">Assume all strings shorter than $w$ are true.</pl-answer>
+    <pl-answer correct="false">Assume $|x| < |w|$.</pl-answer>
+    <pl-answer correct="false">Assume $|w^R| = |w|$ for all shorter strings $w$.</pl-answer>
+    <pl-answer correct="false">Assume $|x^R| = |x|.$</pl-answer>
+    <pl-answer correct="false">Assume $|w^R| = |w|.$</pl-answer>
+    <pl-answer correct="false">Assume $|x^R| = |w|$ for all strings $x$ shorter than $w$.</pl-answer>
+    <pl-answer correct="false">Assume $x^R = x$ for all strings $x$ shorter than $w$.</pl-answer>
+  </pl-multiple-choice>
+  <pl-submission-panel><font color="red"><em>{{feedback.boil3}}</em></font><br></pl-submission-panel>
+  <br>
+  <p><b>Cases:</b></p>
+  <pl-multiple-choice answers-name="boil4" weight="1" number-answers="4" hide-letter-keys="true">
+    <pl-answer correct="true">There are two cases: $w= \varepsilon$ or $w = ax$.</pl-answer>
+    <pl-answer correct="false">There are two cases: $w= \varepsilon$ or $w = xa$.</pl-answer>
+    <pl-answer correct="false">There are two cases: $|w| = 0$ or not.</pl-answer>
+    <pl-answer correct="false">There are three cases: $w = \varepsilon$, $w = ax$, or $w = xa$.</pl-answer>
+  </pl-multiple-choice>
+  <pl-submission-panel><font color="red"><em>{{feedback.boil4}}</em></font><br></pl-submission-panel>
+</pl-hide-in-panel>

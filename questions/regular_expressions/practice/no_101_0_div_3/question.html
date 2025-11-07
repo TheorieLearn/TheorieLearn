@@ -1,0 +1,35 @@
+<pl-question-panel>
+    <markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings $x \in \Sigma^*$ such that $x$ does not begin with $101$ and $\#_0(x)$ is divisible by $3$.</center>***
+<hr>
+    </markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    z = 01*
+    startz = 0(1*(z)(z)0)*1*(z)(z)
+    startoo = 11(1*(z)(z)0)*1*
+    startzoo = 100(1*(z)(z)0)*1*(z)
+    extra = e+1
+    (startz)+(startoo)+(startzoo)+(extra)
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Consider all the different cases where the string does not start with $101$. Can you solve each of them
+        individually?
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        Union together the following cases:
+
+        - Strings that start with $0$ in the language
+        - Strings that start with $11$ in the language
+        - Strings that start with $100$ in the language
+        - Strings of length less that $3$ in the language
+    </pl-hint>
+</pl-hidden-hints>

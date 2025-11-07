@@ -1,0 +1,23 @@
+{
+    "uuid": "66fb730a-a44b-4341-96f7-c4089743979e",
+    "title": "Fooling Set: {0^n^3 | n >= 0}",
+    "topic": "Fooling Sets",
+    "tags": [
+        "samuelr6",
+        "ericjin2",
+        "Fooling Sets"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

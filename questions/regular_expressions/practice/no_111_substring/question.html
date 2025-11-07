@@ -1,0 +1,24 @@
+<pl-question-panel>
+    <markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings in $\Sigma^*$ that do not contain $111$ as a substring.</center>***
+<hr>
+    </markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    ((e+1+11)0)*(e+1+11)0*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Try to think of a given string as individual blocks of $0$'s and $1$'s.
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        A block starts with a run of $1$'s has length at most two. What should the last block end with?
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,123 @@
+<pl-question-panel>
+If you are unfamiliar with this algorithm, refresh yourself by reading the textbook
+<a href="https://courses.engr.illinois.edu/cs374/sp2021/notes/01-recursion.pdf#page=17">here</a>. It is important that you understand
+the reasoning behind this algorithm before attempting these questions.
+<hr/>
+<pl-figure file-name="pseudocode.png" directory="clientFilesQuestion"></pl-figure>
+<hr/>
+<markdown>
+We will now determine the $T(\cdot)$ term that represents the work done by the last recursive subcall.
+Note that the size of the subcall is either the size of the $left$ or $right$ array, depending on which line (highlighted) is called.
+The exact size of $left$/$right$ arrays changes depending on $mom$ (why?), but we can place an upper bound on their sizes to
+ determine the tightest upper bound the $T(\cdot)$ term.
+
+
+For the following questions, consider an arbitrary input array $A$ of $18$ **distinct** elements. Below, we have visualized the array in rows of 3
+ (with letters in place of discrete values).
+It may also help to reference [these grid visuals](https://courses.engr.illinois.edu/cs374/sp2021/notes/01-recursion.pdf#page=18)
+ (note that they are for `MomSelect5`, but the concept is the same).
+
+```
+A = [
+  a b c
+  d e f
+  g h i
+  j k l
+  m n o
+  p q r
+]
+
+```
+_Note: For the following inputs, give the **strongest** statement possible. For example, the answer "$x$ is at least 3" will not be accepted
+if we know $x$ is exactly 3 (even though it is technically true). Similarly, the answer "$x$ is at most 374" will not be accepted
+if we know that $x$ is at most 126._
+</markdown>
+
+</pl-question-panel>
+Within each "row" of <code>A</code>, the median of the row is greater than
+<pl-multiple-choice answers-name='drop1' display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">at least</pl-answer>
+  <pl-answer correct="true">exactly</pl-answer>
+</pl-multiple-choice>
+<pl-integer-input answers-name="ans1" size="1" correct_answer="1" display="inline" show-help-text="false"></pl-integer-input>
+element(s).
+<br/>
+
+Furthermore, we have that <code>mom</code> is greater than
+<pl-multiple-choice answers-name='drop2' display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">at least</pl-answer>
+  <pl-answer correct="true">exactly</pl-answer>
+</pl-multiple-choice>
+<pl-integer-input answers-name="ans2" size="1" correct_answer="2" display="inline" show-help-text="false"></pl-integer-input> element(s) in <code>M</code>.
+
+<pl-question-panel>
+<em>
+  <ul/>
+  <li>Hint: Remember that </em><code>mom</code><em> is simply the median of the array <code>M</code>. We are using our own
+  recursive function <code>MomSelect3</code> as a black box to assume that <code>mom</code> will be correctly computed
+  (i.e., correctness justified by the "Recursion fairy").
+  </li>
+  </ul>
+</em>
+</pl-question-panel>
+
+We conclude that <code>mom</code> is guaranteed to be greater than
+<pl-multiple-choice answers-name='drop3' display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">at least</pl-answer>
+  <pl-answer correct="false">exactly</pl-answer>
+</pl-multiple-choice>
+<pl-integer-input answers-name="ans3" size="1" correct_answer="5" display="inline" show-help-text="false"></pl-integer-input> element(s) in <code>A</code>.
+
+<br/>
+
+Given our conclusions above, we know that the
+<pl-multiple-choice answers-name='drop4' display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true"><code>right</code></pl-answer>
+  <pl-answer correct="false"><code>left</code></pl-answer>
+</pl-multiple-choice>
+array has
+<pl-multiple-choice answers-name='drop5' display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">at most</pl-answer>
+  <pl-answer correct="false">exactly</pl-answer>
+</pl-multiple-choice>
+<pl-symbolic-input answers-name="ans4" size="1" correct_answer="12" display="inline" show-help-text="false"></pl-symbolic-input>
+element(s).
+<pl-question-panel>
+<em>
+  <ul/>
+  <li>Note: Remember that the <code>Partition</code> pivot is not included in either of the returned arrays.
+  </li>
+  </ul>
+</em>
+The same logic can be applied to acheive the tightest upper bound on the size of the other array.
+</pl-question-panel>
+
+<hr/>
+
+<pl-question-panel>
+
+Let's generalize our conclusions for an input array of $n$ elements. Give give expressions for the tightest upper bounds on sizes of the <code>left</code> and <code>right</code>
+arrays with respect to $n$ (e.g., $n^2$) for all of the statements below.
+<br/>
+<em>
+  <ul/>
+  <li>Note that analyzing arrays of different lengths may lead to a bound that is a ceil/floor/constant away from the bound we calculated, but in recurrence analysis those do
+    not matter (<a href="https://courses.engr.illinois.edu/cs374/sp2021/notes/01-recursion.pdf#page=14">see textbook</a>).
+    For example, $T(n/2 + 1)$ or $T(\lceil n/2 \rceil)$ should just be entered as $T(n/2)$.
+  </li>
+  </ul>
+</em>
+
+</pl-question-panel>
+<center>
+<pl-symbolic-input label="$\max(|left|)=$" display="inline" size="11" variables="n" correct-answer="2*n/3" answers-name="ans5"></pl-symbolic-input>
+
+<pl-symbolic-input label="$\max(|right|)=$" display="inline" size="11" variables="n" correct-answer="2*n/3" answers-name="ans6"></pl-symbolic-input>
+</center>
+<br/>
+Finally, the tightest upper bound on the work performed by the last recursive subcall is:
+<center>
+$T\Big($
+</pl-symbolic-input><pl-symbolic-input show-help-text="false" variables="n" correct-answer="2 * n/3" answers-name="ans" display="inline" size="5"></pl-symbolic-input>
+  $ \Big)$
+</center>

@@ -1,0 +1,13 @@
+{
+    "uuid": "ab45c23b-7f22-421a-a320-f70f53dbb93d",
+    "title": "Check if a string matches your regex",
+    "topic": "Regular Expressions",
+    "tags": [
+        "utilities",
+        "regex",
+        "katieli3"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

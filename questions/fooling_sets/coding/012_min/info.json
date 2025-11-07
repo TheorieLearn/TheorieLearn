@@ -1,0 +1,22 @@
+{
+    "uuid": "f8bde18d-2584-4bc5-8455-dfc035bb9191",
+    "title": "Fooling Set: 012, k at least min(i,j)",
+    "topic": "Fooling Sets",
+    "tags": [
+        "erobson2",
+        "Fooling Sets"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

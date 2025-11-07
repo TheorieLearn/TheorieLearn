@@ -1,0 +1,38 @@
+{
+    "uuid": "fd8cc14e-096d-4fb5-8379-57f0f7fcb1e9",
+    "type": "Homework",
+    "title": "Prerequisite Material",
+    "set": "Guided Problem Sets",
+    "number": "0",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+        "title": "Basic Prerequistite Material",
+        "questions": [
+            {
+                "id": "prereqs/concepts/tree_traversal",
+                "points": 1
+            },
+            {
+                "id": "prereqs/concepts/modular_arithmetic",
+                "points": 1
+            },
+            {
+                "id": "prereqs/concepts/function_notation/multiple_choice",
+                "points": 1
+            },
+            {
+                "id": "prereqs/concepts/function_notation/symbolic_response",
+                "points": 1
+            }
+        ]
+        }
+    ]
+}

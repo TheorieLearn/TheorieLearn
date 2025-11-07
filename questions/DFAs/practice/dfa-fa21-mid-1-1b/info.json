@@ -1,0 +1,12 @@
+{
+  "uuid": "0cd4e4a7-5e42-447b-8f2f-e73c5f9a86c3",
+  "title": "DFA Construction: { 0p1q0r | r = (p + q) mod 2 }",
+  "topic": "DFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "ericjin2",
+    "Free Response"
+  ],
+  "type": "v3"
+}

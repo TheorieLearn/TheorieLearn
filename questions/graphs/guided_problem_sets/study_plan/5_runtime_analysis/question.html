@@ -1,0 +1,54 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/study_plan.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+ <p>Finally, let's ensure our algorithm is efficient, as it's no good if it can't produce a study plan fast enough!
+ Determine the runtime of each part of the algorithm, then finally put it all together to determine the overall runtime.
+ Let $G$ be the prerequisite graph, with $V$ vertices and $E$ edges. Express your answers to the next questions in
+ terms of $V$ and $E$.</p>
+
+  <p><b>Do <em>not</em> include any constants or lower-order terms in your response, or the autograder will not give you credit!</b></p>
+
+</pl-question-panel>
+
+<br>
+
+Computing $G.rev$:
+<br>
+<pl-symbolic-input answers-name="ans1" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>
+
+<br><br>
+
+Determining which vertices are reachable from $t$ in $G.rev$:
+<br>
+<pl-symbolic-input answers-name="ans2" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>
+
+<br><br>
+
+Constructing $G'$--consisting only of vertices reachable from $t$ in $G.rev$:
+<br>
+<pl-symbolic-input answers-name="ans3" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>
+
+<br><br>
+
+Constructing $G'.rev$:
+<br>
+<pl-symbolic-input answers-name="ans4" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>
+
+<br><br>
+
+Computing a topological sort of $G'.rev$:
+<br>
+<pl-symbolic-input answers-name="ans5" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>
+
+<br><br><br>
+
+...so the total runtime is:
+<br>
+<pl-symbolic-input answers-name="ans6" label="$O\Big($" variables="V,E" correct-answer="V+E" display='block' size='1' suffix="$\Big)$"></pl-symbolic-input>

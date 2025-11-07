@@ -1,0 +1,22 @@
+<pl-question-panel>
+Great job! Finally, let's do a runtime analysis on our graph reduction and algorithm. Our graph is implemented using an adjacency list, so inserts and deletes are O(1).
+<br/>
+<em>Note: Multiplication must be expressed as </em><code>a*b</code><em> in the symbolic input (as opposed to </em><code>ab</code><em>).</em>
+<br/>
+<br/>
+</pl-question-panel>
+
+<markdown>
+Let $n = |V|$ and $m = |E|$. Answer in terms of $n$ and $m$ when necessary.
+
+Our modified graph $G'$ has
+<pl-symbolic-input show-help-text="false" variables="n,m" correct-answer="3*n" answers-name="ans1" display="inline" size="2"></pl-symbolic-input> vertices and 
+<pl-symbolic-input show-help-text="false" variables="n,m" correct-answer="m"   answers-name="ans2" display="inline" size="2"></pl-symbolic-input> edges.
+
+We run a WFS (whatever-first search) on $G'$ to find the set of all vertices that can be reached from $s$ through a French flag walk.
+
+The overall runtime is then
+$O\Big($
+<pl-symbolic-input show-help-text="false" variables="n,m" correct-answer="n+m" answers-name="ans3" display="inline" size="5"></pl-symbolic-input>
+$\Big)$.
+</markdown>

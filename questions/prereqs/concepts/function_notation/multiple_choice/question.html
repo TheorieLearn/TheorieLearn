@@ -1,0 +1,26 @@
+<pl-question-panel>
+  <p>Disclaimer: If a question like this ever appears on an exam, it will not be this complicated.</p>
+  <p>
+    Consider $f(x) = {{params.base_expr}}$
+  </p>
+  <p>
+    Let the expanded form of some expression be:
+  </p>
+  <p>
+    <center>$\large {{params.expanded_form}}$</center>
+  </p>
+  <p>
+    Which of the following is a recursive form of the same expression?
+  </p>
+</pl-question-panel>
+
+<p>
+  <pl-multiple-choice answers-name="acc" weight="1">
+    <pl-answer correct="true">${{params.recursive_form}}$</pl-answer>
+
+    {{#params.incorrect_forms}}
+      <pl-answer>${{.}}$</pl-answer>
+    {{/params.incorrect_forms}}
+
+  </pl-multiple-choice>
+</p>

@@ -1,0 +1,13 @@
+{
+    "uuid": "3efee41c-19dc-11ed-861d-0242ac120002",
+    "title": "Regular Expressions: No prefix of length at least 2 is a palindrome",
+    "topic": "Regular Expressions",
+    "tags": [
+      "clarage2",
+      "summer22",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

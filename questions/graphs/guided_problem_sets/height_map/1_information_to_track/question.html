@@ -1,0 +1,30 @@
+<pl-question-panel>
+  <b> For the next few questions, you are tasked constructing a graph with the attributes necessary for you to solve the problem. </b>
+  <br>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/height_map_graph.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+  <h3>Information to Track</h3>
+  First, we must determine what information needs to be kept track about past decisions in traversing the mountain to inform future decisions.
+  Please select the options below that would be useful to keep track of to help solve the problem:
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1">
+    <pl-answer correct="true" feedback="This is important information that changes the state you are in.">
+      Whether you are in the uphill or downhill phase of your climb.</pl-answer>
+    <pl-answer correct="true" feedback="This is relevant in deciding where you can next move since you can only move to adjacent positions.">
+      Which position you are in the $Elevation$ map, which is the given 2D array.</pl-answer>
+    <pl-answer feedback="Knowing the number of positions travelled will not help solve the problem.">
+      The number of positions you have traversed in the $Elevation$ map, which is the given 2D array.</pl-answer>
+    <pl-answer feedback="The global height is not necessary since only the difference between successive heights is relevant here.">
+      The total vertical height you have traversed.</pl-answer>
+    <pl-answer feedback="Your peak height does not help in allowing you to decide where you can next move.">
+      Your peak elevation so far.</pl-answer>
+</pl-checkbox>

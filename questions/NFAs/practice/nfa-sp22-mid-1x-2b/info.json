@@ -1,0 +1,13 @@
+{
+  "uuid": "c6afec9b-17e4-416e-be98-65a474c56830",
+  "title": "NFA Construction: Number of 0's divisible by 3 or doesn't end with 0110",
+  "topic": "NFA Construction",
+  "singleVariant": true,
+  "showCorrectAnswer": false,
+  "tags": [
+    "erobson2",
+    "Free Response",
+    "summer22"
+  ],
+  "type": "v3"
+}

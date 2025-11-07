@@ -1,0 +1,43 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+          name="problem-statement"
+          directory="serverFilesCourse"
+          file-name="theorielearn/problem_statements/intermediate_vertex.html"
+        ></pl-variable>
+    </pl-template>
+</pl-question-panel>
+
+<markdown>
+In the previous part we learnt that we need to track information whether a vertex from the set $X$ has been visited or not.
+</markdown>
+
+</pl-question-panel>
+<hr/>
+<markdown>
+Now we have the new vertex set $V'$ and the new edge set $E'$. Let us solve the original problem using the new graph. What algorithm should we use?
+</markdown>
+<pl-multiple-choice order="ascend" answers-name="algo" display="dropdown" hide-letter-keys="true">
+    <pl-answer>Bellman-Ford</pl-answer>
+    <pl-answer>BFS</pl-answer>
+    <pl-answer correct="true">Dijkstra</pl-answer>
+    <pl-answer>Floyd Warshall</pl-answer>
+</pl-multiple-choice>
+<markdown>
+What should be the initial vertex we should use to solve the problem? What should be the final vertex we need to reach? Suppose $s$, $t$ are the start and the target vertices in the original graph.
+</markdown>
+Start Vertex:
+<pl-multiple-choice order="ascend" answers-name="start_vertex" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">(s, 0)</pl-answer>
+    <pl-answer>(s, 1)</pl-answer>
+    <pl-answer>(s, 0) or (s, 1)</pl-answer>
+    <pl-answer>(s, 0) and (s, 1)</pl-answer>
+</pl-multiple-choice>
+
+    End Vertex:
+<pl-multiple-choice order="ascend" answers-name="end_vertex" display="dropdown" hide-letter-keys="true">
+    <pl-answer>(t, 0)</pl-answer>
+    <pl-answer correct="true">(t, 1)</pl-answer>
+    <pl-answer>(t, 0) or (t, 1)</pl-answer>
+    <pl-answer>(t, 0) and (t, 1)</pl-answer>
+</pl-multiple-choice>

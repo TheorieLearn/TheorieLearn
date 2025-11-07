@@ -1,0 +1,6 @@
+from typing import Set
+
+def isInLanguage(str) -> bool: ...
+def generateLanguage(int) -> Set[str]: ...
+
+NUM_ELEMENTS_TO_CHECK: int

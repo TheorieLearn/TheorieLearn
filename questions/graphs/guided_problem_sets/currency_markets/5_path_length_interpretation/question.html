@@ -1,0 +1,25 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Interpreting Path Length</h3>
+
+    <b>For the following question, assume we are using log-base-2.</b>
+    <br>
+    <br>
+    We've now established what the weight of an edge $v_i \rightarrow v_j$ is. A path from vertex $v_i$
+    to $v_j$ represents a series of trades starting with one unit of currency $i$ and ending with some amount of
+    currency $j$.
+    <br>
+    <br>
+    Suppose we have a path of length $L$ from $v_i$ to $v_j$. Determine an expression for the amount of currency $j$
+    that the sequence of trades cooresponding to that path results in.
+    <br>
+</pl-question-panel>
+<pl-symbolic-input answers-name="q1" variables="L" label="$\text{Units of currency } j =$"></pl-symbolic-input>
+<pl-submission-panel>
+    {{feedback.q1}}
+</pl-submission-panel>

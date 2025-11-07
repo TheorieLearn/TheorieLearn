@@ -1,0 +1,26 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>$\{ 0^a w 0^a \mid w \in \Sigma^+, a > 0, |w| \geq 0 \}$</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+0 (0+1)(0+1)* 0
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        $0^a = 0 0^{a - 1}$
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        Any string in the language can be written as $0(0^{a - 1} w 0^{a - 1})0$. Find what
+        $(0^{a - 1} w 0^{a - 1})$ is equivalent to then place that between zeroes.
+    </pl-hint>
+</pl-hidden-hints>

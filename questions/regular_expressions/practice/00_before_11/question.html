@@ -1,0 +1,25 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+***<center>All strings in $\Sigma^*$ in which every occurrence of the substring $00$ appears before every occurrence of the substring $11$.</center>***
+
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (10+0)*(1+10)*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=3>
+        Try to break the string in the language into a prefix and a suffix.
+    </pl-hint>
+    <pl-hint show-after-submission=6>
+        The prefix should have no consecutive $1$'s, and the suffix should have no consecutive $0$'s.
+    </pl-hint>
+</pl-hidden-hints>

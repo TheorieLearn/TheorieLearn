@@ -1,0 +1,21 @@
+<pl-question-panel>
+<markdown>
+Enter a regular expression below to generate some strings accepted by it. Please use:
+
+* **+** for union
+* **\*** for Kleene star
+* **e** for ε (epsilon)
+
+Example: a\*(a+b)c, or (0+1)\*
+</markdown>
+</pl-question-panel>
+
+<pl-string-input answers-name="regex" label="Regular Expression:" placeholder="(0+1)*"></pl-string-input>
+
+<pl-submission-panel>
+  {{#feedback}}
+  <div style="margin-top: 10px;">
+    {{& feedback.message}}
+  </div>
+  {{/feedback}}
+</pl-submission-panel>

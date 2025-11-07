@@ -1,0 +1,13 @@
+{
+    "uuid": "45be96b4-19df-11ed-861d-0242ac120002",
+    "title": "Regular Expressions: No substring of length at least 3 is a palindrome",
+    "topic": "Regular Expressions",
+    "tags": [
+      "clarage2",
+      "summer22",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

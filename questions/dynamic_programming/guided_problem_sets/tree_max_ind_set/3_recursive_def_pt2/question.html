@@ -1,0 +1,53 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/tree_max_ind_set.html"
+    ></pl-variable>
+  </pl-template>
+  <center><b>Let $MaxFun(v, o)$ be the maximum amount of fun achievable from the subtree rooted at $v$ given that we will include $v$ if $o = \text{Include}$ and exclude $v$ if $o = \text{Exclude}$.</b></center>
+  <br/>
+  From the previous question, we have two exhaustive cases representing the value of $MaxFun(v, o)$:
+  <ol>
+  <li>If $o = \text{Include}$ &#8594; [fun from vertex $v$] + [Maxmimum fun of subtrees excluding children of $v$]</li>
+  <li>If $o = \text{Exclude}$ &#8594; [Maximum fun of subtrees either including or excluding childrens of $v$]</li>
+  </ol>
+
+  We will now give an expression for the value of each of these cases. Keep in mind how you can use the subproblem definition of $MaxProfit$
+  when defining these expressions.
+  <br/><br/>
+  Allowed functions are <code>MaxFun</code>. Allowed variables are <code>v</code>,
+  <code>Include</code>, <code>Exclude</code>, and <code>c</code> (children of $v$), <code>Fun</code> (an array of fun values for each employee). <em>Note that due to autograder limitations, you must write</em> <code>Fun[i]</code> <em> as </em><code>Fun(i)</code>
+  <br>
+  <em>*Note: min, max, and sum are included in the list of viable functions</em>
+  <br>
+</pl-question-panel>
+<br>
+<b>Case 1:</b> [fun from vertex $v$] + [Maxmimum fun excluding all children of $v$]
+<br>
+<br>
+<pl-string-input display="inline" size="10" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
++
+<pl-multiple-choice order="random" answers-name="a" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">sum</pl-answer>
+  <pl-answer correct="false">min</pl-answer>
+  <pl-answer correct="false">max</pl-answer>
+</pl-multiple-choice> $\Big($
+  <pl-string-input display="inline" size="20" placeholder="Symbolic input"  answers-name="ans2" show-help-text="false"></pl-string-input>
+  $\forall c \in \text{children(v)}$
+$\Big)$
+<br/>
+<br/>
+<b>Case 2:</b> [Maximum fun including or excluding all children of $v$]
+<br><br>
+<pl-multiple-choice order="random" answers-name="b" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">sum</pl-answer>
+  <pl-answer correct="false">min</pl-answer>
+  <pl-answer correct="false">max</pl-answer>
+</pl-multiple-choice> $\Big($
+  <pl-string-input display="inline" size="20" placeholder="Symbolic input"  answers-name="ans3" show-help-text="false"></pl-string-input>
+  $\forall c \in \text{children(v)}$
+$\Big)$
+<br><br>
+Finally to account for the base case we know that if $v$ is a leaf then it has no children, so the maximum fun of its children is <pl-number-input placeholder="" answers-name="ans4" size="10" correct-answer="0">.

@@ -1,0 +1,26 @@
+<pl-question-panel>
+Consider the following question:
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable name="is-open">True</pl-variable>
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/max_tv_ad_revenue.html"
+    ></pl-variable>
+</pl-template>
+<hr>
+<p>To get a better idea of the problem, let's look at a simple example:</p>
+
+<p>Suppose that there are $n = 4$ advertisers with $L = [1, 5, 8, 2]$ and $P = [10, 20, 40, 5]$. Suppose that the total time available is $W = 5$ minutes. What is the maximum revenue you can obtain?</p>
+
+<p>Provide your answer in the form of an array $X[1..n]$, where each element $X[i]$ represents the time (in minutes) of the advertisement from the $i$-th advertiser. For example, $[0, 0, 0, 2]$ would indicate that you would only play the fourth advertiser's video for two minutes.</p>
+
+<pl-number-input answers-name="x1" label="$X[1] =$" correct-answer=1> </pl-number-input>
+<br><br>
+<pl-number-input answers-name="x2" label="$X[2] =$" correct-answer=0> </pl-number-input>
+<br><br>
+<pl-number-input answers-name="x3" label="$X[3] =$" correct-answer=4> </pl-number-input>
+<br><br>
+<pl-number-input answers-name="x4" label="$X[4] =$" correct-answer=0> </pl-number-input>
+
+</pl-question-panel>

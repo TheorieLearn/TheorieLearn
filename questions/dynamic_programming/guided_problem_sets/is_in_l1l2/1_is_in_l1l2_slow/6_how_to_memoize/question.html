@@ -1,0 +1,49 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+Recall that:
+$$isInA(i) \text{ is true if and only if } s[1 .. i] \in A.$$
+
+Our recurrence is as follows (this describes the same thing you've constructed in the last question, just in a different notation):
+
+$$isInA(i) =
+\begin{cases}
+  True &i = 0\\
+  \bigvee_{j \in [1, i]} (isInA(j - 1) \wedge isInL_1L_2(s[j ... i])) &\text{otherwise}
+\end{cases}
+$$
+
+Now that we've defined our recursive function, we need to figure out how to use memoization to speed up our recursive function.
+<br>
+The input to our recursive function is an integer $i$ such that $i \in [$
+<pl-symbolic-input answers-name="start" variables="n" correct-answer="0" show-help-text="false" size="5"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="end" variables="n" correct-answer="n" show-help-text="false" size="5"></pl-symbolic-input>
+$]$.
+That means we need a 1-D table of size <pl-symbolic-input answers-name="size" variables="n" correct-answer="n + 1" show-help-text="false" size="5"></pl-symbolic-input>
+<br>
+Notice that, for each prefix of an input $s$ (except for the base case), we determine whether a prefix is in $A$ by partitioning it
+into a suffix that may or may not be in $L_1L_2$, and a prefix with a
+<pl-multiple-choice answers-name="suffix-start-index" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">smaller</pl-answer>
+    <pl-answer correct="false">larger</pl-answer>
+</pl-multiple-choice> end index.
+<br>
+That means we should evaluate prefixes with larger end indices
+<pl-multiple-choice answers-name="later-prefix-evaluation" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">first</pl-answer>
+    <pl-answer correct="true">last</pl-answer>
+</pl-multiple-choice>.
+<br>
+This means that we should fill in our memoization table in
+<pl-multiple-choice answers-name="evaluation-order" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">decreasing</pl-answer>
+    <pl-answer correct="true">increasing</pl-answer>
+</pl-multiple-choice> order of end index.

@@ -1,0 +1,72 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour.html"
+    ></pl-variable>
+  </pl-template>
+  <markdown>
+  We **definitely** need to do better than the naive algorithm. One of the techniques
+  we've learned in class is dynamic programming, so you start to think about
+  possible subproblems. After thinking for a while with your groupmate,
+  Julianne Leung, comes up with a possible approach. She defines $d(S - v, v)$ (where $S - v$ is
+  shorthand for $S \setminus \{v\}$) to be the shortest
+  distance from any vertex $S - v$ (set $S$ not including $v$) to $v$, then
+  She gives the following subproblem definition (where $S$ is a set of vertices, and $0 \notin S$):
+  - $\mathsf{MinDist}(S)$: Length of the cheapest tour starting at $Stontrois$ and visiting all vertices of $S$ exactly once (without visiting any vertex not in $S$)
+
+  Julianne claims that, to compute $\mathsf{MinDist}(S)$, we need to find the shortest distance from any vertex other than $v$ to $v$
+  added onto the minimum length of the world tour excluding $v$.
+  This is shown in the following recursive formula:
+
+  - $MinDist(S) = min_{v \in S} [ MinDist(S - v) + d(S - v, v) ]$
+
+  Is Julianne correct? Try stepping through Julianne's recursive formula and seeing what values we get for $\mathsf{MinDist}(S)$ with the following graph (the numbers on the edges denote the output of the function $d$ on those edges).
+  The table has been provided for you. The first column values should be the expected values of $\mathsf{MinDist}(S)$, which should be determined solely by the subproblem definition.
+  The last column values should be derived from Julianne's recursive formula above.
+</markdown>
+</pl-question-panel>
+<p>
+<pl-graph>
+    {{params.img}}
+</pl-graph>
+</p>
+<style>
+table.format th {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 10px;
+    text-align: center;
+}
+
+table.format td {
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 8px;
+    text-align: center;
+}
+
+table.format td input {
+    text-align: center;
+}
+
+table.format td span.form-inline {
+    margin-left: 0 !important;
+}
+
+</style>
+<table class='format' style='border: 2px solid black; width: 100%;'>
+<tr>
+    <th>$S$</th>
+    <th>$\mathsf{MinDist}(S)$ according to <i>Subproblem Definition</i></th>
+    <th>$\mathsf{MinDist}(S)$ according to <i>Recursive Formula</i></th>
+
+</tr>
+
+{{#params.row_data}}
+<tr>
+    <td>$\{ {{S}} \}$</td>
+    <td><pl-integer-input answers-name='{{subdef_answers_name}}' show-help-text=false size=5></pl-integer-input></td>
+    <td><pl-integer-input answers-name='{{formula_answers_name}}' show-help-text=false size=5></pl-integer-input></td>
+</tr>
+{{/params.row_data}}
+</table>

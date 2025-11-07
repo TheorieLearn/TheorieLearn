@@ -1,0 +1,31 @@
+<pl-question-panel>
+<markdown>
+Mistakes like the one you just encountered often occur when we don't write down a clear, unambiguous statement about what each of the states in the DFA means. Writing down this description makes it easier for humans to understand and verify the correctness of the DFA.
+
+For example, if you tell me that your DFA transitions from state $d$ to state $h$ after reading a $0$, I have no way to understand what that means or verify that it's correct if I don't know what states $d$ and $h$ mean.
+
+For ease of reference, here is the diagram of the original (incorrect) DFA:
+</markdown>
+<pl-graph>
+  {{params.dfa}}
+</pl-graph>
+<p>
+Which of the following are clear, unambiguous statements about what each of the states in the (corrected) DFA means?
+</p>
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1" fixed-order="true">
+    <pl-answer>State 0100 means that we've found 0100, $\epsilon$ means we haven't matched anything yet, and everything else is a match in progress.</pl-answer>
+    <pl-answer>The current state is the amount that has been matched so far</pl-answer>
+
+    <pl-answer>The current state is the longest suffix of the input read so far that is also a prefix of 0100.</pl-answer>
+    <pl-answer>The current state is the longest prefix of the input read so far that is also a suffix of 0100.</pl-answer>
+    <pl-answer>The current state is the longest suffix of 0100 that is also a prefix of the input read so far.</pl-answer>
+    <pl-answer>The current state is the longest prefix of 0100 that is also a suffix of the input read so far.</pl-answer>
+    <pl-answer correct="true">If the current state is 0100, that means we have already read substring 0100. Otherwise, the current state is the longest suffix of the input read so far that is also a prefix of 0100.</pl-answer>
+    <pl-answer>If the current state is 0100, that means we have already read substring 0100. Otherwise, the current state is the longest prefix of the input read so far that is also a suffix of 0100.</pl-answer>
+    <pl-answer>If the current state is 0100, that means we have already read substring 0100. Otherwise, the current state is the longest suffix of 0100 that is also a prefix of the input read so far.</pl-answer>
+    <pl-answer correct="true">If the current state is 0100, that means we have already read substring 0100. Otherwise, the current state is the longest prefix of 0100 that is also a suffix of the input read so far.</pl-answer>
+</pl-checkbox>
+
+<b>Note: We are expecting you to write statements with this level of clarity and precision on DFAs that you submit in written HWs and exams!</b>

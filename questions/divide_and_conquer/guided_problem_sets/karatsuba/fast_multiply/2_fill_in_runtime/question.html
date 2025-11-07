@@ -1,0 +1,37 @@
+<div><pl-figure file-name="fast_multiply.png" directory="clientFilesCourse"></pl-figure></div>
+
+<p>
+    Let's analyze the time complexity of this algorithm.
+</p>
+<p>
+    For each call to this function where $x$ and $y$ have $n$ digits, we have
+    <pl-integer-input answers-name="num-subproblems" size="1" correct-answer="3" show-help-text="false"></pl-integer-input>
+    recursive subproblems, each of size (number of digits in the numbers passed to recursive calls)
+    <pl-symbolic-input answers-name="recursive-case-size" variables="n" correct-answer="n/2" show-help-text="false" size="15"></pl-symbolic-input>.
+</p>
+<p>
+    Observe that work done outside of the recursive calls is dominated by the computation of the sum $10^{2m}e + 10^{m}(e + f - g) + f$.
+</p>
+<p>
+    The first term ($10^{2m}e$) in this sum has
+    <pl-big-o-input answers-name="first-term-digit-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input> digits.
+</p>
+<p>
+    The second term ($10^{m}(e + f - g)$) in this sum has
+    <pl-big-o-input answers-name="second-term-digit-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input> digits.
+</p>
+<p>
+    The third term ($f$) in this sum has
+    <pl-big-o-input answers-name="third-term-digit-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input> digits.
+</p>
+<p>
+    So, adding all these terms together (i.e. total work done outside of recursive calls) takes
+    <pl-big-o-input answers-name="summation" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input> time.
+</p>
+<p>
+    So, the runtime for this function can be expressed by the following recurrence:
+    <br>
+    $T(n) = $ <pl-integer-input answers-name="coefficient" size="1" correct-answer=3 show-help-text="false"></pl-integer-input>
+    $T\Big($ <pl-symbolic-input answers-name="recursive_argument" variables="n" correct-answer="n/2" show-help-text="false" size="15"></pl-symbolic-input> $\Big) + $
+    <pl-big-o-input answers-name="work" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+</p>

@@ -1,0 +1,9 @@
+<p>After the Revolutionary War, Alexander Hamilton's biggest rival as a lawyer was Aaron Burr. (Sir!) In fact, the two worked next door to each other. Unlike Hamilton, Burr cannot work non-stop; every trial he tries exhausts him. The bigger the trial, the longer he must rest before he is well enough to take the next trial. (Of course, he is willing to wait for it.) If a trial arrives while Burr is resting, Hamilton snatches it up instead. Burr has been asked to consider a sequence of $n$ upcoming trials. He quickly computes two arrays $profit[1 .. n]$ and $skip[1 .. n]$, where for each index $i$,
+<ul>
+    <li>$profit[i]$ is the amount of money Burr would make by taking the $i$th trial, and</li>
+    <li>$skip[i]$ is the number of consecutive trials Burr must skip if he accepts the $i$th trial. (That is, if Burr accepts the $i$th trial, he cannot accept trials $i + 1$ through $i + skip[i]$.)</li>
+</ul>
+<p>What is the maximum total profit Burr can secure from these $n$ trials?</p>
+
+<h4>Example</h4>
+<p>If $profit = [3, 7, 3, 5, 6, 4]$ and $skip = [2, 0, 2, 3, 1, 2]$, then Burr should take trial 2, rest for no trials, take trial 3, rest for 2 trials, then finally take trial 6. The total profit would be $7 + 3 + 4 = 14$.</p>

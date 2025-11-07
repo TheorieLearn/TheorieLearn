@@ -1,0 +1,12 @@
+{
+    "uuid": "48d12892-8555-4c7a-8743-d66658421707",
+    "title": "Regular Expressions: {0p1q0r | p = (q + r) mod 2}",
+    "topic": "Regular Expressions",
+    "tags": [
+      "ericjin2",
+      "Regular Expressions"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false,
+    "singleVariant": true
+}

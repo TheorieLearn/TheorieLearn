@@ -1,0 +1,40 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+      ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<markdown>
+Recall that
+$$isInA(i) = True \text{ if and only if } s[1..i] \in A$$ Similarly, $$isInB(i) = True \text{ if and only if } s[1..i] \in B$$
+
+We've come up with our recurrence and a way to memoize it. But, we need to know its performance.
+All runtimes are a function of the number of characters in the string, $n$.
+
+There are
+<pl-big-o-input answers-name="subproblem-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+subproblems.
+
+---
+
+For each subproblem (in both recurrences), we need to evaluate the validity of
+<pl-big-o-input answers-name="is-in-a-count" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+prefix-suffix partitions.
+
+Determining whether a partition is valid takes
+<pl-big-o-input answers-name="is-in-a-runtime" variable="n" correct-answer="1" display='inline' size='5'></pl-big-o-input>
+time.
+
+So, it takes
+<pl-big-o-input answers-name="subproblem-time" variable="n" correct-answer="n" display='inline' size='5'></pl-big-o-input>
+time to evaluate each subproblem.
+
+---
+
+So, our total runtime is
+<pl-big-o-input answers-name="total-runtime" variable="n" correct-answer="n**2" display='inline' size='5'></pl-big-o-input>.
+</markdown>

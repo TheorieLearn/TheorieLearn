@@ -1,0 +1,121 @@
+<div>
+    Bellman-Ford is a single-source shortest-walk algorithm that can handle edges with negative weights.
+    (See the footnote <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/book/08-sssp.pdf#page=3">here</a>
+    for more details on why we've stated that Bellman-Ford is a shortest-walk algorithm rather than a shortest-path algorithm.)
+</div>
+<br>
+<div>
+    However, in a graph with negative cycles, the notion of a shortest walk is not well defined.
+    In this problem, we will show how to detect negative cycles in graphs using Bellman-Ford.
+</div>
+<hr>
+<p>
+    Given a graph $G = (V, E)$, suppose that we run Bellman-Ford with $s$ as the source vertex.
+</p>
+<div>
+    Remember that Bellman-Ford is just a <em>dynamic programming algorithm</em>, and having a precise
+    <em>subproblem definition</em> is crucial for understanding any dynamic programming algorithm.
+    What is the subproblem definition for the Bellman-Ford algorithm?
+
+    (It may be helpful to refer to the
+    <a href="https://jeffe.cs.illinois.edu/teaching/algorithms/book/08-sssp.pdf#page=23">textbook</a>,
+    but do note that the notation used in the textbook is slightly different from what we're using in this problem.)
+</div>
+<br>
+<div style="font-weight: bold">
+    Let $dist(v, i)$ denote the weight of the shortest
+    <pl-multiple-choice answers-name="path-or-walk" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">walk</pl-answer>
+        <pl-answer correct="false">path</pl-answer>
+    </pl-multiple-choice>
+
+    from
+
+    <pl-multiple-choice answers-name="direction" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">s to v</pl-answer>
+        <pl-answer correct="false">v to s</pl-answer>
+    </pl-multiple-choice>
+
+    consisting of
+
+    <pl-multiple-choice answers-name="quantifier" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">at most</pl-answer>
+        <pl-answer correct="false">exactly</pl-answer>
+        <pl-answer correct="false">at least</pl-answer>
+    </pl-multiple-choice>
+
+    $i$
+
+    <pl-multiple-choice answers-name="vertices-or-edges" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">edges</pl-answer>
+        <pl-answer correct="false">vertices</pl-answer>
+        <pl-answer correct="false">cycles</pl-answer>
+    </pl-multiple-choice>
+    .
+</div>
+<hr>
+<div>
+    Let $n = |V|$. Suppose there exists a vertex $v \in V$ such that $dist(v, n) < dist(v, n-1)$.
+</div>
+<br>
+<div>
+    This means that allowing the walk to contain $n$ edges actually allows us to do better than
+    if we only allowed at most $n-1$ edges!
+
+    More formally, there exists a walk $W$ from $s$ to $v$ with exactly $n$ edges that is shorter than
+    than every walk from $s$ to $v$ with less than $n$ edges. <b>[1]</b>
+</div>
+<br>
+<div>
+    This walk $W$ has <pl-symbolic-input answers-name="walk-vertex-count" correct-answer="n + 1" variables="n" size="5" show-help-text="false"></pl-symbolic-input> vertices (answer is an expression in terms of $n$).
+</div>
+<br>
+<div>
+    Thus, by Pigeonhole principle, there exists a vertex $u$ that appears in $W$ at least
+    <pl-multiple-choice answers-name="min-repetition-count" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">two times</pl-answer>
+        <pl-answer correct="false">three times</pl-answer>
+        <pl-answer correct="false">four times</pl-answer>
+    </pl-multiple-choice>
+    .
+</div>
+<br>
+<div>
+    Now, consider the first time and the last time that $u$ appears in $W$. We can express $W$ as an ordered sequence of nodes:
+    $$W = s, \space ... , \space u, \space ..., \space u, \space ... , \space v.$$
+
+    By removing the cycle $u,\dots,u$ from $W$, we can form a new walk $$W' = s, \space ..., \space u, \space ..., \space v$$ in which $u$ only appears once.
+
+    $W'$ is a walk with
+    <pl-multiple-choice answers-name="walk-length-quantifier" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">less than</pl-answer>
+        <pl-answer correct="false">exactly</pl-answer>
+        <pl-answer correct="false">more than</pl-answer>
+    </pl-multiple-choice>
+    $n$ edges.
+</div>
+<br>
+<div>
+    From <b>[1]</b>, we know that the weight of $W'$ is
+    <pl-multiple-choice answers-name="walk-inequality" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="false">less than</pl-answer>
+        <pl-answer correct="false">equal to</pl-answer>
+        <pl-answer correct="true">greater than</pl-answer>
+    </pl-multiple-choice>
+
+    the weight of $W$. Note that $$weight(W) = weight(W') + weight(u,\dots,u).$$
+
+    Therefore, the sequence of nodes $u, ..., u$ in $W$ forms a cycle whose total weight is
+    <pl-multiple-choice answers-name="cycle-weight" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">negative</pl-answer>
+        <pl-answer correct="false">zero</pl-answer>
+        <pl-answer correct="false">positive</pl-answer>
+    </pl-multiple-choice>
+    .
+</div>
+<br>
+<div>
+    Thus, we can conclude that if there exists a vertex $v \in V$ such that
+    $dist(v, n) < dist(v, n-1)$, then the graph has a negative cycle.
+    This is how Bellman-Ford performs negative cycle detection!
+</div>

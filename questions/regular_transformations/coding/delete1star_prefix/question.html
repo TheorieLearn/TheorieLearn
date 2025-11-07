@@ -1,0 +1,23 @@
+{{{params.html}}}
+
+<pl-question-panel>
+<pl-hidden-hints>
+    <pl-hint>
+        Use the same idea as the "delete 1" problem from lab, but modify the solution to
+        insert an arbitrary number of 1s rather than a single 1.
+    </pl-hint>
+    <pl-hint>
+        Let $Q' = Q \times \{\mathit{inserting1s}, \mathit{after}\}$.
+    </pl-hint>
+    <pl-hint>
+        In the $\mathit{inserting1s}$ states, use epsilon transitions to simulate the effect
+        of $M$ reading the deleted 1s. In the $\mathit{after}$ states, just read the input string normally.
+    </pl-hint>
+    <pl-hint>
+        When you're at state $(q, \mathit{inserting1s})$,
+        you can either ask $M$ to simulate reading another deleted 1,
+        or you can decide that you're done simulating the $1^n$ prefix and start reading the input string $w$.
+        Use non-determinism to account for both of these possibilities.
+    </pl-hint>
+</pl-hidden-hints>
+</pl-question-panel>

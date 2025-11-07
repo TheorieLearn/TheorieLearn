@@ -1,0 +1,70 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/burr_max_profit.html"
+    ></pl-variable>
+  </pl-template>
+  <center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $i$ through $n$, inclusive.</b></center>
+  <br/>
+  From the previous question, we have two exhaustive cases representing the value of $MaxProfit(i)$:
+  <ol>
+  <li>Burr skips trial $i$ &#8594; [Maximum profit that can be earned from trial $i + 1$ to $n$]</li>
+  <li>Burr takes trial $i$ &#8594; [The profit from taking trial $i$] + [Maximum profit that can be earned from trial $i + skip[i] + 1$ to $n$]</li>
+  </ol>
+
+  We will now give an expression for the value of each of these cases. Keep in mind how you can use the subproblem definition of $MaxProfit$
+  when defining these expressions. Allowed variables/functions are <code>MaxProfit</code>, <code>profit</code>, <code>skip</code>,
+  <code>n</code>, and <code>i</code>. <em>Note that due to autograder limitations, you must write</em> <code>profit[i]</code> <em> and </em><code>skip[i]</code><em> as </em><code>profit(i)</code> <em> and <code>skip(i)</code></em> <em>(i.e.,
+  use </em><code>profit</code> <em> and <code>skip</code></em><em> as functions rather than arrays).</em>
+  <br>
+  <br>
+</pl-question-panel>
+
+<b>Case 1:</b> [Maximum profit that can be earned from trial $i + 1$ to $n$]
+<br>
+<br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input"  answers-name="ans1" show-help-text="false"></pl-string-input>
+<br/>
+<br/>
+<b>Case 2:</b> [The profit from taking trial $i$] + [Maximum profit that can be earned from trial $i + skip[i] + 1$ to $n+1$]
+<br><br>
+<pl-string-input display="inline" size="40" placeholder="Symbolic input" answers-name="ans2" show-help-text="false"></pl-string-input>
+
+<pl-question-panel>
+<hr>
+Finally, we will address the last step of the DP problem-solving bullet points.
+</pl-question-panel>
+<br/>
+<br/>
+
+To compute $MaxProfit(i)$, we combine together the two cases by taking the
+<pl-multiple-choice answers-name="drop1" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">minimum</pl-answer>
+  <pl-answer correct="true">maximum</pl-answer>
+  <pl-answer correct="false">product</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of these two expressions. This will lead us to give the recursive defintion for $MaxProfit(i)$:
+<br>
+<br>
+<pl-string-input display="block" label="$MaxProfit(i)=$" placeholder="Symbolic input"  answers-name="final" show-help-text="false"></pl-string-input>
+<em>*Note: min and max are included in the list of viable functions</em>
+<hr>
+<pl-question-panel>
+  When we consider our recursive formula, we need to make sure that when we call our subproblem function recursively, the input to the function is within the domain of the function.
+  Recall that we said the domain of $MaxProfit(i)$ was $1 \leq i \leq n + 1$.
+  There are two conditions when $i$ exceeds our domain:
+  <br>
+</pl-question-panel>
+
+<ul>
+  <li>If $i > n$, $MaxProfit(i) = $
+    <pl-string-input display="inline" placeholder="Symbolic input"size="30" answers-name="base_ans" show-help-text="false"></pl-string-input>
+  </li>
+
+</ul>
+<p><em>*Recall the autograder limitations: Write </em><code>profit[i]</code><em> as </em><code>profit(i)</code><em> and </em><code>skip[i]</code><em> as </em><code>skip(i)</code></em>
+<br>
+<em>*Note: min and max are included in the list of viable functions</em></p>

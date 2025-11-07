@@ -1,0 +1,21 @@
+<pl-question-panel>
+  Create an NFA with exactly three states that accepts the following language:
+
+  $$L=\{ w \in \{0,1\}^* \mid w ~ \text{starts ands ends with} ~ 0 \}$$
+  <hr>
+</pl-question-panel>
+<tl-fsm-builder answers-name="q" fsm-type="nfa" alphabet="01">
+  <correct-answer max-states=3>
+    {
+    "states": ["s", "a", "b"],
+    "input_symbols": ["0", "1"],
+    "transitions": {
+    "s": {"0": ["a", "b"]},
+    "a": {"0": ["a","b"], "1": ["a"]},
+    "b": {}
+    },
+    "initial_state": "s",
+    "final_states": ["b"]
+    }
+  </correct-answer>
+</tl-fsm-builder>

@@ -1,0 +1,107 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/world_tour.html"
+    ></pl-variable>
+  </pl-template>
+  <markdown>
+  From Julianne's solution, you think that your subproblem definiton has to
+  record subsets of vertices, but the issue from the previous solution was that
+  there was only one way of visiting a new city $v$ from a subset $S$ (namely,
+  connecting $v$ to $\mathsf{LastVertex}(S)$). You realize that you need to be
+  able extend a path traversing a subset of cities through multiple different
+  points of connection (not just one, like before). Newly inspired, use your insight
+  so far to complete the following subproblem definition.
+  </markdown>
+</pl-question-panel>
+
+<!--TODO change this to a question. Fill in the final answer. Remember you
+  need to call it as part of the final answer, doesn't pass through cities
+  not in S-->
+Let $\mathsf{WorldTour}(S,i)$ be the cheapest tour with the following properties:
+
+<ul>
+  <li>The tour starts from
+    <pl-multiple-choice answers-name="drop1" display="dropdown" hide-letter-keys="true">
+      <pl-answer correct="true">0</pl-answer>
+      <pl-answer correct="false">i</pl-answer>
+      <pl-answer correct="false">some j in S</pl-answer>
+    </pl-multiple-choice>.
+  </li>
+
+  <li>The tour passes through the cities in $S\;$
+    <pl-multiple-choice answers-name="drop2" display="dropdown" hide-letter-keys="true">
+      <pl-answer correct="true">exactly once</pl-answer>
+      <pl-answer correct="false">at most once</pl-answer>
+      <pl-answer correct="false">at least once</pl-answer>
+    </pl-multiple-choice>.
+  </li>
+
+  <li>The tour does not pass through any cities in $V \setminus S$.
+  </li>
+
+  <li>The tour
+    <pl-multiple-choice answers-name="drop3" display="dropdown" hide-letter-keys="true">
+      <pl-answer correct="true">ends</pl-answer>
+      <pl-answer correct="false">begins</pl-answer>
+    </pl-multiple-choice>
+    at $i$, for $i \notin S$.
+  </li>
+</ul>
+
+What is the set of values for $i$ and $S$ that are a valid input to $\mathsf{WorldTour}(S,i)$?
+Fill out the expression for the domain of $i$ in terms of $n$.
+<center>
+<pl-symbolic-input variables="n" answers-name="low1" display="inline" size="3" show-help-text="false" size="1" correct-answer="1"></pl-symbolic-input>
+$\leq i \leq$
+<pl-symbolic-input variables="n" answers-name="high1" display="inline" size="3" show-help-text="false" size="1" correct-answer="n-1"></pl-symbolic-input>
+</center>
+Now, fill out the domain for $S$ in terms of $i$ and $n$.
+<center>
+$S \subseteq \Big\{$
+<pl-symbolic-input variables="n" answers-name="low_set2" display="inline" size="3" show-help-text="false" size="1" correct-answer="1"></pl-symbolic-input>
+$, \dots,$
+<pl-symbolic-input variables="n" answers-name="high_set2" display="inline" size="3" show-help-text="false" size="1" correct-answer="n-1"></pl-symbolic-input>
+$\Big\} \; -$
+<pl-symbolic-input variables="i" answers-name="subtract_set2" display="inline" size="3" show-help-text="false" size="1" correct-answer="i"></pl-symbolic-input>
+for all values of $i$.
+</center>
+
+<hr>
+
+Then, our final answer (in terms of $i$ and $T$, use $-$ to denote set difference) is the
+<pl-multiple-choice answers-name="drop4" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">minimum</pl-answer>
+  <pl-answer correct="false">maximum</pl-answer>
+  <pl-answer correct="false">sum</pl-answer>
+</pl-multiple-choice>
+of $\mathsf{WorldTour} \Big($
+<pl-string-input display="inline" size="4" placeholder="?" show-help-text="false" answers-name="ans" correct-answer="T-i,i" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+$\Big)$ taken over every valid value of $i$ and for $T = \{1, \dots, n-1\}$.
+
+<!--To fill in this defintion recursively, you start playing with a small example.
+Say there's a graph on the vertices $\{1, \dots, 10\}$, and we know that the
+path $0 \rightarrow 5 \rightarrow 3 \rightarrow 7 \rightarrow 6$ is the cheaptest tour
+starting from $0$, passing through $\{3,5,7\}$, and ending at $6$.
+
+ Add table and evaluate subproblems
+
+TODO possibly change to free response and table
+From the above information, we know that the tour (represent arrows as "->")
+$0 \rightarrow 5 \rightarrow 3 \rightarrow 7 \rightarrow 6 \rightarrow 9$ <b><i>must be</i></b> shorter than the tour(s)
+<br>
+<pl-checkbox answers-name="ans2" weight="1" fixed-order="false">
+  <pl-answer correct="true">$0 \rightarrow 3 \rightarrow 5 \rightarrow 7 \rightarrow 6 \rightarrow 9$</pl-answer>
+  <pl-answer correct="true">$0 \rightarrow 7 \rightarrow 3 \rightarrow 5 \rightarrow 6 \rightarrow 9$</pl-answer>
+  <pl-answer correct="true">$0 \rightarrow 5 \rightarrow 7 \rightarrow 3 \rightarrow 6 \rightarrow 9$</pl-answer>
+  <pl-answer>$0 \rightarrow 5 \rightarrow 3 \rightarrow 6 \rightarrow 7 \rightarrow 9$</pl-answer>
+  <pl-answer>$0 \rightarrow 5 \rightarrow 6 \rightarrow 7 \rightarrow 3 \rightarrow 9$</pl-answer>
+  <pl-answer>$0 \rightarrow 6 \rightarrow 3 \rightarrow 7 \rightarrow 5 \rightarrow 9$</pl-answer>
+</pl-checkbox>
+<br>
+In fact, from the above observation, the tour we choose <i>must</i> be the cheapest
+tour starting from $0$, passing through $\{3,5,6,7\}$, ending at $9$, with last
+edge $6 \rightarrow 9$. Thus, we can construct our subproblems by taking the
+minimum over the last edge (or second to last vertex) in these tours.-->

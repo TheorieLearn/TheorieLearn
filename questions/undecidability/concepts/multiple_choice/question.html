@@ -1,0 +1,101 @@
+<pl-question-panel>
+    <p> Let $A$ and $B$ be undecidable languages. Then the language $A \cap B$ is
+    </p>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ans1">
+    <pl-answer correct="true">All the other options are possible.
+    </pl-answer>
+
+    <pl-answer correct="false" feedback="What if $A=B$?">Decidable.</pl-answer>
+
+    <pl-answer correct="false" feedback="What if $A \cap B = \emptyset$?">Undecidable.</pl-answer>
+
+    <pl-answer correct="false" feedback="Does this have to be the case?">Regular.</pl-answer>
+
+    <pl-answer correct="false" feedback="What if $A=B$?">Finite.</pl-answer>
+</pl-multiple-choice>
+
+<hr>
+
+
+<pl-question-panel>
+    <p> For a language $L$, denote its complement language to be $\overline{L} = \Sigma^* \setminus L$.
+        Let $A$ and $B$ be languages such that $A$ reduces to $B$. When does $\overline{A}$
+        reduce to $\overline{B}$?
+    </p>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ans2">
+    <pl-answer correct="true">Always.</pl-answer>
+
+    <pl-answer correct="false" feedback="How would you construct a reduction from $\overline{A}$ to $\overline{B}$, in a general case?">Only when $A$ and $B$ are decidable.</pl-answer>
+
+    <pl-answer correct="false" feedback="How would you construct a reduction from $\overline{A}$ to $\overline{B}$, in a general case?">Only when $A$ and $B$ are acceptable.</pl-answer>
+
+    <pl-answer correct="false" feedback="Is this guaranteed? What does a reduction do?">Only when exactly one out of $A$ and $B$ is decidable.</pl-answer>
+
+</pl-multiple-choice>
+
+<hr>
+
+
+<pl-question-panel>
+    <p> Let $A$ and $B$ be languages such that $A$ reduces to $B$. If $A$ is undecidable, then
+        which of the following are necessarily true about $B$?
+    </p>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ans3" fixed-order="true">
+    <pl-answer correct="false" feedback="Think about the implications of this. What if $\text{HALT}$ could be reduced to a decidable language?">$B$ is decidable</pl-answer>
+
+    <pl-answer correct="true">$B$ is undecidable</pl-answer>
+
+    <pl-answer correct="false" feedback="What\'s the relationship between decidability and acceptability?">$B$ is unacceptable</pl-answer>
+
+    <pl-answer correct="false" feedback="What does a reduction do?">None of the above</pl-answer>
+
+</pl-multiple-choice>
+
+<hr>
+
+
+<pl-question-panel>
+    <p> Let $A$ and $B$ be languages such that $A$ reduces to $B$. If $B$ is undecidable, then
+        which of the following are necessarily true about $A$?
+    </p>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ans4" fixed-order="true">
+    <pl-answer correct="false" feedback="What about the trivial reduction, from $B$ to itself?">$A$ is decidable</pl-answer>
+
+    <pl-answer correct="false" feedback="Are reductions a lower bound or an upper bound on hardness?">$A$ is undecidable</pl-answer>
+
+    <pl-answer correct="false" feedback="What's the relationship between decidability and acceptability?">$A$ is unacceptable</pl-answer>
+
+    <pl-answer correct="true">None of the above</pl-answer>
+
+</pl-multiple-choice>
+
+<hr>
+
+
+<pl-question-panel>
+    <p> Recall that $\text{ACCEPT} = \{\langle M,w \rangle\ |\ M\ \text{accepts}\ w \}$ is acceptable but
+        not decidable. Suppose $L$ is a language such that $\text{ACCEPT}$ reduces to $L$. Which of the
+        following is necessarily true?
+    </p>
+</pl-question-panel>
+
+<pl-multiple-choice answers-name="ans5" fixed-order="true">
+    <pl-answer correct="false" feedback="What does a reduction do?">$L$ is acceptable</pl-answer>
+
+    <pl-answer correct="false" feedback="What about $\overline{L}$?">$L$ is unacceptable</pl-answer>
+
+    <pl-answer correct="false" feedback="What would this imply about $L$?">$\overline{L}$ is acceptable</pl-answer>
+
+    <pl-answer correct="false" feedback="Does this tell us anything about $L$?">$\overline{L}$ is unacceptable</pl-answer>
+
+    <pl-answer correct="true">Either $L$ is unacceptable or $\overline{L}$ is unacceptable</pl-answer>
+
+</pl-multiple-choice>

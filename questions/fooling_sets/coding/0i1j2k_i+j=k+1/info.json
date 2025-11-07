@@ -1,0 +1,22 @@
+{
+    "uuid": "8d8c7bb5-ba89-43a8-9df6-560efa945b74",
+    "title": "Fooling Set: {0i1jk | i + j = k + 1}",
+    "topic": "Fooling Sets",
+    "tags": [
+        "samuelr6",
+        "Fooling Sets"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

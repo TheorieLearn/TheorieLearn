@@ -1,0 +1,24 @@
+<pl-question-panel>
+<markdown>
+Assume we have the alphabet $\Sigma = \{0, 1\}$.
+
+Provide a regular expression for the following language:
+
+$$\{w \in \Sigma^* \mid \textbf{ all } 0 \text{ blocks of } w \text{ are of even length } \}$$
+
+Recall a $0$ block is a maximal non-empty substring of 0's in the string.
+As an example, the string $0000100$ is in the language, but $001110$ is not.
+<hr>
+</markdown>
+
+</pl-question-panel>
+
+<tl-regex-input answers-name="q1">
+    (00+1)*
+</tl-regex-input>
+
+<pl-hidden-hints>
+    <pl-hint show-after-submission=6>
+        If you never add just 0, and only ever add 00 then, then any run of zeroes would be even.
+    </pl-hint>
+</pl-hidden-hints>

@@ -1,0 +1,19 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="problem-statement" directory="serverFilesCourse"
+            file-name="theorielearn/problem_statements/currency_markets.html"></pl-variable>
+    </pl-template>
+    <hr>
+
+    <h3>Labelling the Weights</h3>
+
+    We've now established the vertices and edges of our graph. You must now determine the value of every edge weight.
+    Keep in mind that exchange rates are <b>ratios</b> and that our graph algorithms minimize sums.
+    <br>
+    <br>
+    Take $w = R[i, j]$. What is a suitable value for the weight of an edge $v_i \rightarrow v_j$?
+</pl-question-panel>
+<pl-symbolic-input answers-name="q1" variables="w" label="$\text{edge weight} =$"></pl-symbolic-input>
+<pl-submission-panel>
+    {{feedback.q1}}
+</pl-submission-panel>

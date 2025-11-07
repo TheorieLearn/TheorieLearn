@@ -1,0 +1,152 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost_coupon.html"
+    ></pl-variable>
+  </pl-template>
+  <h5>English Definition</h5>
+  Let $MinCost(i, j)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$ (including the
+    cost of the hotel at mile $i$) with $j$ remaining coupons.
+  <br/>
+  <br/>
+<h5>Recursive Definition</h5>
+  $$
+  \begin{equation}
+  MinCost(i, j)=\begin{cases}
+    0 & \text{if $i=n$}\\
+    HotelCosts[i] & \text{else if $i=n - 1$ and $j = 0$}\\
+    0 & \text{else if $i = n - 1$ and $j > 0$}\\
+    \min \begin{cases}
+        HotelCosts(i) + MinCost(i + 1, j)\\
+        HotelCosts(i) + MinCost(i + 2, j) \end{cases} & \text{else if $j = 0$}\\
+    \min \begin{cases}
+        HotelCosts(i) + MinCost(i + 1, j)\\
+        HotelCosts(i) + MinCost(i + 2, j) \\
+        MinCost(i + 1, j - 1) \\
+        MinCost(i + 2, j - 1) \end{cases} & \text{otherwise}
+    \end{cases}
+  \end{equation}
+  $$
+
+<p>
+We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+Because we have two parameters, we now need to iterate over both $i$ and $j$.
+<ul>
+  <li>
+    <em>
+      Why do we need to iterate over $j$? That's because we don't know how many coupons Momo will use up until a certain
+      mile marker $i$ in the trip, so we need to make sure we cover all possible $j$s for the coupon count.
+    </em>
+  </li>
+</ul>
+</p>
+<p>
+For each pseudocode snippet, select all dependencies that would be <em>unsatisfied</em> under that evaluation order.
+If all of the dependencies are satisfied, select "All dependencies are satisfied; this is a valid evaluation order".
+</p>
+</pl-question-panel>
+
+<p>
+<markdown>
+```
+for i from 1 up to n:
+  for j from 0 up to k:
+    evaluate MinCost(i, j)
+```
+</markdown>
+<pl-checkbox answers-name="d1" weight="1" fixed-order="true">
+  <pl-answer correct="true">$MinCost(i + 1, j)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 2, j)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer>               All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>
+
+<p>
+<markdown>
+  ```
+  for i from n down to 1:
+    for j from k down to 0:
+      evaluate MinCost(i, j)
+  ```
+</markdown>
+<pl-checkbox answers-name="d2" weight="1" fixed-order="true">
+  <pl-answer> $MinCost(i + 1, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer correct="true">All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>
+
+<p>
+<markdown>
+```
+for i from 1 up to n:
+  for j from k down to 0:
+    evaluate MinCost(i, j)
+```
+</markdown>
+<pl-checkbox answers-name="d3" weight="1" fixed-order="true">
+  <pl-answer correct="true">$MinCost(i + 1, j)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 2, j)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer correct="true">$MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer>               All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>
+
+<p>
+<markdown>
+```
+for j from k down to 0:
+  for i from n down to 1:
+    evaluate MinCost(i, j)
+```
+</markdown>
+<pl-checkbox answers-name="d4" weight="1" fixed-order="true">
+  <pl-answer> $MinCost(i + 1, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j)$</pl-answer>
+  <pl-answer correct="true"> $MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer correct="true"> $MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer>All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>
+
+<p>
+<markdown>
+```
+for j from 0 up to k:
+  for i from n down to 1:
+    evaluate MinCost(i, j)
+```
+</markdown>
+<pl-checkbox answers-name="d5" weight="1" fixed-order="true">
+  <pl-answer> $MinCost(i + 1, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer correct="true">All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>
+
+<p>
+<markdown>
+```
+for i from n down to 1:
+  for j from 0 up to k:
+    evaluate MinCost(i, j)
+```
+</markdown>
+<pl-checkbox answers-name="d6" weight="1" fixed-order="true">
+  <pl-answer> $MinCost(i + 1, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j)$</pl-answer>
+  <pl-answer> $MinCost(i + 1, j - 1)$</pl-answer>
+  <pl-answer> $MinCost(i + 2, j - 1)$</pl-answer>
+  <pl-answer correct="true">All dependencies are satisfied; this is a valid evaluation order</pl-answer>
+</pl-checkbox>
+</p>

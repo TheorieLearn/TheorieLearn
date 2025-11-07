@@ -1,0 +1,45 @@
+<pl-question-panel>
+    Consider the language $L = \{0^{n^{2}} \space | \space n \geq 0\}$. To prove this language is not regular, a student wrote the following proof:
+    <div style="margin: 30px; padding: 20px; border: 1px solid black;">
+        Let $F = \{0^{n^{2}} \space | \space n \geq 0\}$.
+        <br><br>
+        Pick two arbitrary strings $x = 0^{i^{2}}$ and $y = 0^{j^{2}}$ from $L$, where $i \neq j$.
+        <br><br>
+        Then, let $z = 0^{2i + 1}$.
+        <br><br>
+        We have that $xz = 0^{i^{2} + 2i + 1} = 0^{(i + 1)^{2}} \in L$. On the other hand, $yz = 0^{j^{2} + 2i + 1}$, and
+        $j^2 + 2i + 1$ is not a perfect square,
+        because we can bound it between two consecutive perfect squares:
+        $$j^2 < j^2 + 2i + 1 < j^2 + 2j + 1 = (j + 1)^2.$$
+        Thus, $yz = 0^{j^{2} + 2i + 1} \notin L$.
+        <br><br>
+        To conclude, we have shown that $F$ is a fooling set for $L$. Since $F$ is infinite, $L$ is not regular.
+    </div>
+
+    But, there's something wrong with this proof! Given the above definitions of $x$, $y$, and $z$,
+    give values of $i$ and $j$ such that $z$ fails to distinguish $x$ and $y$ (i.e. $xz$ and $yz$ are either both accepted or both rejected).
+    <br><br>
+    <pl-integer-input label="$i = $" answers-name="i" size="2"></pl-integer-input> $\qquad$
+    <pl-integer-input label="$j = $" answers-name="j" size="2"></pl-integer-input>
+    <br><br>
+
+    Which statement from the proof is not necessarily true?
+    <pl-multiple-choice answers-name="first-incorrect-statement" fixed-order=true>
+        <pl-answer>$xz = 0^{i^{2} + 2i + 1}$</pl-answer>
+        <pl-answer>$0^{i^{2} + 2i + 1} = 0^{(i + 1)^{2}}$</pl-answer>
+        <pl-answer>$0^{(i + 1)^{2}} \in L$</pl-answer>
+        <pl-answer>$yz = 0^{j^{2} + 2i + 1}$</pl-answer>
+        <pl-answer>$j^2 < j^2 + 2i + 1$</pl-answer>
+        <pl-answer correct=true>$j^2 + 2i + 1 < j^2 + 2j + 1$</pl-answer>
+        <pl-answer>$j^2 + 2j + 1 = (j + 1)^2$</pl-answer>
+    </pl-multiple-choice>
+
+    <br><br>
+    To fix the proof, we should add which of the following sentences after the second sentence of the proof?
+    <pl-multiple-choice answers-name="correction">
+        <pl-answer correct="true">Without loss of generality, we can assume that $i < j$.</pl-answer>
+        <pl-answer correct="false">Without loss of generality, we can assume that $i = j$.</pl-answer>
+        <pl-answer correct="false">Without loss of generality, we can assume that $i > j$.</pl-answer>
+    </pl-multiple-choice>
+</pl-question-panel>
+<pl-submission-panel><font color="red"><em><p>{{feedback.feedback}}</em></font></p></pl-submission-panel>

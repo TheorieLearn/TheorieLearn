@@ -1,0 +1,169 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+      <pl-variable name="is-open">True</pl-variable>
+      <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/grasslearn_2var.html"
+      ></pl-variable>
+  </pl-template>
+  <p>A week later, your algorithms class assigns you a new GrassLearn problem set. Unfortuntely, you have a competition in your
+  underwater basket weaving club which leaves you with very little free time that week. Running your algorithm on this problem set,
+  you realize you won't have enough time to earn $p$ points---in fact, you only have $m$ minutes to spare on your problem set.</p>
+
+  <p>You now have the task of maximizing points, rather than minimizing time. You quickly come up with the following subproblem definition:</p>
+
+  <center><b>Define $MaxPoints(i,j)$ to be the maximum number of points that can be earned in $i$ minutes from questions $j$ to $n$.</b></center>
+
+  <br/>
+  <p>We will walk through the same process to construct a dynamic programming algorithm to solve this modified problem, and examine how this modification changes the results.</p>
+  <hr/>
+</pl-question-panel>
+  <h3><b>Domain</b></h3>
+
+  <p>What are the sets of values for $i$ and $j$ which would be valid inputs to $MaxPoints(i,j)$?</p>
+  <center>
+  <pl-symbolic-input variables="n,m" answers-name="lowi" display="inline" size="3" show-help-text="false" correct-answer="0"></pl-symbolic-input>
+  $\leq i \leq$
+  <pl-symbolic-input variables="n,m" answers-name="highi" display="inline" size="3" show-help-text="false" correct-answer="m"></pl-symbolic-input>
+
+  <br/><br/>
+
+  <pl-symbolic-input variables="n,m" answers-name="lowj" display="inline" size="3" show-help-text="false" correct-answer="1"></pl-symbolic-input>
+  $\leq j \leq$
+  <pl-symbolic-input variables="n,m" answers-name="highj" display="inline" size="3" show-help-text="false" correct-answer="n"></pl-symbolic-input>
+  </center>
+  <br/><br/>
+
+  What inputs to $MaxPoints$ would give us our final answer?
+
+<br/><br/>
+<center>
+  $MaxPoints \Big($ <pl-symbolic-input variables="n,m" answers-name="finali" display="inline" size="3" show-help-text="false" correct-answer="m"></pl-symbolic-input>,
+  <pl-symbolic-input variables="n,p" show-help-text="false" answers-name="finalj" display="inline" size="3" correct-answer="1"></pl-symbolic-input>$ \Big)$
+</center>
+
+<hr/>
+
+  <h3><b>Recursive Cases</b></h3>
+
+  <p>Again, you have 2 choices at question $j$: you can either skip the question, or answer the question correctly.
+    Let's analyze the consequences of each choice.
+  </p>
+  Allowed variables and functions are: <code>MinMinutes</code>, <code>TimeNeeded</code>, <code>i</code>, <code>j</code>, <code>n</code>, and <code>p</code>.
+  <em>Note that due to autograder limitations, you must write</em> <code>TimeNeeded[i]</code><em> and </em><code>Points[i]</code><em> as </em><code>TimeNeeded(i)</code> <em> and </em><code>Points(i)</code><em> respectively (i.e.,
+    use </em><code>TimeNeeded</code> <em> and </em><code>Points</code> <em> as functions rather than arrays).</em>
+    <br><br>
+
+  <b>Choice 1: Suppose you skip question $j$.</b> Construct an expression for the value of $MaxPoints(i,j)$ in this case.
+  <pl-string-input label="$MaxPoints(i,j)=$" display="block" size="40" placeholder="Symbolic input"  answers-name="skipfull" show-help-text="false"></pl-string-input>
+<br/><br/>
+  <b>Choice 2: Suppose you correctly answer question $j$.</b> Construct an expression for the value of $MaxPoints(i,j)$ in this case.
+  <pl-string-input label="$MaxPoints(i,j)=$" display="block" size="40" placeholder="Symbolic input"  answers-name="ansfull" show-help-text="false" size="3"></pl-string-input>
+  <br/><br/>
+
+  Our final answer will be the <pl-multiple-choice answers-name="drop1" hide-letter-keys="true" display="dropdown">
+    <pl-answer correct="false">minimum</pl-answer>
+    <pl-answer correct="true">maximum</pl-answer>
+    <pl-answer correct="false">product</pl-answer>
+    <pl-answer correct="false">sum</pl-answer>
+  </pl-multiple-choice> of these two cases.
+
+
+  <hr/>
+  <h3><b>Base Cases</b></h3>
+
+  <p>Use your answers to the previous questions to determine which base cases we need to address. </p>
+
+  <br>
+
+
+ A base case occurs when $i < $
+ <pl-symbolic-input answers-name="ibaseval" variables="i,j,m,n" size="3" correct-answer="0"></pl-symbolic-input>.
+ In this case, we should return <pl-multiple-choice answers-name="ibaseret" display="dropdown" hide-letter-keys="true">
+   <pl-answer correct="false">$\infty$</pl-answer>
+   <pl-answer correct="false">$0$</pl-answer>
+   <pl-answer correct="true">$-\infty$</pl-answer>
+   <pl-answer correct="false">$p$</pl-answer>
+   <pl-answer correct="false">$Points[i]$</pl-answer>
+   <pl-answer correct="false">$TimeNeeded[i]$</pl-answer>
+ </pl-multiple-choice>
+
+
+ <br>
+ A second base case occurs when $j >$
+ <pl-symbolic-input answers-name="jbaseval" variables="i,j,p,n" size="3" correct-answer="n"></pl-symbolic-input> or
+ $i = $<pl-symbolic-input answers-name="ibaseval2" variables="i,j,p,n" size="3" correct-answer="0"></pl-symbolic-input>.
+ In this case, we should return <pl-multiple-choice answers-name="jbaseret" display="dropdown" hide-letter-keys="true">
+   <pl-answer correct="false">$\infty$</pl-answer>
+   <pl-answer correct="true">$0$</pl-answer>
+   <pl-answer correct="false">$-\infty$</pl-answer>
+   <pl-answer correct="false">$p$</pl-answer>
+   <pl-answer correct="false">$TimeNeeded[i]$</pl-answer>
+   <pl-answer correct="false">$TimeNeeded[n]$</pl-answer>
+ </pl-multiple-choice>
+
+<hr/>
+  <h3><b>Iterative Details</b></h3>
+
+  We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+
+<br/>
+<br/>
+
+
+We can memoize the recurrance with a
+<pl-multiple-choice answers-name="memo" hide-letter-keys="true" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">1D array.</pl-answer>
+  <pl-answer correct="true">2D array.</pl-answer>
+  <pl-answer correct="false">3D array.</pl-answer>
+  <pl-answer correct="false">hashmap.</pl-answer>
+</pl-multiple-choice>
+<br/><br/>
+We should fill in a(n)
+<pl-multiple-choice answers-name="dropi" hide-letter-keys="true" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">increasing</pl-answer>
+  <pl-answer correct="false">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $i$,...
+<br><br>
+...and a(n)
+<pl-multiple-choice answers-name="dropj" hide-letter-keys="true" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">increasing</pl-answer>
+  <pl-answer correct="true">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $j$.
+
+<br/><br/>
+
+How should the loops be nested? $1$ indicates the outer loop, and $2$ the inner loop.
+If the relative order of the loops doesn't matter, give them both priority $1$.
+<br>
+
+$i$: <pl-multiple-choice answers-name="ipriority" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">1</pl-answer>
+  <pl-answer correct="false">2</pl-answer>
+</pl-multiple-choice>
+<br>
+$j$: <pl-multiple-choice answers-name="jpriority" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="true">1</pl-answer>
+  <pl-answer correct="false">2</pl-answer>
+</pl-multiple-choice>
+<br>
+<hr/>
+
+  <h3><b>Runtime Analysis</b></h3>
+
+  <p>
+   Finally, let's do a runtime analysis on our DP algorithm. Consider array accesses to all be $O(1)$, and give expressions with respect to $n$ and $m$.
+  </p>
+<br>
+
+
+
+There are </pl-symbolic-input><pl-symbolic-input show-help-text="false" variables="n,m" correct-answer="n*m" answers-name="ans" display="inline" size="6"></pl-symbolic-input> subproblems, and
+each subproblem takes
+<pl-symbolic-input answers-name="ans2" variables="n,m" label="O(" suffix=")" correct-answer="1" display='inline' size='4'></pl-symbolic-input>
+time to evaluate.
+
+The overall runtime is then
+<pl-symbolic-input answers-name="ans3" variables="n,m" label="O(" suffix=")" correct-answer="n*m" display='inline' size='6'></pl-symbolic-input>.

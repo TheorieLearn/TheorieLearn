@@ -1,0 +1,51 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable name="is-open">True</pl-variable>
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/alternating_length_path.html"
+        ></pl-variable>
+    </pl-template>
+    <hr>
+
+    For example, consider the following graph:
+
+        <pl-graph>
+        digraph G {
+            s -> 1 [label=1]
+            s -> 2 [label=1]
+            1 -> t [label=10]
+            2 -> 1 [label=2]
+        }
+        </pl-graph>
+
+        The alternating length of $s \to 1 \to t$ have alternating length of $1 - 10 = -9$, while
+        the alternating length of $s \to 2 \to 1 \to t$ have alternating length of $1 - 2 + 10 = 9$.
+        <b>Notice that a specific edge (such as $1 \to t$) can have different coefficients depending
+    on its position in different paths!</b>
+
+    <hr>
+    <h3>Information to Track</h3>
+    We'll solve this problem by transforming $G$ and running a known algorithm on the new graph.
+    Intuitively, what specific concept from class is most appropriate to apply for solving this problem?
+    <pl-multiple-choice answers-name="q0">
+        <pl-answer feedback="Think about how to use the structure of the given graph to run a more efficient algorithm.
+        However, look out for an alternate solution involving shortest paths!">Shortest Path in a General Graph</pl-answer>
+        <pl-answer correct="true">Longest Path in a DAG</pl-answer>
+        <pl-answer feedback="Does this problem require us to find a minimum spanning tree?">Minimum Spanning Tree</pl-answer>
+    </pl-multiple-choice>
+    <br>
+    To construct a new graph, we must determine what information needs to be kept track about past decisions in traversing the graph to inform future decisions.
+    In addition to the current vertex we're on, which pieces of information would be <b>necessary</b> to track in solving the problem:
+</pl-question-panel>
+
+<pl-checkbox answers-name="q1" weight="1" fixed-order="true">
+    <pl-answer feedback="Knowing the precise number of vertices traversed is unecessary.">
+        The number of vertices you have traversed.</pl-answer>
+    <pl-answer correct="true">The parity of the number of vertices you have traversed.</pl-answer>
+    <pl-answer feedback="Knowing a global number of vertices is not required since you only need to keep track of local vertices you encountered.">
+        The total number of vertices in the graph.</pl-answer>
+</pl-checkbox>
+
+<pl-submission-panel><font color="red"><em><br>{{feedback.q0}}</em></font><br></pl-submission-panel>

@@ -1,0 +1,22 @@
+{
+    "uuid": "6f952c98-49da-44eb-ad9f-a4f6f22a6486",
+    "title": "Regular Transformation: Insert Fifth",
+    "topic": "Regular Transformation",
+    "tags": [
+        "erobson2",
+        "Regular Transformation"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

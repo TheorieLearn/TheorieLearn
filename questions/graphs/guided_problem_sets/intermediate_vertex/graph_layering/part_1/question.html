@@ -1,0 +1,47 @@
+<pl-question-panel>
+<markdown>
+### Problem: Shortest Walk with Intermediate Set Constraint
+
+#### Setup
+
+* Directed Graph ($G$): A directed graph. Edge weights can be assumed to be non-negative.
+* Source Vertex ($s$): The starting point of the walk.
+* Target Vertex ($t$): The desired endpoint of the walk.
+* Required Vertex Set ($X$): A set of vertices within the graph that must be included at least once in the walk.
+
+#### Goal
+
+Determine if there exists a walk from the source vertex $s$ to the target vertex $t$ that includes at least one vertex from the set $X$. If such a walk exists, find the length of the *shortest* possible walk that meets this condition. If no qualifying walk exists, the answer should be infinity.
+
+##### Example
+In the graph below, if $s=2$, $t=4$, and $X=\{3,1\}$, then your algorithm should output $1+3+4+2=10$.
+<pl-graph>
+    digraph G {
+      2 -> 0 [label=1]
+      0 -> 3 [label=3]
+      3 -> 0 [label=4]
+      0 -> 4 [label=2]
+      2 -> 1 [label=812]
+      1 -> 4 [label=374]
+    }
+    </pl-graph>
+</markdown>
+
+<markdown>
+The fundamental challenge in this problem is ensuring that our walk from  $s$ to $t$ includes at least one vertex from the set $X$.
+Directly searching for walks in the original graph while trying to satisfy this constraint can be very complex. Sounds like we need to track some additional information to make this problem more manageable.
+
+We need a way to represent whether or not we've met the condition of visiting a vertex from $X$ at any given point during the walk.
+</markdown>
+
+</pl-question-panel>
+<hr/>
+
+<markdown>
+What information may be valuable to track during the walk to ensure that we've visited a vertex from the set $X$?
+</markdown>
+<pl-multiple-choice order="ascend" answers-name="infoUse" display="dropdown" hide-letter-keys="true">
+    <pl-answer>number of vertices visited</pl-answer>
+    <pl-answer correct="true">binary data of whether vertex in X visited or not</pl-answer>
+    <pl-answer>number of vertices visited in X</pl-answer>
+</pl-multiple-choice>

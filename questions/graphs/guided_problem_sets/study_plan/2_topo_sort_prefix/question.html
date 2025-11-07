@@ -1,0 +1,127 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/study_plan.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+  <h3>Study Plan Properties</h3>
+
+  ...so it's not as simple as just using DAG longest path.
+
+  Let's explore some examples and see what we can deduce about
+  the properties of a valid study plan. For now, we will ignore the weights of the nodes, and only worry about creating valid
+  study plans (rather than optimal ones).
+
+
+  Use the following graph to answer the questions. Let $t$ (the "target" node) be $6$.
+
+  <pl-graph params-type="networkx" params-name="img"></pl-graph>
+</pl-question-panel>
+
+Is $0, 1, 3, 6, 2, 4, 7, 8, 9, 5$ a valid topological sort?
+  <pl-multiple-choice answers-name="ts1" weight="1">
+    <pl-answer correct="false">Yes, because every node is listed before any of its children.</pl-answer>
+    <pl-answer correct="true">No, because it lists a node before it lists all of its ancestors.</pl-answer>
+    <pl-answer correct="false">No, because it does not list <em>all</em> the source nodes first.</pl-answer>
+    <pl-answer correct="false">Yes, because it starts at a source and ends at a sink.</pl-answer>
+  </pl-multiple-choice>
+
+  <br><br>
+
+  Is $0, 1, 3, 6$ a valid study plan?
+  <pl-multiple-choice answers-name="sp1" weight="1">
+    <pl-answer correct="false">Yes.</pl-answer>
+    <pl-answer correct="true">No, because it has an unsatisfied dependency.</pl-answer>
+    <pl-answer correct="false">No, because it does not contain all source nodes.</pl-answer>
+    <pl-answer correct="false">No, because it does not end at a sink.</pl-answer>
+  </pl-multiple-choice>
+
+  <br><br>
+
+  Is $2, 7, 4, 0, 1, 5, 3, 9, 6, 8$ a valid topological sort?
+  <pl-multiple-choice answers-name="ts2" weight="1">
+    <pl-answer correct="true">Yes, because every node is listed before any of its children.</pl-answer>
+    <pl-answer correct="false">No, because it lists a node before it lists all of its ancestors.</pl-answer>
+    <pl-answer correct="false">No, because it does not list <em>all</em> the source nodes first.</pl-answer>
+    <pl-answer correct="false">Yes, because it starts at a source and ends at a sink.</pl-answer>
+  </pl-multiple-choice>
+
+  <br><br>
+
+  Is $2, 7, 4, 0, 1, 5, 3, 9, 6$ a valid study plan?
+  <pl-multiple-choice answers-name="sp2" weight="1">
+    <pl-answer correct="true">Yes.</pl-answer>
+    <pl-answer correct="false">No, because it has an unsatisfied dependency.</pl-answer>
+    <pl-answer correct="false">No, because it does not contain all source nodes.</pl-answer>
+    <pl-answer correct="false">No, because it does not end at a sink.</pl-answer>
+  </pl-multiple-choice>
+
+  <br><br>
+
+  Write a topological sort of the graph, <em>which is different from those in the above questions</em>. Your answer should be written as a list of
+  ten integers (e.g., <code>2740153968</code>, for the above example), corresponding to the vertex labels in the DAG.
+  <br><br>
+  <pl-string-input answers-name="ex_topo_sort" label="List"></pl-string-input>
+  <pl-submission-panel><font color="red"><em><br>{{feedback.ex_topo_sort}}</em></font><br></pl-submission-panel>
+
+
+  <br><br>
+
+  Write a study plan on the current graph (where $t=6$) which is <em>as <b>short</b> as possible</em>.
+  Enter your response as a list of numbers corresponding to nodes, in the same format as the previous question.
+  <br><br>
+  <pl-string-input answers-name="ex_study_plan_short" label="List"></pl-string-input>
+  <pl-submission-panel><font color="red"><em><br>{{feedback.ex_study_plan_short}}</em></font><br></pl-submission-panel>
+
+  <br><br>
+  <pl-hidden-hints>
+    <pl-hint show-after-submission="2">
+      The study plan should have length $6$.
+    </pl-hint>
+  </pl-hidden-hints>
+
+
+  Write a study plan on the current graph (where $t=6$) which is <em>as <b>long</b> as possible</em>.
+  Enter your response as a list of numbers corresponding to nodes, in the same format as the previous question.
+  <br><br>
+  <pl-string-input answers-name="ex_study_plan_long" label="List"></pl-string-input>
+  <pl-submission-panel><font color="red"><em><br>{{feedback.ex_study_plan_long}}</em></font><br></pl-submission-panel>
+
+  <br><br>
+  <pl-hidden-hints>
+    <pl-hint show-after-submission="2">
+      The study plan should have length $9$.
+    </pl-hint>
+  </pl-hidden-hints>
+
+
+  <hr>
+
+
+  <h4>Noticing Patterns</h4>
+
+  Suppose we have a (new) prerequisite graph with the following topological sort: $A, F, P, E, C, L, S, D, Q, O, R$.
+  Which of the following (if any) are <em>guaranteed</em> to be valid study plans for $t = L$?
+
+  <br>
+
+  <pl-multiple-choice answers-name="prefix" weight="2">
+    <pl-answer correct="false">$R, O, Q, D, S, L$</pl-answer>
+    <pl-answer correct="true"> $A, F, P, E, C, L$</pl-answer>
+    <pl-answer correct="false">$A, F, P, E, C, S, D, Q, O, R, L$</pl-answer>
+    <pl-answer correct="false">$L$</pl-answer>
+    <pl-answer correct="false">Not enough information</pl-answer>
+  </pl-multiple-choice>
+
+  <pl-hidden-hints>
+    <pl-hint show-after-submission="1">
+      Recall that a topological sort must list a parent node before any of its children. How does this relate to a study plan?
+    </pl-hint>
+  </pl-hidden-hints>
+
+
+{{{params.html}}}

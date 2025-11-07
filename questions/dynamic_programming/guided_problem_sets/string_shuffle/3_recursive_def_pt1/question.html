@@ -1,0 +1,41 @@
+<pl-question-panel>
+<pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/valid_shuffle.html"
+    ></pl-variable>
+</pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+  <center><b>Define $ValidShuffle(i, j)$ to be True if $C[1…i+j]$ is a valid shuffle of $A[1…i]$ and $B[1…j]$, False otherwise.</b></center>
+  <br/>
+  <markdown>
+Now, we will address the first step of the general problem-solving advice. At some index $k=i+j$ in $C$, the character, $C[k]$, is either part of:
+1. The character $A[i]$, because $C[k] = A[i]$
+2. The character $B[j]$, because $C[k] = B[j]$
+3. Neither character in $A$ or $B$, because $C[k] \neq A[i]$ and $C[k] \neq B[j]$.
+
+In the third case, we know that $C[1..k]$ is not a valid shuffle of $A[1..i]$ and $B[1..j]$, so we return False.
+
+Let's analyze how our subproblem changes for the other two choices.
+  </markdown>
+  <hr>
+  </pl-question-panel>
+  <p><b>Choice 1:</b> If $C[k] = A[i]$, what are the remaining strings of $A$ and $B$ that we need to consider, with respect to our subproblem definition?
+  <pl-multiple-choice answers-name="case1">
+    <pl-answer correct="true">$A[1..i-1]$ and $B[1..j]$</pl-answer>
+    <pl-answer correct="false" feedback="This uses $B[j]$ instead of $A[i]$">$A[1..i]$ and $B[1..j-1]$</pl-answer>
+    <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$A[1..i+1]$ and $B[1..j]$</pl-answer>
+    <pl-answer correct="false" feedback="This uses $B[j]$ and $A[i]$, but we only consider one character at a time.">$A[1..i-1]$ and $B[1..j-1]$</pl-answer>
+    <pl-answer correct="false" feedback="This does not reduce our subproblem.">$A[1..i]$ and $B[1..j]$</pl-answer>
+  </pl-multiple-choice></p>
+
+  </pl-question-panel>
+  <p><b>Choice 2:</b> If $C[k] = B[j]$, what are the remaining strings of $A$ and $B$ that we need to consider, with respect to our subproblem definition?
+  <pl-multiple-choice answers-name="case2">
+    <pl-answer correct="false" feedback="This uses $A[i]$ instead of $B[J]$">$A[1..i-1]$ and $B[1..j]$</pl-answer>
+    <pl-answer correct="true">$A[1..i]$ and $B[1..j-1]$</pl-answer>
+    <pl-answer correct="false" feedback="We're working with prefixes, so once we make a decision, we have to ensure the rest of the prefix is correct.">$A[1..i]$ and $B[1..j+1]$</pl-answer>
+    <pl-answer correct="false" feedback="This uses $B[j]$ and $A[i]$, but we only consider one character at a time.">$A[1..i-1]$ and $B[1..j-1]$</pl-answer>
+    <pl-answer correct="false" feedback="This does not reduce our subproblem.">$A[1..i]$ and $B[1..j]$</pl-answer>
+  </pl-multiple-choice></p>

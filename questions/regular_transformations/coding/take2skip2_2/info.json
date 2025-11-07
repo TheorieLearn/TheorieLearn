@@ -1,0 +1,23 @@
+{
+    "uuid": "d2c6261e-fa09-4a05-9979-e782f9ce1e93",
+    "title": "Regular Transformation: Take 2 Skip 2 Type 2",
+    "topic": "Regular Transformation",
+    "tags": [
+        "ericjin2",
+        "Free Response",
+        "Regular Transformation"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/regular_transformations/run.sh",
+        "timeout": 30
+    }
+}

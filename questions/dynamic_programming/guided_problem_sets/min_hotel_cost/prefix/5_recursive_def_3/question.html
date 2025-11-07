@@ -1,0 +1,27 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+  <b>Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $1$ to mile $i$, including the
+    cost of the hotel at mile $i$.</b>
+  <br/>
+  <br/>
+
+From the previous question, we have a recursive definition as follows:
+$$MinCost(i) = \min(HotelCosts[i] + MinCost(i - 1), HotelCosts[i] + MinCost(i - 2))$$
+We also know that the definition breaks for $i=1$ and $i=2$.
+We will now give expressions for these base cases. Again, allowed variables/functions are <code>MinCost</code>, <code>HotelCosts</code>,
+<code>n</code>, and <code>i</code>. <em>Note that due to autograder limitations, you must write</em> <code>HotelCosts[i]</code><em> as </em><code>HotelCosts(i)</code> <em>(i.e.,
+use </em><code>HotelCosts</code><em> as a function rather than an array).</em>
+<br><br>
+</pl-question-panel>
+If $i=1$,
+$MinCost(i)=$<pl-string-input show-help-text="false" answers-name="base1" display="inline" size="40"></pl-string-input>
+<br><br>
+
+If $i=2$,
+$MinCost(i)=$<pl-string-input show-help-text="false"  answers-name="base2" display="inline" size="40"></pl-string-input>

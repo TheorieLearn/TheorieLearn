@@ -1,0 +1,23 @@
+{
+    "uuid": "ca40977c-1594-40e2-87c5-dc6e7713f133",
+    "title": "Fooling Set: 0^i 1 0^j, i divisible by j",
+    "topic": "Fooling Sets",
+    "tags": [
+        "zhuofan7",
+        "fa22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

@@ -1,0 +1,20 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+    name="problem-statement"
+    directory="serverFilesCourse"
+    file-name="theorielearn/problem_statements/alternating_length_path.html"
+    ></pl-variable>
+  </pl-template>
+  <hr>
+
+  <h3>Constructing G'</h3>
+  To make the newly constructed graph more clear, we will recreate the problem statement with a small example.
+  <pl-graph>
+    {{{params.original_graph}}}
+  </pl-graph>
+  From this, we generate our new graph $G' = (V', E')$. Recall from the previous part that $V' = V \times \{+, -\}$.
+  Now, we need to define the transitions to complete our graph construction.
+</pl-question-panel>
+{{{params.html}}}
+<pl-submission-panel><font color="red"><em><br>{{feedback.flipped}}</em></font><br></pl-submission-panel>

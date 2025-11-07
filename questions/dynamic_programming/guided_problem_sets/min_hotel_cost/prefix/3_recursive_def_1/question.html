@@ -1,0 +1,42 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+  <pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+  <b>
+  Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $1$ to mile $i$, including the
+      cost of the hotel at mile $i$.
+  </b>
+  <br/>
+  <br/>
+  Notice that the total cost of Momo's trip can be expressed as:
+  <br>
+  <br>
+  <center>
+  <em>[The cost of the hotel at mile $i$] + [The cost of all of the hotels she stayed at before this hotel]</em></center>
+  <br/>
+
+  Since we already know the cost of the current hotel, we need to derive an expression for the cost of all of the hotels
+  she stayed at before this hotel.
+  At this point, we can address the first step of the general problem-solving advice.
+  The choice to consider is: what is the last hotel that Momo stayed at prior to staying at the hotel at mile $i$?
+  Choose all that apply below.
+  <br>
+  <br>
+</pl-question-panel>
+
+<pl-checkbox answers-name="drop1">
+  <pl-answer correct="false">Hotel at mile $i$</pl-answer>
+  <pl-answer correct="true">Hotel at mile $i - 1$</pl-answer>
+  <pl-answer correct="true">Hotel at mile $i - 2$</pl-answer>
+  <pl-answer correct="false">Hotel at mile $i + 1$</pl-answer>
+  <pl-answer correct="false">Hotel at mile $i + 2$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $1$ through $i - 1$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $1$ through $i - 2$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $i+1$ through $n$</pl-answer>
+  <pl-answer correct="false">Any of the hotels at miles $i+2$ through $n$</pl-answer>
+</pl-checkbox>

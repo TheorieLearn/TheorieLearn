@@ -1,0 +1,16 @@
+<pl-question-panel>
+<markdown>
+***Create a regular expression for the language of all binary strings containing at least two 0s and at least one 1.***
+
+The goal of this series of questions is to guide you through *one possible approach* to solving this problem. This is not the only approach, and we are not trying to suggest that it is the best approach.
+
+---
+
+Using the regular expressions you built in the previous part as cases, build a regular expression that describes this language.
+
+*Hint: What operation do you use for language union?
+</markdown>
+</pl-question-panel>
+<tl-regex-input answers-name="q">
+(0+1)*0(0+1)*0(0+1)*1(0+1)* + (0+1)*0(0+1)*1(0+1)*0(0+1)* + (0+1)*1(0+1)*0(0+1)*0(0+1)*
+</tl-regex-input>

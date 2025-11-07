@@ -1,0 +1,23 @@
+{
+    "uuid": "33a61bbd-1222-4e9e-a16c-f52df5f17227",
+    "title": "Fooling Set: (0 + 1)* No Leading Prefix",
+    "topic": "Fooling Sets",
+    "tags": [
+        "clarage2",
+        "summer22",
+        "Free Response"
+    ],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "/grade/serverFilesCourse/theorielearn/fooling_sets/run.sh",
+        "timeout": 5
+    }
+}

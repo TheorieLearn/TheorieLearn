@@ -1,0 +1,12 @@
+{
+    "uuid": "a262652d-4c92-4fb6-a4d8-104c3e7a41be",
+    "title": "NFA to DFA: Incremental Subset Construction",
+    "topic": "NFAs",
+    "tags": [
+        "jiwonl4",
+        "Guided Practice",
+        "fa21"
+    ],
+    "type": "v3",
+    "showCorrectAnswer": false
+}

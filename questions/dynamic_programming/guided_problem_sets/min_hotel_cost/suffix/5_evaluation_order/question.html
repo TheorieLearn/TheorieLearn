@@ -1,0 +1,38 @@
+<pl-question-panel>
+  <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+    <pl-variable
+      name="problem-statement"
+      directory="serverFilesCourse"
+      file-name="theorielearn/problem_statements/min_hotel_cost.html"
+    ></pl-variable>
+  </pl-template>
+  <h5>English Definition</h5>
+  Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$, including the
+    cost of the hotel at mile $i$.
+  <br/>
+  <br/>
+<h5>Recursive Definition</h5>
+  $$
+  \begin{equation}
+  MinCost(i)=\begin{cases}
+    0 & \text{if $i=n$}\\
+    HotelCosts[i] & \text{if $i=n-1$}\\
+    \min \begin{cases}
+    HotelCosts[i] + MinCost(i + 1)\\
+    HotelCosts[i] + MinCost(i + 2) \end{cases} & \text{otherwise}
+    \end{cases}
+  \end{equation}
+  $$
+
+
+We now need to determine the evaluation order for our memoization structure.
+In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+
+<br/>
+<br/>
+</pl-question-panel>
+We should fill in a(n)
+<pl-multiple-choice answers-name="drop1" order="ascend" display="dropdown" hide-letter-keys="true">
+  <pl-answer correct="false">increasing</pl-answer>
+  <pl-answer correct="true">decreasing</pl-answer>
+</pl-multiple-choice> order with respect to $i$.

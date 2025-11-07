@@ -1,0 +1,153 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/is_in_l1_l2.html"
+        ></pl-variable>
+  </pl-template>
+</pl-question-panel>
+
+<pl-template file-name="theorielearn/dp-advice/template.html" directory="serverFilesCourse"></pl-template>
+Recall that
+$isInA(i) = True$ if and only if $s[1..i] \in A$. Similarly, $isInB(i) = True$ if and only if $s[1..i] \in B$.
+<hr>
+
+The previous question exposed an important relationship between our two recurrences. Let's try to formalize it.
+There are two cases that we need to consider.
+<br>
+<b>Case 1 $(i = 0)$:</b> $s[1..i]$ is
+<pl-multiple-choice answers-name="empty-string-membership-a" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">in</pl-answer>
+    <pl-answer correct="false">not in</pl-answer>
+</pl-multiple-choice> $(L_1L_2)^*$, so $isInA(0)$ =
+<pl-multiple-choice answers-name="isInA-empty-string" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">True</pl-answer>
+    <pl-answer correct="false">False</pl-answer>
+</pl-multiple-choice>. Furthermore, $s[1..i]$ is
+<pl-multiple-choice answers-name="empty-string-membership-b" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">in</pl-answer>
+    <pl-answer correct="true">not in</pl-answer>
+</pl-multiple-choice> $(L_1L_2)^*L_1$, so $isInB(0)$ =
+<pl-multiple-choice answers-name="isInB-empty-string" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">True</pl-answer>
+    <pl-answer correct="true">False</pl-answer>
+</pl-multiple-choice>. (Remember that neither $L_1$ nor $L_2$ accepts the empty string.)
+</pl-dropdown>
+<hr>
+<b>Case 2 $(i \geq 1)$:</b>
+For both of our recurrences, in order for $s[1..i]$ to be in  $(L_1L_2)^*$,
+we must be able to extract a suffix from $s[1..i]$ that is in $L_1$ or $L_2$ (depending on the recurrence).
+<i>The choice that we are considering for each subproblem is what suffix to extract.</i>
+Let $j$ be the starting index of the suffix. The possible values of $j$ are integers that fall into the interval
+<center>
+    $[$
+    <pl-symbolic-input answers-name="split-start" show-help-text="false" size="5" variables="n, i, j" correct-answer="1"></pl-symbolic-input>
+    $,$
+    <pl-symbolic-input answers-name="split-end" show-help-text="false" size="5" variables="n, i, j" correct-answer="i"></pl-symbolic-input>
+    $]$
+</center>
+
+
+<br><br>
+
+Let's focus on $isInA()$. (The indices for the entirety of this case can be constants or expressions that contain $i$ and/or $j$.)
+<i>We need an expression that determines the "value" of this case.</i>
+
+Formally speaking, we can conclude that $j$ is a valid index if and only if
+<br>
+<center>
+    $isInB\Big($
+    <pl-symbolic-input answers-name="prefix-end-index-a" variables="n, i, j" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+    $\Big)$
+
+    <pl-multiple-choice answers-name="conjunction-a" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">and</pl-answer>
+        <pl-answer correct="false">or</pl-answer>
+    </pl-multiple-choice>
+    <br>
+    $isInL_2\Big(s[$
+    <pl-symbolic-input answers-name="suffix-start-index-a" variables="n, i, j" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+    $.. i]\Big)$.
+</center>
+
+<br>
+
+So, to evaluate $isInA(i)$, we can simply enumerate over the possibilites for $j$.
+
+$isInA(i)$ is true if and only if, <pl-multiple-choice answers-name="quantifier-a" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">for all indices</pl-answer>
+    <pl-answer correct="true">there exists an index</pl-answer>
+    <pl-answer correct="false">there exists exactly one index</pl-answer>
+</pl-multiple-choice>
+$j$ where
+$j \in [$<pl-symbolic-input answers-name="earliest-suffix-index-a" variables="n, i, j" correct-answer="1" show-help-text="false" size="5"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="latest-suffix-index-a" variables="n, i, j" correct-answer="i" show-help-text="false" size="5"></pl-symbolic-input>
+$]$
+such that
+<br>
+$isInB\Big($
+<pl-symbolic-input answers-name="prefix-end-index-2-a" variables="n, i, j" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+$\Big)$
+
+<pl-multiple-choice answers-name="conjunction-2-a" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">and</pl-answer>
+    <pl-answer correct="false">or</pl-answer>
+</pl-multiple-choice>
+
+$isInL_2\Big(s[$
+<pl-symbolic-input answers-name="suffix-start-index-2-a" variables="n, i, j" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+$.. i]\Big)$.
+
+<br><br>
+
+Now, let's move on to $isInB()$.
+<i>We need an expression that determines the "value" of this case.</i>
+
+Formally speaking, we can conclude that $j$ is a valid index if and only if
+<br>
+<center>
+    $isInA\Big($
+    <pl-symbolic-input answers-name="prefix-end-index-b" variables="n, i, j" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+    $\Big)$
+
+    <pl-multiple-choice answers-name="conjunction-b" display="dropdown" hide-letter-keys="true">
+        <pl-answer correct="true">and</pl-answer>
+        <pl-answer correct="false">or</pl-answer>
+    </pl-multiple-choice>
+    <br>
+
+    $isInL_1\Big(s[$
+    <pl-symbolic-input answers-name="suffix-start-index-b" variables="n, i, j" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+    $.. i]\Big)$.
+</center>
+
+<br>
+
+So, to evaluate $isInB(i)$, we can simply enumerate over the possibilites for $j$.
+
+$isInB(i)$ is true if and only if, <pl-multiple-choice answers-name="quantifier-b" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="false">for all indices</pl-answer>
+    <pl-answer correct="true">there exists an index</pl-answer>
+    <pl-answer correct="false">there exists exactly one index</pl-answer>
+</pl-multiple-choice>
+$j$ where
+$j \in [$<pl-symbolic-input answers-name="earliest-suffix-index-b" variables="n, i, j" correct-answer="1" show-help-text="false" size="5"></pl-symbolic-input>
+$,$
+<pl-symbolic-input answers-name="latest-suffix-index-b" variables="n, i, j" correct-answer="i" show-help-text="false" size="5"></pl-symbolic-input>
+$]$
+such that
+<br>
+$isInA\Big($
+<pl-symbolic-input answers-name="prefix-end-index-2-b" variables="n, i, j" correct-answer="j - 1" show-help-text="false" size="5"></pl-symbolic-input>
+$\Big)$
+
+<pl-multiple-choice answers-name="conjunction-2-b" display="dropdown" hide-letter-keys="true">
+    <pl-answer correct="true">and</pl-answer>
+    <pl-answer correct="false">or</pl-answer>
+</pl-multiple-choice>
+
+$isInL_1\Big(s[$
+<pl-symbolic-input answers-name="suffix-start-index-2-b" variables="n, i, j" correct-answer="j" show-help-text="false" size="5"></pl-symbolic-input>
+$.. i]\Big)$.
