@@ -1,7 +1,7 @@
 {
     "uuid": "fd8cc14e-096d-4fb5-8379-57f0f7fcb1e9",
     "type": "Homework",
-    "title": "Prerequisite Material",
+    "title": "Prerequisite Material & Induction",
     "set": "Guided Problem Sets",
     "number": "0",
     "allowIssueReporting": false,
@@ -30,6 +30,23 @@
             },
             {
                 "id": "prereqs/concepts/function_notation/symbolic_response",
+                "points": 1
+            }
+        ]
+        },
+        {
+        "title": "Induction Proof for |w^R| = |w|",
+        "questions": [
+            {
+                "id": "induction/guided_problem_sets/string_induction/1_boilerplate",
+                "points": 1
+            },
+            {
+                "id": "induction/guided_problem_sets/string_induction/2_base_case",
+                "points": 1
+            },
+            {
+                "id": "induction/guided_problem_sets/string_induction/3_induction_case",
                 "points": 1
             }
         ]

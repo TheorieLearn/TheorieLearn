@@ -1,0 +1,80 @@
+{
+    "uuid": "34e3076c-009c-4bee-aab6-136c32a8ccd9",
+    "type": "Homework",
+    "title": "DFAs",
+    "set": "Guided Problem Sets",
+    "number": "2",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Incorrect DFA",
+            "questions": [
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/1_counterexample",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/2_fix_dfa",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/3_clear_description",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "DFA Concepts",
+            "questions": [
+                {
+                    "id": "DFAs/concepts/dfa_acceptance",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/concepts/delta_star",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/concepts/product_construction_drill",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "DFA Construction: Number of 01 subsequences is 4 mod 7",
+            "questions": [
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/1_are_you_with_us",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/2_what_info_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/3_transition_examples",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/4_code_to_count_01s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/5_specify_states",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/6-specify_other_components",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

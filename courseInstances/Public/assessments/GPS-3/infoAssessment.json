@@ -1,0 +1,89 @@
+{
+    "uuid": "0995799c-3e1b-4ff0-a4fd-af3a05193d53",
+    "type": "Homework",
+    "title": "NFAs",
+    "set": "Guided Problem Sets",
+    "number": "2",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "NFA Concepts",
+            "questions": [
+                {
+                    "id": "NFAs/concepts/e_reach",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Thompson's Algorithm: Kleene",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/4_correct",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Thompson's Algorithm: Union",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/4_correct",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Thompson's Algorithm: Concatenation",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/4_correct",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}
