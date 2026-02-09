@@ -1,0 +1,124 @@
+{
+  "uuid": "ea900e29-fd1e-46e2-aeff-c00c9fbec568",
+  "type": "Homework",
+  "title": "Dynamic Programming 1",
+  "set": "Guided Problem Sets",
+  "number": "6",
+  "allowIssueReporting": false,
+  "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+  ],
+  "zones": [
+    {
+      "title": "Minimum Hotel Cost Part 1",
+      "questions": [
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/1_english_definition",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/2_domain",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/3_recursive_def_1",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/4_recursive_def_2",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/5_recursive_def_3",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/6_evaluation_order",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/7_runtime_analysis",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/8_memo_array_code",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "Minimum Hotel Cost Part 2",
+      "questions": [
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/1_domain",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/2_recursive_def_1",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/3_recursive_def_2",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/4_recursive_def_3",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/5_evaluation_order",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/6_runtime_analysis",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/7_memo_array_code",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "Minimum Hotel Cost with Coupons",
+      "questions": [
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/1_english_definition",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/2_domain",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/3_recursive_def_1",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/4_recursive_def_2",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/5_recursive_def_3",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/6_evaluation_order",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/7_runtime_analysis",
+          "points": 1
+        },
+        {
+          "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/8_memo_array_code",
+          "points": 1
+        }
+      ]
+    }
+  ]
+}

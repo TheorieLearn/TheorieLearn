@@ -1,0 +1,75 @@
+{
+    "uuid": "cf0bcbab-4e2e-48b6-ad3e-e512bdfdff3a",
+    "type": "Homework",
+    "title": "NP-Hardness",
+    "set": "Guided Problem Sets",
+    "number": "10",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Hamiltonian Cycle to Hamiltonian Path",
+            "questions": [
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/2_write_iff_statement",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/3_define_reduction",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/4_prove_iff_statement_forward",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/5_prove_iff_statement_backward",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "World Tour",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/2_first_attempt",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/3_subproblem_domain_answer",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/4_recursive_formula",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/5_recurrence",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/6_hardness_reduction",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/7_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

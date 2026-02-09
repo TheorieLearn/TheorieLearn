@@ -1,0 +1,51 @@
+<pl-question-panel>
+<markdown>
+Consider the following following graph $G$.
+</markdown>
+
+<p>
+    <pl-graph>
+        {{params.img}}
+    </pl-graph>
+</p>
+
+<p>
+<markdown>
+Recall that two vertices $u$ and $v$ in a graph $G$ are strongly connected if $u$ can reach $v$ and $v$ can reach $u$.
+The strong component graph, also referred to as a meta-graph or condensation of $G$, is a directed acyclic graph obtained from $G$ by contracting each strong component to a single vertex and collapsing parallel edges.
+
+In this question, we will exercise identifying strong components and applying a topological sort to the resulting meta-graph.
+</markdown>
+</p>
+<hr>
+</pl-question-panel>
+
+<p>
+<markdown>
+**What are the vertices of the meta-graph?**
+- Enter your answer as a comma separated list where each item of the list corresponds to the vertices in the meta-graph of $G$.
+- *Example:* `01324, 5678, 9`
+</markdown>
+<pl-string-input label='Vertices:' answers-name="meta_v" label="" display="block" show-help-text="false" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+</p>
+
+<p>
+<markdown>
+**What are the edges of the meta-graph?**
+- Enter your answer as a list of edges from vertex $u_i$ to vertex $v_i$ as $u_i \rightarrow v_i$
+- *Example:* `01324 -> 5678, 01324 -> 9`
+</markdown>
+<pl-string-input label='Edges:' answers-name="meta_e" label="" display="block" show-help-text="false" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+</p>
+
+<p>
+<markdown>
+**What is the topological sort of the meta-graph?**
+- Enter your answer as a comma separated list where each item of the list corresponds to the vertices in the meta-graph of $G$, in topological order.
+- *Example:* `01324, 5678, 9`
+</markdown>
+<pl-string-input label='Topological Ordering:' answers-name="meta_topo" label="" display="block" show-help-text="false" remove-spaces=true remove-leading-trailing=true></pl-string-input>
+</p>
+<pl-submission-panel>
+    <font color="red"><em><p>{{feedback.meta_topo}}</em></font></p>
+</pl-submission-panel>

@@ -1,0 +1,84 @@
+{
+  "uuid": "a28436be-d468-486a-8603-52a56abaddee",
+  "type": "Homework",
+  "title": "Graph Algorithms 1",
+  "set": "Guided Problem Sets",
+  "number": "8",
+  "allowIssueReporting": false,
+  "allowAccess": [
+    {
+        "mode": "Public",
+        "credit": 100,
+        "startDate": "2025-01-01T12:59:59"
+    }
+  ],
+  "zones": [
+    {
+      "title": "Maze Graph Construction",
+      "questions": [
+        {
+          "id": "graphs/guided_problem_sets/maze_graph_construction/1_information_to_track",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/maze_graph_construction/2_vertex_construction",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/maze_graph_construction/3_graph_creation",
+          "points": 3
+        },
+        {
+          "id": "graphs/guided_problem_sets/maze_graph_construction/4_solve_problem",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/maze_graph_construction/5_runtime_analysis",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "French Flag Walk",
+      "questions": [
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/1_sanity_check",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/2_tracking_information",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/3_creating_vertices",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/4_defining_edges",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/5_english_problem_statement",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/french_flag_walk/6_runtime_analysis",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "Topological Sort & SCC",
+      "questions": [
+        {
+          "id": "graphs/practice/topological_sort",
+          "points": 1
+        },
+        {
+          "id": "graphs/practice/strongly_connected_components",
+          "points": 1
+        }
+      ]
+    }
+  ]
+}

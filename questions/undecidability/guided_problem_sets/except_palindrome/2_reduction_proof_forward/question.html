@@ -1,0 +1,57 @@
+<pl-question-panel>
+
+<p>
+As a reminder, our overarching goal has been to prove the following language is undecidable:
+</p>
+
+$$
+    \text{ExceptPalindrome} ~ := \{\langle M \rangle ~ | ~ M ~ \text{rejects all palindromes and accepts all other strings}\}
+$$
+
+<p>
+From the previous question, we now have the following correct reduction from $\text{Halt}$ to ${\text{ExceptPalindrome}}$:
+</p>
+
+$$
+\begin{align*}
+&\underline{\textbf{DecideHalt}(\langle M,w\rangle):}\\
+&\text{Encode the following algorithm} ~ M': \\
+&\qquad\underline{M'(x):}\qquad\qquad\quad\\
+&\qquad\quad\text{Run} ~ M ~ \text{on input} ~ w\\
+&\qquad\quad\text{return} ~ x ~ \text{is not a palindrome}\\
+&\text{if} ~ \textbf{DecideExceptPalindrome}(\langle M' \rangle):\\
+&\quad\text{return True}\\
+&\text{else:}\\
+&\quad\text{return False}\\
+\end{align*}
+$$
+
+<p>
+All that's left is to show our reduction is correct. To do this, we need to show the algorithm $M$ halts on the
+given input $w$ if and only if $\textbf{DecideHalt}$ returns $\text{True}$.
+</p>
+
+<p>
+In this question, we will prove the forward direction of the "if and only if" claim. In other words, we want to prove
+
+$$ M ~ \text{halts on} ~ w \implies \textbf{DecideHalt}(\langle M,w \rangle) ~ \text{returns True} $$
+
+</p>
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="except-palindrome-forward" source-blocks-order="random" grading-method="dag" feedback="first-wrong">
+    <pl-answer correct="true" tag="init"> Suppose $M$ halts on input $w$.</pl-answer>
+    <pl-answer correct="true" tag="mpaccepts" depends="init"> Then $M'$ accepts every input string $x$ that is not a palindrome, and rejects every input string $x$ that is a palindrome. </pl-answer>
+    <pl-answer correct="true" tag="mpinlang" depends="mpaccepts"> So $M'$ is in the language $\text{ExceptPalindrome}$. </pl-answer>
+    <pl-answer correct="true" tag="depaccepts" depends="mpinlang"> So $\textbf{DecideExceptPalindrome}$ accepts the encoding $\langle M' \rangle$. </pl-answer>
+    <pl-answer correct="true" tag="dhaccepts" depends="depaccepts"> So $\textbf{DecideHalt}$ correctly accepts the encoding $\langle M,w \rangle$. </pl-answer>
+
+    <pl-answer correct="false"> Suppose $M$ does not halt on input $w$.</pl-answer>
+    <pl-answer correct="false"> Then $M'$ accepts every input string $x$. </pl-answer>
+    <pl-answer correct="false"> In particular, $M'$ does not accept any non-palindromes, nor does it reject any palindromes. </pl-answer>
+    <pl-answer correct="false"> Then $M'$ diverges on every input string $x$. </pl-answer>
+    <pl-answer correct="false"> So $M'$ is not in the language $\text{ExceptPalindrome}$. </pl-answer>
+    <pl-answer correct="false"> So $\textbf{DecideExceptPalindrome}$ rejects the encoding $\langle M' \rangle$. </pl-answer>
+    <pl-answer correct="false"> So $\textbf{DecideHalt}$ correctly rejects the encoding $\langle M,w \rangle$. </pl-answer>
+</pl-order-blocks>

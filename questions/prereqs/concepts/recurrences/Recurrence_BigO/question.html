@@ -1,0 +1,27 @@
+<pl-question-panel>
+  <p>Consider the following recurrence:</p>
+  <p>$${{params.rec}}$$</p>
+
+  <p>How many levels are there in the recursion tree?</p>
+  <pl-big-o-input answers-name="depth_of_tree" type="theta" variable="n" correct-answer="n"></pl-big-o-input>
+
+  <br>
+
+  <p>What is the work per level?</p>
+  {{#params.n}}
+    <pl-big-o-input answers-name="work_per_level" type="theta" variable="n" correct-answer="1"></pl-big-o-input>
+  {{/params.n}}
+  {{^params.n}}
+    <pl-big-o-input answers-name="work_per_level" type="theta" variable="n" correct-answer="n"></pl-big-o-input>
+  {{/params.n}}
+
+  <br>
+
+  <p>Thus, $T(n) = $</p>
+  {{#params.n}}
+    <pl-big-o-input answers-name="final_ans" type="theta" variable="n" correct-answer="n"></pl-big-o-input>
+  {{/params.n}}
+  {{^params.n}}
+    <pl-big-o-input answers-name="final_ans" type="theta" variable="n" correct-answer="n**2"></pl-big-o-input>
+  {{/params.n}}
+</pl-question-panel>

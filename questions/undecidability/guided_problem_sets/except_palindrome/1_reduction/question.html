@@ -1,0 +1,39 @@
+<pl-question-panel>
+
+Suppose we're trying to prove the following language is undecidable:
+
+$$
+    \text{ExceptPalindrome} ~ := \{\langle M \rangle ~ | ~ M ~ \text{rejects all palindromes and accepts all other strings}\}
+$$
+
+One of the ways to prove undecidability is to <b>reduce from a known undecidable language</b>. In this case,
+we will reduce from the halting problem. The reduction will demonstrate that if there exists an algorithm
+$\textbf{DecideExceptPalindrome}$ that correctly decides $\text{ExceptPalindrome}$, then we can construct an algorithm
+to decide
+
+$$
+    \text{Halt} ~ := \{\langle M,w \rangle ~ | ~ M ~ \text{halts on input} ~ w\}
+$$
+
+Since we know $\text{Halt}$ is undecidable, then this will prove $\text{ExceptPalindrome}$ must be undecidable.
+
+With this in mind, <b>use an ordered subset of the following statements to form a valid reduction from</b>
+$\text{Halt}$ <b>to </b> $\text{ExceptPalindrome}$:
+
+</pl-question-panel>
+
+<pl-order-blocks answers-name="except-palindrome-reduction" source-blocks-order="random" grading-method="dag" feedback="first-wrong" indentation="true">
+    <pl-answer correct="true" tag="init_alg_decl" indent="0">Define an algorithm $\textbf{DecideHalt}$$(\langle M,w\rangle)$ where $M$ is an algorithm and $w$ is a string:</pl-answer>
+    <pl-answer correct="true" tag="m_prime_decl" depends="init_alg_decl" indent="1">Encode an algorithm $M'(x)$, where $x$ is a string, defined as:</pl-answer>
+    <pl-answer correct="true" tag="run_m_on_w" depends="m_prime_decl" indent="2">Run $M$ on input $w$</pl-answer>
+    <pl-answer correct="true" tag="x_not_pal" depends="run_m_on_w" indent="2">Evaluate the expression "$x ~ \text{is NOT a palindrome}$" and return the result</pl-answer>
+    <pl-answer correct="true" tag="decide_ep_if" depends="x_not_pal" indent="1">If $\textbf{DecideExceptPalindrome}$$(\langle M'\rangle)$:</pl-answer>
+    <pl-answer correct="true" tag="ret_true" depends="decide_ep_if" indent="2">return $\text{True}$</pl-answer>
+    <pl-answer correct="true" tag="decide_ep_else" depends="ret_true" indent="1">Else:</pl-answer>
+    <pl-answer correct="true" tag="ret_false" depends="decide_ep_else" indent="2">return $\text{False}$</pl-answer>
+
+    <pl-answer correct="false" tag="x_pal">Evaluate the expression "$x ~ \text{is a palindrome}$" and return the result</pl-answer>
+    <pl-answer correct="false" tag="w_pal">Evaluate the expression "$w ~ \text{is a palindrome}$" and return the result</pl-answer>
+    <pl-answer correct="false" tag="w_not_pal">Evaluate the expression "$w ~ \text{is NOT a palindrome}$" and return the result</pl-answer>
+    <pl-answer correct="false" tag="run_m_on_x">Run $M$ on input $x$</pl-answer>
+</pl-order-blocks>

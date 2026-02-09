@@ -1,0 +1,43 @@
+<pl-question-panel>
+  <p>Consider the following recurrence:</p>
+  <p>$${{params.rec}}$$</p>
+  <p>Consider the recursion tree for $T$. Our goal is to bound its height.</p>
+
+  <p>How does the input to $T$ change between levels of the recursion? Let $n'$ be the current level and $n$ be the previous level.</p>
+  <pl-multiple-choice answers-name="ans1">
+    <pl-answer correct="true">$n' = \sqrt[{{params.b}}]{n}$</pl-answer>
+    <pl-answer correct="false">$n' = \sqrt[{{params.d}}]{n}$</pl-answer>
+    <pl-answer correct="false">$n' = n^{{params.d}}$</pl-answer>
+    <pl-answer correct="false">$n' = n^{{params.b}}$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Let $h$ be the height of the recursion tree with input $n$. How can we write an expression to solve for $h$?</p>
+  <pl-multiple-choice answers-name="ans2">
+    <pl-answer correct="true">$n^{(\frac{1}{{{params.b}}})^h} \leq 1000$</pl-answer>
+    <pl-answer correct="false">$n^{({{params.b}})^h} \leq 1000$</pl-answer>
+    <pl-answer correct="false">$n^{\frac{h}{{{params.b}}}} \leq 1000$</pl-answer>
+    <pl-answer correct="false">$n^{({{params.d}})^h} \leq 1000$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Which of the following correctly solves the above for the height $h$?</p>
+  <pl-multiple-choice answers-name="ans3">
+    <pl-answer correct="true">$h = \log(\log n / \log 1000) / \log({{params.b}})$</pl-answer>
+    <pl-answer correct="false">$h = \log(n / 1000) / \log({{params.b}})$</pl-answer>
+    <pl-answer correct="false">$h = \log(n / 1000) / \log(n/{{params.b}})$</pl-answer>
+    <pl-answer correct="false">$h = \log(\log 1000 / \log n) / \log({{params.d}})$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Asymptotically, what is $h$?</p>
+  <pl-multiple-choice answers-name="ans4">
+    <pl-answer correct="true">$\Theta( \log\log n)$</pl-answer>
+    <pl-answer correct="false">$\Theta( \log n)$</pl-answer>
+    <pl-answer correct="false">$\Theta({n})$</pl-answer>
+    <pl-answer correct="false">$\Theta(1)$</pl-answer>
+  </pl-multiple-choice>
+</pl-question-panel>

@@ -1,0 +1,43 @@
+<pl-question-panel>
+  <p>Consider the following recurrence:</p>
+  <p>$${{params.rec}}$$</p>
+  <p>Consider the recursion tree for $T$. Our goal is to find its height.</p>
+
+  <p>How does the input to $T$ change between levels of the recursion? Let $n'$ be the current level and $n$ be the previous level.</p>
+  <pl-multiple-choice answers-name="ans1">
+    <pl-answer correct="false">$n' = \sqrt[{{params.b}}]{n}$</pl-answer>
+    <pl-answer correct="false">$n' = \sqrt[{{params.d}}]{n}$</pl-answer>
+    <pl-answer correct="true">$n' = \frac{n}{{{params.b}}}$</pl-answer>
+    <pl-answer correct="false">$n' = {{params.b}}n$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Let $h$ be the height of the recursion tree with input $n$. How can we write an expression to solve for $h$?</p>
+  <pl-multiple-choice answers-name="ans2">
+    <pl-answer correct="false">$(\frac{n}{{{params.b}}})^h = {{params.btp}}$</pl-answer>
+    <pl-answer correct="true">$\frac{n}{({{params.b}})^h} = {{params.btp}}$</pl-answer>
+    <pl-answer correct="false">$\frac{n}{({{params.d}})^h} = {{params.btp}}$</pl-answer>
+    <pl-answer correct="false">$(\frac{n}{{{params.d}}})^h = {{params.btp}}$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Which of the following correctly solves the above for $h$?</p>
+  <pl-multiple-choice answers-name="ans3">
+    <pl-answer correct="false">$h = \log(\log n / \log {{params.btp}}) / \log({{params.b}})$</pl-answer>
+    <pl-answer correct="true">$h = \log(n / {{params.btp}}) / \log({{params.b}})$</pl-answer>
+    <pl-answer correct="false">$h = n * \log(n / {{params.btp}}) / \log(n/{{params.d}})$</pl-answer>
+    <pl-answer correct="false">$h = \log(n / {{params.btp}}) / \log(n)$</pl-answer>
+  </pl-multiple-choice>
+
+  <br>
+
+  <p>Asymptotically, what is $h$?</p>
+  <pl-multiple-choice answers-name="ans4">
+    <pl-answer correct="false">$\Theta( \log\log n)$</pl-answer>
+    <pl-answer correct="true">$\Theta( \log n)$</pl-answer>
+    <pl-answer correct="false">$\Theta({n})$</pl-answer>
+    <pl-answer correct="false">$\Theta(1)$</pl-answer>
+  </pl-multiple-choice>
+</pl-question-panel>

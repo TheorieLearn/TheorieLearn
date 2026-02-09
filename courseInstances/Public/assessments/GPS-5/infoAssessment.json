@@ -27,6 +27,23 @@
         ]
         },
         {
+        "title": "Bounding Recurrences",
+        "questions": [
+            {
+            "id": "prereqs/concepts/recurrences/RecursionTree_Height_logn",
+            "points": 1
+            },
+            {
+            "id": "prereqs/concepts/recurrences/RecursionTree_Height_loglogn",
+            "points": 1
+            },
+            {
+            "id": "prereqs/concepts/recurrences/Recurrence_BigO",
+            "points": 1
+            }
+        ]
+        },
+        {
         "title": "Recursion Trees",
         "questions": [
             {

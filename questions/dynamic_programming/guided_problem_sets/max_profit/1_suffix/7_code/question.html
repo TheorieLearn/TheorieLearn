@@ -1,0 +1,64 @@
+<pl-question-panel>
+    <pl-template file-name="theorielearn/templates/problem-statement.mustache">
+        <pl-variable
+        name="problem-statement"
+        directory="serverFilesCourse"
+        file-name="theorielearn/problem_statements/burr_max_profit.html"
+        ></pl-variable>
+  </pl-template>
+
+    <b>Let's see how this all translates to code!</b>
+
+
+    <p><pl-external-grader-variables params-name="names_for_user" empty="true"></pl-external-grader-variables>
+    </p>
+
+    <p>Your code snippet should define the following variables:</p>
+    <pl-external-grader-variables params-name="names_from_user">
+        <pl-variable name="ComputeMaxProfit" type="function">
+            A function taking in the following arguments: a read-only array profit, a read-only array skip, the length of profit and skip n, and a memoization array MaxProfit. The function should modify MaxProfit in-place with the proper values of our memoized array according to our subproblem definition, and return the maximum profit that can be achieved under the problem constraints.
+        </pl-variable>
+    </pl-external-grader-variables>
+
+    <p>
+    You MUST write an algorithm according to our definition, or your implementation will not be graded correct (even if you have the correct final answer).
+    </p>
+    <p>
+    <center><b>Let $MaxProfit(i)$ be the maximum amount of money Burr can make from trials $i$ through $n$, inclusive.</b></center>
+    </p>
+    <hr/>
+    <code>profit</code>, <code>skip</code>, and <code>MaxProfit</code> are not standard Python lists; they are instances of a custom wrapper class that behave like an array. We designed this wrapper class in order to keep track of how your code accesses/modifies the arrays, and we use that information to provide you with better feedback.
+    Here is some guidance for how to use and modify the memoization array <code>MaxProfit</code>:
+    <ul>
+        <li>You will first need to set the bounds of <code>MaxProfit</code> using the <code>set_bounds</code> function, passing in tuples representing the bounds for each dimension. <b>Note that the bounds are inclusive!</b> For example, <code>MaxProfit.set_bounds((1, 2))</code> will set the memoization array to be 1-D, with accessible elements in the <b>inclusive</b> range [1, 2]. Running <code>MaxProfit.set_bounds((1, 6), (2, 5))</code> will set the memoization array to be 2-D, where the accessible elements can be called as <code>MaxProfit[i, j]</code> for the <b>inclusive</b> ranges [1, 6] and [2, 5].</li>
+        <li>To access elements in <code>MaxProfit</code>, you will need to index the array (with comma-seperated values in higher dimensions). For example, if <code>MaxProfit</code> was set to be 1-D, you can access elements using the syntax <code>MaxProfit[i]</code>. If <code>MaxProfit</code> is 2-D, you can access elements with syntax <code>MaxProfit[i, j]</code></li>
+        <li>Your indexing must match the subproblem definition <i>exactly</i>. In particular, that means you need to use 1-indexing in your memoization array, and declare your memoization array to have the same bounds as the domain of the subproblem function.</li>
+    </ul>
+
+    <pl-file-editor
+        file-name="user_code.py"
+        ace-mode="ace/mode/python">
+    def ComputeMaxProfit(profit, skip, n, MaxProfit):
+    MaxProfit.set_bounds(____) # what should the bounds of our memoization array be?
+
+    # Helper function to evaluate each entry
+    def evaluate_subproblem(i):
+        if __: # what is our first base case and what should it return?
+            return __
+        elif __: # do we have additional base cases? feel free to add more elif statements if needed
+            return __
+        else: # what is the general recursive statement?
+            return __
+
+    # what is our evaluation order?
+    for i in __:
+        MaxProfit[i] = evaluate_subproblem(i)
+
+    return __ # what is our final answer?
+    </pl-file-editor>
+    </pl-question-panel>
+
+    <pl-submission-panel>
+        <pl-external-grader-results></pl-external-grader-results>
+        <pl-file-preview></pl-file-preview>
+    </pl-submission-panel>

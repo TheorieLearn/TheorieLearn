@@ -1,0 +1,31 @@
+<pl-question-panel>
+<p>
+  Consider the following DAG $G$.
+</p>
+<p>
+  <pl-graph engine='circo'>
+      {{params.img}}
+  </pl-graph>
+</p>
+<p>
+  Recall that a topological sort of $G$ is a list of all its vertices
+  such that if $(u,v) \in E(G)$ then $u$ appears before $v$ in the
+  list. Write down a topological sort of the DAG above.
+  Your answer should be written as a list of nine integers
+  (e.g., <code>123456789</code>), corresponding
+  to the vertex labels in the DAG.
+</p>
+
+<p>
+<pl-string-input answers-name="r" label="" size="9"></pl-string-input>
+</p>
+</pl-question-panel>
+
+<pl-answer-panel>
+  Possible correct answer:
+  <span class="user-output">{{params.possible_answer}}</span>
+</pl-answer-panel>
+
+<pl-submission-panel>
+  {{{feedback.r}}}
+</pl-submission-panel>

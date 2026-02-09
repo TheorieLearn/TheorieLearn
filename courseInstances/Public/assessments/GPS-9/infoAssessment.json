@@ -1,0 +1,100 @@
+{
+  "uuid": "75bf0640-e6e2-4abd-92ce-bcbc04772595",
+  "type": "Homework",
+  "title": "Graph Algorithms 2",
+  "set": "Guided Problem Sets",
+  "number": "9",
+  "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+  "zones": [
+    {
+      "title": "Multiple Vertex Color",
+      "questions": [
+        {
+          "id": "graphs/guided_problem_sets/multiple_vertex_color/1_information_to_track",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/multiple_vertex_color/2_vertex_construction",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/multiple_vertex_color/3_graph_creation",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/multiple_vertex_color/4_solve_problem",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/multiple_vertex_color/5_runtime_analysis",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "Alternating Length Path",
+      "questions": [
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/1_information_to_track",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/2_vertex_contruction",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/3_graph_creation",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/4_solve_problem_part_1",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/5_solve_problem_part_2",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/alternating_length_path/6_runtime_analysis",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "title": "No Russian Flag Walk",
+      "questions": [
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/1_sanity_check",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/2_tracking_information",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/3_creating_vertices",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/4_defining_edges",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/5_english_problem_statement",
+          "points": 1
+        },
+        {
+          "id": "graphs/guided_problem_sets/no_russian_flag/6_runtime_analysis",
+          "points": 1
+        }
+      ]
+    }
+  ]
+}
