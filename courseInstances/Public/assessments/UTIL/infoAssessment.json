@@ -1,0 +1,47 @@
+{
+    "uuid": "d20a61e8-d022-4e8a-b27b-bc261c2ce84f",
+    "type": "Homework",
+    "title": "Elements & Utilities",
+    "set": "Elements + Utilities",
+    "number": "",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "FSM Builder Playgrounds",
+            "questions": [
+                {
+                    "id": "utilities/dfa-builder",
+                    "points": 1
+                },
+                {
+                    "id": "utilities/nfa-builder",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regex Helpers",
+            "questions": [
+                {
+                    "id": "utilities/regex_checker",
+                    "points": 1
+                },
+                {
+                    "id": "utilities/regex_equivalence",
+                    "points": 1
+                },
+                {
+                    "id": "utilities/string_generator",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

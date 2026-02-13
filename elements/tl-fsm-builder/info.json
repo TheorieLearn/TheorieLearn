@@ -1,0 +1,11 @@
+{
+    "controller": "tl_fsm_builder.py",
+    "dependencies": {
+        "elementScripts": [
+            "tl-fsm-builder.js"
+        ],
+        "elementStyles": [
+            "tl-fsm-builder.css"
+        ]
+    }
+}

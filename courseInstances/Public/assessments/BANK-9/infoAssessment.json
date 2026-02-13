@@ -1,0 +1,297 @@
+{
+    "uuid": "b4a03981-f345-469b-9c02-b599ac1f76ad",
+    "type": "Homework",
+    "title": "Graph Algorithms",
+    "set": "Question Bank",
+    "number": "9",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Maze Graph Construction",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/maze_graph_construction/1_information_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/maze_graph_construction/2_vertex_construction",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/maze_graph_construction/3_graph_creation",
+                    "points": 3
+                },
+                {
+                    "id": "graphs/guided_problem_sets/maze_graph_construction/4_solve_problem",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/maze_graph_construction/5_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "French Flag Walk",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/1_sanity_check",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/2_tracking_information",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/3_creating_vertices",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/4_defining_edges",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/5_english_problem_statement",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/french_flag_walk/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "No Russian Flag Walk",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/1_sanity_check",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/2_tracking_information",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/3_creating_vertices",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/4_defining_edges",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/5_english_problem_statement",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/no_russian_flag/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Study Plan",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/study_plan/1_initial_approaches",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/study_plan/2_topo_sort_prefix",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/study_plan/3_putting_it_together",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/study_plan/4_final_procedure",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/study_plan/5_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Multiple Vertex Color",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/multiple_vertex_color/1_information_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/multiple_vertex_color/2_vertex_construction",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/multiple_vertex_color/3_graph_creation",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/multiple_vertex_color/4_solve_problem",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/multiple_vertex_color/5_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Alternating Length Path",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/1_information_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/2_vertex_contruction",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/3_graph_creation",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/4_solve_problem_part_1",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/5_solve_problem_part_2",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/alternating_length_path/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Intermediate Vertex by Graph Layering",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/intermediate_vertex/graph_layering/part_1",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/intermediate_vertex/graph_layering/part_2",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/intermediate_vertex/graph_layering/part_3",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Intermediate Vertex by Two Dijkstra's",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/intermediate_vertex/two_dijkstra/part_1",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/intermediate_vertex/two_dijkstra/part_2",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Height Map",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/height_map/1_information_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/height_map/2_vertex_construction",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/height_map/3_graph_creation",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/height_map/4_solve_problem",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/height_map/5_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Bellman Ford Negative Cycle Detection",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/bellman_ford_negative_cycle/1_introduction",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/bellman_ford_negative_cycle/2_run_on_example",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Currency Markets",
+            "questions": [
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/1_problem_type",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/2_determining_vertices",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/3_determining_edges",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/4_weight_labelling",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/5_path_length_interpretation",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/6_algo_choosing",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/7_runtime_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/guided_problem_sets/currency_markets/8_arbitrage_detection",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Topological Sort & SCC",
+            "questions": [
+                {
+                    "id": "graphs/practice/topological_sort",
+                    "points": 1
+                },
+                {
+                    "id": "graphs/practice/strongly_connected_components",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

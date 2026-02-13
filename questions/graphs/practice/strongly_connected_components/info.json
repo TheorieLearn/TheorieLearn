@@ -9,7 +9,5 @@
     "graphs",
     "strongly connected components"
   ],
-  "type": "v3",
-  "shareSourcePublicly": true,
-  "sharePublicly": true
+  "type": "v3"
 }

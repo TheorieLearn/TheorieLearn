@@ -1,0 +1,222 @@
+{
+    "uuid": "a6452bfc-3473-4237-9f39-818c0fc47386",
+    "type": "Homework",
+    "title": "NFAs",
+    "set": "Question Bank",
+    "number": "3",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "GPS: Thompson's Algorithm - Kleene",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/kleene/4_correct",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "GPS: Thompson's Algorithm - Union",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/union/4_correct",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "GPS: Thompson's Algorithm - Concatenation",
+            "questions": [
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/2_counter1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/3_counter2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/guided_problem_sets/thompson/concat/4_correct",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "NFA Concepts",
+            "questions": [
+                {
+                    "id": "NFAs/concepts/counterexample_fix",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/concepts/delta_star",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/concepts/e_reach",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/concepts/nfa_acceptance",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/concepts/subset_construction",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "NFA Practice",
+            "questions": [
+                {
+                    "id": "NFAs/practice/0star1star",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/any_obfuscated",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/anything_but_10",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa20-hw-3-7a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa20-hw-3-7b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa20-hw-3-7c",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa20-hw-3-7d",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa20-hw-3-7e",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa22-hw-3-1a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa22-hw-3-1b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa22-hw-3-1c",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-fa22-hw-3-1d",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-hw-2-1a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-hw-2-1b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-lab-3-1",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-lab-3-2",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-lab-3-3",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp21-lab-3-4",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-hw-3-1a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-hw-3-1b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-hw-3-1c",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-hw-old3-1a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-hw-old3-1b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-mid-1-2a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-mid-1-2b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-mid-1x-2a",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/nfa-sp22-mid-1x-2b",
+                    "points": 1
+                },
+                {
+                    "id": "NFAs/practice/one_1_out_of_5",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

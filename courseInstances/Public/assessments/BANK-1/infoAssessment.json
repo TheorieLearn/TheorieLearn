@@ -1,0 +1,327 @@
+{
+    "uuid": "5ac472ce-5c68-4a00-b0d1-be14b4640717",
+    "type": "Homework",
+    "title": "Regular Expressions",
+    "set": "Question Bank",
+    "number": "1",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Regular Expressions GPS: Case Analysis for String Intersection",
+            "questions": [
+                {
+                    "id": "regular_expressions/guided_problem_sets/one_1_and_length_2_mod_3/1_are_you_with_us",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/one_1_and_length_2_mod_3/2_form_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/one_1_and_length_2_mod_3/3_form_analysis_pt2",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/one_1_and_length_2_mod_3/4_casework",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/one_1_and_length_2_mod_3/5_final_expression",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regular Expressions GPS: All but a Finite Number of Strings",
+            "questions": [
+                {
+                    "id": "regular_expressions/guided_problem_sets/all_but_finite/1_split_into_cases",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/all_but_finite/2_length_lt_3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/all_but_finite/3_length_eq_3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/all_but_finite/4_length_gt_3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/all_but_finite/5_final_expression",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regular Expressions GPS: Analyzing Blocks of Characters",
+            "questions": [
+                {
+                    "id": "regular_expressions/guided_problem_sets/no_000_substring/1_glass_half_full",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/no_000_substring/2_subexpression",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/no_000_substring/3_final_expression",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regular Expressions GPS: Case Analysis for Language Intersection",
+            "questions": [
+                {
+                    "id": "regular_expressions/guided_problem_sets/two_0s_and_one_1/1_are_you_with_us",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/two_0s_and_one_1/2_observation",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/two_0s_and_one_1/3_casework",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/two_0s_and_one_1/4_subsequence",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/guided_problem_sets/two_0s_and_one_1/5_final_expression",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regular Expressions Conceptual Questions",
+            "questions": [
+                {
+                    "id": "regular_expressions/concepts/analyzing_blocks",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/concepts/statement_about_blocks",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/concepts/string_matching",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/concepts/strings_in_lang",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Regular Expressions Practice Questions",
+            "questions": [
+                {
+                    "id": "regular_expressions/practice/00_before_11",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/010_and_#0_mod_3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/010_and_at_least_3_1s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/010_or_at_least_3_1s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/012_g4_0_2_1",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/0_at_div_5",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/0_w_0-w_is_anything",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/at_least_3_0s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/balanced_prefix_1",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/balanced_prefix_2",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/contains000",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/contains222",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/count_1001_at_least_2",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/end_in_1011",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/even000s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/even_01_substrings",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/even_0s_even_1s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/even_runs_of_1s",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/everything_except_000",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/exactly_one_1",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/except_11",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/long0runs",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no0001substring",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no000substring",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no010substring",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_0111",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_101_0_div_3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_111_substring",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_palindrome_prefix_len_2",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_subseq_010",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_subseq_0101010",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/no_substring_len_3_palindrome",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/num0s_is_2mod3",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/odd0runs",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-fa21-mid-1-1b",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-fa21-mid-1x-1a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-fa23-mid-1-5a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-fa23-mid-1-5b",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-sp22-mid-1-3a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-sp22-mid-1-5a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/regex-sp22-mid-1x-5a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/sp19-mid1-3c",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/sp21-mid1-1a",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/sp21-mid1-1b",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/two_0s_and_one_1",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/weighted_balanced_prefix_1",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/weighted_balanced_prefix_2",
+                    "points": 1
+                },
+                {
+                    "id": "regular_expressions/practice/x_w_wR_y",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

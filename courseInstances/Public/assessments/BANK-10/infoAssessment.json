@@ -1,0 +1,42 @@
+{
+    "uuid": "1b6ff3c8-3251-46c2-869c-7255ddba710a",
+    "type": "Homework",
+    "title": "NP-Hardness",
+    "set": "Question Bank",
+    "number": "10",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Hamiltonian Cycle to Hamiltonian Path",
+            "questions": [
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/2_write_iff_statement",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/3_define_reduction",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/4_prove_iff_statement_forward",
+                    "points": 1
+                },
+                {
+                    "id": "np_reductions/guided_problem_sets/hamcycle_to_hampath/5_prove_iff_statement_backward",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

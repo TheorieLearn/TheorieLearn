@@ -1,0 +1,42 @@
+{
+    "uuid": "d4da63a6-2bf2-42fa-92d8-9b0eb2d24c61",
+    "type": "Homework",
+    "title": "Greedy Algorithms",
+    "set": "Question Bank",
+    "number": "12",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Max TV Ad Revenue",
+            "questions": [
+                {
+                    "id": "greedy/guided_problem_sets/max_tv_ad_revenue/1_simple-optimal-example",
+                    "points": 1
+                },
+                {
+                    "id": "greedy/guided_problem_sets/max_tv_ad_revenue/2_wrong-strategy-1",
+                    "points": 1
+                },
+                {
+                    "id": "greedy/guided_problem_sets/max_tv_ad_revenue/3_wrong-strategy-2",
+                    "points": 1
+                },
+                {
+                    "id": "greedy/guided_problem_sets/max_tv_ad_revenue/4_constructing-soln-pt1",
+                    "points": 1
+                },
+                {
+                    "id": "greedy/guided_problem_sets/max_tv_ad_revenue/5_constructing-soln-pt2",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

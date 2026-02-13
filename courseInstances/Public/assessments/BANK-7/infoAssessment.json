@@ -1,0 +1,84 @@
+{
+    "uuid": "8605e19b-adb3-45e3-bea0-02150d9506df",
+    "type": "Homework",
+    "title": "Divide and Conquer & Recursion",
+    "set": "Question Bank",
+    "number": "7",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Recursion Trees",
+            "questions": [
+                {
+                    "id": "algo_analysis/guided_problem_sets/recursion_tree/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "algo_analysis/guided_problem_sets/recursion_tree/2_constant_geom",
+                    "points": 1
+                },
+                {
+                    "id": "algo_analysis/guided_problem_sets/recursion_tree/3_decreasing_geom",
+                    "points": 1
+                },
+                {
+                    "id": "algo_analysis/guided_problem_sets/recursion_tree/4_increasing_geom",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Karatsuba's Algorithm",
+            "questions": [
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/karatsuba/fast_multiply/1_fill_recursive_cases",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/karatsuba/fast_multiply/2_fill_in_runtime",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/karatsuba/fast_multiply/3_recursion_tree",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Median of Medians 3",
+            "questions": [
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/1_example_by_hand",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/2_recurrence_1",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/3_recurrence_2",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/4_recurrence_3",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/5_recurrence_4",
+                    "points": 1
+                },
+                {
+                    "id": "divide_and_conquer/guided_problem_sets/median_of_medians/three/6_recursion_tree",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

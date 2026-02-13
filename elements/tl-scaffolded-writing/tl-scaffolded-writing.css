@@ -1,0 +1,8 @@
+.tl-scaffolded-writing-incomplete {
+    opacity: .65;
+    pointer-events: none;
+}
+
+.tl-scaffolded-writing-submission p:last-child {
+    margin-bottom: 0;
+}

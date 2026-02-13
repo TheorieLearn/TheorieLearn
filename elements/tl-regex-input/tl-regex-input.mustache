@@ -1,0 +1,130 @@
+{{#help_text_body}}
+Regexes you define should only contain the following characters:
+<ul>
+  <li><code>(</code> and <code>)</code> </li>
+  <li><code>+</code> (to represent union)</li>
+  <li><code>*</code> (to represent Kleene star)</li>
+  <li><code>e</code> (to represent the empty string)</li>
+  <li>Symbols in the alphabet: {
+      {{#alphabet_list}}
+        <code>{{char}}</code> {{^last}}, {{/last}}
+      {{/alphabet_list}}
+    }
+  </li>
+</ul>
+
+The caret (^) is not necessary,
+and using superscript plus (+) to represent &quot;one or more copies&quot; isn't supported.
+For example, don't submit <code>0^*</code> or <code>0^+</code>;
+instead, you can submit <code>0*</code> or <code>00*</code>, respectively.<br><br>
+
+The concatenation operator (•) is also not necessary. For example, don't submit <code>0*•1*</code>; instead,
+you should submit <code>0*1*</code>.<br><br>
+
+The symbol Σ is not supported; you can use <code>({{alphabet_union}})</code> instead.<br><br>
+
+Finally, the symbol ∅ is not supported. (Note that every non-empty regular language
+can be represented by a regular expression that does not use the symbol ∅.)<br><br>
+
+You may define subexpressions on different lines for use later, with your
+final expression on the last line. Your subexpressions must be named with
+upper or lowercase letters, and each expression must fit on a single line.
+For example: <br>
+<code> E = (00)* <br> O = E0 <br> E1E + O1O</code> <br> <br>
+
+Note that spaces are ignored in defining variables, so to repeat
+the variable <code>all</code>, you would type <code>all all</code>.
+<br><br>
+The backend grader code is powered by the
+<a href="https://github.com/caleb531/automata" target="_blank">Automata package</a>
+by Caleb Evans.
+{{/help_text_body}}
+
+{{#question}}
+<script type="text/javascript">
+  const regexInput_{{name}} = '#tl-regex-input-{{name}}';
+
+  function resize_{{name}}() {
+      const heightLimit = 300;
+      let inputElem = $(regexInput_{{name}});
+
+      inputElem.prop('style').height = "auto";
+      const oldHeight = inputElem.prop('scrollHeight');
+      const newHeight = Math.min(oldHeight, heightLimit) + "px";
+
+      inputElem.prop('style').height = newHeight;
+  }
+
+  $(() => {
+    $(regexInput_{{name}}).on('input', resize_{{name}});
+  });
+
+  document.addEventListener('DOMContentLoaded', resize_{{name}});
+</script>
+<!-- TODO figure out if it's possible to change this without messing with other popovers -->
+<style>
+    .popover{
+      max-width:600px;
+    }
+
+    #tl-regex-input-{{name}} {
+      overflow: hidden;
+    }
+</style>
+
+<span id="tl-regex-input-group-{{name}}" class="input-group">
+    <textarea
+        name="{{name}}"
+        class="form-control tl-regex-input"
+        placeholder="regular expression"
+        rows=1
+        id="tl-regex-input-{{name}}"
+        {{^editable}}disabled{{/editable}}
+    >{{{submitted_answer}}}</textarea>
+    <a
+        role="button"
+        class="btn btn-light border d-flex align-items-center"
+        data-toggle="popover"
+        data-html="true"
+        title="Regular Expression Formatting"
+        data-content="{{help_text}}"
+        data-placement="auto"
+        tabindex="0"
+    >
+      <i class="fa fa-question-circle" aria-hidden="true"></i>
+      {{#display_score_badge}}
+          &nbsp;
+          {{#correct}}
+            <span class="badge badge-success"><i class="fa fa-check" aria-hidden="true"></i> 100%</span>
+          {{/correct}}
+          {{^correct}}
+            <span class="badge badge-danger"><i class="fa fa-times" aria-hidden="true"></i> 0%</span>
+          {{/correct}}
+      {{/display_score_badge}}
+    </a>
+</span>
+{{/question}}
+
+{{#submission}}
+  <div style="border: solid; border-radius:7px; padding: 5px; margin: 15px">
+  Your submission:<br>
+  {{#submitted_answer_lines}}
+    <span class="user-output">{{answer_line}}</span><br>
+  {{/submitted_answer_lines}}
+  {{#parse_errors}}
+    <br>
+    The autograder could not parse your submission.<br>
+    <code>Syntax Error: {{{parse_errors}}}</code>
+  {{/parse_errors}}
+  {{#submission_was_graded}}
+    <br>
+    {{#submission_was_correct}}
+      Your regular expression matches the desired language!
+    {{/submission_was_correct}}
+    {{^submission_was_correct}}
+      Your regular expression does not match the desired language.<br>
+      {{{counterexample_strings}}}
+    {{/submission_was_correct}}
+  {{/submission_was_graded}}
+  </div>
+{{/submission}}

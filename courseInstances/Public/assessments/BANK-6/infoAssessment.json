@@ -1,0 +1,42 @@
+{
+    "uuid": "3e5dd3ba-e83d-4635-a6a5-b5f2beb70ceb",
+    "type": "Homework",
+    "title": "Context Free Grammars",
+    "set": "Question Bank",
+    "number": "6",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Context Free Grammar Practice",
+            "questions": [
+                {
+                    "id": "CFGs/practice/m_neq_two_n",
+                    "points": 1
+                },
+                {
+                    "id": "CFGs/practice/not_ww",
+                    "points": 1
+                },
+                {
+                    "id": "CFGs/practice/not_zero_two_n_one_n",
+                    "points": 1
+                },
+                {
+                    "id": "CFGs/practice/twice_as_many_zeros_as_ones",
+                    "points": 1
+                },
+                {
+                    "id": "CFGs/practice/zero_two_n_one_n",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,200 @@
+{
+    "uuid": "4f6e1228-2a56-4e21-b58e-99561e25a995",
+    "type": "Homework",
+    "title": "Fooling Sets",
+    "set": "Question Bank",
+    "number": "4",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Fooling Sets Concepts",
+            "questions": [
+                {
+                    "id": "fooling_sets/concepts/broken_proof",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Fooling Sets Practice",
+            "questions": [
+                {
+                    "id": "fooling_sets/practice/m_neq_two_n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_n_one_n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_one_m_one_zero_n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_one_n_one_zero_n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_perfect_cube",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_perfect_square",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_power_of_two",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/practice/zero_three_n_one_two_n",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Fooling Sets Coding",
+            "questions": [
+                {
+                    "id": "fooling_sets/coding/#0s_lessthan_twice#1s",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/012_min",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/012_star_prefix_palindrome",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/01_10_subsequences",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/01_star_prefix_palindrome",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0A_1w1_0C",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0^(nC2)",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0^i_0^sqrt{i}",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0^n1^n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0^n^3",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0^{kj}_1_0^j",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0_to_3_to_n",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0i1j2k_i+j=k+1",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0p1q0r_p=q+r",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/0p1q0r_r=p+q",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/1_0n_1n_suffix",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/abs_value_last_digit",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/all_palindromes_len_divisible_by_3",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/even_odd_blocks",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/fibonacci",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/gcd_is_1",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/k_sqrt_k",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/min_#0_#1_divisible_5",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/odd_length_at_least_3_matching",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/palindrome_prefix",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/palindromes",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/w#x_substring",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/w_c_d^{#a(w)}",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/w_wR_w",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/w_wR_x_y",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/ww",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/x#y_diff_length",
+                    "points": 1
+                },
+                {
+                    "id": "fooling_sets/coding/x#y_equal_length",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

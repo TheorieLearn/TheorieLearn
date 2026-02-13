@@ -1,0 +1,164 @@
+<div>
+{{#question}}
+{{#editable}}
+<div {{#shrink_tree}}style="max-width:450"{{/shrink_tree}}>
+    <details class="instructions rounded">
+
+        <summary> Tree Builder Instructions</summary>
+          {{#mode_toggle}}
+              <b> Using Multiple Edit Modes </b>
+              <ul>
+              <li> Click the "Change Edit Mode" button in the bottom right corner to cycle through modes</li>
+              <li> If in Pointer Manipulation Mode, changing edit mode will "Re-Draw Tree" with pointer updates</li>
+              <li> If the pointers in your tree are in an invalid state, you will be prevented from changing modes </li>
+              <li> You may submit from either mode without effecting your score </li>
+              </ul>
+          {{/mode_toggle}}
+          {{#pointer_instructions}}
+              <b>Pointer Manipulation Mode</b>
+              <ul>
+              <li> <b>Click</b> the purple square button below a node to select that node's pointer.</li>
+              <li> After selecting a pointer, <b>Click</b> a node to choose the node to point to</li>
+              <li> <b>ctrl + Click</b> A pointer button to delete the pointer</li>
+              <li> <b>Click</b> the "Re-Draw Tree" button in the top left corner to finalize any changes to pointers.</li>
+              <li> Re-Draw Tree will fail if the current pointer configuration does not represent a valid binary tree </li>
+              <li> In this mode you may not: change the value of nodes, create nodes, or delete modes </li>
+              </ul>
+          {{/pointer_instructions}}
+          {{#pointer_delete_instructions}}
+          <b>Pointer Manipulation Mode with Node Deleting</b>
+          <ul>
+          <li> <b>Click</b> the purple square button below a node to select that node's pointer.</li>
+              <li> After selecting a pointer, <b>Click</b> a node to choose the node to point to</li>
+              <li> <b>ctrl + Click</b> A pointer button to delete the pointer</li>
+              <li> <b>Click</b> the "Re-Draw Tree" button in the top left corner to finalize any changes to pointers.</li>
+              <li> Re-Draw Tree will fail if the current pointer configuration does not represent a valid binary tree </li>
+              <li> <b>Click</b> the red <b style="color: rgb(155, 0, 0)">X</b> button above a node to delete a node and all pointers from or to it.</li>
+              <li> In this mode you may not: change the value of nodes or create nodes.</li>
+              <li> In the event of an accidental delete, use the "Reset Tree" button to start over (this will not use a submission).</li>
+            </ul>
+          {{/pointer_delete_instructions}}
+
+          {{#builder_instructions}}
+              <b>Node Builder Mode</b>
+              <ul>
+              <li> <b>Click</b> the green <b style="color: rgb(0, 155, 0)">+</b> button below a node to create a child node.</li>
+              <li> <b>ctrl + Click</b> the green <b style="color: rgb(0, 155, 0)">+</b> button below a node to create a subtree.</li>
+              <li> <b>Click</b> on a node to select. Type while a node is selected to assign its label</li>
+              <li> <b>Click</b> the red <b style="color: rgb(155, 0, 0)">X</b> button above a node to delete a node. This button will only appear on leaf nodes. The root node may not be deleted.</li>
+              </ul>
+          {{/builder_instructions}}
+          {{#value_only_instructions}}
+            <b>Value Only Mode</b>
+            <ul>
+            <li> <b>Click</b> on a node to select. Type while a node is selected to assign its label</li>
+            </ul>
+          {{/value_only_instructions}}
+          {{#side_label_instructions}}
+            <b>Side Label Mode</b>
+            <ul>
+            <li> <b>Click</b> on a node or the square next to it to select the node.</li>
+            <li> Type while a node is selected to assign the value of it's label on the side (in the box).</li>
+            <li> In this mode, you cannot alter the value of the node (inside the circle).</li>
+            </ul>
+          {{/side_label_instructions}}
+          {{#recurrence_instructions}}
+          <b> Recursion Tree Mode </b>
+          <ul>
+          <li> <b>Click</b> the green <b style="color: rgb(0, 155, 0)">+</b> button below a node to create a child node.
+          Clicking multiple times will create multiple children.</li>
+          <li> <b>Click</b> the red <b style="color: rgb(155, 0, 0)">X</b> button above a node to delete a node. This button will only appear on leaf nodes. The root node may not be deleted.</li>
+          <li> <b>Click</b> on a node to select. Type while a node is selected to assign its label</li>
+          <li> Every node in the 'Work per Call' tree should be labeled by the total work done by one </li>
+          <li> On the right, 'Work per Level' inputs will appear automatically. Sum the work done on each level of the tree for the respective input.</li>
+          <li> The input on the far bottom right is for the total work done by the leaves. (This only applies when the 'Total # Leaves' input is displayed)</li>
+          <li> Enter the total height of the tree (number of levels) with a symbolic expression in the square labeled 'Height' on the right of the screen. (This may not be required for all questions. If this input square does not appear, this may be skipped)</li>
+          <li> Enter the total number of leaves of the tree (nodes in the bottom level) with a symbolic expression in the square labeled 'Total # Leaves' on the bottom of the screen. (This may not be required for all questions. If this input square does not appear, this may be skipped)</li>
+          <li> Answers should be written in symbolic equation format - matching code formatting.</li>
+          <li>Any equivalent expression is acceptable i.e. If the answer is 2*n, any of 2n, n+n, 2(n), 2n**2 / n is permissable.
+          (Though an excessively complex expression may make the grader timeout)</li>
+          <li> logs must be written in the format log(a,b) for log<sub>b</sub>(a). <b>Logs must explicitly declare a base</b> </li>
+          <li> use **  or ^ for exponents.
+          <li> Square roots may be written as n**(1/2) or sqrt(n)</li>
+          <li> When child nodes are not equivalent, they may be listed in any order</li>
+          </ul>
+          {{/recurrence_instructions}}
+        <div> Use the "Reset Tree" button in the bottom right to revert to the original tree configuration</div>
+        <div> The "toggle node size" button will shrink or enlarge the nodes. This is to help you see the tree better and does not affect your submission.</div>
+    </details>
+  </div>
+  {{/editable}}
+
+<div>
+    {{^feedback-canvas}}
+    <canvas id="{{{answers_name}}}-tree-canvas" {{^shrink_tree}}width="932"{{/shrink_tree}} {{#shrink_tree}}width="450"{{/shrink_tree}} height="588">
+        <span class="error">Your browser does not support<br>the HTML5 &lt;canvas&gt; element</span>
+    </canvas>
+
+    {{^animation_mode}}
+    <div class="btn-toolbar justify-content-end" role="toolbar">
+      <div class="btn-group">
+        <button id="{{{answers_name}}}-toggle-mode" type="button" class="btn btn-secondary btn-sm" {{^mode_toggle}}disabled{{/mode_toggle}}>Change Edit Mode</button>
+        <button id="{{{answers_name}}}-toggle-state-size" type="button" class="btn btn-secondary btn-sm" {{#breditable}}disabled{{/breditable}}>Toggle Node Size</button>
+        <button id="{{{answers_name}}}-clear-tree" type="button" class="btn btn-danger btn-sm" {{^editable}}disabled{{/editable}}>Reset Tree</button>
+      </div>
+    </div>
+    {{/animation_mode}}
+
+    <input id="{{{answers_name}}}-raw-json" name="{{{answers_name}}}-raw" type="hidden" {{^editable}}disabled{{/editable}}>
+
+    <script>
+        tbe = new window.TreeBuilderElement("{{{answers_name}}}");
+        tbe.tree_builder_init("{{{starttree_json}}}", "{{{tree_json}}}", "{{{mode}}}",
+        {{^fix_node_height}}false{{/fix_node_height}}{{#fix_node_height}}true{{/fix_node_height}},
+        {{^editable}}false{{/editable}}{{#editable}}true{{/editable}}, "{{{front_end_data}}}"
+        ,{{^numeric_only}}false{{/numeric_only}}{{#numeric_only}}true{{/numeric_only}},
+        {{#bool-side-json}}"{{side-tree-json}}"{{/bool-side-json}}{{^bool-side-json}}"[]"{{/bool-side-json}},
+        {{#bool-start-side}}"{{starter-side-tree-json}}"{{/bool-start-side}}{{^bool-start-side}}"[]"{{/bool-start-side}},
+        {{^enable-final-level}}false{{/enable-final-level}}{{#enable-final-level}}true{{/enable-final-level}},
+        "{{{leaf-value}}}", "{{{leaf-count}}}", "{{{node_draw_mode}}}",
+        {{^enable-subtree}}false{{/enable-subtree}}{{#enable-subtree}}true{{/enable-subtree}},
+        {{^enable-height}}false{{/enable-height}}{{#enable-height}}true{{/enable-height}}, "{{{height_init}}}",
+        {{height_limit}}, {{#toggle_small}}true{{/toggle_small}}{{^toggle_small}}false{{/toggle_small}},
+        [{{#tree_frames}}"{{{.}}}",{{/tree_frames}}], {{interval}}, "{{{label_tree_json}}}"
+        )
+    </script>
+    {{/feedback-canvas}}
+
+</div>
+{{/question}}
+
+{{#submission}}
+{{#parse_errors}}
+  <p><b>Error: </b>{{#message}}{{message}}{{/message}}{{^message}}{{parse_errors}}{{/message}}</p>
+{{/parse_errors}}
+{{#feedback}}
+  <div id="Feedback">{{{feedback}}}</div>
+{{/feedback}}
+
+{{#feedback-canvas}}
+    <canvas id="{{{answers_name}}}-tree-canvas" {{^shrink_tree}}width="781"{{/shrink_tree}} {{#shrink_tree}}width="450"{{/shrink_tree}} height="588">
+        <span class="error">Your browser does not support<br>the HTML5 &lt;canvas&gt; element</span>
+    </canvas>
+
+    <script>
+        tbe = new window.TreeBuilderElement("{{{answers_name}}}");
+        tbe.tree_builder_init("{{{starttree_json}}}", "{{{tree_json}}}", "{{{mode}}}",
+        {{^fix_node_height}}false{{/fix_node_height}}{{#fix_node_height}}true{{/fix_node_height}},
+        {{^editable}}false{{/editable}}{{#editable}}true{{/editable}}, "{{{front_end_data}}}"
+        ,{{^numeric_only}}false{{/numeric_only}}{{#numeric_only}}true{{/numeric_only}},
+        {{#bool-side-json}}"{{side-tree-json}}"{{/bool-side-json}}{{^bool-side-json}}"[]"{{/bool-side-json}},
+        {{#bool-start-side}}"{{starter-side-tree-json}}"{{/bool-start-side}}{{^bool-start-side}}"[]"{{/bool-start-side}},
+        {{^enable-final-level}}false{{/enable-final-level}}{{#enable-final-level}}true{{/enable-final-level}},
+        "{{{leaf-value}}}", "{{{leaf-count}}}", "{{{node_draw_mode}}}",
+        {{^enable-subtree}}false{{/enable-subtree}}{{#enable-subtree}}true{{/enable-subtree}},
+        {{^enable-height}}false{{/enable-height}}{{#enable-height}}true{{/enable-height}}, "{{{height_init}}}",
+        {{height_limit}}, {{#toggle_small}}true{{/toggle_small}}{{^toggle_small}}false{{/toggle_small}},
+        [{{#tree_frames}}"{{{.}}}",{{/tree_frames}}], {{interval}},
+        "{{{label_tree_json}}}"
+        )
+    </script>
+{{/feedback-canvas}}
+
+{{/submission}}
+</div>

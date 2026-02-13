@@ -1,0 +1,12 @@
+{
+    "controller": "tl_tree_builder.py",
+    "dependencies": {
+        "elementScripts": [
+            "tl-tree-builder.js",
+            "tl-tree-elements.js"
+        ],
+        "elementStyles": [
+            "tl-tree-builder.css"
+        ]
+    }
+}

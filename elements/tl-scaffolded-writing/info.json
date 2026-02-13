@@ -1,0 +1,11 @@
+{
+    "controller": "tl_scaffolded_writing.py",
+    "dependencies": {
+        "elementScripts": [
+            "tl-scaffolded-writing.js"
+        ],
+        "elementStyles": [
+            "tl-scaffolded-writing.css"
+        ]
+    }
+}

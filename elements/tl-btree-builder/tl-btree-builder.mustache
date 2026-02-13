@@ -1,0 +1,76 @@
+{{#question}}
+<div>
+    <details class="instructions rounded">
+        {{#editable}}
+        <summary> BTree Builder Instructions </summary>
+          <ul padding-left=10px>
+            <li> <b>Click</b> the green <b style="color: rgb(0, 155, 0)">+</b> button to add an element to the nodes array. This is only possible on node's without children.</li>
+            <li> <b>Click</b> on a node to select. Type while a node is selected to assign its label</li>
+            <li> <b>Click</b> the red <b style="color: rgb(155, 0, 0)">X</b> button to delete an element from the node's array. This is only possible on nodes without children.</li>
+            <li> <b>Click</b> the blue <b style="color: rgb(0, 0, 255)">↑</b> button to 'promote' an element to a higher node.</li>
+            <li> <b>Click</b> the orange <b style="color: rgb(252, 165, 3)">↓</b> to 'demote' an element to a lower node. Note: this is not a real btree operation you learned, but it permits you to undo incorrect actions.</li>
+            <li> <b>Keyboard Shortcuts:</b>
+            <ul>
+              <li> Use Right and Left arrow keys to select different elements within the selected node </li>
+              <li> Up arrow key to select the parent node of the selected node</li>
+              <li> Down + left/right arrow key to select the left/right child node of the selected node</li>
+              <li> Ctrl + left/right arrows keys to add a new element to the left/right (when possible)  </li>
+              <li> Ctrl + up arrow to promote the selected element (when possible) </li>
+              <li> Ctrl + down arrow to demote the selected element (when possible) </li>
+              <li> Ctrl + backspace to delete the selected element (when possible) </li>
+            </ul></li>
+          </ul>
+          {{/editable}}
+          {{^editable}}
+          <summary> Uneditable BTree Builder Help </summary>
+          <ul padding-left=10px>
+            <li> The 'Toggle Node Size' button can switch between smaller and larger nodes if there are too many too conveniently fit on the screen. </li>
+            <li> <b>Keyboard Shortcuts:</b>
+            <ul>
+              <li> Use Right and Left arrow keys to select different elements within the selected node </li>
+              <li> Up arrow key to select the parent node of the selected node</li>
+              <li> Down + left/right arrow key to select the left/right child node of the selected node</li>
+            </ul></li>
+          </ul>
+          {{/editable}}
+
+    </details>
+    <details open class="instructions rounded">
+    <summary> Highlight Key </summary>
+      <ul padding-left=10px>
+        <li> A selected node element will be highlighted <b style="color: rgb(51, 180, 255)">Light Blue</b></li>
+        <li> A selected node's children will be highlighted <b style="color: rgb(252, 165, 3)">Orange</b></li>
+        <li> A selected node's parent will be highlighted <b style="color: rgb(0, 0, 255)">Dark Blue</b></li>
+      </ul>
+    </details>
+    </div>
+
+<div>
+    <canvas id="{{{answers_name}}}-tree-canvas" width="932" height="588">
+        <span class="error">Your browser does not support<br>the HTML5 &lt;canvas&gt; element</span>
+    </canvas>
+    <div class="btn-toolbar justify-content-end" role="toolbar">
+      <div class="btn-group">
+        <button id="{{{answers_name}}}-toggle-state-size" type="button" class="btn btn-secondary btn-sm">Toggle Node Size</button>
+        <button id="{{{answers_name}}}-clear-tree" type="button" class="btn btn-danger btn-sm" {{^editable}}disabled{{/editable}}>Reset Tree</button>
+      </div>
+    </div>
+
+    <input id="{{{answers_name}}}-raw-json" name="{{{answers_name}}}-raw" type="hidden" {{^editable}}disabled{{/editable}}>
+    <script>
+        tree_builder_init("{{{answers_name}}}", "{{{starttree_json}}}", "{{{tree_json}}}",
+        {{^editable}}false{{/editable}}{{#editable}}true{{/editable}},
+        {{^numeric_only}}false{{/numeric_only}}{{#numeric_only}}true{{/numeric_only}},
+        {{^small_nodes}}false{{/small_nodes}}{{#small_nodes}}true{{/small_nodes}})
+    </script>
+</div>
+{{/question}}
+
+{{#submission}}
+{{#parse_errors}}
+  <p><b>Error: </b>{{message}}</p>
+{{/parse_errors}}
+{{#feedback}}
+  {{{feedback}}}
+{{/feedback}}
+{{/submission}}

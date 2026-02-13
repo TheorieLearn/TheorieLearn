@@ -1,0 +1,435 @@
+{
+    "uuid": "786d7ed7-7e73-4dbc-b889-6d87499252a3",
+    "type": "Homework",
+    "title": "Dynamic Programming",
+    "set": "Question Bank",
+    "number": "8",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "Minimum Hotel Cost Part 1",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/1_english_definition",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/2_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/3_recursive_def_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/4_recursive_def_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/5_recursive_def_3",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/6_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/7_runtime_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/prefix/8_memo_array_code",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Minimum Hotel Cost Part 2",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/1_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/2_recursive_def_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/3_recursive_def_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/4_recursive_def_3",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/6_runtime_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost/suffix/7_memo_array_code",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Minimum Hotel Cost with Coupons",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/1_english_definition",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/2_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/3_recursive_def_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/4_recursive_def_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/5_recursive_def_3",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/6_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/7_runtime_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/min_hotel_cost_coupon/8_memo_array_code",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Maximize Burr's Profit",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/1_scaffolded_writing_subproblem",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/2_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/3_recursive_def_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/4_recursive_def_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/6_runtime_analysis",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/1_suffix/7_code",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "MaxProfit Prefix Broken",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/2_prefix/1_counterexample",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/max_profit/2_prefix/2_revised",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "String Shuffle",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/1_scaffolded_writing",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/2_subproblem_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/3_recursive_def_pt1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/4_recursive_def_pt2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/string_shuffle/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Tree Maximum Indepedent Set",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tree_max_ind_set/1_subproblem_definition",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tree_max_ind_set/2_recursive_def_pt1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tree_max_ind_set/3_recursive_def_pt2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tree_max_ind_set/4_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tree_max_ind_set/5_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Longest Common Subsequence",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/1_english_definition",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/2_subproblem_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/3_recursive_def_pt1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/4_recursive_def_pt2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/LCS/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Grasslearn",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/1_grasslearn_scaffolded",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/2_grasslearn_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/3_grasslearn_recursive",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/4_base_cases",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Grasslearn 2 Variable",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/1_grasslearn_scaffolded",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/2_domain",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/3_recursive",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/4_base_cases",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/5_evaluation_order",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/grasslearn-2var/6_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "L1L2 Membership (Slow)",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/1_select_subproblem_definition",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/2_how_to_call",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/3_evaluate_cases_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/4_evaluate_cases_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/5_analyze_is_in_l1l2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/6_how_to_memoize",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/1_is_in_l1l2_slow/7_analyze_runtime",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "L1L2 Membership (Fast)",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/1_wishful_thinking",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/2_evaluate_cases_1",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/3_evaluate_cases_2",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/4_how_to_call",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/5_how_to_memoize",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/is_in_l1l2/2_is_in_l1l2_fast/6_analyze_runtime",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "TSP DP",
+            "questions": [
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/1_intro",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/2_first_attempt",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/3_subproblem_domain_answer",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/4_recursive_formula",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/5_recurrence",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/6_hardness_reduction",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/guided_problem_sets/tsp_dp/7_runtime_analysis",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "Scaffolded Writing Practice",
+            "questions": [
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_min_sum/basic_version",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_min_sum/limit_two_digit_summands",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_min_sum/no_consecutive_same_length",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_max_sum/basic_version",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_max_sum/limit_two_digit_summands",
+                    "points": 1
+                },
+                {
+                    "id": "dynamic_programming/practice/scaffolded_writing/partition_digits_max_sum/no_consecutive_same_length",
+                    "points": 1
+                }
+            ]
+        }
+    ]
+}

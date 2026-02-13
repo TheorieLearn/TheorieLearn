@@ -3,7 +3,5 @@
   "title": "Topological Sort",
   "topic": "graphs",
   "tags": ["Sp21", "plin15", "graphs", "topological sort"],
-  "type": "v3",
-  "shareSourcePublicly": true,
-  "sharePublicly": true
+  "type": "v3"
 }

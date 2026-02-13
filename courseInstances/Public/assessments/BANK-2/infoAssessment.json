@@ -1,0 +1,230 @@
+{
+    "uuid": "fe12a441-cc5f-48b7-a4cb-8fe4bb621d04",
+    "type": "Homework",
+    "title": "DFAs",
+    "set": "Question Bank",
+    "number": "2",
+    "allowIssueReporting": false,
+    "allowAccess": [
+        {
+            "mode": "Public",
+            "credit": 100,
+            "startDate": "2025-01-01T12:59:59"
+        }
+    ],
+    "zones": [
+        {
+            "title": "GPS: Incorrect DFA",
+            "questions": [
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/1_counterexample",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/2_fix_dfa",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/incorrect_dfa_0100/3_clear_description",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "DFA Construction GPS: Number of 01 subsequences is 4 mod 7",
+            "questions": [
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/1_are_you_with_us",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/2_what_info_to_track",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/3_transition_examples",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/4_code_to_count_01s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/5_specify_states",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/guided_problem_sets/count_01_subsequences/6-specify_other_components",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "DFA Concepts",
+            "questions": [
+                {
+                    "id": "DFAs/concepts/dfa_acceptance",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/concepts/delta_star",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/concepts/product_construction_drill",
+                    "points": 1
+                }
+            ]
+        },
+        {
+            "title": "DFA Practice",
+            "questions": [
+                {
+                    "id": "DFAs/practice/010_and_#0_mod_3",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/010_and_at_least_3_1s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/010_or_at_least_3_1s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/0_at_div_5",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/any_obfuscated",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/anything_but_10",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/at_least_3_0s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/balanced_prefix_1",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/balanced_prefix_2",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/contains000",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/contains010",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/count_1001_at_least_2",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-fa21-mid-1-1b",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-fa21-mid-1x-1a",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-fa23-mid-1-5a",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-fa23-mid-1-5b",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-sp22-mid-1-2c",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/dfa-sp22-mid-1x-2c",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/even000s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/even_0s_even_1s",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/even_and_not_div_3",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/even_or_not_div_3",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/everything_except_000",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/long0runs",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/no0001substring",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/no000substring",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/no010substring",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/no_011001",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/no_101_#0_3",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/num0s_is_2mod3",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/odd0runs",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/sp19_mid1",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/sp21-mid1-2",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/two_0s_and_one_1",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/weighted_balanced_prefix_1",
+                    "points": 1
+                },
+                {
+                    "id": "DFAs/practice/weighted_balanced_prefix_2",
+                    "points": 1
+                }
+            ]
+        }
+
+    ]
+}

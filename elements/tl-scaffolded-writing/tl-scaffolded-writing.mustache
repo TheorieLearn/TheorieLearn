@@ -1,0 +1,58 @@
+{{! TODO: in order to support multiple scaffolded-writing elements in a single question,
+we need to stop relying on the id attribute to select elements. }}
+
+<details class="mb-3">
+  <summary>Example Response</summary>
+
+  <p>
+    To help you get started, here is an example of a response that has a similar structure to the response that you will be constructing:
+  </p>
+
+  <blockquote class="px-5">
+  {{#isDP}}
+    Define $MaxAir(i)$ to be the maximum air time that can be achieved by starting on the ground at Ramp $i$ and taking exactly $n$ jumps.
+  {{/isDP}}
+  {{#isGraph}}
+    $G$ has a cycle if and only if $H$ has a path of length 3.
+  {{/isGraph}}
+  </blockquote>
+</details>
+
+<div class="tl-scaffolded-writing-element">
+  <div class="mb-4">
+    <h4>Your Response</h4>
+
+    <div class="input-group mb-2">
+      <textarea id="sentence" class="form-control" readonly rows=5
+        placeholder="Click one of the tokens below to start constructing your response!"></textarea>
+    </div>
+
+    {{#editable}}
+      <button id="delete-last-token" type="button" class="btn btn-outline-danger btn-sm">Delete Last Token</button>
+      <button id="clear-response" type="button" class="btn btn-outline-danger btn-sm">Clear Response</button>
+    {{/editable}}
+  </div>
+
+{{#editable}}
+  <div>
+    <h4>Possible next tokens (click one)</h4>
+    <h4 id="possible-next-tokens" onselectstart="return false"></h4>
+    <div id="no-more-tokens-message">
+      You have completed your response; no more tokens can be appended. You can either submit your response by
+      clicking "Save & Grade", or you can revise your response by deleting tokens from it.
+    </div>
+  </div>
+{{/editable}}
+
+  <input id="token-list-json" name="{{answers_name}}" type="hidden"/>
+
+  <script>
+    setUpScaffoldedWritingQuestion(
+      "{{answers_name}}",
+      {{{entered_tokens}}},
+      {{{cfg}}},
+      {{^editable}}false{{/editable}}{{#editable}}true{{/editable}},
+      "{{sort_type}}"
+    );
+  </script>
+</div>
