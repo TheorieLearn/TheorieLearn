@@ -10,17 +10,17 @@ A public practice course containing all our available exercises is available on 
 
 For more information about the TheorieLearn project, including developers, publications, instructor usage, and funding information, please see the project page at <https://theorielearn.github.io/>.
 
-For questions specific to this repository, feel free to join the TheorieLearn [Slack](https://pl4tcs.slack.com) or contact the project director [Jeff Erickson](https://jeffe.cs.illinois.edu) by email at [jeffe@illinois.edu]{mailto:jeffe@illinois.edu).  For more general PrairieLearn questions, we recommend joining the [PrairieLearn Slack](prairielearn.slack.com); Jeff and other members of the TheorieLearn team are active on this Slack space.
+For questions specific to this repository, feel free to join the TheorieLearn [Slack](https://pl4tcs.slack.com) or email the project director [Jeff Erickson](https://jeffe.cs.illinois.edu) (jeffe@illinois.edu).  For more general PrairieLearn questions, we recommend joining the [PrairieLearn Slack](prairielearn.slack.com); Jeff and other members of the TheorieLearn team are active on this Slack space.
 
 ## Copyright and License Information
 
-&copy; 2026 Jeff Erickson and the [TheorieLearn](https://theorielearn.github.io/) team
+**Copyright &copy; 2026 [TheorieLearn](https://theorielearn.github.io/)**
 
 * All text in this repository is released under a [Creative Commons Attribution 4.0 International (CC-BY) License](https://creativecommons.org/licenses/by/4.0/deed.en).
 
-* All code in this repository is released under <a href="https://opensource.org/license/mit">The MIT License</a>.
+* All code in this repository is released under [The MIT License](LICENSE).
 
-You may freely free to use, copy, adapt, remix, and/or redistribure any questions, assessments, elements, or other code from this repository, subject to the terms of these licenses.  In particular, we ask that you include a link to this repository <https://github.com/TheorieLearn/TheorieLearnPublic>.
+You may freely free to use, copy, adapt, remix, and/or redistribure any questions, assessments, elements, or other code from this repository, subject to the terms of these licenses.  In particular, if you redistribute any code, please include a link either to this repository <https://github.com/TheorieLearn/TheorieLearnPublic> or to the main TheorieLearn page <https://theorielearn.github.io/>
 
 These resources are based in part on [Jeff Erickson's _Algorithms_ textbook and other course materials](https://jeffe.cs.illinois.edu/teaching/algorithms/), which are also freely available.
 
