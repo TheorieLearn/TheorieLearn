@@ -6,11 +6,11 @@
 
 This is a public repository of scaffolding exercises for theoretical computer science, implemented on the on the [PrairieLearn](https://www.prairielearn.org) platform.  These exercises were designed for [CS 374](https://courses.grainger.illinois.edu/cs374al1/) and other courses that teach theoretical computer science at the University of Illinois Urbana-Champaign.
 
-A public practice course containing all our available exercises is available on [PrairieLearn](https://www.prairielearn.org) to anyone with a Microsoft account, Google account, or login credentials at an university with a PrarieLearn license.
+A public practice course containing all our available exercises is available on [PrairieLearn](https://www.prairielearn.org) to anyone with a Microsoft account, Google account, or login credentials at a university with a PrarieLearn license.
 
 For more information about the TheorieLearn project, including developers, publications, instructor usage, and funding information, please see the project page at <https://theorielearn.github.io/>.
 
-For questions specific to this repository, feel free to join the TheorieLearn [Slack](https://pl4tcs.slack.com), or contact the prject director [Jeff Erickson](https://jeffe.cs.illinois.edu) by email at [jeffe@illinois.edu]{mailto:jeffe@illinois.edu).  For more general PrairieLearn questions, we recommend joining the [PrairieLearn Slack](prairielearn.slack.com); Jeff and other members of the TheorieLearn team are active on this Slack space.
+For questions specific to this repository, feel free to join the TheorieLearn [Slack](https://pl4tcs.slack.com) or contact the project director [Jeff Erickson](https://jeffe.cs.illinois.edu) by email at [jeffe@illinois.edu]{mailto:jeffe@illinois.edu).  For more general PrairieLearn questions, we recommend joining the [PrairieLearn Slack](prairielearn.slack.com); Jeff and other members of the TheorieLearn team are active on this Slack space.
 
 ## Copyright and License Information
 
