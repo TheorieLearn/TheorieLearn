@@ -1,7 +1,7 @@
 {
   "uuid": "bc771e2c-42fb-4c59-b583-d9e94eef32ba",
-  "name": "TheorieLearn Public",
-  "title": "Public PrairieLearn Course for TheorieLearn questions and elements.",
+  "name": "TheorieLearn",
+  "title": "Public Practice Course / Catalog",
   "assessmentSets": [
     {
       "abbreviation": "GPS",
@@ -24,5 +24,6 @@
   ],
   "topics": [],
   "tags": [],
-  "sharingSets": []
+  "sharingSets": [],
+  "timezone": "America/Chicago"
 }
