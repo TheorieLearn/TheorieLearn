@@ -2,6 +2,8 @@
 
 [![Slack](https://img.shields.io/badge/join%20slack-pl4tcs-orange)](https://pl4tcs.slack.com)
 
+<img src="NewTLlogo.png" width="66%" alt="TheorieLearn logo">
+
 ## Welcome to TheorieLearn!
 
 This is a public repository of scaffolding exercises for theoretical computer science, implemented on the on the [PrairieLearn](https://www.prairielearn.org) platform.  These exercises were designed for [CS 374](https://courses.grainger.illinois.edu/cs374al1/) and other courses that teach theoretical computer science at the University of Illinois Urbana-Champaign.
@@ -41,8 +43,3 @@ To use an element, copy the elements you want from `elements/` into your own `el
 
 TBA! We will provide a script in the future that will let you select questions and elements you want and package it for you to drop in your course, automatically.
 
-## Licensing
-
-All text in this repository is published under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution (CC-BY 4.0)</a> licence.
-  
-All code in this repository is published under <a href="https://opensource.org/license/mit">the MIT License</a>.
