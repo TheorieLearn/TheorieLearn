@@ -1,4 +1,6 @@
+
 <pl-question-panel>
+
   <pl-template file-name="theorielearn/templates/problem-statement.mustache">
     <pl-variable
       name="problem-statement"
@@ -6,33 +8,34 @@
       file-name="theorielearn/problem_statements/min_hotel_cost.html"
     ></pl-variable>
   </pl-template>
+
   <h5>English Definition</h5>
   Let $MinCost(i)$ denote the minimum possible cost of traveling from mile $i$ to mile $n$, including the
-    cost of the hotel at mile $i$.
-  <br/>
-  <br/>
-<h5>Recursive Definition</h5>
+  cost of the hotel at mile $i$.
+  <br/><br/>
+
+  <h5>Recursive Definition</h5>
   $$
-  \begin{equation}
-  MinCost(i)=\begin{cases}
-    0 & \text{if $i=n$}\\
-    HotelCosts[i] & \text{if $i=n-1$}\\
-    \min \begin{cases}
-    HotelCosts[i] + MinCost(i + 1)\\
-    HotelCosts[i] + MinCost(i + 2) \end{cases} & \text{otherwise}
-    \end{cases}
-  \end{equation}
+  MinCost(i) =
+  \begin{cases}
+    0 & \text{if } i = n \\
+    HotelCosts[i] & \text{if } i = n-1 \\
+    \min
+      \begin{cases}
+        HotelCosts[i] + MinCost(i + 1) \\
+        HotelCosts[i] + MinCost(i + 2)
+      \end{cases} & \text{otherwise}
+  \end{cases}
   $$
 
-
-We now need to determine the evaluation order for our memoization structure.
-In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
-
-<br/>
-<br/>
+  <br/>
+  We now need to determine the evaluation order for our memoization structure.
+  In what order do we have to evaluate each subproblem in order to make sure that all of its dependencies are satisfied?
+  <b>Note: Make sure you have proper indentation.</b>
 </pl-question-panel>
-We should fill in a(n)
-<pl-multiple-choice answers-name="drop1" order="ascend" display="dropdown" hide-letter-keys="true">
-  <pl-answer correct="false">increasing</pl-answer>
-  <pl-answer correct="true">decreasing</pl-answer>
-</pl-multiple-choice> order with respect to $i$.
+
+<pl-order-blocks answers-name="eval" grading-method="dag" indentation="true">
+  <pl-answer correct="false" tag="1">For $i$, in increasing order:</pl-answer>
+  <pl-answer correct="true" tag="2">For $i$, in decreasing order:</pl-answer>
+  <pl-answer correct="true" tag="3">Compute $MinCost(i)$</pl-answer>
+</pl-order-blocks>

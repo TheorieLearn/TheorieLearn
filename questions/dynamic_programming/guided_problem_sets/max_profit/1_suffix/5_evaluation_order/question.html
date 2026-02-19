@@ -29,9 +29,11 @@ In what order do we have to evaluate each subproblem in order to make sure that 
 
 <br/>
 <br/>
+<b>Note: Make sure you have proper indentation.</b>
 </pl-question-panel>
-We should fill in a(n)
-<pl-multiple-choice answers-name="drop1" order="ascend" display="dropdown" hide-letter-keys="true">
-  <pl-answer correct="false">increasing</pl-answer>
-  <pl-answer correct="true">decreasing</pl-answer>
-</pl-multiple-choice> order with respect to $i$.
+
+<pl-order-blocks answers-name="eval" grading-method="dag" indentation="true">
+  <pl-answer correct="false" tag="1">For $i$, in increasing order:</pl-answer>
+  <pl-answer correct="true" tag="2">For $i$, in decreasing order:</pl-answer>
+  <pl-answer correct="true" tag="3">Compute $MaxProfit(i)$</pl-answer>
+</pl-order-blocks>
