@@ -1,0 +1,3 @@
+from nltk.grammar import CFG
+
+cfg = CFG.fromstring("""
