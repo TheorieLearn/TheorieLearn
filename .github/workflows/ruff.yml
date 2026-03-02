@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch: # Allows you to run the workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   ruff:
@@ -20,5 +20,10 @@ jobs:
       - name: Run Ruff check
         uses: astral-sh/ruff-action@v3
         with:
-          # This runs `ruff check .` on your whole repository.
+          # Runs `ruff check .` on your whole repository.
           args: "check ."
+      - name: Run Ruff formatter
+        uses: astral-sh/ruff-action@v3
+        with:
+          # Checks for any format needs.
+          args: "format --check"
