@@ -9,8 +9,9 @@ import theorielearn.fooling_set_drill.server_base as server_base
 def grade(data: pl.QuestionData) -> None:
     server_base.grade(
         data,
-        lambda x: (x.count("0") != 2 * x.count("1"))
-        and (re.fullmatch("0*1*", x) is not None),
+        lambda x: (
+            (x.count("0") != 2 * x.count("1")) and (re.fullmatch("0*1*", x) is not None)
+        ),
     )
 
 
