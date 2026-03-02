@@ -6,6 +6,8 @@ import sympy
 from numpy.random import choice, randint
 from theorielearn.shared_utils import QuestionData, grade_question_parameterized
 
+GenerateT = tuple[sympy.Expr, sympy.Expr]
+
 PARSING_ERROR_MSG = "We were unable to parse your expression. Check for syntax errors \
     and make sure to only use the listed valid variables/functions."
 
@@ -326,8 +328,6 @@ def make_random_function(
 
     def f_eval(param: sympy.Expr) -> sympy.Expr:
         return base_expr.subs(x, param)
-
-    GenerateT = tuple[sympy.Expr, sympy.Expr]
 
     def recursive_generate(
         cur_complexity: float, current_recursion: int

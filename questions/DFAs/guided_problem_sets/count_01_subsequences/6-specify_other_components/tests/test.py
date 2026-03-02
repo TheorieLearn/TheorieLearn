@@ -61,14 +61,14 @@ class Test(PLTestCase):
                     )
                     return
 
-                if num01s == 4 and actual == False:
+                if num01s == 4 and not actual:
                     Feedback.add_feedback(
                         f"Your answer says that ({num0s}, {num01s}) is not an accepting state, "
                         f"but it should be an accepting state."
                     )
                     return
 
-                if num01s != 4 and actual == True:
+                if num01s != 4 and actual:
                     Feedback.add_feedback(
                         f"Your answer says that ({num0s}, {num01s}) is an accepting state, "
                         f"but it should not be an accepting state."
