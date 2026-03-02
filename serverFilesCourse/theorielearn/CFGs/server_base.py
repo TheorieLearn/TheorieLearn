@@ -9,6 +9,7 @@ def generate(data):
     ]
 
     with open(
-        data["options"]["server_files_course_path"] + "/theorielearn/CFGs/question_base.html"
+        data["options"]["server_files_course_path"]
+        + "/theorielearn/CFGs/question_base.html"
     ) as f:
         data["params"]["html"] = chevron.render(f, data).strip()

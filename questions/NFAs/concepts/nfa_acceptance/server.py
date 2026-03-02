@@ -12,7 +12,7 @@ NUM_RAND_CHOICES = 6
 
 def load_fallback_nfa():
     """
-    Fallback NFA 
+    Fallback NFA
     """
     nfa = NFA(
         states={"a", "b", "c", "d", "e", "f"},
@@ -34,7 +34,6 @@ def load_fallback_nfa():
     strings_not_in_nfa = ["10101", "1", "01110", "000", "101", "11"]
 
     return nfa, strings_in_nfa, strings_not_in_nfa
-
 
 
 def generate(data: pl.QuestionData) -> None:
@@ -90,12 +89,13 @@ def generate(data: pl.QuestionData) -> None:
             if attempts >= MAX_RETRIES:
                 break
 
-    
-    # Loading Fallback NFA if random generation fails 
+    # Loading Fallback NFA if random generation fails
 
-    if len(sampled_accepted) < NUM_RAND_CHOICES or len(sampled_not_accepted) < NUM_RAND_CHOICES:
+    if (
+        len(sampled_accepted) < NUM_RAND_CHOICES
+        or len(sampled_not_accepted) < NUM_RAND_CHOICES
+    ):
         nfa, sampled_accepted, sampled_not_accepted = load_fallback_nfa()
-
 
     if "" in sampled_accepted:
         idx = sampled_accepted.index("")
@@ -103,7 +103,6 @@ def generate(data: pl.QuestionData) -> None:
     if "" in sampled_not_accepted:
         idx = sampled_not_accepted.index("")
         sampled_not_accepted[idx] = r"\varepsilon"
-
 
     data["params"]["nfa"] = str(nfa.show_diagram())
     data["params"]["strings_in_nfa"] = sampled_accepted

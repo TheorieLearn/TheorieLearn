@@ -1,6 +1,9 @@
 from automata.fa.dfa import DFA
 from automata.fa.nfa import NFA
-from theorielearn.automata_utils.fa_utils import generate_dfa_feedback_string, get_equiv_dfa
+from theorielearn.automata_utils.fa_utils import (
+    generate_dfa_feedback_string,
+    get_equiv_dfa,
+)
 from code_feedback import Feedback
 from pl_helpers import name, points
 from pl_unit_test import PLTestCase

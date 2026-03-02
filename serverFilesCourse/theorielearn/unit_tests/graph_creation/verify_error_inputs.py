@@ -78,7 +78,9 @@ class VerifyInputErrors:
                 student_incoming_v,
             )
         except Exception:
-            assert False, "verify_num_of_parts_and_perens raised an exception when it should not have."
+            assert False, (
+                "verify_num_of_parts_and_perens raised an exception when it should not have."
+            )
 
     @pytest.mark.parametrize(
         "part_values, st_out_v_parts, st_in_v_parts, part_symbols, alt_orig_vertex_symbol",
@@ -173,9 +175,9 @@ class VerifyInputErrors:
                 alt_orig_vertex_symbol,
             )
         except Exception:
-            assert (
-                False
-            ), "verify_has_valid_parts raised an exception when it should not have."
+            assert False, (
+                "verify_has_valid_parts raised an exception when it should not have."
+            )
 
     @pytest.mark.parametrize(
         "st_out_v_parts, st_in_v_parts, edge_to_same_vertex_in_G, alt_orig_vertex_symbol",
@@ -224,4 +226,6 @@ class VerifyInputErrors:
                 alt_orig_vertex_symbol,
             )
         except Exception:
-            assert False, "verify_uses_defined_symbols raised an exception when it should not have."
+            assert False, (
+                "verify_uses_defined_symbols raised an exception when it should not have."
+            )

@@ -2,7 +2,9 @@ from typing import Optional
 
 import prairielearn as pl
 import theorielearn.scaffolded_writing.scaffolded_graph_utils as sw_gu
-from theorielearn.scaffolded_writing.constraint_based_grader import IncrementalConstraintGrader
+from theorielearn.scaffolded_writing.constraint_based_grader import (
+    IncrementalConstraintGrader,
+)
 from theorielearn.scaffolded_writing.graph_cfgs import get_ham_path_cycle_cfg
 from theorielearn.shared_utils import QuestionData
 

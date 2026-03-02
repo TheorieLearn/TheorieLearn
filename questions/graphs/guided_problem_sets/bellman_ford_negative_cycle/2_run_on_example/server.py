@@ -47,18 +47,14 @@ def get_potential_source_vertices(G: nx.DiGraph) -> Set[int]:
     potential_source_vertices = set()
 
     negative_cycles = [
-        cycle
-        for cycle in nx.simple_cycles(G)
-        if get_weight_of_cycle(G, cycle) < 0
+        cycle for cycle in nx.simple_cycles(G) if get_weight_of_cycle(G, cycle) < 0
     ]
 
     # Find nodes that are ancestors of nodes in negative cycles.
     for source in G.nodes():
         for cycle in negative_cycles:
             node_in_cycle = cycle[0]
-            if source not in cycle and node_in_cycle in nx.descendants(
-                G, source
-            ):
+            if source not in cycle and node_in_cycle in nx.descendants(G, source):
                 potential_source_vertices.add(source)
 
     # Remove nodes that are in negative cycles.

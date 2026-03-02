@@ -82,9 +82,7 @@ def determine_suffix_correctness(
     )
 
     # Check correctness
-    expanded_suffix = su.form_string_from_shorthand(
-        cleaned_distinguishing_suffix
-    )
+    expanded_suffix = su.form_string_from_shorthand(cleaned_distinguishing_suffix)
     first_string_in_language = is_in_language(first_prefix + expanded_suffix)
     second_string_in_language = is_in_language(second_prefix + expanded_suffix)
 

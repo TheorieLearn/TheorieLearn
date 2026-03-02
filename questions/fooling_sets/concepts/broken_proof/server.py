@@ -16,7 +16,7 @@ def grade(data: pl.QuestionData) -> None:
                 f"$0^{{i^{{2}} + 2i + 1}} = 0^{{{str(i**2 + 2 * i + 1)}}}$"
             )
             second_string_expanded = (
-                f"$0^{{j^{{2}} + 2i + 1}} = 0^{{{str(j**2 + 2*i + 1)}}}$"
+                f"$0^{{j^{{2}} + 2i + 1}} = 0^{{{str(j**2 + 2 * i + 1)}}}$"
             )
             return (
                 False,

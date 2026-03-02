@@ -4,9 +4,7 @@ import prairielearn as pl
 from theorielearn.shared_utils import QuestionData, grade_question_parameterized
 
 
-
 def grade(data: QuestionData) -> None:
-
     block_dict = {
         1: "For $i$, in increasing order:",
         2: "For $i$, in decreasing order:",

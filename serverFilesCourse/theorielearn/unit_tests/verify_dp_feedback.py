@@ -5,7 +5,10 @@ import pytest
 from theorielearn.dynamic_programming.arbitrary_index_array import ArbitraryIndexArray
 from theorielearn.dynamic_programming.dp_coding_exception import DPCodingException
 from theorielearn.dynamic_programming.memo_array import MemoArray
-from theorielearn.dynamic_programming.utils import NAN_ANSWER_FEEDBACK, generate_student_feedback
+from theorielearn.dynamic_programming.utils import (
+    NAN_ANSWER_FEEDBACK,
+    generate_student_feedback,
+)
 
 
 class VerifyArbitraryIndexArray:

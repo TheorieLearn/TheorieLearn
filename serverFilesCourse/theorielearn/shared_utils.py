@@ -20,6 +20,7 @@ from typing import (
 )
 from typing_extensions import assert_never, NotRequired
 
+
 class PartialScore(TypedDict):
     "A class with type signatures for the partial scores dict"
 
@@ -48,6 +49,7 @@ class QuestionData(TypedDict):
     score: float
     submitted_answers: dict[str, Any]
     variant_seed: int
+
 
 def binary_search(
     lo: int, hi: int, condition_fn: Callable[[int], bool]
@@ -443,4 +445,4 @@ def list_to_english(items: Optional[List[str]]) -> str:
         return f"{a} and {b}"
 
     *all_but_last, last = items
-    return f'{", ".join(all_but_last)}, and {last}'
+    return f"{', '.join(all_but_last)}, and {last}"

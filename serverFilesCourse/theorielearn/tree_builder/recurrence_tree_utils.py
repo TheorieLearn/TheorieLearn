@@ -379,7 +379,7 @@ class MaryTreeNode(Generic[T]):
                 else:
                     heightfb = f"The tree height is not correct: ${raw_sub['Height']}$ "
                     if extraHints:
-                        heightfb += f'is {"greater" if heightTooBig else "less"} than the correct answer'
+                        heightfb += f"is {'greater' if heightTooBig else 'less'} than the correct answer"
                     feedbackarr.append(heightfb)
 
             if final_level:
@@ -395,7 +395,7 @@ class MaryTreeNode(Generic[T]):
                 else:
                     leaffb = f"The total number of leaves is not correct: ${raw_sub['LeafCount']}$ "
                     if extraHints:
-                        leaffb += f'is {"greater" if leafTooBig else "less"} than the correct answer'
+                        leaffb += f"is {'greater' if leafTooBig else 'less'} than the correct answer"
                     feedbackarr.append(leaffb)
 
             feedback = "\n".join(feedbackarr)

@@ -16,7 +16,9 @@ def num_points_reduces_handler(submission: sw_du.DPStudentSubmission) -> str:
 
 
 def generate(data: QuestionData) -> None:
-    data["params"]["subproblem_definition_cfg"] = get_grasslearn_2var_cfg().to_json_string()
+    data["params"]["subproblem_definition_cfg"] = (
+        get_grasslearn_2var_cfg().to_json_string()
+    )
 
 
 def grade(data: QuestionData) -> None:

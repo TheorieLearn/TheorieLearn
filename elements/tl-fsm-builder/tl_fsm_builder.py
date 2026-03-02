@@ -146,7 +146,7 @@ def render(element_html: str, data: pl.QuestionData) -> str:
     display_json = data["submitted_answers"].get(display_dict_name, None)
 
     if data["panel"] == "question":
-        html_params : dict[str, Any] = {
+        html_params: dict[str, Any] = {
             "question": True,
             "answers_name": name,
             "display_json": json.dumps(display_json),
@@ -254,15 +254,17 @@ def parse(element_html: str, data: pl.QuestionData) -> None:
             for char in link["text"].split(","):
                 transitions[start_node].setdefault(char, []).append(end_node)
 
-    data["submitted_answers"][name] = json.dumps({
-        "states": states,
-        "input_symbols": data["params"][name]["alphabet_list"],
-        "transitions": transitions,
-        "initial_state": initial_states,
-        "final_states": final_states,
-        "include_dump_state": data["submitted_answers"][checkbox_name],
-        "epsilon_symbol": epsilon_symbol,
-    })
+    data["submitted_answers"][name] = json.dumps(
+        {
+            "states": states,
+            "input_symbols": data["params"][name]["alphabet_list"],
+            "transitions": transitions,
+            "initial_state": initial_states,
+            "final_states": final_states,
+            "include_dump_state": data["submitted_answers"][checkbox_name],
+            "epsilon_symbol": epsilon_symbol,
+        }
+    )
 
 
 def grade(element_html: str, data: pl.QuestionData) -> None:

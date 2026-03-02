@@ -43,6 +43,6 @@ def grade(data: QuestionData) -> None:
 
         return (1, "Correct!")
 
-    #use the shared grading helper
+    # use the shared grading helper
     grade_question_parameterized(data, "eval", grade_proof, 1, "feedback")
     pl.set_weighted_score_data(data)

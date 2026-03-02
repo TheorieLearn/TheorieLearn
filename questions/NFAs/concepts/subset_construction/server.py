@@ -89,10 +89,8 @@ def generate_table_list(question_nfa: NFA) -> list[RowDict]:
     all_table_rows: list[RowDict] = []
 
     initial_state = question_nfa.initial_state
-    closures = question_nfa._get_lambda_closures() #type: ignore
-    initial_e_reach = sort_string(
-        set().union(*(closures[i] for i in initial_state))
-    )
+    closures = question_nfa._get_lambda_closures()  # type: ignore
+    initial_e_reach = sort_string(set().union(*(closures[i] for i in initial_state)))
 
     state_queue.put(initial_e_reach)
     states_in_table.add(initial_e_reach)
@@ -107,14 +105,10 @@ def generate_table_list(question_nfa: NFA) -> list[RowDict]:
             set().union(*(question_nfa.transitions[i].get("1", set()) for i in state))
         )
         correct_e0_reach = sort_string(
-            set().union(
-                *(closures[i] for i in correct_0_transition)
-            )
+            set().union(*(closures[i] for i in correct_0_transition))
         )
         correct_e1_reach = sort_string(
-            set().union(
-                *(closures[i] for i in correct_1_transition)
-            )
+            set().union(*(closures[i] for i in correct_1_transition))
         )
 
         is_accepting: IsAcceptingTextT = (

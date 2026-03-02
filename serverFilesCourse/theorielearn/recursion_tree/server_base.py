@@ -152,23 +152,26 @@ def stringify(nodes: List[Tuple[Expr, int]]) -> str:
         str(new_node).replace("**", "^") for new_node in nodes if new_node[1] > 0
     )
 
+
 def check_bad_input(submission: str) -> Optional[str]:
     if not isinstance(submission, str):
         submission = str(submission)
 
-    if len(re.findall(r'\blog\b', submission)) > 2:
+    if len(re.findall(r"\blog\b", submission)) > 2:
         return "Sanity Check: Too many instances of 'log'."
 
     # Check for exponents containing variables (checks ^ and **)
-    exponent_pattern = re.compile(r'(\^|\*\*)\s*[\{\(\[]?\s*\d*[a-zA-Z]+\s*[\}\)\]]?')
+    exponent_pattern = re.compile(r"(\^|\*\*)\s*[\{\(\[]?\s*\d*[a-zA-Z]+\s*[\}\)\]]?")
     if exponent_pattern.search(submission):
         return "Sanity Check: Variables in exponents are not required."
+
 
 def sanity_check(data: QuestionData) -> None:
     for question, answer in data["submitted_answers"].items():
         bad = check_bad_input(answer)
-        if(bad):
+        if bad:
             data["format_errors"][question] = bad
+
 
 def grade(data: QuestionData) -> None:
     sanity_check(data)

@@ -1,6 +1,8 @@
 import prairielearn as pl
 import theorielearn.scaffolded_writing.dp_utils as sw_du
-from theorielearn.scaffolded_writing.constraint_based_grader import IncrementalConstraintGrader
+from theorielearn.scaffolded_writing.constraint_based_grader import (
+    IncrementalConstraintGrader,
+)
 from theorielearn.scaffolded_writing.dp_cfgs import get_partition_min_sum_cfg
 from theorielearn.shared_utils import QuestionData
 
@@ -10,12 +12,13 @@ def generate(data: QuestionData) -> None:
         get_partition_min_sum_cfg().to_json_string()
     )
 
+
 def array_reduces_handler(submission: sw_du.DPStudentSubmission) -> str:
     return "if we decide to place a plus sign after the first digit, then we would need to compute the minimum sum that can be obtained from A[2..n] using at most j 1-digit terms"
 
+
 def one_digit_term_handler(submission: sw_du.DPStudentSubmission) -> str:
     return "if we decide to use a 1-digit term, then we would need to compute the minimum sum that can be obtained from A[2..n] without using any more 1-digit terms"
-
 
 
 def grade(data: QuestionData) -> None:

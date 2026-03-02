@@ -9,6 +9,8 @@ import prairielearn as pl
 from prairielearn import QuestionData
 
 SCAFFOLDED_WRITING_MUSTACHE_TEMPLATE_NAME = "tl-scaffolded-writing.mustache"
+
+
 class Type(Enum):
     DP = "isDP"
     GRAPH = "isGraph"
@@ -53,7 +55,9 @@ def prepare(element_html: str, data: QuestionData) -> None:
     name = pl.get_string_attrib(element, "answers-name")
 
     if f"{name}_cfg" not in data["params"]:
-        raise Exception(f"CFG was not provided for tl-scaffolded-writing element: {name}")
+        raise Exception(
+            f"CFG was not provided for tl-scaffolded-writing element: {name}"
+        )
 
 
 def render(element_html: str, data: QuestionData) -> str:
@@ -101,7 +105,7 @@ def render(element_html: str, data: QuestionData) -> str:
 
         return f"""
             <div class="tl-scaffolded-writing-submission">
-                {''.join(feedback_paragraphs)}
+                {"".join(feedback_paragraphs)}
             </div>
         """
 

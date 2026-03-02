@@ -43,6 +43,7 @@ def get_partition_min_sum_cfg() -> ScaffoldedWritingCFG:
     """
     )
 
+
 def get_partition_sum_cfg() -> ScaffoldedWritingCFG:
     function_names = concat_into_production_rule(
         ["DP", "Memo", "MinSum", "MaxSum", "MinTerms", "MaxTerms"], ["(i)", "(i,j)"]
@@ -128,6 +129,7 @@ def get_hotel_cost_coupons_cfg() -> ScaffoldedWritingCFG:
         EPSILON ->
     """
     )
+
 
 def get_hotel_cost_cfg() -> ScaffoldedWritingCFG:
     function_names = concat_into_production_rule(
@@ -253,7 +255,6 @@ def get_grasslearn_2var_cfg() -> ScaffoldedWritingCFG:
         EPSILON ->
     """
     )
-
 
 
 def get_max_profit_cfg() -> ScaffoldedWritingCFG:

@@ -20,6 +20,9 @@ class CFG:
     @classmethod
     def fromstring(cls: Type[T], input: str, encoding: Optional[str] = None) -> T: ...
     def productions(
-        self, lhs: Optional[Nonterminal] = None, rhs: Optional[SymbolT] = None, empty: bool = False
+        self,
+        lhs: Optional[Nonterminal] = None,
+        rhs: Optional[SymbolT] = None,
+        empty: bool = False,
     ) -> List[Production]: ...
     def start(self) -> Nonterminal: ...

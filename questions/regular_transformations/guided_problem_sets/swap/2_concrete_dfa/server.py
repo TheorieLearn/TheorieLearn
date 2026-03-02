@@ -4,7 +4,10 @@ from typing import Any, Dict
 
 import prairielearn as pl
 import theorielearn.regular_transformation_concrete_example.server_base as server_base
-from theorielearn.automata_utils.fa_utils import dfa_read_input_from_state, generate_random_dfa
+from theorielearn.automata_utils.fa_utils import (
+    dfa_read_input_from_state,
+    generate_random_dfa,
+)
 from automata.fa.dfa import DFA, DFATransitionsT
 
 EPSILON = "ε"
@@ -57,7 +60,8 @@ def should_use_dfa(M: DFA) -> bool:
             for (q, a) in product(M.final_states, M.input_symbols)
         )
         and all(
-            dfa_read_input_from_state(M, q, "01") != dfa_read_input_from_state(M, q, "10")
+            dfa_read_input_from_state(M, q, "01")
+            != dfa_read_input_from_state(M, q, "10")
             for q in M.states
         )
     )

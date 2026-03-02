@@ -7,8 +7,9 @@ import sys
 # Configuration
 TARGET_DIR = "DFAs/practice"
 
+
 def generate_questions_json(target=TARGET_DIR, title=None):
-    if (title is not None):
+    if title is not None:
         data = {"title": title, "questions": []}
     else:
         data = {"questions": []}
@@ -26,23 +27,20 @@ def generate_questions_json(target=TARGET_DIR, title=None):
 
         # Check if it is actually a directory
         if os.path.isdir(full_path):
-            
             # Ensure we use forward slashes even on Windows for consistency
             clean_path = full_path.replace("\\", "/")
-            
-            question_obj = {
-                "id": clean_path,
-                "points": 1
-            }
+
+            question_obj = {"id": clean_path, "points": 1}
             data["questions"].append(question_obj)
 
     # Print to console (stdout)
     print(json.dumps(data, indent=4))
 
+
 if __name__ == "__main__":
-    if (len(sys.argv) > 2):
+    if len(sys.argv) > 2:
         generate_questions_json(sys.argv[1], " ".join(sys.argv[2:]))
-    elif (len(sys.argv) == 2):
+    elif len(sys.argv) == 2:
         generate_questions_json(sys.argv[1])
     else:
         generate_questions_json()

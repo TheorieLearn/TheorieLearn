@@ -5,6 +5,7 @@ from typing import Any, Optional
 import pytest
 import theorielearn.shared_utils as su
 
+
 @pytest.fixture
 def qdata() -> su.QuestionData:
     """
@@ -27,10 +28,11 @@ def qdata() -> su.QuestionData:
         "ai_grading": False,
         "answers_names": dict(),
         "num_valid_submissions": 0,
-        "manual_grading": False
+        "manual_grading": False,
     }
 
     return data
+
 
 class VerifyFormStringFromShorthand:
     @pytest.mark.parametrize(
@@ -42,7 +44,7 @@ class VerifyFormStringFromShorthand:
             "1^}",
             "1^{{2}",
             "0^{1}0^{1}}",
-            "abc0" "0abc",
+            "abc00abc",
             "1^{1a2}",
             "0^{-1}",
             "2^{12}",
@@ -144,12 +146,12 @@ def verify_grade_question_parametrized_correct(
     expected_score = 1.0 if expected_grade else 0.0
     assert su.get_partial_score(data, question_name) == expected_score
     assert type(su.get_partial_score(data, question_name)) is float
-    assert data["partial_scores"][question_name]["weight"] == weight # type: ignore
+    assert data["partial_scores"][question_name]["weight"] == weight  # type: ignore
 
     expected_feedback = good_feedback if expected_grade else bad_feedback
 
     assert data["feedback"][feedback_field] == expected_feedback
-    assert data["partial_scores"][question_name]["feedback"] == expected_feedback # type: ignore
+    assert data["partial_scores"][question_name]["feedback"] == expected_feedback  # type: ignore
 
 
 @pytest.mark.parametrize(
@@ -171,9 +173,7 @@ def verify_grade_question_parametrized_exception(
 
     if should_raise:
         with pytest.raises(ValueError, match="input should not be present"):
-            su.grade_question_parameterized(
-                data, question_name, grading_function
-            )
+            su.grade_question_parameterized(data, question_name, grading_function)
     else:
         su.grade_question_parameterized(data, question_name, grading_function)
 
@@ -192,7 +192,7 @@ def verify_grade_question_parametrized_bad_grade_function() -> None:
         return "True", f"The answer {ans} is right"
 
     with pytest.raises(AssertionError):
-        su.grade_question_parameterized(data, question_name, grading_function) #type: ignore
+        su.grade_question_parameterized(data, question_name, grading_function)  # type: ignore
 
 
 def verify_grade_question_parametrized_key_error_blank() -> None:
@@ -274,7 +274,7 @@ def verify_grade_question_tokenized(
             == "This input field is not a set, so it does not require curly braces"
         )
 
-    assert data["partial_scores"]["base"]["weight"] == weight #type: ignore
+    assert data["partial_scores"]["base"]["weight"] == weight  # type: ignore
     assert su.get_partial_score(data, "base") == expected_grade
 
 
@@ -295,7 +295,11 @@ def verify_set_holistic_feedback(
     expected_feedback: str, student_answer: tuple[str, str, str]
 ) -> None:
     data = qdata()
-    data["partial_scores"] = {"p1": {"score": 0}, "p2": {"score": 0}, "p3": {"score": 0}}
+    data["partial_scores"] = {
+        "p1": {"score": 0},
+        "p2": {"score": 0},
+        "p3": {"score": 0},
+    }
     data["submitted_answers"] = {
         "p1": student_answer[0],
         "p2": student_answer[1],

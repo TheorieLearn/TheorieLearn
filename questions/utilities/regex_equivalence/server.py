@@ -10,9 +10,9 @@ def infer_alphabet(*regexes):
     """Infer alphabet from regex symbols (letters or digits)."""
     symbols = set()
     for r in regexes:
-        #Collect alphanumeric symbols used in the regex
+        # Collect alphanumeric symbols used in the regex
         symbols |= set(re.findall(r"[A-Za-z0-9]", r))
-    #Default to binary alphabet if nothing found
+    # Default to binary alphabet if nothing found
     return symbols or set("01")
 
 
@@ -32,7 +32,7 @@ def grade(data):
             compute_nfa_from_regex_lines(regex2, alphabet), retain_names=False
         ).minify()
 
-        #compare DFAs
+        # compare DFAs
         equal = dfa1 == dfa2
         subset = dfa1.issubset(dfa2)
         superset = dfa1.issuperset(dfa2)
@@ -40,8 +40,7 @@ def grade(data):
         # find a counter example for the user
         counterexample = get_minimum_counterexample(dfa1, dfa2)[0]
 
-
-        #building feedback message
+        # building feedback message
         if equal:
             msg = f"Equivalent!\n{regex1} and {regex2} describe the same language."
             data["score"] = 1.0
@@ -55,7 +54,7 @@ def grade(data):
                 lines.append(f"{regex1} and {regex2} are not equivalent!")
 
             if counterexample:
-                #Determine which regex accepts/rejects the counterexample
+                # Determine which regex accepts/rejects the counterexample
                 accepts1 = dfa1.accepts_input(counterexample)
                 accepts2 = dfa2.accepts_input(counterexample)
                 if accepts1 and not accepts2:

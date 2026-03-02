@@ -15,5 +15,7 @@ def generate(data):
     data["params"]["rec"] = rec
     # T(n) = c if n = b^p and b^q * T(n/b) + n^d otherwise
     data["params"]["b"] = b
-    data["params"]["d"] = d if d > 1 and d != b else b+1 # Only used for wrong MCQ answers
+    data["params"]["d"] = (
+        d if d > 1 and d != b else b + 1
+    )  # Only used for wrong MCQ answers
     data["params"]["btp"] = b**p

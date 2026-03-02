@@ -104,15 +104,19 @@ def generate_dfa_feedback_html(
     feedback_string_list = []
 
     if false_positives:
-        feedback_string_list.extend([
-            f"Here are some strings matched by your {student_input_name} which are not in the language:",
-            latex_prepare_list(false_positives),
-        ])
+        feedback_string_list.extend(
+            [
+                f"Here are some strings matched by your {student_input_name} which are not in the language:",
+                latex_prepare_list(false_positives),
+            ]
+        )
     if false_negatives:
-        feedback_string_list.extend([
-            f"Here are some strings in the language which aren't matched by your {student_input_name}:",
-            latex_prepare_list(false_negatives),
-        ])
+        feedback_string_list.extend(
+            [
+                f"Here are some strings in the language which aren't matched by your {student_input_name}:",
+                latex_prepare_list(false_negatives),
+            ]
+        )
     if not false_positives and not false_negatives:
         feedback_string_list.append(
             f"There are no counterexamples of length at most {max_length_to_check}."

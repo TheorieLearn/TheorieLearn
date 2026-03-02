@@ -435,6 +435,7 @@ def dfa_from_json(json_dfa: DFAJsonDict) -> DFA:
         final_states=final_states,
     )
 
+
 def dfa_dump_json(dfa: DFA) -> DFAJsonDict:
     state_map = {state: str(i) for i, state in enumerate(dfa.states)}
     json_states = sorted(state_map[state] for state in dfa.states)
@@ -457,6 +458,7 @@ def dfa_dump_json(dfa: DFA) -> DFAJsonDict:
         "initial_state": json_initial_state,
         "final_states": json_final_states,
     }
+
 
 def nfa_dump_json(nfa: NFA) -> NFAJsonDict:
     state_map = {state: str(i) for i, state in enumerate(nfa.states)}

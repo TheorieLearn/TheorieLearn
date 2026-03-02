@@ -17,7 +17,6 @@ class SympyJson(TypedDict):
     _assumptions: NotRequired[AssumptionsDictT]
     _custom_functions: NotRequired[list[str]]
 
-
 class LocalsForEval(TypedDict):
     """A class with type signatures for the locals_for_eval dict"""
 

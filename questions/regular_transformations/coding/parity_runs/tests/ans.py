@@ -19,13 +19,18 @@ def transform(M: DFA) -> DFA:
                     elif c == nextcharint:
                         transitions[(q, c, p)][nextchar] = (q, nextcharint, 1 - p)
                     else:
-                        transitions[(q, c, p)][nextchar] = (M.transitions[q][str(p)], nextcharint, 1)
-
+                        transitions[(q, c, p)][nextchar] = (
+                            M.transitions[q][str(p)],
+                            nextcharint,
+                            1,
+                        )
 
     initial_state = (M.initial_state, None, 0)
     final_states = set()
     for q, c, p in states:
-        if (c == None and q in M.final_states) or (c != None and M.transitions[q][str(p)] in M.final_states):
+        if (c == None and q in M.final_states) or (
+            c != None and M.transitions[q][str(p)] in M.final_states
+        ):
             final_states.add((q, c, p))
 
     return DFA(

@@ -7,19 +7,22 @@ import networkx as nx
 # Helper functions
 # ---------------------------------------------------------------------------
 
+
 def isSimple(s: str):
     return "(" not in s and ")" not in s and "/" not in s and "+" not in s
+
 
 def is_balanced(s: str):
     stack = []
     for char in s:
-        if char == '(':
+        if char == "(":
             stack.append(char)
-        elif char == ')':
+        elif char == ")":
             if not stack:
                 return False
             stack.pop()
     return len(stack) == 0
+
 
 def remove_outer_parentheses(s: str):
     if s is None:
@@ -28,43 +31,45 @@ def remove_outer_parentheses(s: str):
         s = s[1:-1]
     return s
 
+
 def split_reg_expr(expr: str):
     parts = []
     current_part = []
     paren_depth = 0
 
     for char in expr:
-        if char == '(':
+        if char == "(":
             paren_depth += 1
             current_part.append(char)
-        elif char == ')':
+        elif char == ")":
             paren_depth -= 1
             current_part.append(char)
-        elif char == '+' and paren_depth == 0:
-            parts.append(''.join(current_part).strip())
+        elif char == "+" and paren_depth == 0:
+            parts.append("".join(current_part).strip())
             current_part = []
         else:
             current_part.append(char)
 
-    parts.append(''.join(current_part).strip())
+    parts.append("".join(current_part).strip())
     return parts
+
 
 def processParenthesis(s: str):
     stack = []
     result: List[str] = []
     for i, char in enumerate(s):
-        if char == '(':
+        if char == "(":
             if not stack:
                 start = i
             stack.append(char)
-        elif char == ')':
+        elif char == ")":
             stack.pop()
             if not stack:
-                result.append(s[start:i+1])
+                result.append(s[start : i + 1])
     if result:
         before_parentheses = s.split(result[0])[0]
         first_parentheses = result[0]
-        after_parentheses = s[s.find(first_parentheses) + len(first_parentheses):]
+        after_parentheses = s[s.find(first_parentheses) + len(first_parentheses) :]
         return before_parentheses, first_parentheses, after_parentheses
     else:
         return s
@@ -73,6 +78,7 @@ def processParenthesis(s: str):
 # ---------------------------------------------------------------------------
 # Graph construction (NFA)
 # ---------------------------------------------------------------------------
+
 
 def genGraph(reg_expr: str, start_key, G):
     reg_expr = reg_expr.replace("|", "+")
@@ -85,7 +91,7 @@ def genGraph(reg_expr: str, start_key, G):
         temp_key += 1
         for s in reg_expr:
             if s == "e":
-                s = "\u03B5"  # epsilon
+                s = "\u03b5"  # epsilon
             G.add_node(temp_key, label="")
             G.add_edge(temp_key - 1, temp_key, label=s)
             temp_key += 1
@@ -96,29 +102,29 @@ def genGraph(reg_expr: str, start_key, G):
     if len(parts) == 1:
         if "(" in reg_expr or ")" in reg_expr:
             paren_result = processParenthesis(reg_expr)
-            if (type(paren_result) is tuple):
+            if type(paren_result) is tuple:
                 before, paren, after = paren_result
         else:
-            kleene_index = reg_expr.index('*')
-            before = reg_expr[:kleene_index - 1]
+            kleene_index = reg_expr.index("*")
+            before = reg_expr[: kleene_index - 1]
             paren = reg_expr[kleene_index - 1]
             after = reg_expr[kleene_index:]
 
         if len(before) > 0:
             end_key = genGraph(before, start_key + 1, G)
-            G.add_edge(start_key, start_key + 1, label="\u03B5")
+            G.add_edge(start_key, start_key + 1, label="\u03b5")
             temp_key = end_key
             start_key = end_key
 
         end_key = genGraph(paren, temp_key + 1, G)
-        G.add_edge(temp_key, temp_key + 1, label="\u03B5")
+        G.add_edge(temp_key, temp_key + 1, label="\u03b5")
 
         if after.startswith("*"):
-            G.add_edge(end_key, temp_key, label="\u03B5")
+            G.add_edge(end_key, temp_key, label="\u03b5")
             temp_key = end_key + 1
             G.add_node(temp_key, label="f")
-            G.add_edge(start_key, temp_key, label="\u03B5")
-            G.add_edge(end_key, temp_key, label="\u03B5")
+            G.add_edge(start_key, temp_key, label="\u03b5")
+            G.add_edge(end_key, temp_key, label="\u03b5")
             after = after[1:]
             end_key = temp_key
         else:
@@ -126,20 +132,20 @@ def genGraph(reg_expr: str, start_key, G):
 
         if len(after) > 0:
             end_key = genGraph(after, temp_key + 1, G)
-            G.add_edge(temp_key, temp_key + 1, label="\u03B5")
+            G.add_edge(temp_key, temp_key + 1, label="\u03b5")
         return end_key
 
     end_keys = []
     for part in parts:
         end_key = genGraph(part, temp_key + 1, G)
-        G.add_edge(start_key, temp_key + 1, label="\u03B5")
+        G.add_edge(start_key, temp_key + 1, label="\u03b5")
         temp_key = end_key
         end_keys.append(end_key)
 
     temp_key = max(end_keys) + 1
     G.add_node(temp_key, label="f")
     for end_key in end_keys:
-        G.add_edge(end_key, temp_key, label="\u03B5")
+        G.add_edge(end_key, temp_key, label="\u03b5")
     return temp_key
 
 
@@ -153,7 +159,7 @@ def getEpsilonClosure(G, state):
         for neighbor in G.neighbors(curr):
             if not visited[neighbor]:
                 edge = G.edges[curr, neighbor]["label"]
-                if edge == "\u03B5":
+                if edge == "\u03b5":
                     closure.add(neighbor)
                     stack.append(neighbor)
     return closure
@@ -162,6 +168,7 @@ def getEpsilonClosure(G, state):
 # ---------------------------------------------------------------------------
 # Function: Generate strings accepted by regex
 # ---------------------------------------------------------------------------
+
 
 def genStrings(reg):
     """
@@ -191,23 +198,23 @@ def genStrings(reg):
         # explore neighbors
         for neighbor in G.neighbors(curr):
             edge = G.edges[curr, neighbor].get("label", None)
-            if edge != "\u03B5" and type(edge)==str:
+            if edge != "\u03b5" and type(edge) == str:
                 queue.append((neighbor, built + edge))
             else:
                 queue.append((neighbor, built))
 
-    string_list = {s if s != "" else "\u03B5" for s in string_list}
+    string_list = {s if s != "" else "\u03b5" for s in string_list}
 
     result = sorted(string_list, key=lambda x: (len(x), x))
-    if "\u03B5" in result:
-        result.insert(0, result.pop(result.index("\u03B5")))
+    if "\u03b5" in result:
+        result.insert(0, result.pop(result.index("\u03b5")))
     return result
-
 
 
 # ---------------------------------------------------------------------------
 # PrairieLearn grade() entry point
 # ---------------------------------------------------------------------------
+
 
 def grade(data):
     regex = data["submitted_answers"]["regex"]
@@ -218,11 +225,7 @@ def grade(data):
         strings = genStrings(regex)
         formatted = "<br>".join(f"`{s}`" for s in strings)
         data["score"] = 1
-        data["feedback"] = {
-            "message": f"Accepted strings for {regex}:<br>{formatted}"
-        }
+        data["feedback"] = {"message": f"Accepted strings for {regex}:<br>{formatted}"}
     except Exception as e:
         data["score"] = 0
-        data["feedback"] = {
-            "message": f"Error generating strings: {str(e)}"
-        }
+        data["feedback"] = {"message": f"Error generating strings: {str(e)}"}

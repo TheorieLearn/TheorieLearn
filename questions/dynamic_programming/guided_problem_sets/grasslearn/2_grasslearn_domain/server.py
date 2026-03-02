@@ -20,6 +20,5 @@ def grade(data: su.QuestionData) -> None:
             )
         return False, None
 
-
     su.grade_question_parameterized(data, "highk", grade_highk)
     pl.set_weighted_score_data(data)

@@ -23,9 +23,7 @@ def generate(data: QuestionData) -> None:
 
 
 def grade(data: QuestionData) -> None:
-    DAG = nx.node_link_graph(
-        data["params"]["graph"], edges="links"
-    )
+    DAG = nx.node_link_graph(data["params"]["graph"], edges="links")
 
     if (
         data["submitted_answers"]["ex_topo_sort"] == "2740153968"

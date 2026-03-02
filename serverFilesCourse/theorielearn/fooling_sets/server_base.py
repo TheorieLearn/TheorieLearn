@@ -11,6 +11,7 @@ def generate(data: QuestionData) -> None:
     ]
 
     with open(
-        data["options"]["server_files_course_path"] + "/theorielearn/fooling_sets/question_base.html"
+        data["options"]["server_files_course_path"]
+        + "/theorielearn/fooling_sets/question_base.html"
     ) as f:
         data["params"]["html"] = chevron.render(f, data["params"]).strip()

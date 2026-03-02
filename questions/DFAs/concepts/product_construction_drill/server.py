@@ -3,11 +3,16 @@ from enum import IntEnum
 
 import theorielearn.shared_utils as su
 from automata.fa.dfa import DFA
-from theorielearn.automata_utils.fa_utils import generate_random_dfa, generate_dfa_html_description
+from theorielearn.automata_utils.fa_utils import (
+    generate_random_dfa,
+    generate_dfa_html_description,
+)
 from typing_extensions import assert_never
 
 
 ATTEMPTS = 100
+
+
 class QuestionType(IntEnum):
     BOTH = 0
     AT_LEAST_ONE = 1
@@ -66,7 +71,7 @@ def generate(data: su.QuestionData) -> None:
         low = max(1, num_answers - len(rejecting_states))
         high = min(len(final_states), num_answers)
 
-        if (low > high):
+        if low > high:
             continue
         num_correct_answers = random.randint(low, high)
 
@@ -94,10 +99,10 @@ def generate(data: su.QuestionData) -> None:
     data["params"]["set_description"] = SET_DESCRIPTIONS[question_type]
     data["params"]["accept_states_answers"] = accept_states_answers
 
-    data["correct_answers"]["end_state_1"] = dfa1.transitions[transition_start_1][ #type: ignore
+    data["correct_answers"]["end_state_1"] = dfa1.transitions[transition_start_1][  # type: ignore
         transition_symbol
     ]
-    data["correct_answers"]["end_state_2"] = dfa2.transitions[transition_start_2][ #type: ignore
+    data["correct_answers"]["end_state_2"] = dfa2.transitions[transition_start_2][  # type: ignore
         transition_symbol
     ]
     data["correct_answers"]["initial_state_1"] = dfa1.initial_state

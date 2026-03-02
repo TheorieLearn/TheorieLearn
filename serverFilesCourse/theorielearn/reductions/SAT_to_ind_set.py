@@ -96,8 +96,7 @@ def is_ind_set_valid(graph: nx.Graph, k: int, certificate: Any) -> Tuple[bool, s
     if size != k:
         return (
             False,
-            f"Your independent set has size {size}, "
-            f"but is supposed to have size {k}.",
+            f"Your independent set has size {size}, but is supposed to have size {k}.",
         )
 
     for u, v in graph.edges:

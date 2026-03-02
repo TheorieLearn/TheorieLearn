@@ -1603,7 +1603,7 @@ def question_data() -> QuestionData:
         "ai_grading": False,
         "answers_names": dict(),
         "num_valid_submissions": 0,
-        "manual_grading": False
+        "manual_grading": False,
     }
 
     return data

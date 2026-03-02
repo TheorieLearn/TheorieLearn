@@ -2,7 +2,9 @@ from typing import Optional
 
 import prairielearn as pl
 import theorielearn.scaffolded_writing.scaffolded_graph_utils as sw_gu
-from theorielearn.scaffolded_writing.constraint_based_grader import IncrementalConstraintGrader
+from theorielearn.scaffolded_writing.constraint_based_grader import (
+    IncrementalConstraintGrader,
+)
 from theorielearn.scaffolded_writing.graph_cfgs import get_no_russian_flag_cfg
 from theorielearn.shared_utils import QuestionData
 

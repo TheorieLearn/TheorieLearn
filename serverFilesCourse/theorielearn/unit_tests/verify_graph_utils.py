@@ -59,7 +59,7 @@ def generate_test_graph(edges: EdgeListT) -> nx.DiGraph:
     all_unweighted = all(ith_weight_is_none)
     if any(ith_weight_is_none) and not all_unweighted:
         raise ValueError(
-            "Graph has inconsistent weighting" "(only some edeges have weights)"
+            "Graph has inconsistent weighting(only some edeges have weights)"
         )
 
     graph = nx.DiGraph()

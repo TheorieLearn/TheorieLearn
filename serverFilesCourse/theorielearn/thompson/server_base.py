@@ -33,7 +33,8 @@ def generate(data: Dict[str, Any]) -> None:
     regex = data["params"]["regex_string"]
     data["params"]["regex_latex"] = convert_regex_to_latex(regex)
     with open(
-        data["options"]["server_files_course_path"] + "/theorielearn/thompson/question_base.html"
+        data["options"]["server_files_course_path"]
+        + "/theorielearn/thompson/question_base.html"
     ) as f:
         data["params"]["html"] = chevron.render(f, data).strip()
 
@@ -104,6 +105,7 @@ def grade(data: pl.QuestionData, nfa: NFA) -> None:
     pl.set_weighted_score_data(data)
 
     with open(
-        data["options"]["server_files_course_path"] + "/theorielearn/thompson/submission_base.html"
+        data["options"]["server_files_course_path"]
+        + "/theorielearn/thompson/submission_base.html"
     ) as f:
-        data["feedback"]["submission_html"] = chevron.render(f, data).strip() #type: ignore
+        data["feedback"]["submission_html"] = chevron.render(f, data).strip()  # type: ignore

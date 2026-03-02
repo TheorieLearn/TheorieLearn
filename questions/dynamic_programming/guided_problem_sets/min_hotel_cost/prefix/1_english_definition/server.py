@@ -1,6 +1,8 @@
 import prairielearn as pl
 import theorielearn.scaffolded_writing.dp_utils as sw_du
-from theorielearn.scaffolded_writing.constraint_based_grader import IncrementalConstraintGrader
+from theorielearn.scaffolded_writing.constraint_based_grader import (
+    IncrementalConstraintGrader,
+)
 from theorielearn.scaffolded_writing.dp_cfgs import get_hotel_cost_cfg
 from theorielearn.shared_utils import QuestionData
 
@@ -14,9 +16,7 @@ def prefix_handler(submission: sw_du.DPStudentSubmission) -> str:
 
 
 def generate(data: QuestionData) -> None:
-    data["params"]["subproblem_definition_cfg"] = (
-        get_hotel_cost_cfg().to_json_string()
-    )
+    data["params"]["subproblem_definition_cfg"] = get_hotel_cost_cfg().to_json_string()
 
 
 def grade(data: QuestionData) -> None:

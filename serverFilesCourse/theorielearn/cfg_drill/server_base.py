@@ -16,7 +16,8 @@ def generate(data: Dict[str, Any]) -> None:
         data["params"]["production_rules"]
     )
     with open(
-        data["options"]["server_files_course_path"] + "/theorielearn/cfg_drill/question_base.html"
+        data["options"]["server_files_course_path"]
+        + "/theorielearn/cfg_drill/question_base.html"
     ) as f:
         data["params"]["html"] = chevron.render(f, data).strip()
 

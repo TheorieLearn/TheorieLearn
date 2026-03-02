@@ -4,6 +4,7 @@ import random
 import sympy
 from sympy import Expr
 
+
 # creates a for loop.
 def gen_for(
     *,
@@ -49,7 +50,7 @@ def gen_for(
         f"for ({iter} = {start}; {iter} < {fornfact}*n; {iter} += {jump}): \n",
         f"for ({iter} = 1; {iter} < n; {iter} *= 2): \n",
         f"for ({iter} = 0; {iter} < {fornfact}; {iter}++): \n",
-        f"for ({iter} = 1; {iter} < n**{random.randint(1,3)}; {iter}*={random.randint(2,4)}): \n",
+        f"for ({iter} = 1; {iter} < n**{random.randint(1, 3)}; {iter}*={random.randint(2, 4)}): \n",
     ]
     Ansops = [n, fornfact * n / jump, sympy.log(n), fornfact, sympy.log(n)]
     ForOptLabels = [

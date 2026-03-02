@@ -2,6 +2,7 @@ from typing import Any
 import prairielearn as pl
 from theorielearn.shared_utils import QuestionData, grade_question_parameterized
 
+
 def grade(data: QuestionData) -> None:
     block_dict = {
         1: "For $i$, in decreasing order:",
@@ -17,9 +18,15 @@ def grade(data: QuestionData) -> None:
         if proof[0]["inner_html"] == block_dict[5]:
             return (0, "You haven't defined an evaluation order first.")
         if proof[0]["inner_html"] == block_dict[3]:
-            return (0, "Evaluating in increasing order violates the suffix dependency on $i+1$ and $i+2$.")
+            return (
+                0,
+                "Evaluating in increasing order violates the suffix dependency on $i+1$ and $i+2$.",
+            )
         if proof[0]["inner_html"] == block_dict[4]:
-            return (0, "Evaluating in decreasing $j$ order violates $j-1$ dependencies.")
+            return (
+                0,
+                "Evaluating in decreasing $j$ order violates $j-1$ dependencies.",
+            )
 
         i_first = proof[0]["inner_html"] in {block_dict[1], block_dict[3]}
         if len(proof) == 1:
@@ -28,11 +35,20 @@ def grade(data: QuestionData) -> None:
         if proof[1]["indent"] != 1:
             return (0.33, "Your second block is indented incorrectly.")
         if proof[1]["inner_html"] == block_dict[3]:
-            return (0.33, "Evaluating in increasing order violates suffix dependencies on $i+1$ and $i+2$.")
+            return (
+                0.33,
+                "Evaluating in increasing order violates suffix dependencies on $i+1$ and $i+2$.",
+            )
         if proof[1]["inner_html"] == block_dict[4]:
-            return (0.33, "Evaluating in decreasing $j$ order violates $j-1$ dependencies.")
+            return (
+                0.33,
+                "Evaluating in decreasing $j$ order violates $j-1$ dependencies.",
+            )
         if proof[1]["inner_html"] == block_dict[5]:
-            return (0.33, f"You haven't defined an evaluation order for {'j' if i_first else 'i'}.")
+            return (
+                0.33,
+                f"You haven't defined an evaluation order for {'j' if i_first else 'i'}.",
+            )
 
         if len(proof) == 2:
             return (0, "Your evaluation is incomplete.")
