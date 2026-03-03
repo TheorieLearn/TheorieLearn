@@ -1,6 +1,6 @@
 <pl-question-panel>
 <markdown>
-Provide a context free grammar that generates the following language:
+Provide a context-free grammar that generates the following language:
 
 ***<center>{{{params.language_description}}}</center>***
 
@@ -8,21 +8,32 @@ Provide a context free grammar that generates the following language:
 
 ##### Instructions
 
-When writing production rules, make sure to include a space between variables (e.g. `S -> A B | C` instead of `S -> AB | C`). In the second version, the grader would interpret `AB` as a single variable.
+Write your grammar rules below, **one rule per line**:
 
-Also, to handle empty strings, you should just not write anything where you would normally write $\epsilon$. For example, $S \rightarrow \epsilon$ should be written as `S ->`, and $A \rightarrow A0 \mid \epsilon$ should be written as `A -> A '0' |`.
+```
+NONTERMINAL -> alternative₁ | alternative₂ | ...
+```
 
-Note that the left-hand side of the first production rule should be the start symbol; The grader doesn't place any special importance on the symbol $S$.
+- **Nonterminals** start with an uppercase letter: `S`, `A`, `B`, `Start`, …
+- **Terminals** are lowercase letters or digits written directly: `0`, `1`, `a`, `b`, …
+- **Epsilon** (empty string ε) is written as `e`, or simply left empty: `S -> 0S |` and `S -> 0S | e` mean the same thing
+- The nonterminal on the **first rule** is the start symbol
+- Spaces between symbols are optional: `0S0` and `0 S 0` both work
+- Lines starting with `#` are comments and are ignored
 
-As an example, below are the rules that generate the language 0\*1\*
+**Example** — a grammar for $\{0^n \mid n \geq 0\}$ could be written as:
+```
+S -> 0S | e
+```
 </markdown>
 
 <pl-file-editor
-    file-name="submission.txt">
-S -> A B
-A -> A '0' |
-B -> B '1' |
-
+    file-name="grammar.txt"
+    ace-mode="ace/mode/text"
+    min-lines="10">
+# Write your grammar rules here.
+# Replace this example with your grammar for the given language.
+S -> e
 </pl-file-editor>
 
 </pl-question-panel>
