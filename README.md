@@ -43,3 +43,10 @@ To use an element, copy the elements you want from `elements/` into your own `el
 
 TBA! We will provide a script in the future that will let you select questions and elements you want and package it for you to drop in your course, automatically.
 
+### Contributing to TheorieLearn
+
+We welcome participation with TheorieLearn in many ways. First we hope that you take and adapt the material here for use in your own courses. This can be done by copying material from the repo or by forking. If you fork it is a boon for the project if you make your fork public. 
+
+Our goal with the public TheorieLearn repository is not to produce canned courses so when considering pull requests we are not interested in more questions of the same style we already have. We are interested in new ways of teaching and testing theory material as well as bug fixes.
+
+All contributions to the TheorieLearn repository must be made via pull requests. If you have something you would like to contribute to the core repository please feel free to make a pull request. All contributions will need to be licensed with the same licensing described above.
