@@ -3,10 +3,7 @@ import chevron
 
 def generate(data):
     data["params"]["names_for_user"] = []
-
-    data["params"]["names_from_user"] = [
-        {"name": "cfg", "type": "nltk.grammar.CFG"},
-    ]
+    data["params"]["names_from_user"] = []
 
     with open(
         data["options"]["server_files_course_path"]

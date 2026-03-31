@@ -60,8 +60,6 @@ MAX_LENGTH_TO_CHECK = 14
 
 
 class Test(PLTestCase):
-    student_code_file = "submission.txt"
-
     @points(1)
     @name("Check that CFG is correct")
     def test_0(self):

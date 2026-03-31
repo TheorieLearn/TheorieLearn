@@ -1,0 +1,19 @@
+{
+    "uuid": "8b3d61e2-98cf-43b8-bd64-0d06b48e7966",
+    "title": "CFG Writing: Equal Numbers of 0s and 1s",
+    "topic": "Context-Free Grammars",
+    "tags": [],
+    "type": "v3",
+    "singleVariant": true,
+    "gradingMethod": "External",
+    "partialCredit": false,
+    "externalGradingOptions": {
+        "enabled": true,
+        "image": "prairielearn/grader-python",
+        "serverFilesCourse": [
+            "/"
+        ],
+        "entrypoint": "bash /grade/serverFilesCourse/theorielearn/CFGs/run.sh",
+        "timeout": 10
+    }
+}
